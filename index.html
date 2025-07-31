@@ -18,10 +18,8 @@
     .container{max-width:1000px;margin:0 auto;padding:2rem 1rem;}
     header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
     .logo {display:flex;align-items:center;gap:0.75rem;}
-    .logo-placeholder{width:48px;height:48px;background:var(--light-blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;letter-spacing:1px;}
     h1{font-size:2rem;margin-bottom:.5rem;}
     .tagline{font-size:1rem;color:#555;margin-top:4px;}
-    nav{margin-top:8px;}
     .btn{padding:.75rem 1.25rem;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:inline-block;transition:filter .2s;}
     .btn-primary{background:var(--dark-blue);color:#fff;}
     .btn-primary:hover{filter:brightness(1.05);}
@@ -31,7 +29,6 @@
     .price{font-size:1.5rem;font-weight:700;margin:8px 0;}
     .list{margin:0;padding-left:1.1rem;}
     .section{margin-top:3rem;}
-    .grid{display:grid;gap:1rem;}
     .contact{background:#fff;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);}
     .field{margin-bottom:1rem;}
     label{display:block;font-size:.85rem;margin-bottom:4px;font-weight:600;}
@@ -39,9 +36,8 @@
     .small{font-size:.85rem;color:#666;margin-top:4px;}
     footer{margin-top:4rem;text-align:center;font-size:.85rem;color:#777;padding-bottom:2rem;}
     .badge{background:#e8f0fe;color:var(--light-blue);padding:4px 10px;border-radius:6px;font-size:.6rem;display:inline-block;margin-bottom:6px;}
-    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
     @media (max-width:800px){
-      .feature-grid{grid-template-columns:1fr;}
+      .cards{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -49,7 +45,9 @@
   <div class="container">
     <header>
       <div class="logo">
-        <div class="logo-placeholder">NOC</div>
+        <div>
+          <img src="HellasNOC Logo Transparent.png" alt="HellasNOC Logo" style="height:48px; display:inline-block; vertical-align:middle;" />
+        </div>
         <div>
           <div style="font-size:1.5rem;font-weight:700;color:var(--dark-blue);">HellasNOC</div>
           <div class="tagline">Θωρακίζουμε την Ελλάδα, ένα δίκτυο τη φορά.</div>
@@ -107,26 +105,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2>Σύστημα Υπαλλήλων & Οχημάτων</h2>
-      <p>Παρακολούθησε ποιος υπάλληλος παίρνει ποιο όχημα, πότε και για ποιον πελάτη. Μπορεί να επεκταθεί σε web dashboard με login υπαλλήλων και ιστορικό δρομολογίων.</p>
-      <div class="feature-grid">
-        <div class="card">
-          <h3>Υπάλληλοι</h3>
-          <p>Κωδικοί 6 ψηφίων, μοναδικοί. Παράδειγμα:</p>
-          <ul class="list">
-            <li>000001 – Εσύ (Founder)</li>
-            <li>000002 – CLO</li>
-            <li>000003+ – Τεχνικοί</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Οχήματα</h3>
-          <p>Καταγραφή δρομολογίων: ποιος, πότε, σε ποιον πελάτη, χιλιόμετρα και σχόλια.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="contact" class="section">
       <div class="contact">
         <h2>Επικοινωνία / Ζήτα Προσφορά</h2>
@@ -164,7 +142,6 @@
     function handleSubmit(e) {
       e.preventDefault();
       const status = document.getElementById('status');
-      // Placeholder: replace with real endpoint (email sending / backend)
       status.textContent = 'Αποστολή...';
       setTimeout(() => {
         status.textContent = 'Ευχαριστούμε! Θα επικοινωνήσουμε μαζί σας σύντομα.';
