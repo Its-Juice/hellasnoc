@@ -461,5 +461,50 @@
       }
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set default language to Greek ('el') regardless of browser preference
+      let currentLang = localStorage.getItem('language') || 'el';
+      
+      // Update UI
+      updateLanguage(currentLang);
+      
+      // Handle language switch
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+      
+      function updateLanguage(lang) {
+        // Update buttons
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        // Update slider position
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+        }
+        
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      }
+    });
+</script>
 </body>
 </html>
