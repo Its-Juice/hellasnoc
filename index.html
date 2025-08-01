@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>HellasNOC – Θωρακίζουμε την Ελλάδα, ένα δίκτυο τη φορά</title>
-  <meta name="description" content="Managed network & security services για μικρές/μεσαίες επιχειρήσεις στην Ελλάδα. Οn-prem, remote, pro-level με ελληνική υποστήριξη." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HellasNOC - Επαγγελματικές Υπηρεσίες Δικτύων & Ασφαλείας</title>
   <style>
     :root {
       --dark-blue: #1c2c3a;
@@ -12,164 +11,362 @@
       --gold: #FFD700;
       --radius: 12px;
       --shadow: 0 12px 40px -10px rgba(28,44,58,0.15);
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --transition: all 0.3s ease;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body {background:#f5f7fa;color:#1c2c3a;line-height:1.5;}
-    .container{max-width:1000px;margin:0 auto;padding:2rem 1rem;}
-    header{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2.5rem 0;text-align:center;}
-    .logo {display:flex;align-items:center;gap:0.75rem;}
-    h1{font-size:2rem;margin-bottom:.5rem;text-align:center;}
-    h2{font-size:1.5rem;margin-bottom:1rem;text-align:center;}
-    p{text-align:center;max-width:800px;margin-left:auto;margin-right:auto;}
-    .tagline{font-size:1rem;color:#555;margin-top:4px;}
-    .btn{padding:.75rem 1.25rem;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:inline-block;transition:filter .2s;}
-    .btn-primary{background:var(--dark-blue);color:#fff;}
-    .btn-primary:hover{filter:brightness(1.05);}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;}
-    .card{background:#fff;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);position:relative;overflow:hidden;display:flex;flex-direction:column;height:100%;}
-    .card h3{margin-bottom:.75rem;font-size:1.25rem;color:var(--dark-blue);text-align:center;}
-    .price{font-size:1.5rem;font-weight:700;margin:1rem 0;text-align:center;}
-    .device-limit{font-size:1rem;color:var(--light-blue);font-weight:600;text-align:center;margin-bottom:1rem;}
-    .list{margin:1rem 0;padding-left:1.25rem;flex-grow:1;}
-    .list li{margin-bottom:.5rem;}
-    .section{margin-top:3rem;}
-    .contact{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);max-width:800px;margin:0 auto;}
-    .field{margin-bottom:1.25rem;}
-    label{display:block;font-size:.9rem;margin-bottom:.5rem;font-weight:600;}
-    input, textarea{width:100%;padding:.75rem;border:1px solid #d9dce3;border-radius:6px;font-size:1rem;resize:vertical;}
-    .small{font-size:.85rem;color:#666;margin-top:.5rem;text-align:center;}
-    footer{margin-top:4rem;text-align:center;font-size:.85rem;color:#777;padding-bottom:2rem;}
-    .badge{
-      background:#e8f0fe;
-      color:var(--light-blue);
-      padding:4px 10px;
-      border-radius:6px;
-      font-size:.7rem;
-      display:inline-block;
-      margin-bottom:.75rem;
-      text-align:center;
-      width:100%;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    
+    /* Header */
+    header {
+      background: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .badge.popular {
-      background: linear-gradient(135deg, #FFD700, #FFC000);
-      color: #8B6508;
-      font-weight: 700;
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
     }
-    @media (max-width:800px){
-      .cards{grid-template-columns:1fr;}
+    .logo img {
+      height: 60px;
+      transition: var(--transition);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark-blue);
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--light-blue);
+    }
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--light-blue);
+      transition: var(--transition);
+    }
+    nav a:hover:after {
+      width: 100%;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      display: inline-block;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--dark-blue);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark-blue);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #444;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* About Section */
+    .about {
+      padding: 5rem 0;
+      background: white;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--dark-blue);
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--light-blue);
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Values Section */
+    .values {
+      padding: 5rem 0;
+      background: #f5f7fa;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .value-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+    .value-card h3 {
+      color: var(--light-blue);
+      margin-bottom: 1rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      padding: 5rem 0;
+      text-align: center;
+      background: var(--dark-blue);
+      color: white;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    /* Footer */
+    footer {
+      background: #1a2634;
+      color: white;
+      padding: 3rem 0;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .footer-column h3 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    .footer-column ul {
+      list-style: none;
+    }
+    .footer-column li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-column a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-column a:hover {
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #2e3a4a;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="HellasNOC Logo Transparent.png" alt="HellasNOC Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Αρχική</a></li>
+          <li><a href="pricing.html">Τιμές</a></li>
+          <li><a href="#contact">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+      <a href="pricing.html" class="btn btn-primary">Δωρεάν Αξιολόγηση</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Θωρακίζουμε την Ελλάδα, ένα δίκτυο τη φορά</h1>
+      <p>Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφαλείας για μικρές και μεσαίες επιχειρήσεις.</p>
+      <div class="hero-buttons">
+        <a href="pricing.html" class="btn btn-primary">Δείτε τα Πακέτα μας</a>
+        <a href="#contact" class="btn btn-secondary">Επικοινωνήστε μαζί μας</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Η Εταιρεία μας</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Η <strong>HellasNOC</strong> ιδρύθηκε με μια απλή αποστολή: να φέρει επαγγελματική διαχείριση δικτύων και ασφάλεια σε ελληνικές επιχειρήσεις με προσιτές τιμές.</p>
+          <p>Ως πρώην sysadmins και network engineers, καταλάβαμε ότι οι μικρές επιχειρήσεις δεν έχουν πρόσβαση στις ίδιες ποιοτικές υπηρεσίες που προσφέρουν τα μεγάλα data centers.</p>
+          <p>Χρησιμοποιούμε <strong>ανοιχτές τεχνολογίες</strong> και <strong>ελληνική υποστήριξη</strong> για λύσεις που πραγματικά λειτουργούν.</p>
+          <a href="pricing.html" class="btn btn-primary">Δείτε τα Πακέτα μας</a>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="HellasNOC Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values">
+    <div class="container">
+      <div class="section-title">
+        <h2>Γιατί να επιλέξετε την HellasNOC;</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Τοπική Υποστήριξη</h3>
+          <p>Οι τεχνικοί μας βρίσκονται στην Ελλάδα και μιλούν τη γλώσσα σας.</p>
+        </div>
+        <div class="value-card">
+          <h3>Διαφανής Τιμολόγηση</h3>
+          <p>Καμία κρυφή χρέωση. Ξέρετε ακριβώς τι πληρώνετε.</p>
+        </div>
+        <div class="value-card">
+          <h3>Open Source Core</h3>
+          <p>Αξιόπιστα open source εργαλεία για μειωμένο κόστος.</p>
+        </div>
+        <div class="value-card">
+          <h3>Enterprise Security</h3>
+          <p>Πρωτόκολλα ασφαλείας επιπέδου enterprise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Έτοιμοι να προστατεύσετε το δίκτυό σας;</h2>
+      <p>Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές δίκτυο.</p>
       <div>
-        <img src="HellasNOC Logo Transparent.png" alt="HellasNOC Logo"
-             style="height:180px; max-width:100%; display:block; margin:0 auto;" />
+        <a href="pricing.html" class="btn btn-primary">Δείτε τις Υπηρεσίες μας</a>
       </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contact" class="btn btn-primary" style="font-size:1rem; padding:1rem 1.5rem;">
-          Ζήτα Προσφορά
-        </a>
-      </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="section">
-      <h1>Διαχειριζόμενες Υπηρεσίες Δικτύου & Ασφαλείας</h1>
-      <p>Επαγγελματική υποστήριξη δικτύων για μικρές και μεσαίες επιχειρήσεις. Προσιτές, ελληνικές, και βασισμένες σε ανοιχτές τεχνολογίες.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="badge">Βασικό</div>
-          <h3>Πακέτο Basic</h3>
-          <div class="price">49€/μήνα</div>
-          <div class="device-limit">Μέχρι 5 υπολογιστές</div>
-          <p style="text-align:center;">Έναρξη με ασφάλεια και υγεία δικτύου.</p>
-          <ul class="list">
-            <li>Έλεγχος δικτύου</li>
-            <li>Ad-blocking / DNS filtering</li>
-            <li>Βελτιστοποίηση Wi-Fi</li>
-            <li>Βασική παραμετροποίηση firewall</li>
-          </ul>
-          <div class="small">Τέλος εγκατάστασης: 99€</div>
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>HellasNOC</h3>
+          <p>Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
-        <div class="card">
-          <div class="badge popular">Δημοφιλές</div>
-          <h3>Πακέτο Secure Office</h3>
-          <div class="price">99€/μήνα</div>
-          <div class="device-limit">Μέχρι 15 υπολογιστές</div>
-          <p style="text-align:center;">Πλήρης ασφάλεια για μικρά γραφεία.</p>
-          <ul class="list">
-            <li>Όλα από το Basic</li>
-            <li>WireGuard VPN</li>
-            <li>Nextcloud για έγγραφα</li>
-            <li>Backup & scans</li>
-            <li>Security training</li>
+        <div class="footer-column">
+          <h3>Σύνδεσμοι</h3>
+          <ul>
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="pricing.html">Τιμές</a></li>
           </ul>
-          <div class="small">Τέλος εγκατάστασης: 149€</div>
         </div>
-        <div class="card">
-          <div class="badge">Pro</div>
-          <h3>Πακέτο Pro</h3>
-          <div class="price">Από 149€/μήνα</div>
-          <div class="device-limit">Απεριόριστοι υπολογιστές</div>
-          <p style="text-align:center;">Self-hosted suite με πλήρη διαχείριση.</p>
-          <ul class="list">
-            <li>Proxmox / Unraid stack</li>
-            <li>24/7 monitoring</li>
-            <li>ΖFS backups</li>
-            <li>Απεριόριστη υποστήριξη</li>
+        <div class="footer-column">
+          <h3>Επικοινωνία</h3>
+          <ul>
+            <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
+            <li>Τηλ: 210 6969 420</li>
+            <li>Email: info@hellasnoc.gr</li>
           </ul>
-          <div class="small">Τέλος εγκατάστασης: Κατόπιν Συνεννόησης</div>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="contact">
-        <h2>Επικοινωνία / Ζήτα Προσφορά</h2>
-        <p>Συμπλήρωσε τα στοιχεία και θα επικοινωνήσουμε μαζί σου άμεσα.</p>
-        
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="field">
-            <label for="name">Όνομα</label>
-            <input type="text" id="name" required placeholder="Π.χ. Γιάννης Παπαδόπουλος" />
-          </div>
-          <div class="field">
-            <label for="company">Εταιρεία</label>
-            <input type="text" id="company" placeholder="Π.χ. Γραφείο Λογιστικής" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="you@domain.gr" />
-          </div>
-          <div class="field">
-            <label for="message">Μήνυμα / Πακέτο</label>
-            <textarea id="message" rows="4" placeholder="Θέλω το Secure Office για 3 χρήστες"></textarea>
-          </div>
-          <div style="text-align:center;">
-            <button type="submit" class="btn btn-primary">Αποστολή</button>
-            <div id="status" class="small"></div>
-          </div>
-        </form>
+      <div class="copyright">
+        <p>© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
       </div>
-    </section>
-
-    <footer>
-      <p>© 2025 HellasNOC. Θωρακίζουμε την Ελλάδα, ένα δίκτυο τη φορά.</p>
-      <p>Επικοινωνία: <a href="mailto:info@hellasnoc.gr">info@hellasnoc.gr</a> | Τηλ: +30 210 6969 420</p>
-    </footer>
-  </div>
-
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const status = document.getElementById('status');
-      status.textContent = 'Αποστολή...';
-      setTimeout(() => {
-        status.textContent = 'Ευχαριστούμε! Θα επικοινωνήσουμε μαζί σας σύντομα.';
-      }, 1000);
-    }
-  </script>
+    </div>
+  </footer>
 </body>
 </html>
