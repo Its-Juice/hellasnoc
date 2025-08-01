@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HellasNOC - Επικοινωνία</title>
+  <style>
+    :root {
+      --dark-blue: #1c2c3a;
+      --light-blue: #2e4a7d;
+      --gold: #FFD700;
+      --radius: 12px;
+      --shadow: 0 12px 40px -10px rgba(28,44,58,0.15);
+      --transition: all 0.3s ease;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    
+    /* Header */
+    header {
+      background: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo img {
+      height: 60px;
+      transition: var(--transition);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark-blue);
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--light-blue);
+    }
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--light-blue);
+      transition: var(--transition);
+    }
+    nav a:hover:after {
+      width: 100%;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      display: inline-block;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--dark-blue);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Contact Hero */
+    .contact-hero {
+      padding: 3rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    }
+    .contact-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark-blue);
+    }
+    .contact-hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #444;
+    }
+
+    /* Contact Form */
+    .contact-section {
+      padding: 3rem 0;
+      background: white;
+    }
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-info {
+      background: var(--dark-blue);
+      color: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+    }
+    .contact-info h3 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-icon {
+      margin-right: 1rem;
+      color: var(--gold);
+    }
+    .contact-form {
+      background: #f5f7fa;
+      padding: 2rem;
+      border-radius: var(--radius);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--light-blue);
+      box-shadow: 0 0 0 3px rgba(46, 74, 125, 0.1);
+    }
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a2634;
+      color: white;
+      padding: 3rem 0;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .footer-column h3 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    .footer-column ul {
+      list-style: none;
+    }
+    .footer-column li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-column a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-column a:hover {
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #2e3a4a;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="HellasNOC Logo Transparent.png" alt="HellasNOC Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Αρχική</a></li>
+          <li><a href="pricing.html">Τιμές</a></li>
+          <li><a href="contact.html">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+      <a href="pricing.html" class="btn btn-primary">Δωρεάν Αξιολόγηση</a>
+    </div>
+  </header>
+
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Επικοινωνήστε μαζί μας</h1>
+      <p>Έχουμε τις λύσεις που χρειάζεστε για το δίκτυό σας. Συμπληρώστε την φόρμα και θα σας απαντήσουμε εντός 24 ωρών.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Στοιχεία Επικοινωνίας</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <h4>Διεύθυνση</h4>
+              <p>Αγίου Κωνσταντίνου 12, Αθήνα</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <h4>Τηλέφωνο</h4>
+              <p>210 6969 420</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@hellasnoc.gr</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">⏰</div>
+            <div>
+              <h4>Ωράριο</h4>
+              <p>Δευτέρα - Παρασκευή: 09:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Ονοματεπώνυμο</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Τηλέφωνο</label>
+              <input type="tel" id="phone" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="subject">Θέμα</label>
+              <select id="subject" class="form-control" required>
+                <option value="">Επιλέξτε θέμα</option>
+                <option value="support">Τεχνική Υποστήριξη</option>
+                <option value="sales">Πωλήσεις</option>
+                <option value="billing">Τιμολόγηση</option>
+                <option value="other">Άλλο</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Μήνυμα</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Αποστολή Μηνύματος</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>HellasNOC</h3>
+          <p>Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Σύνδεσμοι</h3>
+          <ul>
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="pricing.html">Τιμές</a></li>
+            <li><a href="contact.html">Επικοινωνία</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Επικοινωνία</h3>
+          <ul>
+            <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
+            <li>Τηλ: 210 6969 420</li>
+            <li>Email: info@hellasnoc.gr</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Το μήνυμά σας εστάλη με επιτυχία! Θα σας απαντήσουμε το συντομότερο δυνατό.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

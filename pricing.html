@@ -100,7 +100,7 @@
       color: #444;
     }
 
-    /* Price Toggle */
+    /* Updated Price Toggle with Sliding Animation */
     .price-toggle {
       display: flex;
       justify-content: center;
@@ -110,6 +110,13 @@
       border-radius: 50px;
       padding: 5px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .price-toggle-container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 1;
     }
     .price-toggle-btn {
       flex: 1;
@@ -118,10 +125,22 @@
       cursor: pointer;
       border-radius: 50px;
       font-weight: 600;
-      transition: var(--transition);
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+    .price-toggle-slider {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height: calc(100% - 10px);
+      width: calc(50% - 5px);
+      background: var(--dark-blue);
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 1;
     }
     .price-toggle-btn.active {
-      background: var(--dark-blue);
       color: white;
     }
 
@@ -281,10 +300,10 @@
         <ul>
           <li><a href="index.html">Αρχική</a></li>
           <li><a href="pricing.html">Τιμές</a></li>
-          <li><a href="#contact">Επικοινωνία</a></li>
+          <li><a href="contact.html">Επικοινωνία</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn btn-primary">Επικοινωνία</a>
+      <a href="contact.html" class="btn btn-primary">Επικοινωνία</a>
     </div>
   </header>
 
@@ -294,10 +313,13 @@
       <h1>Πακέτα Υπηρεσιών</h1>
       <p>Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
       
-      <!-- Price Toggle -->
+      <!-- Updated Price Toggle with Slider -->
       <div class="price-toggle">
-        <div id="monthly-toggle" class="price-toggle-btn active">Μηνιαία</div>
-        <div id="annual-toggle" class="price-toggle-btn">Ετήσια</div>
+        <div class="price-toggle-slider"></div>
+        <div class="price-toggle-container">
+          <div id="monthly-toggle" class="price-toggle-btn active">Μηνιαία</div>
+          <div id="annual-toggle" class="price-toggle-btn">Ετήσια</div>
+        </div>
       </div>
     </div>
   </section>
@@ -316,7 +338,7 @@
           <li>Βελτιστοποίηση Wi-Fi</li>
           <li>Βασική παραμετροποίηση firewall</li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
       </div>
 
       <div class="pricing-card">
@@ -332,7 +354,7 @@
           <li>Backup & scans</li>
           <li>Security training</li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
       </div>
 
       <div class="pricing-card">
@@ -347,7 +369,7 @@
           <li>Απεριόριστη υποστήριξη</li>
           <li>Διαχείριση πολλαπλών τοποθεσιών</li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
       </div>
     </div>
   </div>
@@ -368,7 +390,7 @@
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
+  <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
@@ -380,6 +402,7 @@
           <ul>
             <li><a href="index.html">Αρχική</a></li>
             <li><a href="pricing.html">Τιμές</a></li>
+            <li><a href="contact.html">Επικοινωνία</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -398,25 +421,32 @@
   </footer>
 
   <script>
-    // Price Toggle Functionality
+    // Price Toggle Functionality with Sliding Animation
     document.addEventListener('DOMContentLoaded', function() {
       const monthlyToggle = document.getElementById('monthly-toggle');
       const annualToggle = document.getElementById('annual-toggle');
+      const slider = document.querySelector('.price-toggle-slider');
       
       monthlyToggle.addEventListener('click', function() {
-        this.classList.add('active');
-        annualToggle.classList.remove('active');
-        
-        document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
-        document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
+        if (!this.classList.contains('active')) {
+          this.classList.add('active');
+          annualToggle.classList.remove('active');
+          slider.style.transform = 'translateX(0)';
+          
+          document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
+          document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
+        }
       });
       
       annualToggle.addEventListener('click', function() {
-        this.classList.add('active');
-        monthlyToggle.classList.remove('active');
-        
-        document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
-        document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
+        if (!this.classList.contains('active')) {
+          this.classList.add('active');
+          monthlyToggle.classList.remove('active');
+          slider.style.transform = 'translateX(100%)';
+          
+          document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
+          document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
+        }
       });
     });
   </script>
