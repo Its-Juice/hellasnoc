@@ -69,7 +69,16 @@ const translations = {
     "links": "Links",
     "copyright": "© 2023 HellasNOC. All rights reserved.",
     
+    
+    // Add these new translations:
+    "basic-package": "Βασικό",
+    "secure-office": "Ασφαλές Γραφείο",
+    "professional": "Επαγγελματικό",
+    "month": "μήνα",
+    "year": "έτος"
+  }
     // Features
+    ,
     "network-monitoring": "Network monitoring",
     "ad-blocking": "Ad-blocking / DNS filtering",
     "wifi-optimization": "Wi-Fi optimization",
@@ -89,6 +98,15 @@ const translations = {
     "save-289": "Save €289"
   },
   el: {
+  
+      // Add these new translations:
+    "basic-package": "Basic",
+    "secure-office": "Secure Office",
+    "professional": "Professional",
+    "month": "month",
+    "year": "year"
+  },
+
     // Header
     "home": "Αρχική",
     "pricing": "Τιμές",
