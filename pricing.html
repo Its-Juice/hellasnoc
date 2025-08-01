@@ -527,7 +527,7 @@
       <!-- Basic Package -->
       <div class="pricing-card">
         <h3 data-i18n="basic-package">Βασικό</h3>
-        <div class="device-limit" data-i18n="devices">Έως 5 συσκευές</div>
+    <div class="device-limit" data-i18n="devices" data-i18n-count="5"></div>
         <div class="price price-monthly show">49€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
         <div class="price price-annual">499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
         <div class="annual-savings price-annual" data-i18n="save-89">Εξοικονομείτε 89€</div>
@@ -544,7 +544,7 @@
       <div class="pricing-card">
         <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
         <h3 data-i18n="secure-office">Ασφαλές Γραφείο</h3>
-        <div class="device-limit" data-i18n="devices">Έως 15 συσκευές</div>
+    <div class="device-limit" data-i18n="devices" data-i18n-count="15"></div>
         <div class="price price-monthly show">99€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
         <div class="price price-annual">999€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
         <div class="annual-savings price-annual" data-i18n="save-189">Εξοικονομείτε 189€</div>
@@ -561,7 +561,7 @@
       <!-- Professional Package -->
       <div class="pricing-card">
         <h3 data-i18n="professional">Επαγγελματικό</h3>
-        <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
+    <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
         <div class="price price-monthly show">149€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
         <div class="price price-annual">1,499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
         <div class="annual-savings price-annual" data-i18n="save-289">Εξοικονομείτε 289€</div>
@@ -683,30 +683,46 @@
         });
       });
       
-      // Update all translated elements
-      function updateLanguage(lang) {
-        // Update active button state
-        document.querySelectorAll('.language-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update language slider position
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-        }
-        
-        // Update HTML lang attribute
-        document.documentElement.lang = lang;
-        
-        // Update all elements with data-i18n attribute
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
+   function updateLanguage(lang) {
+  // Update active button state
+  document.querySelectorAll('.language-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  
+  // Update language slider position
+  const slider = document.querySelector('.language-slider');
+  if (slider) {
+    slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+  }
+  
+  // Update HTML lang attribute
+  document.documentElement.lang = lang;
+  
+  // Update all translatable elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang] && translations[lang][key]) {
+      let translation = translations[lang][key];
+      
+      // Replace {count} placeholder if element has data-i18n-count attribute
+      const count = el.dataset.i18nCount;
+      if (count !== undefined) {
+        translation = translation.replace('{count}', count);
       }
+      
+      el.textContent = translation;
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Set default language to Greek ('el')
+  let currentLang = localStorage.getItem('language') || 'el';
+  
+  // Update UI on load (including dynamic counts)
+  updateLanguage(currentLang);
+  
+  // Rest of your existing code...
+});
 
       // Price toggle functionality
       const monthlyToggle = document.getElementById('monthly-toggle');
