@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HellasNOC - Τιμές & Πακέτα Υπηρεσιών</title>
   <style>
     :root {
@@ -14,7 +14,7 @@
       --transition: all 0.3s ease;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    
+
     /* Language Switcher */
     .header-right {
       display: flex;
@@ -68,17 +68,15 @@
       transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
       z-index: 1;
     }
-    
-    /* Reset and Base Styles */
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
-    .container { 
-      max-width: 1200px; 
-      margin: 0 auto; 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0 1.5rem;
     }
-    
-    /* Header */
+
     header {
       background: white;
       box-shadow: var(--shadow);
@@ -142,7 +140,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* Pricing Hero */
     .pricing-hero {
       padding: 3rem 0;
       text-align: center;
@@ -160,7 +157,6 @@
       color: #444;
     }
 
-    /* Price Toggle */
     .price-toggle {
       display: flex;
       justify-content: center;
@@ -204,7 +200,6 @@
       color: white;
     }
 
-    /* Pricing Cards */
     .pricing-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -278,7 +273,6 @@
       display: block;
     }
 
-    /* Logo Section */
     .logo-section {
       padding: 3rem 0;
       margin: 2rem 0;
@@ -314,8 +308,6 @@
     .logo-item img {
       max-width: 100%;
       max-height: 50px;
-      width: auto;
-      height: auto;
       object-fit: contain;
       filter: grayscale(100%);
       opacity: 0.8;
@@ -331,7 +323,6 @@
       transform: scale(1.05);
     }
 
-    /* FAQ Section */
     .faq {
       padding: 3rem 0;
       background: white;
@@ -346,7 +337,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Footer */
     footer {
       background: #1a2634;
       color: white;
@@ -384,7 +374,6 @@
       color: #9ca3af;
     }
 
-    /* Responsive Adjustments */
     @media (max-width: 992px) {
       .logo-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -424,7 +413,7 @@
   <header>
     <div class="container nav-container">
       <div class="logo">
-        <img src="assets/img/HellasNOC-Logo-Transparent.png">
+        <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo">
       </div>
       <nav>
         <ul>
@@ -437,15 +426,14 @@
         <div class="language-switcher">
           <div class="language-slider"></div>
           <div class="language-toggle-container">
-            <button class="language-btn active" data-lang="el">
+            <button class="language-btn" data-lang="el" aria-label="Ελληνικά">
               <img src="assets/img/flags/gr.png" alt="Greek">
             </button>
-            <button class="language-btn" data-lang="en">
+            <button class="language-btn" data-lang="en" aria-label="English">
               <img src="assets/img/flags/gb.png" alt="English">
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-primary" data-i18n="contact-btn">Επικοινωνία</a>
       </div>
     </div>
   </header>
@@ -455,7 +443,7 @@
     <div class="container">
       <h1 data-i18n="packages-title">Πακέτα Υπηρεσιών</h1>
       <p data-i18n="packages-subtitle">Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
-      
+
       <!-- Price Toggle -->
       <div class="price-toggle">
         <div class="price-toggle-slider"></div>
@@ -520,13 +508,11 @@
     </div>
   </div>
 
-
   <!-- Technologies Section -->
   <div class="container">
     <div class="logo-section">
       <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
       <div class="logo-grid">
-        <!-- Row 1 -->
         <div class="logo-item">
           <img src="assets/img/tech-logos/cisco.png" alt="Cisco" loading="eager">
         </div>
@@ -542,8 +528,6 @@
         <div class="logo-item">
           <img src="assets/img/tech-logos/unraid.png" alt="Unraid" loading="eager">
         </div>
-        
-        <!-- Row 2 -->
         <div class="logo-item">
           <img src="assets/img/tech-logos/wireguard.png" alt="WireGuard" loading="eager">
         </div>
@@ -609,127 +593,68 @@
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script>
-    // Price Toggle Functionality
     document.addEventListener('DOMContentLoaded', function() {
+      // Default to Greek unless previously selected
+      let currentLang = localStorage.getItem('language') || 'el';
+
+      function updateLanguage(lang) {
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+        }
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (window.translations && translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      }
+
+      updateLanguage(currentLang);
+
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+
+      // Price toggle
       const monthlyToggle = document.getElementById('monthly-toggle');
       const annualToggle = document.getElementById('annual-toggle');
       const slider = document.querySelector('.price-toggle-slider');
-      
+
       monthlyToggle.addEventListener('click', function() {
         if (!this.classList.contains('active')) {
           this.classList.add('active');
           annualToggle.classList.remove('active');
-          slider.style.transform = 'translateX(0)';
-          
+          if (slider) slider.style.transform = 'translateX(0)';
           document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
           document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
         }
       });
-      
+
       annualToggle.addEventListener('click', function() {
         if (!this.classList.contains('active')) {
           this.classList.add('active');
           monthlyToggle.classList.remove('active');
-          slider.style.transform = 'translateX(100%)';
-          
+          if (slider) slider.style.transform = 'translateX(100%)';
           document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
           document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
         }
       });
     });
   </script>
-  <script src="translations.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set default language from localStorage or browser preference
-      let currentLang = localStorage.getItem('language') || 
-                       (navigator.language.startsWith('el') ? 'el' : 'en');
-      
-      // Update UI
-      updateLanguage(currentLang);
-      
-      // Handle language switch
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const lang = this.dataset.lang;
-          if (lang !== currentLang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            updateLanguage(lang);
-          }
-        });
-      });
-      
-      function updateLanguage(lang) {
-        // Update buttons
-        document.querySelectorAll('.language-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update slider position
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-        }
-        
-        // Update html lang attribute
-        document.documentElement.lang = lang;
-        
-        // Update all translatable elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set default language to Greek ('el') regardless of browser preference
-      let currentLang = localStorage.getItem('language') || 'el';
-      
-      // Update UI
-      updateLanguage(currentLang);
-      
-      // Handle language switch
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const lang = this.dataset.lang;
-          if (lang !== currentLang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            updateLanguage(lang);
-          }
-        });
-      });
-      
-      function updateLanguage(lang) {
-        // Update buttons
-        document.querySelectorAll('.language-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update slider position
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-        }
-        
-        // Update html lang attribute
-        document.documentElement.lang = lang;
-        
-        // Update all translatable elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-      }
-    });
-</script>
 </body>
 </html>
+
