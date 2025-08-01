@@ -14,7 +14,61 @@
       --transition: all 0.3s ease;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-
+    
+    /* Language Switcher */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .language-switcher {
+      display: flex;
+      background: #f5f7fa;
+      border-radius: 50px;
+      padding: 2px;
+      position: relative;
+      height: 40px;
+      width: 84px;
+    }
+    .language-toggle-container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .language-btn {
+      border: none;
+      background: transparent;
+      padding: 0.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
+      width: 40px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .language-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    .language-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: calc(100% - 4px);
+      width: calc(50% - 2px);
+      background: var(--dark-blue);
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 1;
+    }
+    
     /* Reset and Base Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
@@ -374,27 +428,40 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Αρχική</a></li>
-          <li><a href="pricing.html">Τιμές</a></li>
-          <li><a href="contact.html">Επικοινωνία</a></li>
+          <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+          <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+          <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="btn btn-primary">Επικοινωνία</a>
+      <div class="header-right">
+        <div class="language-switcher">
+          <div class="language-slider"></div>
+          <div class="language-toggle-container">
+            <button class="language-btn active" data-lang="el">
+              <img src="assets/img/flags/gr.png" alt="Greek">
+            </button>
+            <button class="language-btn" data-lang="en">
+              <img src="assets/img/flags/gb.png" alt="English">
+            </button>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="contact-btn">Επικοινωνία</a>
+      </div>
     </div>
   </header>
 
   <!-- Pricing Hero -->
   <section class="pricing-hero">
     <div class="container">
-      <h1>Πακέτα Υπηρεσιών</h1>
-      <p>Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
+      <h1 data-i18n="packages-title">Πακέτα Υπηρεσιών</h1>
+      <p data-i18n="packages-subtitle">Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
       
       <!-- Price Toggle -->
       <div class="price-toggle">
         <div class="price-toggle-slider"></div>
         <div class="price-toggle-container">
-          <div id="monthly-toggle" class="price-toggle-btn active">Μηνιαία</div>
-          <div id="annual-toggle" class="price-toggle-btn">Ετήσια</div>
+          <div id="monthly-toggle" class="price-toggle-btn active" data-i18n="monthly">Μηνιαία</div>
+          <div id="annual-toggle" class="price-toggle-btn" data-i18n="annual">Ετήσια</div>
         </div>
       </div>
     </div>
@@ -405,26 +472,26 @@
     <div class="pricing-cards">
       <div class="pricing-card">
         <h3>Basic</h3>
-        <div class="device-limit">Έως 5 συσκευές</div>
+        <div class="device-limit" data-i18n="devices">Έως 5 συσκευές</div>
         <div class="price price-monthly show">49€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">499€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual">Εξοικονομείτε 89€</div>
+        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 89€</div>
         <ul class="pricing-features">
           <li>Έλεγχος δικτύου</li>
           <li>Ad-blocking / DNS filtering</li>
           <li>Βελτιστοποίηση Wi-Fi</li>
           <li>Βασική παραμετροποίηση firewall</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
       </div>
 
       <div class="pricing-card">
-        <div class="popular-badge">Πιο Δημοφιλές</div>
+        <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
         <h3>Secure Office</h3>
-        <div class="device-limit">Έως 15 συσκευές</div>
+        <div class="device-limit" data-i18n="devices">Έως 15 συσκευές</div>
         <div class="price price-monthly show">99€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">999€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual">Εξοικονομείτε 189€</div>
+        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 189€</div>
         <ul class="pricing-features">
           <li>Όλα από το Basic</li>
           <li>WireGuard VPN</li>
@@ -432,15 +499,15 @@
           <li>Backup & scans</li>
           <li>Security training</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
       </div>
 
       <div class="pricing-card">
         <h3>Pro</h3>
-        <div class="device-limit">Απεριόριστες συσκευές</div>
+        <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
         <div class="price price-monthly show">149€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">1.499€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual">Εξοικονομείτε 289€</div>
+        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 289€</div>
         <ul class="pricing-features">
           <li>Proxmox / Unraid stack</li>
           <li>24/7 monitoring</li>
@@ -448,7 +515,7 @@
           <li>Απεριόριστη υποστήριξη</li>
           <li>Διαχείριση πολλαπλών τοποθεσιών</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Επιλογή</a>
+        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
       </div>
     </div>
   </div>
@@ -456,7 +523,7 @@
   <!-- Technologies Section -->
   <div class="container">
     <div class="logo-section">
-      <h2>Τεχνολογίες που χρησιμοποιούμε</h2>
+      <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
       <div class="logo-grid">
         <!-- Row 1 -->
         <div class="logo-item">
@@ -498,14 +565,14 @@
   <!-- FAQ Section -->
   <section class="faq">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 2rem;">Συχνές Ερωτήσεις</h2>
+      <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="faq-title">Συχνές Ερωτήσεις</h2>
       <div class="faq-item">
-        <h3>Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
-        <p>Τα βασικά πακέτα εγκαθίστανται συνήθως εντός 2-3 εργάσιμων ημερών. Τα πιο σύνθετα πακέτα μπορεί να χρειαστούν έως και μια εβδομάδα.</p>
+        <h3 data-i18n="installation-time">Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
+        <p data-i18n="installation-answer">Τα βασικά πακέτα εγκαθίστανται συνήθως εντός 2-3 εργάσιμων ημερών. Τα πιο σύνθετα πακέτα μπορεί να χρειαστούν έως και μια εβδομάδα.</p>
       </div>
       <div class="faq-item">
-        <h3>Προσφέρετε δωρεάν δοκιμή;</h3>
-        <p>Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
+        <h3 data-i18n="free-trial">Προσφέρετε δωρεάν δοκιμή;</h3>
+        <p data-i18n="free-trial-answer">Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
       </div>
     </div>
   </section>
@@ -515,28 +582,28 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>HellasNOC</h3>
-          <p>Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
+          <h3 data-i18n="company">HellasNOC</h3>
+          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
         <div class="footer-column">
-          <h3>Σύνδεσμοι</h3>
+          <h3 data-i18n="links">Σύνδεσμοι</h3>
           <ul>
-            <li><a href="index.html">Αρχική</a></li>
-            <li><a href="pricing.html">Τιμές</a></li>
-            <li><a href="contact.html">Επικοινωνία</a></li>
+            <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+            <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+            <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Επικοινωνία</h3>
+          <h3 data-i18n="contact">Επικοινωνία</h3>
           <ul>
-            <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
-            <li>Τηλ: 210 6969 420</li>
-            <li>Email: info@hellasnoc.gr</li>
+            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
+            <li data-i18n="phone">Τηλ: 210 6969 420</li>
+            <li data-i18n="email">Email: info@hellasnoc.gr</li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        <p>© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
+        <p data-i18n="copyright">© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
       </div>
     </div>
   </footer>
@@ -569,6 +636,53 @@
           document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
         }
       });
+    });
+  </script>
+  <script src="translations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set default language from localStorage or browser preference
+      let currentLang = localStorage.getItem('language') || 
+                       (navigator.language.startsWith('el') ? 'el' : 'en');
+      
+      // Update UI
+      updateLanguage(currentLang);
+      
+      // Handle language switch
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+      
+      function updateLanguage(lang) {
+        // Update buttons
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        // Update slider position
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+        }
+        
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      }
     });
   </script>
 </body>

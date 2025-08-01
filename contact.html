@@ -18,6 +18,60 @@
     body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     
+    /* Language Switcher */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .language-switcher {
+      display: flex;
+      background: #f5f7fa;
+      border-radius: 50px;
+      padding: 2px;
+      position: relative;
+      height: 40px;
+      width: 84px;
+    }
+    .language-toggle-container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .language-btn {
+      border: none;
+      background: transparent;
+      padding: 0.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
+      width: 40px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .language-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    .language-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: calc(100% - 4px);
+      width: calc(50% - 2px);
+      background: var(--dark-blue);
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 1;
+    }
+    
     /* Header */
     header {
       background: white;
@@ -213,27 +267,40 @@
 </head>
 <body>
   <!-- Header -->
- <header>
+  <header>
     <div class="container nav-container">
       <div class="logo">
-<img src="assets/img/HellasNOC-Logo-Transparent.png">
+        <img src="assets/img/HellasNOC-Logo-Transparent.png">
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Αρχική</a></li>
-          <li><a href="pricing.html">Τιμές</a></li>
-          <li><a href="contact.html">Επικοινωνία</a></li>
+          <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+          <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+          <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
         </ul>
       </nav>
-      <a href="pricing.html" class="btn btn-primary">Δωρεάν Αξιολόγηση</a>
+      <div class="header-right">
+        <div class="language-switcher">
+          <div class="language-slider"></div>
+          <div class="language-toggle-container">
+            <button class="language-btn active" data-lang="el">
+              <img src="assets/img/flags/gr.png" alt="Greek">
+            </button>
+            <button class="language-btn" data-lang="en">
+              <img src="assets/img/flags/gb.png" alt="English">
+            </button>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="contact-btn">Επικοινωνία</a>
+      </div>
     </div>
   </header>
 
   <!-- Contact Hero -->
   <section class="contact-hero">
     <div class="container">
-      <h1>Επικοινωνήστε μαζί μας</h1>
-      <p>Έχουμε τις λύσεις που χρειάζεστε για το δίκτυό σας. Συμπληρώστε την φόρμα και θα σας απαντήσουμε εντός 24 ωρών.</p>
+      <h1 data-i18n="contact-title">Επικοινωνήστε μαζί μας</h1>
+      <p data-i18n="contact-subtitle">Έχουμε τις λύσεις που χρειάζεστε για το δίκτυό σας. Συμπληρώστε την φόρμα και θα σας απαντήσουμε εντός 24 ωρών.</p>
     </div>
   </section>
 
@@ -242,33 +309,33 @@
     <div class="container">
       <div class="contact-container">
         <div class="contact-info">
-          <h3>Στοιχεία Επικοινωνίας</h3>
+          <h3 data-i18n="contact-info">Στοιχεία Επικοινωνίας</h3>
           <div class="contact-info-item">
             <div class="contact-info-icon">📍</div>
             <div>
-              <h4>Διεύθυνση</h4>
+              <h4 data-i18n="address">Διεύθυνση</h4>
               <p>Αγίου Κωνσταντίνου 12, Αθήνα</p>
             </div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-icon">📞</div>
             <div>
-              <h4>Τηλέφωνο</h4>
+              <h4 data-i18n="phone">Τηλέφωνο</h4>
               <p>210 6969 420</p>
             </div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-icon">✉️</div>
             <div>
-              <h4>Email</h4>
+              <h4 data-i18n="email">Email</h4>
               <p>info@hellasnoc.gr</p>
             </div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-icon">⏰</div>
             <div>
-              <h4>Ωράριο</h4>
-              <p>Δευτέρα - Παρασκευή: 09:00 - 17:00</p>
+              <h4 data-i18n="hours">Ωράριο</h4>
+              <p data-i18n="hours-text">Δευτέρα - Παρασκευή: 09:00 - 17:00</p>
             </div>
           </div>
         </div>
@@ -276,32 +343,32 @@
         <div class="contact-form">
           <form id="contactForm">
             <div class="form-group">
-              <label for="name">Ονοματεπώνυμο</label>
+              <label for="name" data-i18n="full-name">Ονοματεπώνυμο</label>
               <input type="text" id="name" class="form-control" required>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email" data-i18n="email">Email</label>
               <input type="email" id="email" class="form-control" required>
             </div>
             <div class="form-group">
-              <label for="phone">Τηλέφωνο</label>
+              <label for="phone" data-i18n="phone">Τηλέφωνο</label>
               <input type="tel" id="phone" class="form-control">
             </div>
             <div class="form-group">
-              <label for="subject">Θέμα</label>
+              <label for="subject" data-i18n="subject">Θέμα</label>
               <select id="subject" class="form-control" required>
-                <option value="">Επιλέξτε θέμα</option>
-                <option value="support">Τεχνική Υποστήριξη</option>
-                <option value="sales">Πωλήσεις</option>
-                <option value="billing">Τιμολόγηση</option>
-                <option value="other">Άλλο</option>
+                <option value="" data-i18n="select-subject">Επιλέξτε θέμα</option>
+                <option value="support" data-i18n="support">Τεχνική Υποστήριξη</option>
+                <option value="sales" data-i18n="sales">Πωλήσεις</option>
+                <option value="billing" data-i18n="billing">Τιμολόγηση</option>
+                <option value="other" data-i18n="other">Άλλο</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Μήνυμα</label>
+              <label for="message" data-i18n="message">Μήνυμα</label>
               <textarea id="message" class="form-control" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Αποστολή Μηνύματος</button>
+            <button type="submit" class="btn btn-primary" data-i18n="send-message">Αποστολή Μηνύματος</button>
           </form>
         </div>
       </div>
@@ -313,28 +380,28 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>HellasNOC</h3>
-          <p>Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
+          <h3 data-i18n="company">HellasNOC</h3>
+          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
         <div class="footer-column">
-          <h3>Σύνδεσμοι</h3>
+          <h3 data-i18n="links">Σύνδεσμοι</h3>
           <ul>
-            <li><a href="index.html">Αρχική</a></li>
-            <li><a href="pricing.html">Τιμές</a></li>
-            <li><a href="contact.html">Επικοινωνία</a></li>
+            <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+            <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+            <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Επικοινωνία</h3>
+          <h3 data-i18n="contact">Επικοινωνία</h3>
           <ul>
-            <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
-            <li>Τηλ: 210 6969 420</li>
-            <li>Email: info@hellasnoc.gr</li>
+            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
+            <li data-i18n="phone">Τηλ: 210 6969 420</li>
+            <li data-i18n="email">Email: info@hellasnoc.gr</li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        <p>© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
+        <p data-i18n="copyright">© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
       </div>
     </div>
   </footer>
@@ -345,6 +412,53 @@
       e.preventDefault();
       alert('Το μήνυμά σας εστάλη με επιτυχία! Θα σας απαντήσουμε το συντομότερο δυνατό.');
       this.reset();
+    });
+  </script>
+  <script src="translations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set default language from localStorage or browser preference
+      let currentLang = localStorage.getItem('language') || 
+                       (navigator.language.startsWith('el') ? 'el' : 'en');
+      
+      // Update UI
+      updateLanguage(currentLang);
+      
+      // Handle language switch
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+      
+      function updateLanguage(lang) {
+        // Update buttons
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        // Update slider position
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+        }
+        
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      }
     });
   </script>
 </body>
