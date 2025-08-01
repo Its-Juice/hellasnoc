@@ -5,6 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HellasNOC - Τιμές & Πακέτα Υπηρεσιών</title>
   <style>
+    .logo-section {
+    padding: 3rem 0;
+    background: white;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;
+  }
+  
+  .logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding: 1rem;
+    transition: var(--transition);
+  }
+  
+  .logo-item img {
+    max-height: 60px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: var(--transition);
+  }
+  
+  .logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .logo-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
     :root {
       --dark-blue: #1c2c3a;
       --light-blue: #2e4a7d;
@@ -374,28 +429,34 @@
     </div>
   </div>
 
-<!-- Technologies we use -->
+<!-- Add this right above the Pricing Cards Section -->
 <div class="container">
   <div class="logo-section">
     <h2 style="text-align: center; margin-bottom: 2rem;">Τεχνολογίες που χρησιμοποιούμε</h2>
     <div class="logo-grid">
+      <!-- Cisco -->
       <div class="logo-item">
-        <img src="assets/img/cisco.svg" alt="Cisco" style="height: 60px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco">
       </div>
+      <!-- OPNsense -->
       <div class="logo-item">
-        <img src="assets/img/opnsense.svg" alt="OPNsense" style="height: 60px;">
+        <img src="https://raw.githubusercontent.com/opnsense/docs/master/source/_static/OPNsense-Logo-380x500.png" alt="OPNsense">
       </div>
+      <!-- pfSense -->
       <div class="logo-item">
-        <img src="assets/img/pfsense.png" alt="pfSense" style="height: 60px;">
+        <img src="https://www.netgate.com/assets/img/pfsense-logo.png" alt="pfSense">
       </div>
+      <!-- Proxmox -->
       <div class="logo-item">
-        <img src="assets/img/proxmox.svg" alt="Proxmox" style="height: 60px;">
+        <img src="https://www.proxmox.com/images/proxmox/Proxmox-logo-stacked-840px.png" alt="Proxmox">
       </div>
+      <!-- Unraid -->
       <div class="logo-item">
-        <img src="assets/img/unraid.png" alt="Unraid" style="height: 60px;">
+        <img src="https://unraid.net/assets/img/logo.png" alt="Unraid">
       </div>
+      <!-- WireGuard -->
       <div class="logo-item">
-        <img src="assets/img/wireguard.svg" alt="WireGuard" style="height: 60px;">
+        <img src="https://www.wireguard.com/img/wireguard.svg" alt="WireGuard">
       </div>
     </div>
   </div>
