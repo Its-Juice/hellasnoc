@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HellasNOC - Τιμές & Πακέτα Υπηρεσιών</title>
+  <title>HellasNOC - Επικοινωνία</title>
   <style>
     :root {
       --dark-blue: #1c2c3a;
@@ -14,6 +14,9 @@
       --transition: all 0.3s ease;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     
     /* Language Switcher */
     .header-right {
@@ -67,15 +70,6 @@
       border-radius: 50px;
       transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
       z-index: 1;
-    }
-    
-    /* Reset and Base Styles */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
-    .container { 
-      max-width: 1200px; 
-      margin: 0 auto; 
-      padding: 0 1.5rem;
     }
     
     /* Header */
@@ -142,208 +136,81 @@
       box-shadow: var(--shadow);
     }
 
-    /* Pricing Hero */
-    .pricing-hero {
+    /* Contact Hero */
+    .contact-hero {
       padding: 3rem 0;
       text-align: center;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
     }
-    .pricing-hero h1 {
+    .contact-hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: var(--dark-blue);
     }
-    .pricing-hero p {
+    .contact-hero p {
       font-size: 1.2rem;
       max-width: 800px;
       margin: 0 auto 2rem;
       color: #444;
     }
 
-    /* Price Toggle */
-    .price-toggle {
-      display: flex;
-      justify-content: center;
-      margin: 2rem auto;
-      max-width: 300px;
-      background: #f5f7fa;
-      border-radius: 50px;
-      padding: 5px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: relative;
+    /* Contact Form */
+    .contact-section {
+      padding: 3rem 0;
+      background: white;
     }
-    .price-toggle-container {
-      display: flex;
-      width: 100%;
-      position: relative;
-      z-index: 1;
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
-    .price-toggle-btn {
-      flex: 1;
-      padding: 0.75rem;
-      text-align: center;
-      cursor: pointer;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-    .price-toggle-slider {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      height: calc(100% - 10px);
-      width: calc(50% - 5px);
+    .contact-info {
       background: var(--dark-blue);
-      border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-      z-index: 1;
-    }
-    .price-toggle-btn.active {
       color: white;
-    }
-
-    /* Pricing Cards */
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    .pricing-card {
-      background: white;
-      border-radius: var(--radius);
       padding: 2rem;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      position: relative;
-    }
-    .pricing-card:hover {
-      transform: translateY(-5px);
-    }
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--dark-blue);
-    }
-    .price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--light-blue);
-      margin: 1rem 0;
-    }
-    .billing-cycle {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .pricing-features {
-      margin: 2rem 0;
-      list-style: none;
-    }
-    .pricing-features li {
-      margin-bottom: 0.75rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .pricing-features li:before {
-      content: "✓";
-      color: var(--light-blue);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-    .popular-badge {
-      background: linear-gradient(135deg, #FFD700, #FFC000);
-      color: #8B6508;
-      padding: 0.5rem 1rem;
       border-radius: var(--radius);
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      position: absolute;
-      top: -10px;
-      right: 20px;
     }
-    .annual-savings {
-      color: #2e7d32;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-    .price-monthly, .price-annual {
-      display: none;
-    }
-    .price-monthly.show, .price-annual.show {
-      display: block;
-    }
-
-    /* Logo Section */
-    .logo-section {
-      padding: 3rem 0;
-      margin: 2rem 0;
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .logo-section h2 {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 1.8rem;
-      color: var(--dark-blue);
-    }
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.5rem;
-      align-items: center;
-      justify-items: center;
-    }
-    .logo-item {
-      width: 100%;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      transition: var(--transition);
-    }
-    .logo-item img {
-      max-width: 100%;
-      max-height: 50px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.8;
-      transition: var(--transition);
-    }
-    .logo-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
-    .logo-item:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    /* FAQ Section */
-    .faq {
-      padding: 3rem 0;
-      background: white;
-    }
-    .faq-item {
+    .contact-info h3 {
+      color: var(--gold);
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 1.5rem;
     }
-    .faq-item h3 {
-      color: var(--light-blue);
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-icon {
+      margin-right: 1rem;
+      color: var(--gold);
+    }
+    .contact-form {
+      background: #f5f7fa;
+      padding: 2rem;
+      border-radius: var(--radius);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
       margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--light-blue);
+      box-shadow: 0 0 0 3px rgba(46, 74, 125, 0.1);
+    }
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
     }
 
     /* Footer */
@@ -384,13 +251,6 @@
       color: #9ca3af;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 992px) {
-      .logo-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -399,22 +259,8 @@
       nav ul {
         gap: 1rem;
       }
-      .pricing-hero h1 {
-        font-size: 2rem;
-      }
-      .popular-badge {
-        position: static;
-        margin-top: -10px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-      }
-      .logo-item {
-        height: 70px;
+      .contact-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -450,129 +296,81 @@
     </div>
   </header>
 
-  <!-- Pricing Hero -->
-  <section class="pricing-hero">
+  <!-- Contact Hero -->
+  <section class="contact-hero">
     <div class="container">
-      <h1 data-i18n="packages-title">Πακέτα Υπηρεσιών</h1>
-      <p data-i18n="packages-subtitle">Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
-      
-      <!-- Price Toggle -->
-      <div class="price-toggle">
-        <div class="price-toggle-slider"></div>
-        <div class="price-toggle-container">
-          <div id="monthly-toggle" class="price-toggle-btn active" data-i18n="monthly">Μηνιαία</div>
-          <div id="annual-toggle" class="price-toggle-btn" data-i18n="annual">Ετήσια</div>
-        </div>
-      </div>
+      <h1 data-i18n="contact-title">Επικοινωνήστε μαζί μας</h1>
+      <p data-i18n="contact-subtitle">Έχουμε τις λύσεις που χρειάζεστε για το δίκτυό σας. Συμπληρώστε την φόρμα και θα σας απαντήσουμε εντός 24 ωρών.</p>
     </div>
   </section>
 
-  <!-- Pricing Cards Section -->
-  <div class="container">
-    <div class="pricing-cards">
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="device-limit" data-i18n="devices">Έως 5 συσκευές</div>
-        <div class="price price-monthly show">49€ <span class="billing-cycle">/μήνα</span></div>
-        <div class="price price-annual">499€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 89€</div>
-        <ul class="pricing-features">
-          <li>Έλεγχος δικτύου</li>
-          <li>Ad-blocking / DNS filtering</li>
-          <li>Βελτιστοποίηση Wi-Fi</li>
-          <li>Βασική παραμετροποίηση firewall</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
-        <h3>Secure Office</h3>
-        <div class="device-limit" data-i18n="devices">Έως 15 συσκευές</div>
-        <div class="price price-monthly show">99€ <span class="billing-cycle">/μήνα</span></div>
-        <div class="price price-annual">999€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 189€</div>
-        <ul class="pricing-features">
-          <li>Όλα από το Basic</li>
-          <li>WireGuard VPN</li>
-          <li>Nextcloud για έγγραφα</li>
-          <li>Backup & scans</li>
-          <li>Security training</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-      </div>
-
-      <div class="pricing-card">
-        <h3>Pro</h3>
-        <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
-        <div class="price price-monthly show">149€ <span class="billing-cycle">/μήνα</span></div>
-        <div class="price price-annual">1.499€ <span class="billing-cycle">/έτος</span></div>
-        <div class="annual-savings price-annual" data-i18n="save">Εξοικονομείτε 289€</div>
-        <ul class="pricing-features">
-          <li>Proxmox / Unraid stack</li>
-          <li>24/7 monitoring</li>
-          <li>ΖFS backups</li>
-          <li>Απεριόριστη υποστήριξη</li>
-          <li>Διαχείριση πολλαπλών τοποθεσιών</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Technologies Section -->
-  <div class="container">
-    <div class="logo-section">
-      <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
-      <div class="logo-grid">
-        <!-- Row 1 -->
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/cisco.png" alt="Cisco" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/opnsense.png" alt="OPNsense" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/pfsense.png" alt="pfSense" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/proxmox.svg" alt="Proxmox" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/unraid.png" alt="Unraid" loading="eager">
-        </div>
-        
-        <!-- Row 2 -->
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/wireguard.png" alt="WireGuard" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/mikrotik.png" alt="MikroTik" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/ubuntu.png" alt="Ubuntu" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/synology.png" alt="Synology" loading="eager">
-        </div>
-        <div class="logo-item">
-          <img src="assets/img/tech-logos/fortinet.png" alt="Fortinet" loading="eager">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ Section -->
-  <section class="faq">
+  <!-- Contact Section -->
+  <section class="contact-section">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="faq-title">Συχνές Ερωτήσεις</h2>
-      <div class="faq-item">
-        <h3 data-i18n="installation-time">Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
-        <p data-i18n="installation-answer">Τα βασικά πακέτα εγκαθίστανται συνήθως εντός 2-3 εργάσιμων ημερών. Τα πιο σύνθετα πακέτα μπορεί να χρειαστούν έως και μια εβδομάδα.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="free-trial">Προσφέρετε δωρεάν δοκιμή;</h3>
-        <p data-i18n="free-trial-answer">Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 data-i18n="contact-info">Στοιχεία Επικοινωνίας</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <h4 data-i18n="address">Διεύθυνση</h4>
+              <p>Αγίου Κωνσταντίνου 12, Αθήνα</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <h4 data-i18n="phone">Τηλέφωνο</h4>
+              <p>210 6969 420</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉️</div>
+            <div>
+              <h4 data-i18n="email">Email</h4>
+              <p>info@hellasnoc.gr</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">⏰</div>
+            <div>
+              <h4 data-i18n="hours">Ωράριο</h4>
+              <p data-i18n="hours-text">Δευτέρα - Παρασκευή: 09:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name" data-i18n="full-name">Ονοματεπώνυμο</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="phone">Τηλέφωνο</label>
+              <input type="tel" id="phone" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="subject" data-i18n="subject">Θέμα</label>
+              <select id="subject" class="form-control" required>
+                <option value="" data-i18n="select-subject">Επιλέξτε θέμα</option>
+                <option value="support" data-i18n="support">Τεχνική Υποστήριξη</option>
+                <option value="sales" data-i18n="sales">Πωλήσεις</option>
+                <option value="billing" data-i18n="billing">Τιμολόγηση</option>
+                <option value="other" data-i18n="other">Άλλο</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="message">Μήνυμα</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="send-message">Αποστολή Μηνύματος</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -609,33 +407,11 @@
   </footer>
 
   <script>
-    // Price Toggle Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const monthlyToggle = document.getElementById('monthly-toggle');
-      const annualToggle = document.getElementById('annual-toggle');
-      const slider = document.querySelector('.price-toggle-slider');
-      
-      monthlyToggle.addEventListener('click', function() {
-        if (!this.classList.contains('active')) {
-          this.classList.add('active');
-          annualToggle.classList.remove('active');
-          slider.style.transform = 'translateX(0)';
-          
-          document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
-          document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
-        }
-      });
-      
-      annualToggle.addEventListener('click', function() {
-        if (!this.classList.contains('active')) {
-          this.classList.add('active');
-          monthlyToggle.classList.remove('active');
-          slider.style.transform = 'translateX(100%)';
-          
-          document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
-          document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
-        }
-      });
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Το μήνυμά σας εστάλη με επιτυχία! Θα σας απαντήσουμε το συντομότερο δυνατό.');
+      this.reset();
     });
   </script>
   <script src="translations.js"></script>
