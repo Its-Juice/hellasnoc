@@ -135,5 +135,28 @@ const translations = {
     "company-description": "Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.",
     "links": "Σύνδεσμοι",
     "copyright": "© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος."
+    
+       // Add new translations for bullet points
+           "network-monitoring": "Έλεγχος δικτύου",
+    "ad-blocking": "Ad-blocking / DNS filtering",
+    "wifi-optimization": "Βελτιστοποίηση Wi-Fi",
+    "firewall-config": "Βασική παραμετροποίηση firewall",
+    "all-basic": "Όλα από το Βασικό πακέτο",
+    "wireguard-vpn": "WireGuard VPN",
+    "nextcloud-docs": "Nextcloud για έγγραφα",
+    "backups-scans": "Αντίγραφα ασφαλείας & σαρώσεις",
+    "security-training": "Εκπαίδευση ασφαλείας",
+    "proxmox-stack": "Proxmox / Unraid stack",
+    "24-7-monitoring": "24/7 παρακολούθηση",
+    "zfs-backups": "ΖFS backups",
+    "unlimited-support": "Απεριόριστη υποστήριξη",
+    "multi-site": "Διαχείριση πολλαπλών τοποθεσιών",
+    "network-monitoring": "Έλεγχος δικτύου",
+    
+    // Add translations for savings amounts
+    "save-89": "Εξοικονομείτε 89€",
+    "save-189": "Εξοικονομείτε 189€",
+    "save-289": "Εξοικονομείτε 289€"
+  }
   }
 };
