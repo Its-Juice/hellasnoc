@@ -55,6 +55,9 @@
       align-items: center;
       justify-content: center;
     }
+    .language-btn.active {
+      color: white;
+    }
     .language-btn img {
       width: 24px;
       height: 24px;
@@ -310,7 +313,7 @@
   <header>
     <div class="container nav-container">
       <div class="logo">
-        <img src="assets/img/HellasNOC-Logo-Transparent.png">
+        <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo">
       </div>
       <nav>
         <ul>
@@ -323,15 +326,14 @@
         <div class="language-switcher">
           <div class="language-slider"></div>
           <div class="language-toggle-container">
-            <button class="language-btn active" data-lang="el">
+            <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
               <img src="assets/img/flags/gr.png" alt="Greek">
             </button>
-            <button class="language-btn" data-lang="en">
+            <button class="language-btn" data-lang="en" aria-label="English">
               <img src="assets/img/flags/gb.png" alt="English">
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-primary" data-i18n="contact-btn">Επικοινωνία</a>
       </div>
     </div>
   </header>
@@ -343,7 +345,7 @@
       <p data-i18n="hero-subtitle">Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφαλείας για μικρές και μεσαίες επιχειρήσεις.</p>
       <div class="hero-buttons">
         <a href="pricing.html" class="btn btn-primary" data-i18n="see-our-packages">Δείτε τα Πακέτα μας</a>
-        <a href="#contact" class="btn btn-secondary" data-i18n="contact-btn">Επικοινωνήστε μαζί μας</a>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="contact-btn">Επικοινωνήστε μαζί μας</a>
       </div>
     </div>
   </section>
@@ -418,6 +420,7 @@
           <ul>
             <li><a href="index.html" data-i18n="home">Αρχική</a></li>
             <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+            <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -436,52 +439,6 @@
   </footer>
 
   <script src="translations.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set default language from localStorage or browser preference
-      let currentLang = localStorage.getItem('language') || 
-                       (navigator.language.startsWith('el') ? 'el' : 'en');
-      
-      // Update UI
-      updateLanguage(currentLang);
-      
-      // Handle language switch
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const lang = this.dataset.lang;
-          if (lang !== currentLang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            updateLanguage(lang);
-          }
-        });
-      });
-      
-      function updateLanguage(lang) {
-        // Update buttons
-        document.querySelectorAll('.language-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update slider position
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-        }
-        
-        // Update html lang attribute
-        document.documentElement.lang = lang;
-        
-        // Update all translatable elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-      }
-    });
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Set default language to Greek ('el') regardless of browser preference
@@ -526,6 +483,6 @@
         });
       }
     });
-</script>
+  </script>
 </body>
 </html>
