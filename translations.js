@@ -67,6 +67,24 @@ const translations = {
     "company-description": "Professional network and security services.",
     "links": "Links",
     "copyright": "© 2023 HellasNOC. All rights reserved."
+    
+        // Add English translations for the bullet points
+        ,
+    "network-monitoring": "Network monitoring",
+    "ad-blocking": "Ad-blocking / DNS filtering",
+    "wifi-optimization": "Wi-Fi optimization",
+    "firewall-config": "Basic firewall configuration",
+    "all-basic": "Everything from Basic package",
+    "wireguard-vpn": "WireGuard VPN",
+    "nextcloud-docs": "Nextcloud for documents",
+    "backups-scans": "Backups & scans",
+    "security-training": "Security training",
+    "proxmox-stack": "Proxmox / Unraid stack",
+    "24-7-monitoring": "24/7 monitoring",
+    "zfs-backups": "ZFS backups",
+    "unlimited-support": "Unlimited support",
+    "multi-site": "Multi-site management"
+
   },
   el: {
     // Header
@@ -137,7 +155,7 @@ const translations = {
     "copyright": "© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος."
     
        // Add new translations for bullet points
-           "network-monitoring": "Έλεγχος δικτύου",
+       ,
     "ad-blocking": "Ad-blocking / DNS filtering",
     "wifi-optimization": "Βελτιστοποίηση Wi-Fi",
     "firewall-config": "Βασική παραμετροποίηση firewall",
@@ -152,8 +170,24 @@ const translations = {
     "unlimited-support": "Απεριόριστη υποστήριξη",
     "multi-site": "Διαχείριση πολλαπλών τοποθεσιών",
     "network-monitoring": "Έλεγχος δικτύου",
+     // Add Greek translations for the bullet points
+    "network-monitoring": "Έλεγχος δικτύου",
+    "ad-blocking": "Ad-blocking / DNS filtering",
+    "wifi-optimization": "Βελτιστοποίηση Wi-Fi",
+    "firewall-config": "Βασική παραμετροποίηση firewall",
+    "all-basic": "Όλα από το Βασικό πακέτο",
+    "wireguard-vpn": "WireGuard VPN",
+    "nextcloud-docs": "Nextcloud για έγγραφα",
+    "backups-scans": "Αντίγραφα ασφαλείας & σαρώσεις",
+    "security-training": "Εκπαίδευση ασφαλείας",
+    "proxmox-stack": "Proxmox / Unraid stack",
+    "24-7-monitoring": "24/7 παρακολούθηση",
+    "zfs-backups": "ΖFS backups",
+    "unlimited-support": "Απεριόριστη υποστήριξη",
+    "multi-site": "Διαχείριση πολλαπλών τοποθεσιών"
     
     // Add translations for savings amounts
+    ,
     "save-89": "Εξοικονομείτε 89€",
     "save-189": "Εξοικονομείτε 189€",
     "save-289": "Εξοικονομείτε 289€"
