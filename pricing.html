@@ -138,6 +138,7 @@
       padding: 2rem;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      position: relative;
     }
     .pricing-card:hover {
       transform: translateY(-5px);
@@ -159,6 +160,7 @@
     }
     .pricing-features {
       margin: 2rem 0;
+      list-style: none;
     }
     .pricing-features li {
       margin-bottom: 0.75rem;
@@ -166,7 +168,7 @@
       position: relative;
     }
     .pricing-features li:before {
-      content: "•";
+      content: "✓";
       color: var(--light-blue);
       position: absolute;
       left: 0;
@@ -180,6 +182,21 @@
       display: inline-block;
       margin-bottom: 1rem;
       font-weight: 700;
+      position: absolute;
+      top: -10px;
+      right: 20px;
+    }
+    .annual-savings {
+      color: #2e7d32;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .price-monthly, .price-annual {
+      display: none;
+    }
+    .price-monthly.show, .price-annual.show {
+      display: block;
     }
 
     /* FAQ Section */
@@ -246,6 +263,10 @@
       .pricing-hero h1 {
         font-size: 2rem;
       }
+      .popular-badge {
+        position: static;
+        margin-top: -10px;
+      }
     }
   </style>
 </head>
@@ -272,24 +293,23 @@
     <div class="container">
       <h1>Πακέτα Υπηρεσιών</h1>
       <p>Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
+      
+      <!-- Price Toggle -->
+      <div class="price-toggle">
+        <div id="monthly-toggle" class="price-toggle-btn active">Μηνιαία</div>
+        <div id="annual-toggle" class="price-toggle-btn">Ετήσια</div>
+      </div>
     </div>
   </section>
 
-  <!-- Price Toggle -->
-  <div class="container">
-    <div class="price-toggle">
-      <div class="price-toggle-btn active" id="monthly-toggle">Μηνιαία</div>
-      <div class="price-toggle-btn" id="annual-toggle">Ετήσια</div>
-    </div>
-  </div>
-
-  <!-- Pricing Cards -->
+  <!-- Pricing Cards Section -->
   <div class="container">
     <div class="pricing-cards">
       <div class="pricing-card">
         <h3>Basic</h3>
         <div class="price price-monthly show">49€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">499€ <span class="billing-cycle">/έτος</span></div>
+        <div class="annual-savings price-annual">Εξοικονομείτε 89€</div>
         <ul class="pricing-features">
           <li>Έλεγχος δικτύου</li>
           <li>Ad-blocking / DNS filtering</li>
@@ -304,6 +324,7 @@
         <h3>Secure Office</h3>
         <div class="price price-monthly show">99€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">999€ <span class="billing-cycle">/έτος</span></div>
+        <div class="annual-savings price-annual">Εξοικονομείτε 189€</div>
         <ul class="pricing-features">
           <li>Όλα από το Basic</li>
           <li>WireGuard VPN</li>
@@ -318,6 +339,7 @@
         <h3>Pro</h3>
         <div class="price price-monthly show">149€ <span class="billing-cycle">/μήνα</span></div>
         <div class="price price-annual">1.499€ <span class="billing-cycle">/έτος</span></div>
+        <div class="annual-savings price-annual">Εξοικονομείτε 289€</div>
         <ul class="pricing-features">
           <li>Proxmox / Unraid stack</li>
           <li>24/7 monitoring</li>
@@ -340,7 +362,7 @@
       </div>
       <div class="faq-item">
         <h3>Προσφέρετε δωρεάν δοκιμή;</h3>
-        <p>Ναι, προσφέρουμε 14ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
+        <p>Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
       </div>
     </div>
   </section>
@@ -377,23 +399,25 @@
 
   <script>
     // Price Toggle Functionality
-    const monthlyToggle = document.getElementById('monthly-toggle');
-    const annualToggle = document.getElementById('annual-toggle');
-    
-    monthlyToggle.addEventListener('click', function() {
-      this.classList.add('active');
-      annualToggle.classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const monthlyToggle = document.getElementById('monthly-toggle');
+      const annualToggle = document.getElementById('annual-toggle');
       
-      document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
-      document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
-    });
-    
-    annualToggle.addEventListener('click', function() {
-      this.classList.add('active');
-      monthlyToggle.classList.remove('active');
+      monthlyToggle.addEventListener('click', function() {
+        this.classList.add('active');
+        annualToggle.classList.remove('active');
+        
+        document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
+        document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
+      });
       
-      document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
-      document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
+      annualToggle.addEventListener('click', function() {
+        this.classList.add('active');
+        monthlyToggle.classList.remove('active');
+        
+        document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
+        document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
+      });
     });
   </script>
 </body>
