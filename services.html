@@ -6,6 +6,7 @@
   <title>HellasNOC - Υπηρεσίες Δικτύων & Ασφαλείας</title>
   <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -48,114 +49,219 @@
   <!-- Services Hero -->
   <section class="hero">
     <div class="container">
-      <h1 data-i18n="services-title">Επαγγελματικές Υπηρεσίες Δικτύων</h1>
+      <h1 data-i18n="services-title">Επαγγελματικές Υπηρεσίες Δικτύων & Ασφαλείας</h1>
       <p data-i18n="services-subtitle">Πλήρης κάλυψη των αναγκών σας με ελληνική υποστήριξη και παγκόσμια τεχνογνωσία</p>
+      <div class="hero-buttons">
+        <a href="#network-services" class="btn btn-outline" data-i18n="network-services-btn">Δικτυακές Υπηρεσίες</a>
+        <a href="#security-services" class="btn btn-outline" data-i18n="security-services-btn">Υπηρεσίες Ασφαλείας</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3 data-i18n="benefit-1-title">24/7 Παρακολούθηση</h3>
+          <p data-i18n="benefit-1-desc">Συνεχής εποπτεία του δικτύου σας από ειδικούς</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-headset"></i>
+          <h3 data-i18n="benefit-2-title">Ελληνική Υποστήριξη</h3>
+          <p data-i18n="benefit-2-desc">Αποκλειστική εξυπηρέτηση στα ελληνικά</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-bolt"></i>
+          <h3 data-i18n="benefit-3-title">Γρήγορη Ανταπόκριση</h3>
+          <p data-i18n="benefit-3-desc">Διασφάλιση ελάχιστου χρόνου εκτός λειτουργίας</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Network Services -->
-  <section class="service-category">
+  <section class="service-category" id="network-services">
     <div class="container">
       <div class="section-title">
-        <h2 data-i18n="network-services">Υπηρεσίες Δικτύων</h2>
+        <h2 data-i18n="network-services"><i class="fas fa-network-wired"></i> Υπηρεσίες Δικτύων</h2>
+        <p data-i18n="network-services-desc">Ολοκληρωμένες λύσεις για τη βελτιστοποίηση και διαχείριση του δικτύου σας</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <h3><img src="assets/icons/monitoring.svg" class="service-icon" alt="" data-i18n="service-monitoring-title">24/7 Network Monitoring</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/monitoring.svg" class="service-icon" alt="" data-i18n="service-monitoring-title">24/7 Network Monitoring</h3>
+            <span class="service-badge" data-i18n="popular">Δημοφιλές</span>
+          </div>
           <p data-i18n="monitoring-desc">Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου.</p>
           <ul class="service-features">
-            <li data-i18n="monitoring-feature-1">Παρακολούθηση uptime/downtime</li>
-            <li data-i18n="monitoring-feature-2">Στατιστικά εύρους ζώνης</li>
-            <li data-i18n="monitoring-feature-3">Προειδοποιήσεις μέσω email/SMS</li>
+            <li data-i18n="monitoring-feature-1"><i class="fas fa-check-circle"></i> Παρακολούθηση uptime/downtime</li>
+            <li data-i18n="monitoring-feature-2"><i class="fas fa-check-circle"></i> Στατιστικά εύρους ζώνης</li>
+            <li data-i18n="monitoring-feature-3"><i class="fas fa-check-circle"></i> Προειδοποιήσεις μέσω email/SMS</li>
+            <li data-i18n="monitoring-feature-4"><i class="fas fa-check-circle"></i> Ιστορικό επιδόσεων</li>
+            <li data-i18n="monitoring-feature-5"><i class="fas fa-check-circle"></i> Προσαρμοσμένες μετρήσεις</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">Zabbix</span>
             <span class="tech-pill">PRTG</span>
             <span class="tech-pill">Prometheus</span>
+            <span class="tech-pill">Grafana</span>
           </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
         </div>
 
         <div class="service-card">
-          <h3><img src="assets/icons/cloud.svg" class="service-icon" alt="" data-i18n="service-cloud-title">Διαχείριση Cloud</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/cloud.svg" class="service-icon" alt="" data-i18n="service-cloud-title">Διαχείριση Cloud</h3>
+          </div>
           <p data-i18n="cloud-desc">Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους.</p>
           <ul class="service-features">
-            <li data-i18n="cloud-feature-1">Διαχείριση AWS/Azure/Google Cloud</li>
-            <li data-i18n="cloud-feature-2">Private cloud υπηρεσίες</li>
-            <li data-i18n="cloud-feature-3">Αυτοματοποιημένη κλιμάκωση</li>
+            <li data-i18n="cloud-feature-1"><i class="fas fa-check-circle"></i> Διαχείριση AWS/Azure/Google Cloud</li>
+            <li data-i18n="cloud-feature-2"><i class="fas fa-check-circle"></i> Private cloud υπηρεσίες</li>
+            <li data-i18n="cloud-feature-3"><i class="fas fa-check-circle"></i> Αυτοματοποιημένη κλιμάκωση</li>
+            <li data-i18n="cloud-feature-4"><i class="fas fa-check-circle"></i> Διαχείριση κόστους</li>
+            <li data-i18n="cloud-feature-5"><i class="fas fa-check-circle"></i> Πολυ-περιβαλλοντικές αναπτύξεις</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">Proxmox</span>
             <span class="tech-pill">Kubernetes</span>
             <span class="tech-pill">Terraform</span>
+            <span class="tech-pill">Ansible</span>
           </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
         </div>
 
         <div class="service-card">
-          <h3><img src="assets/icons/backup.svg" class="service-icon" alt="" data-i18n="service-backup-title">Backup & Recovery</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/backup.svg" class="service-icon" alt="" data-i18n="service-backup-title">Backup & Recovery</h3>
+            <span class="service-badge" data-i18n="essential">Απαραίτητο</span>
+          </div>
           <p data-i18n="backup-desc">Αξιόπιστες λύσεις αντιγράφων ασφαλείας και αποκατάστασης.</p>
           <ul class="service-features">
-            <li data-i18n="backup-feature-1">Ημερήσια/ωριαία backups</li>
-            <li data-i18n="backup-feature-2">Off-site αποθήκευση</li>
-            <li data-i18n="backup-feature-3">Disaster recovery planning</li>
+            <li data-i18n="backup-feature-1"><i class="fas fa-check-circle"></i> Ημερήσια/ωριαία backups</li>
+            <li data-i18n="backup-feature-2"><i class="fas fa-check-circle"></i> Off-site αποθήκευση</li>
+            <li data-i18n="backup-feature-3"><i class="fas fa-check-circle"></i> Disaster recovery planning</li>
+            <li data-i18n="backup-feature-4"><i class="fas fa-check-circle"></i> Κρυπτογράφηση δεδομένων</li>
+            <li data-i18n="backup-feature-5"><i class="fas fa-check-circle"></i> Δοκιμές επαναφοράς</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">BorgBackup</span>
             <span class="tech-pill">ZFS</span>
             <span class="tech-pill">Veeam</span>
+            <span class="tech-pill">Restic</span>
           </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Security Services -->
-  <section class="service-category">
+  <section class="service-category" id="security-services">
     <div class="container">
       <div class="section-title">
-        <h2 data-i18n="security-services">Υπηρεσίες Ασφαλείας</h2>
+        <h2 data-i18n="security-services"><i class="fas fa-shield-alt"></i> Υπηρεσίες Ασφαλείας</h2>
+        <p data-i18n="security-services-desc">Προστατέψτε την επιχείρησή σας από σύγχρονες απειλές</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <h3><img src="assets/icons/firewall.svg" class="service-icon" alt="" data-i18n="service-firewall-title">Firewall Management</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/firewall.svg" class="service-icon" alt="" data-i18n="service-firewall-title">Firewall Management</h3>
+          </div>
           <p data-i18n="firewall-desc">Προστασία δικτύου με εξατομικευμένους κανόνες ασφαλείας.</p>
           <ul class="service-features">
-            <li data-i18n="firewall-feature-1">Παραμετροποίηση firewall</li>
-            <li data-i18n="firewall-feature-2">VPN διαμόρφωση</li>
-            <li data-i18n="firewall-feature-3">Πολιτικές πρόσβασης</li>
+            <li data-i18n="firewall-feature-1"><i class="fas fa-check-circle"></i> Παραμετροποίηση firewall</li>
+            <li data-i18n="firewall-feature-2"><i class="fas fa-check-circle"></i> VPN διαμόρφωση</li>
+            <li data-i18n="firewall-feature-3"><i class="fas fa-check-circle"></i> Πολιτικές πρόσβασης</li>
+            <li data-i18n="firewall-feature-4"><i class="fas fa-check-circle"></i> Intrusion prevention</li>
+            <li data-i18n="firewall-feature-5"><i class="fas fa-check-circle"></i> Threat intelligence</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">OPNsense</span>
             <span class="tech-pill">pfSense</span>
             <span class="tech-pill">FortiGate</span>
+            <span class="tech-pill">Cisco ASA</span>
           </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
         </div>
 
         <div class="service-card">
-          <h3><img src="assets/icons/shield.svg" class="service-icon" alt="" data-i18n="service-audit-title">Security Audits</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/shield.svg" class="service-icon" alt="" data-i18n="service-audit-title">Security Audits</h3>
+            <span class="service-badge" data-i18n="recommended">Συνιστάται</span>
+          </div>
           <p data-i18n="audit-desc">Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση.</p>
           <ul class="service-features">
-            <li data-i18n="audit-feature-1">Penetration testing</li>
-            <li data-i18n="audit-feature-2">GDPR compliance</li>
-            <li data-i18n="audit-feature-3">Αναφορά ευπαθειών</li>
+            <li data-i18n="audit-feature-1"><i class="fas fa-check-circle"></i> Penetration testing</li>
+            <li data-i18n="audit-feature-2"><i class="fas fa-check-circle"></i> GDPR compliance</li>
+            <li data-i18n="audit-feature-3"><i class="fas fa-check-circle"></i> Αναφορά ευπαθειών</li>
+            <li data-i18n="audit-feature-4"><i class="fas fa-check-circle"></i> Social engineering tests</li>
+            <li data-i18n="audit-feature-5"><i class="fas fa-check-circle"></i> Security awareness training</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">Nessus</span>
             <span class="tech-pill">Metasploit</span>
             <span class="tech-pill">OpenVAS</span>
+            <span class="tech-pill">Burp Suite</span>
           </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
         </div>
 
         <div class="service-card">
-          <h3><img src="assets/icons/gdpr.svg" class="service-icon" alt="" data-i18n="service-gdpr-title">GDPR Compliance</h3>
+          <div class="service-card-header">
+            <h3><img src="assets/icons/gdpr.svg" class="service-icon" alt="" data-i18n="service-gdpr-title">GDPR Compliance</h3>
+          </div>
           <p data-i18n="gdpr-desc">Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων.</p>
           <ul class="service-features">
-            <li data-i18n="gdpr-feature-1">Αξιολόγηση κινδύνων</li>
-            <li data-i18n="gdpr-feature-2">Εκπαίδευση προσωπικού</li>
-            <li data-i18n="gdpr-feature-3">Τεκμηρίωση διαδικασιών</li>
+            <li data-i18n="gdpr-feature-1"><i class="fas fa-check-circle"></i> Αξιολόγηση κινδύνων</li>
+            <li data-i18n="gdpr-feature-2"><i class="fas fa-check-circle"></i> Εκπαίδευση προσωπικού</li>
+            <li data-i18n="gdpr-feature-3"><i class="fas fa-check-circle"></i> Τεκμηρίωση διαδικασιών</li>
+            <li data-i18n="gdpr-feature-4"><i class="fas fa-check-circle"></i> DPO as a Service</li>
+            <li data-i18n="gdpr-feature-5"><i class="fas fa-check-circle"></i> Incident response planning</li>
           </ul>
           <div class="tech-stack">
             <span class="tech-pill">ISO 27001</span>
             <span class="tech-pill">GDPR Toolkit</span>
+            <span class="tech-pill">OneTrust</span>
+          </div>
+          <a href="contact.html" class="btn btn-small" data-i18n="learn-more">Μάθετε περισσότερα</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="testimonials-title">Τι Λένε Οι Πελάτες Μας</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left"></i>
+            <p data-i18n="testimonial-1">Αξιόπιστη και επαγγελματική υπηρεσία. Το δίκτυό μας δεν έχει ξαναδουλέψει τόσο καλά.</p>
+            <div class="testimonial-author">
+              <img src="assets/img/testimonials/client1.jpg" alt="Client" loading="lazy">
+              <div>
+                <h4>Μαρία Παπαδοπούλου</h4>
+                <span data-i18n="testimonial-1-role">Διευθύντρια, TechSolutions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left"></i>
+            <p data-i18n="testimonial-2">Αποτελεσματική λύση για τα προβλήματα ασφαλείας μας με εξαιρετική υποστήριξη.</p>
+            <div class="testimonial-author">
+              <img src="assets/img/testimonials/client2.jpg" alt="Client" loading="lazy">
+              <div>
+                <h4>Νίκος Κωνσταντίνου</h4>
+                <span data-i18n="testimonial-2-role">CTO, RetailCorp</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -166,9 +272,39 @@
   <section class="cta">
     <div class="container">
       <h2 data-i18n="cta-title">Έτοιμοι να προστατεύσετε το δίκτυό σας;</h2>
-      <p data-i18n="cta-text">Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές δίκτυο.</p>
-      <div>
+      <p data-i18n="cta-text">Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές και αξιόπιστο δίκτυο.</p>
+      <div class="cta-buttons">
         <a href="contact.html" class="btn btn-primary" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
+        <a href="pricing.html" class="btn btn-outline" data-i18n="view-pricing">Δείτε τις Τιμές</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="faq-title">Συχνές Ερωτήσεις</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+            <span data-i18n="faq-1-question">Πόσο γρήγορα μπορείτε να ανταποκριθείτε σε επείγοντα ζητήματα;</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer" id="faq1">
+            <p data-i18n="faq-1-answer">Ανταποκρινόμαστε εντός 15 λεπτών για επείγοντα ζητήματα και εντός 2 ωρών για μη επείγοντα ζητήματα, 24/7.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+            <span data-i18n="faq-2-question">Πώς γίνεται η χρέωση των υπηρεσιών σας;</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer" id="faq2">
+            <p data-i18n="faq-2-answer">Οι υπηρεσίες μας χρεώνονται είτε με μηνιαία συνδρομή είτε με project-based τιμολόγηση, ανάλογα με τις ανάγκες σας.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -180,6 +316,11 @@
         <div class="footer-column">
           <h3 data-i18n="company">HellasNOC</h3>
           <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφάλειας.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
         </div>
         <div class="footer-column">
           <h3 data-i18n="links">Σύνδεσμοι</h3>
@@ -188,14 +329,15 @@
             <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
             <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
             <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
+            <li><a href="#" data-i18n="blog">Blog</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h3 data-i18n="contact">Επικοινωνία</h3>
           <ul>
-            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
-            <li data-i18n="phone">Τηλ: 210 6969 420</li>
-            <li data-i18n="email">Email: info@hellasnoc.gr</li>
+            <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</span></li>
+            <li><i class="fas fa-phone"></i> <span data-i18n="phone">Τηλ: 210 6969 420</span></li>
+            <li><i class="fas fa-envelope"></i> <span data-i18n="email">Email: info@hellasnoc.gr</span></li>
           </ul>
         </div>
       </div>
@@ -249,6 +391,18 @@
           }
         });
       }
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', !expanded);
+          const answer = button.nextElementSibling;
+          answer.style.display = expanded ? 'none' : 'block';
+          button.querySelector('i').classList.toggle('fa-chevron-up');
+          button.querySelector('i').classList.toggle('fa-chevron-down');
+        });
+      });
     });
   </script>
 </body>
