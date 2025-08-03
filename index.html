@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (consistent with other pages) -->
   <header>
     <div class="container nav-container" aria-label="Κύρια πλοήγηση">
       <div class="logo">
@@ -23,7 +23,7 @@
       </button>
       <nav id="primary-navigation">
         <ul class="nav-list" role="menubar">
-          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="index.html" data-i18n="home" role="menuitem" aria-current="page">Αρχική</a></li>
           <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
           <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
@@ -45,32 +45,95 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1 data-i18n="hero-title">Θωρακίζουμε την Ελλάδα, ένα δίκτυο τη φορά</h1>
-      <p data-i18n="hero-subtitle">Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις.</p>
-      <div class="hero-buttons">
-        <a href="pricing.html" class="btn btn-primary" data-i18n="see-our-packages">Δείτε τα Πακέτα μας</a>
-        <a href="contact.html" class="btn btn-secondary" data-i18n="contact-btn">Επικοινωνήστε μαζί μας</a>
+      <div class="hero-content">
+        <h1 data-i18n="hero-title">Επαγγελματικές Λύσεις Δικτύων & Ασφαλείας</h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle">Αξιόπιστες υπηρεσίες διαχείρισης υποδομής για επιχειρήσεις στην Ελλάδα</p>
+        <div class="hero-buttons">
+          <a href="pricing.html" class="btn btn-primary" data-i18n="see-our-packages">Δείτε τα Πακέτα μας</a>
+          <a href="contact.html" class="btn btn-outline" data-i18n="contact-btn">Επικοινωνήστε μαζί μας</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="about">
+  <!-- Trust Indicators -->
+  <section class="trust-indicators">
+    <div class="container">
+      <div class="indicators-grid">
+        <div class="indicator-item">
+          <div class="indicator-number">10+</div>
+          <div class="indicator-label" data-i18n="years-experience">Χρόνια Εμπειρία</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-number">24/7</div>
+          <div class="indicator-label" data-i18n="support-availability">Υποστήριξη</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-number">100%</div>
+          <div class="indicator-label" data-i18n="client-satisfaction">Ικανοποίηση Πελατών</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services -->
+  <section class="core-services">
     <div class="container">
       <div class="section-title">
-        <h2 data-i18n="about-title">Η Εταιρεία μας</h2>
+        <h2 data-i18n="our-solutions">Οι Λύσεις μας</h2>
+        <p data-i18n="solutions-subtitle">Προσφέρουμε ολοκληρωμένες υπηρεσίες για την ασφάλεια και σταθερότητα του δικτύου σας</p>
       </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση</h3>
+          <p data-i18n="monitoring-desc">Συνεχής εποπτεία του δικτύου σας με άμεση ανταπόκριση σε τυχόν προβλήματα</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="security-solutions">Λύσεις Ασφαλείας</h3>
+          <p data-i18n="security-desc">Προστασία από απειλές με σύγχρονες τεχνολογίες και καλύτερες πρακτικές</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="cloud-services">Υπηρεσίες Cloud</h3>
+          <p data-i18n="cloud-desc">Αξιόπιστες υπηρεσίες cloud για την επιχείρησή σας με υψηλή διαθεσιμότητα</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <p data-i18n="about-text-1">Η HellasNOC ιδρύθηκε με μια απλή αποστολή: να φέρει επαγγελματική διαχείριση δικτύων και ασφαλείας σε ελληνικές επιχειρήσεις με προσιτές τιμές.</p>
-          <p data-i18n="about-text-2">Ως πρώην sysadmins και network engineers, καταλάβαμε ότι οι μικρές επιχειρήσεις δεν έχουν πρόσβαση στις ίδιες ποιοτικές υπηρεσίες που προσφέρουν τα μεγάλα data centers.</p>
-          <p data-i18n="about-text-3">Χρησιμοποιούμε ανοιχτές τεχνολογίες και ελληνική υποστήριξη για λύσεις που πραγματικά λειτουργούν.</p>
+          <div class="section-title">
+            <h2 data-i18n="about-title">Η Εταιρεία μας</h2>
+            <p data-i18n="about-subtitle">Αξιοπιστία και Επαγγελματισμός</p>
+          </div>
+          <p data-i18n="about-text-1">Η HellasNOC παρέχει υπηρεσίες διαχείρισης δικτύων και υποδομής από το 2015, με έδρα την Αθήνα. Εξειδικευόμαστε στην παροχή ολοκληρωμένων λύσεων για επιχειρήσεις κάθε μεγέθους.</p>
+          <p data-i18n="about-text-2">Η ομάδα μας αποτελείται από έμπειρους επαγγελματίες με πιστοποιήσεις σε κορυφαίες τεχνολογίες δικτύωσης και ασφαλείας.</p>
           <div class="about-buttons">
-            <a href="pricing.html" class="btn btn-primary" data-i18n="see-our-packages">Δείτε τα Πακέτα μας</a>
-            <a href="contact.html" class="btn btn-secondary" data-i18n="contact-btn">Επικοινωνία</a>
+            <a href="services.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
         </div>
         <div class="about-image">
@@ -80,47 +143,66 @@
     </div>
   </section>
 
-  <!-- Values -->
-  <section class="values">
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
     <div class="container">
       <div class="section-title">
-        <h2 data-i18n="why-choose">Γιατί να επιλέξετε την HellasNOC;</h2>
+        <h2 data-i18n="testimonials-title">Τι Λένε Οι Πελάτες Μας</h2>
+        <p data-i18n="testimonials-subtitle">Απολαύστε την εμπειρία των πελατών μας</p>
       </div>
-      <div class="values-grid">
-        <div class="value-card">
-          <h3 data-i18n="local-support">Τοπική Υποστήριξη</h3>
-          <p data-i18n="local-support-text">Οι τεχνικοί μας βρίσκονται στην Ελλάδα και μιλούν τη γλώσσα σας.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="testimonial-text">
+              <p data-i18n="testimonial-1">"Αξιόπιστη και επαγγελματική υπηρεσία. Το δίκτυό μας δεν έχει ξαναδουλέψει τόσο καλά."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Μαρία Παπαδοπούλου</h4>
+                <span data-i18n="testimonial-1-role">Διευθύντρια, TechSolutions</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="value-card">
-          <h3 data-i18n="transparent-pricing">Διαφανής Τιμολόγηση</h3>
-          <p data-i18n="transparent-pricing-text">Καμία κρυφή χρέωση. Ξέρετε ακριβώς τι πληρώνετε.</p>
-        </div>
-        <div class="value-card">
-          <h3 data-i18n="enterprise-security">Enterprise Security</h3>
-          <p data-i18n="enterprise-security-text">Πρωτόκολλα ασφαλείας επιπέδου enterprise.</p>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="testimonial-text">
+              <p data-i18n="testimonial-2">"Αποτελεσματική λύση για τα προβλήματα ασφαλείας μας με εξαιρετική υποστήριξη."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Νίκος Κωνσταντίνου</h4>
+                <span data-i18n="testimonial-2-role">CTO, RetailCorp</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
+  <!-- CTA Section -->
+  <section class="cta-section">
     <div class="container">
-      <h2 data-i18n="cta-title">Έτοιμοι να προστατεύσετε το δίκτυό σας;</h2>
-      <p data-i18n="cta-text">Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές δίκτυο.</p>
-      <div>
-        <a href="pricing.html" class="btn btn-primary" data-i18n="see-our-services">Δείτε τις Υπηρεσίες μας</a>
+      <div class="cta-content">
+        <h2 data-i18n="cta-title">Έτοιμοι να Βελτιώσετε το Δίκτυό Σας;</h2>
+        <p data-i18n="cta-text">Επικοινωνήστε μαζί μας για μια δωρεάν αξιολόγηση των αναγκών σας.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
+          <a href="pricing.html" class="btn btn-outline" data-i18n="view-pricing">Δείτε τις Τιμές</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (consistent with other pages) -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
           <h3 data-i18n="company">HellasNOC</h3>
-          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφάλειας.</p>
+          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
         <div class="footer-column">
           <h3 data-i18n="links">Σύνδεσμοι</h3>
@@ -148,21 +230,21 @@
 
   <script src="translations.js"></script>
   <script>
-    // Mobile nav toggle
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    hamburger?.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      hamburger.classList.toggle('active');
-      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile nav toggle
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      hamburger?.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        hamburger.classList.toggle('active');
+        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      });
 
-    // Language switcher + i18n
-    document.addEventListener('DOMContentLoaded', () => {
+      // Language switcher functionality
       let currentLang = localStorage.getItem('language') || 'el';
       updateLanguage(currentLang);
-
+      
       document.querySelectorAll('.language-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const lang = this.dataset.lang;
@@ -173,16 +255,23 @@
           }
         });
       });
-
+      
       function updateLanguage(lang) {
+        // Update buttons
         document.querySelectorAll('.language-btn').forEach(btn => {
           btn.classList.toggle('active', btn.dataset.lang === lang);
         });
+        
+        // Update slider position
         const slider = document.querySelector('.language-slider');
         if (slider) {
           slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
         }
+        
+        // Update html lang attribute
         document.documentElement.lang = lang;
+        
+        // Update all translatable elements
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.dataset.i18n;
           if (translations[lang] && translations[lang][key]) {
