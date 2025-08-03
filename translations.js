@@ -67,7 +67,7 @@ const translations = {
     "company": "HellasNOC",
     "company-description": "Professional network and security services.",
     "links": "Quick Links",
-    "copyright": "© 2023 HellasNOC. All rights reserved.",
+    "copyright": "© 2025 HellasNOC. All rights reserved.",
     
     // Package names and billing terms
     "basic-package": "Basic",
@@ -162,7 +162,7 @@ const translations = {
     "company": "HellasNOC",
     "company-description": "Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.",
     "links": "Γρήγοροι Σύνδεσμοι",
-    "copyright": "© 2023 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.",
+    "copyright": "© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.",
     
     // Package names and billing terms
     "basic-package": "Βασικό",
