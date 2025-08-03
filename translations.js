@@ -3,6 +3,7 @@ const translations = {
   en: {
     // Header
     "home": "Home",
+    "services": "Services",
     "pricing": "Pricing",
     "contact": "Contact",
     "contact-btn": "Contact Us",
@@ -63,6 +64,42 @@ const translations = {
     "send-message": "Send Message",
     "message-sent-alert": "Your message has been sent successfully! We'll respond as soon as possible.",
 
+    // Services Page
+    "services-title": "Professional Network Services",
+    "services-subtitle": "Complete coverage of your needs with Greek support and global expertise",
+    "network-services": "Network Services",
+    "security-services": "Security Services",
+    "service-monitoring-title": "24/7 Network Monitoring",
+    "monitoring-desc": "Continuous monitoring and notification for network issues.",
+    "monitoring-feature-1": "Uptime/downtime monitoring",
+    "monitoring-feature-2": "Bandwidth statistics",
+    "monitoring-feature-3": "Email/SMS alerts",
+    "service-cloud-title": "Cloud Management",
+    "cloud-desc": "Complete cloud solutions for businesses of all sizes.",
+    "cloud-feature-1": "AWS/Azure/Google Cloud management",
+    "cloud-feature-2": "Private cloud services",
+    "cloud-feature-3": "Automated scaling",
+    "service-backup-title": "Backup & Recovery",
+    "backup-desc": "Reliable backup and recovery solutions.",
+    "backup-feature-1": "Daily/hourly backups",
+    "backup-feature-2": "Off-site storage",
+    "backup-feature-3": "Disaster recovery planning",
+    "service-firewall-title": "Firewall Management",
+    "firewall-desc": "Network protection with customized security rules.",
+    "firewall-feature-1": "Firewall configuration",
+    "firewall-feature-2": "VPN setup",
+    "firewall-feature-3": "Access policies",
+    "service-audit-title": "Security Audits",
+    "audit-desc": "Specialized checks for vulnerabilities and compliance.",
+    "audit-feature-1": "Penetration testing",
+    "audit-feature-2": "GDPR compliance",
+    "audit-feature-3": "Vulnerability reporting",
+    "service-gdpr-title": "GDPR Compliance",
+    "gdpr-desc": "Services for compliance with the General Data Protection Regulation.",
+    "gdpr-feature-1": "Risk assessment",
+    "gdpr-feature-2": "Staff training",
+    "gdpr-feature-3": "Process documentation",
+
     // Footer
     "company": "HellasNOC",
     "company-description": "Professional network and security services.",
@@ -93,11 +130,13 @@ const translations = {
     "multi-site": "Multi-site management",
     "save-89": "Save €89 annually",
     "save-189": "Save €189 annually",
-    "save-289": "Save €289 annually"
+    "save-289": "Save €289 annually",
+    "contact-us": "Contact Us"
   },
   el: {
     // Header
     "home": "Αρχική",
+    "services": "Υπηρεσίες",
     "pricing": "Τιμές",
     "contact": "Επικοινωνία",
     "contact-btn": "Επικοινωνία",
@@ -158,6 +197,42 @@ const translations = {
     "send-message": "Αποστολή Μηνύματος",
     "message-sent-alert": "Το μήνυμά σας εστάλη με επιτυχία! Θα σας απαντήσουμε το συντομότερο δυνατό.",
 
+    // Services Page
+    "services-title": "Επαγγελματικές Υπηρεσίες Δικτύων",
+    "services-subtitle": "Πλήρης κάλυψη των αναγκών σας με ελληνική υποστήριξη και παγκόσμια τεχνογνωσία",
+    "network-services": "Υπηρεσίες Δικτύων",
+    "security-services": "Υπηρεσίες Ασφαλείας",
+    "service-monitoring-title": "24/7 Παρακολούθηση Δικτύου",
+    "monitoring-desc": "Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου.",
+    "monitoring-feature-1": "Παρακολούθηση uptime/downtime",
+    "monitoring-feature-2": "Στατιστικά εύρους ζώνης",
+    "monitoring-feature-3": "Προειδοποιήσεις μέσω email/SMS",
+    "service-cloud-title": "Διαχείριση Cloud",
+    "cloud-desc": "Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους.",
+    "cloud-feature-1": "Διαχείριση AWS/Azure/Google Cloud",
+    "cloud-feature-2": "Private cloud υπηρεσίες",
+    "cloud-feature-3": "Αυτοματοποιημένη κλιμάκωση",
+    "service-backup-title": "Backup & Recovery",
+    "backup-desc": "Αξιόπιστες λύσεις αντιγράφων ασφαλείας και αποκατάστασης.",
+    "backup-feature-1": "Ημερήσια/ωριαία backups",
+    "backup-feature-2": "Off-site αποθήκευση",
+    "backup-feature-3": "Σχεδιασμός disaster recovery",
+    "service-firewall-title": "Διαχείριση Firewall",
+    "firewall-desc": "Προστασία δικτύου με εξατομικευμένους κανόνες ασφαλείας.",
+    "firewall-feature-1": "Παραμετροποίηση firewall",
+    "firewall-feature-2": "VPN διαμόρφωση",
+    "firewall-feature-3": "Πολιτικές πρόσβασης",
+    "service-audit-title": "Έλεγχοι Ασφαλείας",
+    "audit-desc": "Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση.",
+    "audit-feature-1": "Δοκιμές διείσδυσης",
+    "audit-feature-2": "Συμμόρφωση GDPR",
+    "audit-feature-3": "Αναφορά ευπαθειών",
+    "service-gdpr-title": "Συμμόρφωση GDPR",
+    "gdpr-desc": "Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων.",
+    "gdpr-feature-1": "Αξιολόγηση κινδύνων",
+    "gdpr-feature-2": "Εκπαίδευση προσωπικού",
+    "gdpr-feature-3": "Τεκμηρίωση διαδικασιών",
+
     // Footer
     "company": "HellasNOC",
     "company-description": "Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.",
@@ -188,6 +263,7 @@ const translations = {
     "multi-site": "Διαχείριση πολλαπλών τοποθεσιών",
     "save-89": "Εξοικονομείτε 89€ ετησίως",
     "save-189": "Εξοικονομείτε 189€ ετησίως",
-    "save-289": "Εξοικονομείτε 289€ ετησίως"
+    "save-289": "Εξοικονομείτε 289€ ετησίως",
+    "contact-us": "Επικοινωνήστε μαζί μας"
   }
 };

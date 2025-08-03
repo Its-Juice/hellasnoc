@@ -1,403 +1,11 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HellasNOC - Επαγγελματικές Υπηρεσίες Δικτύων & Ασφαλείας</title>
-  <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα." />
-  <style>
-    :root {
-      --dark-blue: #1c2c3a;
-      --light-blue: #2e4a7d;
-      --gold: #FFD700;
-      --radius: 12px;
-      --shadow: 0 12px 40px -10px rgba(28,44,58,0.15);
-      --transition: all 0.3s ease;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
-    img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
-    /* Header */
-    header {
-      background: white;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      flex-wrap: wrap;
-    }
-    .logo img {
-      height: 50px;
-      transition: var(--transition);
-    }
-    nav {
-      order: 3;
-      width: 100%;
-      display: none;
-    }
-    .nav-list {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      gap: 1rem;
-      padding: 1rem 0;
-      margin: 0;
-    }
-    nav a {
-      color: var(--dark-blue);
-      font-weight: 600;
-      padding: 0.5rem;
-      transition: var(--transition);
-      display: block;
-      position: relative;
-    }
-    nav a:hover { color: var(--light-blue); }
-    nav a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--light-blue);
-      transition: var(--transition);
-    }
-    nav a:hover:after {
-      width: 100%;
-    }
-
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      display: inline-block;
-      transition: var(--transition);
-      text-align: center;
-    }
-    .btn-primary {
-      background: var(--dark-blue);
-      color: white;
-    }
-    .btn-primary:hover {
-      background: var(--light-blue);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-    .btn-secondary {
-      background: white;
-      color: var(--dark-blue);
-      border: 1px solid var(--dark-blue);
-    }
-
-    /* Language Switcher */
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .language-switcher {
-      display: flex;
-      background: #f5f7fa;
-      border-radius: 50px;
-      padding: 2px;
-      position: relative;
-      height: 40px;
-      width: 84px;
-    }
-    .language-toggle-container {
-      display: flex;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-    .language-btn {
-      border: none;
-      background: transparent;
-      padding: 0.5rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      position: relative;
-      z-index: 2;
-      width: 40px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .language-btn.active { color: white; }
-    .language-btn img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-    }
-    .language-slider {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      height: calc(100% - 4px);
-      width: calc(50% - 2px);
-      background: var(--dark-blue);
-      border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-      z-index: 1;
-    }
-
-    /* Hamburger */
-    .hamburger {
-      display: block;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      width: 40px;
-      height: 40px;
-    }
-    .hamburger .bar {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px auto;
-      background: var(--dark-blue);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Hero */
-    .hero {
-      padding: 2rem 0;
-      text-align: center;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
-    }
-    .hero h1 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: var(--dark-blue);
-    }
-    .hero p {
-      font-size: 1rem;
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      color: #444;
-      padding: 0 1rem;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0 1rem;
-    }
-
-    /* About */
-    .about {
-      padding: 2rem 0;
-      background: white;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      padding: 0 1rem;
-      position: relative;
-    }
-    .section-title h2 {
-      font-size: 1.5rem;
-      color: var(--dark-blue);
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--light-blue);
-    }
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 0 1rem;
-    }
-    .about-text p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    .about-buttons {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .about-image img {
-      border-radius: var(--radius);
-      width: 100%;
-      height: auto;
-    }
-
-    /* Values */
-    .values {
-      padding: 2rem 0;
-      background: #f5f7fa;
-    }
-    .values-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 0 1rem;
-    }
-    .value-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    .value-card:hover {
-      transform: translateY(-4px);
-    }
-    .value-card h3 {
-      color: var(--light-blue);
-      margin-bottom: 0.75rem;
-    }
-
-    /* CTA */
-    .cta {
-      padding: 2rem 1rem;
-      text-align: center;
-      background: var(--dark-blue);
-      color: white;
-    }
-    .cta h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-      font-size: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #1a2634;
-      color: white;
-      padding: 2rem 1rem;
-    }
-    .footer-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .footer-column h3 {
-      color: var(--gold);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem 0;
-    }
-    .footer-column li {
-      margin-bottom: 0.5rem;
-    }
-    .footer-column a {
-      color: #d1d5db;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .footer-column a:hover {
-      color: white;
-    }
-    .copyright {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #2e3a4a;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
-
-    /* Desktop styles */
-    @media (min-width: 768px) {
-      .nav-container {
-        padding: 1rem;
-        flex-wrap: nowrap;
-      }
-      nav {
-        order: initial;
-        width: auto;
-        display: block;
-      }
-      .nav-list {
-        flex-direction: row;
-        gap: 1.5rem;
-        padding: 0;
-      }
-      nav a {
-        padding: 0.5rem 0;
-      }
-      .hamburger {
-        display: none;
-      }
-      .hero {
-        padding: 3rem 0;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .section-title h2 {
-        font-size: 1.75rem;
-      }
-      .about-content {
-        flex-direction: row;
-        padding: 0;
-      }
-      .about-text {
-        flex: 1;
-      }
-      .about-image {
-        flex: 1;
-      }
-      .values-grid {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0;
-      }
-      .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (min-width: 992px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .section-title h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header -->
@@ -405,7 +13,7 @@
     <div class="container nav-container" aria-label="Κύρια πλοήγηση">
       <div class="logo">
         <a href="index.html" aria-label="HellasNOC home">
-          <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" loading="lazy" />
+          <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" loading="lazy">
         </a>
       </div>
       <button class="hamburger" aria-label="Μενού" aria-expanded="false" aria-controls="primary-navigation">
@@ -416,6 +24,7 @@
       <nav id="primary-navigation">
         <ul class="nav-list" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
           <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
         </ul>
@@ -425,10 +34,10 @@
           <div class="language-slider"></div>
           <div class="language-toggle-container">
             <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
-              <img src="assets/img/flags/gr.png" alt="Greek flag" />
+              <img src="assets/img/flags/gr.png" alt="Greek flag">
             </button>
             <button class="language-btn" data-lang="en" aria-label="English">
-              <img src="assets/img/flags/gb.png" alt="UK flag" />
+              <img src="assets/img/flags/gb.png" alt="UK flag">
             </button>
           </div>
         </div>
@@ -465,7 +74,7 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="HellasNOC Team" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="HellasNOC Team" loading="lazy">
         </div>
       </div>
     </div>
@@ -517,6 +126,7 @@
           <h3 data-i18n="links">Σύνδεσμοι</h3>
           <ul>
             <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+            <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
             <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
             <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
@@ -554,7 +164,7 @@
       updateLanguage(currentLang);
 
       document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
+        btn.addEventListener('click', function() {
           const lang = this.dataset.lang;
           if (lang !== currentLang) {
             currentLang = lang;
