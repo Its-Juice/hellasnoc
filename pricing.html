@@ -15,9 +15,9 @@
       --transition: all 0.3s ease;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    * { box-sizing: border-box; }
-    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; margin:0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
     /* Header */
     header {
@@ -31,45 +31,55 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 0;
+      padding: 1rem;
       flex-wrap: wrap;
-      gap: 1rem;
     }
-    .logo img { height: 50px; transition: var(--transition); }
-    nav { position: relative; }
+    .logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+    nav {
+      order: 3;
+      width: 100%;
+      display: none;
+    }
     .nav-list {
       display: flex;
+      flex-direction: column;
       list-style: none;
-      gap: 1.75rem;
-      padding: 0;
+      gap: 1rem;
+      padding: 1rem 0;
       margin: 0;
     }
     nav a {
       color: var(--dark-blue);
       font-weight: 600;
-      position: relative;
-      padding: 0.25rem 0;
+      padding: 0.5rem;
       transition: var(--transition);
+      display: block;
+      position: relative;
     }
     nav a:hover { color: var(--light-blue); }
     nav a:after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
       background: var(--light-blue);
       transition: var(--transition);
     }
-    nav a:hover:after { width: 100%; }
+    nav a:hover:after {
+      width: 100%;
+    }
 
-    .btn { padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; display: inline-block; transition: var(--transition); }
-    .btn-primary { background: var(--dark-blue); color: white; }
-    .btn-primary:hover { background: var(--light-blue); transform: translateY(-2px); box-shadow: var(--shadow); }
-
-    /* Language & hamburger */
-    .header-right { display: flex; align-items: center; gap: 1rem; }
+    /* Language Switcher */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
     .language-switcher {
       display: flex;
       background: #f5f7fa;
@@ -79,7 +89,12 @@
       height: 40px;
       width: 84px;
     }
-    .language-toggle-container { display: flex; width: 100%; position: relative; z-index:1; }
+    .language-toggle-container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
     .language-btn {
       border: none;
       background: transparent;
@@ -89,7 +104,7 @@
       font-weight: 600;
       transition: color 0.3s ease;
       position: relative;
-      z-index:2;
+      z-index: 2;
       width: 40px;
       height: 36px;
       display: flex;
@@ -97,27 +112,32 @@
       justify-content: center;
     }
     .language-btn.active { color: white; }
-    .language-btn img { width:24px; height:24px; object-fit:contain; }
+    .language-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
     .language-slider {
       position: absolute;
-      top:2px;
-      left:2px;
+      top: 2px;
+      left: 2px;
       height: calc(100% - 4px);
       width: calc(50% - 2px);
       background: var(--dark-blue);
       border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.65,0,0.35,1);
-      z-index:1;
+      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 1;
     }
+
+    /* Hamburger */
     .hamburger {
-      display: none;
+      display: block;
       background: none;
       border: none;
       cursor: pointer;
       padding: 8px;
       width: 40px;
       height: 40px;
-      flex-shrink:0;
     }
     .hamburger .bar {
       display: block;
@@ -128,22 +148,49 @@
       border-radius: 2px;
       transition: var(--transition);
     }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      display: inline-block;
+      transition: var(--transition);
+      text-align: center;
+      width: 100%;
+    }
+    .btn-primary {
+      background: var(--dark-blue);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
 
     /* Pricing Hero */
     .pricing-hero {
-      padding: 2.5rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
     }
     .pricing-hero h1 {
-      font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
-      margin-bottom: 0.75rem;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
       color: var(--dark-blue);
     }
     .pricing-hero p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
+      font-size: 1rem;
       color: #444;
     }
 
@@ -151,14 +198,13 @@
     .price-toggle {
       display: flex;
       justify-content: center;
-      margin: 1.5rem auto 2rem;
-      max-width: 320px;
+      margin: 1.5rem auto;
       background: #f5f7fa;
       border-radius: 50px;
       padding: 5px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: relative;
-      gap: 0;
+      max-width: 320px;
     }
     .price-toggle-container {
       display: flex;
@@ -168,7 +214,7 @@
     }
     .price-toggle-btn {
       flex: 1;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem;
       text-align: center;
       cursor: pointer;
       border-radius: 50px;
@@ -194,39 +240,41 @@
     /* Pricing Cards */
     .pricing-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
-      margin: 2rem 0 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      padding: 0 1rem;
     }
     .pricing-card {
       background: white;
       border-radius: var(--radius);
-      padding: 1.75rem;
+      padding: 1.5rem;
       box-shadow: var(--shadow);
-      transition: var(--transition);
       position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
+      transition: var(--transition);
     }
-    .pricing-card:hover { transform: translateY(-3px); }
+    .pricing-card:hover {
+      transform: translateY(-3px);
+    }
     .pricing-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 0.5rem;
       color: var(--dark-blue);
     }
     .price {
-      font-size: 1.85rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--light-blue);
       margin: 0.5rem 0;
     }
-    .billing-cycle { font-size: 0.85rem; color: #666; margin-left:4px; }
+    .billing-cycle {
+      font-size: 0.85rem;
+      color: #666;
+    }
     .pricing-features {
       margin: 1.5rem 0;
       list-style: none;
       padding: 0;
-      flex-grow:1;
     }
     .pricing-features li {
       margin-bottom: 0.5rem;
@@ -248,9 +296,6 @@
       display: inline-block;
       margin-bottom: 0.75rem;
       font-weight: 700;
-      position: absolute;
-      top: 12px;
-      right: 16px;
       font-size: 0.75rem;
     }
     .annual-savings {
@@ -264,7 +309,7 @@
 
     /* Technologies */
     .logo-section {
-      padding: 2.5rem 0;
+      padding: 2rem 1rem;
       margin: 1.5rem 0;
       background: white;
       border-radius: var(--radius);
@@ -272,13 +317,13 @@
     }
     .logo-section h2 {
       text-align: center;
-      margin-bottom: 1.75rem;
-      font-size: 1.7rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
       color: var(--dark-blue);
     }
     .logo-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       align-items: center;
       justify-items: center;
@@ -295,6 +340,10 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       transition: var(--transition);
     }
+    .logo-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
     .logo-item img {
       max-width: 100%;
       max-height: 50px;
@@ -303,38 +352,42 @@
       opacity: 0.8;
       transition: var(--transition);
     }
-    .logo-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
     .logo-item:hover img {
       filter: grayscale(0%);
       opacity: 1;
-      transform: scale(1.03);
     }
 
     /* FAQ */
     .faq {
-      padding: 2.5rem 0;
+      padding: 2rem 1rem;
       background: white;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
     }
     .faq-item {
       margin-bottom: 1.25rem;
       border-bottom: 1px solid #eee;
       padding-bottom: 1.25rem;
     }
-    .faq-item h3 { color: var(--light-blue); margin-bottom: 0.5rem; }
+    .faq-item h3 {
+      color: var(--light-blue);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
 
     /* Footer */
     footer {
       background: #1a2634;
       color: white;
-      padding: 2.5rem 0;
+      padding: 2rem 1rem;
     }
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     .footer-column h3 {
       color: var(--gold);
@@ -343,37 +396,76 @@
     }
     .footer-column ul {
       list-style: none;
-      padding:0;
-      margin:0;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
-    .footer-column li { margin-bottom: 0.5rem; }
-    .footer-column a { color: #d1d5db; text-decoration: none; transition: var(--transition); }
-    .footer-column a:hover { color: white; }
+    .footer-column li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-column a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-column a:hover {
+      color: white;
+    }
     .copyright {
       text-align: center;
       margin-top: 2rem;
-      padding-top: 1.25rem;
+      padding-top: 1.5rem;
       border-top: 1px solid #2e3a4a;
       color: #9ca3af;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .logo-grid { grid-template-columns: repeat(3, 1fr); }
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 1rem;
+        flex-wrap: nowrap;
+      }
+      nav {
+        order: initial;
+        width: auto;
+        display: block;
+      }
+      .nav-list {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+      }
+      nav a {
+        padding: 0.5rem 0;
+      }
+      .hamburger {
+        display: none;
+      }
+      .pricing-hero {
+        padding: 3rem 1rem;
+      }
+      .pricing-hero h1 {
+        font-size: 2rem;
+      }
+      .pricing-cards {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+      }
+      .logo-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .btn {
+        width: auto;
+      }
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
-    @media (max-width: 900px) {
-      .nav-list { display: none; position: absolute; top: 100%; right: 0; background: white; flex-direction: column; padding: 1rem 1rem; border-radius: 12px; box-shadow: var(--shadow); width: 220px; }
-      .nav-list.show { display: flex; }
-      .hamburger { display: block; }
-    }
-    @media (max-width: 768px) {
-      .pricing-hero h1 { font-size: 1.75rem; }
-      .popular-badge { position: static; margin-top: -4px; }
-    }
-    @media (max-width: 576px) {
-      .logo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-      .logo-item { height: 60px; }
+
+    @media (min-width: 992px) {
+      .pricing-hero h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -391,8 +483,8 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <nav>
-        <ul id="primary-navigation" class="nav-list" role="menubar">
+      <nav id="primary-navigation">
+        <ul class="nav-list" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
           <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
@@ -556,11 +648,12 @@
   <script>
     // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
-    const navList = document.getElementById('primary-navigation');
+    const nav = document.querySelector('nav');
     hamburger?.addEventListener('click', () => {
       const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', String(!expanded));
-      navList.classList.toggle('show');
+      hamburger.classList.toggle('active');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
     });
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -629,4 +722,3 @@
   </script>
 </body>
 </html>
-

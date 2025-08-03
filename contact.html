@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>HellasNOC - Επικοινωνία</title>
   <style>
     :root {
@@ -17,6 +17,61 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+    /* Header */
+    header {
+      background: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+    .logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+    nav {
+      order: 3;
+      width: 100%;
+      display: none;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 1rem;
+      padding: 1rem 0;
+      margin: 0;
+    }
+    nav a {
+      color: var(--dark-blue);
+      font-weight: 600;
+      padding: 0.5rem;
+      transition: var(--transition);
+      display: block;
+      position: relative;
+    }
+    nav a:hover { color: var(--light-blue); }
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--light-blue);
+      transition: var(--transition);
+    }
+    nav a:hover:after {
+      width: 100%;
+    }
 
     /* Language Switcher */
     .header-right {
@@ -55,9 +110,7 @@
       align-items: center;
       justify-content: center;
     }
-    .language-btn.active {
-      color: white;
-    }
+    .language-btn.active { color: white; }
     .language-btn img {
       width: 24px;
       height: 24px;
@@ -75,59 +128,44 @@
       z-index: 1;
     }
 
-    /* Header */
-    header {
-      background: white;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* Hamburger */
+    .hamburger {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      width: 40px;
+      height: 40px;
     }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-    .logo img {
-      height: 60px;
+    .hamburger .bar {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px auto;
+      background: var(--dark-blue);
+      border-radius: 2px;
       transition: var(--transition);
     }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
     }
-    nav a {
-      text-decoration: none;
-      color: var(--dark-blue);
-      font-weight: 600;
-      transition: var(--transition);
-      padding: 0.5rem 0;
-      position: relative;
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
     }
-    nav a:hover {
-      color: var(--light-blue);
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
-    nav a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--light-blue);
-      transition: var(--transition);
-    }
-    nav a:hover:after {
-      width: 100%;
-    }
+
+    /* Buttons */
     .btn {
       padding: 0.75rem 1.5rem;
       border-radius: var(--radius);
       font-weight: 600;
       display: inline-block;
       transition: var(--transition);
+      text-align: center;
+      width: 100%;
     }
     .btn-primary {
       background: var(--dark-blue);
@@ -141,58 +179,62 @@
 
     /* Contact Hero */
     .contact-hero {
-      padding: 3rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
     }
     .contact-hero h1 {
-      font-size: 2.5rem;
+      font-size: 1.75rem;
       margin-bottom: 1rem;
       color: var(--dark-blue);
     }
     .contact-hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
+      font-size: 1rem;
       color: #444;
     }
 
-    /* Contact Form */
+    /* Contact Section */
     .contact-section {
-      padding: 3rem 0;
+      padding: 2rem 1rem;
       background: white;
     }
     .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
     .contact-info {
       background: var(--dark-blue);
       color: white;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: var(--radius);
     }
     .contact-info h3 {
       color: var(--gold);
       margin-bottom: 1.5rem;
+      font-size: 1.25rem;
     }
     .contact-info-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .contact-info-icon {
       margin-right: 1rem;
       color: var(--gold);
+      font-size: 1.2rem;
+    }
+    .contact-info-item h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
     }
     .contact-form {
       background: #f5f7fa;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: var(--radius);
     }
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .form-group label {
       display: block;
@@ -212,7 +254,7 @@
       box-shadow: 0 0 0 3px rgba(46, 74, 125, 0.1);
     }
     textarea.form-control {
-      min-height: 150px;
+      min-height: 120px;
       resize: vertical;
     }
 
@@ -220,23 +262,25 @@
     footer {
       background: #1a2634;
       color: white;
-      padding: 3rem 0;
+      padding: 2rem 1rem;
     }
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     .footer-column h3 {
       color: var(--gold);
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
     }
     .footer-column ul {
       list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
     .footer-column li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .footer-column a {
       color: #d1d5db;
@@ -248,22 +292,58 @@
     }
     .copyright {
       text-align: center;
-      margin-top: 3rem;
-      padding-top: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
       border-top: 1px solid #2e3a4a;
       color: #9ca3af;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
+    /* Desktop styles */
+    @media (min-width: 768px) {
       .nav-container {
-        flex-direction: column;
-        gap: 1rem;
+        padding: 1rem;
+        flex-wrap: nowrap;
       }
-      nav ul {
-        gap: 1rem;
+      nav {
+        order: initial;
+        width: auto;
+        display: block;
+      }
+      .nav-list {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+      }
+      nav a {
+        padding: 0.5rem 0;
+      }
+      .hamburger {
+        display: none;
+      }
+      .contact-hero {
+        padding: 3rem 1rem;
+      }
+      .contact-hero h1 {
+        font-size: 2rem;
       }
       .contact-container {
-        grid-template-columns: 1fr;
+        flex-direction: row;
+      }
+      .contact-info, .contact-form {
+        flex: 1;
+      }
+      .btn {
+        width: auto;
+      }
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .contact-hero h1 {
+        font-size: 2.5rem;
       }
     }
   </style>
@@ -271,26 +351,33 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container nav-container">
+    <div class="container nav-container" aria-label="Κύρια πλοήγηση">
       <div class="logo">
-        <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo">
+        <a href="index.html" aria-label="HellasNOC home">
+          <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" loading="lazy">
+        </a>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html" data-i18n="home">Αρχική</a></li>
-          <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
-          <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
+      <button class="hamburger" aria-label="Μενού" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="primary-navigation">
+        <ul class="nav-list" role="menubar">
+          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
+          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
         </ul>
       </nav>
       <div class="header-right">
-        <div class="language-switcher">
+        <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
           <div class="language-slider"></div>
           <div class="language-toggle-container">
             <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
-              <img src="assets/img/flags/gr.png" alt="Greek">
+              <img src="assets/img/flags/gr.png" alt="Greek flag">
             </button>
             <button class="language-btn" data-lang="en" aria-label="English">
-              <img src="assets/img/flags/gb.png" alt="English">
+              <img src="assets/img/flags/gb.png" alt="UK flag">
             </button>
           </div>
         </div>
@@ -394,7 +481,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h3 data-i18n="contact">Εпικοινωνία</h3>
+          <h3 data-i18n="contact">Επικοινωνία</h3>
           <ul>
             <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
             <li data-i18n="phone">Τηλ: 210 6969 420</li>
@@ -411,6 +498,16 @@
   <script src="translations.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Mobile nav toggle
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      hamburger?.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        hamburger.classList.toggle('active');
+        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      });
+
       // Set default language to Greek ('el') regardless of browser preference
       let currentLang = localStorage.getItem('language') || 'el';
       

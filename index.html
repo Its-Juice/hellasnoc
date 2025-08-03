@@ -15,10 +15,9 @@
       --transition: all 0.3s ease;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    * { box-sizing: border-box; }
-    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; margin:0; }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; color: #1c2c3a; line-height: 1.6; }
+    img { max-width: 100%; height: auto; display: block; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
     /* Header */
@@ -33,8 +32,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 0;
-      gap: 1rem;
+      padding: 1rem;
       flex-wrap: wrap;
     }
     .logo img {
@@ -42,43 +40,70 @@
       transition: var(--transition);
     }
     nav {
-      position: relative;
+      order: 3;
+      width: 100%;
+      display: none;
     }
     .nav-list {
       display: flex;
+      flex-direction: column;
       list-style: none;
-      gap: 1.75rem;
-      align-items: center;
-      padding: 0;
+      gap: 1rem;
+      padding: 1rem 0;
       margin: 0;
     }
     nav a {
       color: var(--dark-blue);
       font-weight: 600;
-      position: relative;
-      padding: 0.25rem 0;
+      padding: 0.5rem;
       transition: var(--transition);
+      display: block;
+      position: relative;
     }
     nav a:hover { color: var(--light-blue); }
     nav a:after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
       background: var(--light-blue);
       transition: var(--transition);
     }
-    nav a:hover:after { width: 100%; }
+    nav a:hover:after {
+      width: 100%;
+    }
 
-    .btn { padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; display: inline-block; transition: var(--transition); }
-    .btn-primary { background: var(--dark-blue); color: white; }
-    .btn-primary:hover { background: var(--light-blue); transform: translateY(-2px); box-shadow: var(--shadow); }
-    .btn-secondary { background: white; color: var(--dark-blue); border: 1px solid var(--dark-blue); }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      display: inline-block;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--dark-blue);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+      border: 1px solid var(--dark-blue);
+    }
 
     /* Language Switcher */
-    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
     .language-switcher {
       display: flex;
       background: #f5f7fa;
@@ -88,7 +113,12 @@
       height: 40px;
       width: 84px;
     }
-    .language-toggle-container { display: flex; width: 100%; position: relative; z-index:1; }
+    .language-toggle-container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
     .language-btn {
       border: none;
       background: transparent;
@@ -98,7 +128,7 @@
       font-weight: 600;
       transition: color 0.3s ease;
       position: relative;
-      z-index:2;
+      z-index: 2;
       width: 40px;
       height: 36px;
       display: flex;
@@ -106,30 +136,32 @@
       justify-content: center;
     }
     .language-btn.active { color: white; }
-    .language-btn img { width:24px; height:24px; object-fit:contain; }
+    .language-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
     .language-slider {
       position: absolute;
-      top:2px;
-      left:2px;
+      top: 2px;
+      left: 2px;
       height: calc(100% - 4px);
       width: calc(50% - 2px);
       background: var(--dark-blue);
       border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.65,0,0.35,1);
-      z-index:1;
+      transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+      z-index: 1;
     }
 
-    /* Hamburger for mobile */
+    /* Hamburger */
     .hamburger {
-      display: none;
+      display: block;
       background: none;
       border: none;
       cursor: pointer;
       padding: 8px;
-      position: relative;
       width: 40px;
       height: 40px;
-      flex-shrink:0;
     }
     .hamburger .bar {
       display: block;
@@ -140,43 +172,55 @@
       border-radius: 2px;
       transition: var(--transition);
     }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
     /* Hero */
     .hero {
-      padding: 4rem 0 3rem;
+      padding: 2rem 0;
       text-align: center;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
     }
     .hero h1 {
-      font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+      font-size: 1.75rem;
       margin-bottom: 1rem;
       color: var(--dark-blue);
     }
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       max-width: 800px;
-      margin: 0 auto 1.75rem;
+      margin: 0 auto 1.5rem;
       color: #444;
+      padding: 0 1rem;
     }
     .hero-buttons {
       display: flex;
       gap: 0.75rem;
       justify-content: center;
       flex-wrap: wrap;
+      padding: 0 1rem;
     }
 
     /* About */
     .about {
-      padding: 4rem 0;
+      padding: 2rem 0;
       background: white;
     }
     .section-title {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
       position: relative;
     }
     .section-title h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: var(--dark-blue);
     }
     .section-title:after {
@@ -185,107 +229,173 @@
       bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 60px;
       height: 3px;
       background: var(--light-blue);
     }
     .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0 1rem;
     }
-    .about-text p { margin-bottom: 1.25rem; line-height: 1.7; }
-    .about-buttons { margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .about-text p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .about-buttons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .about-image img {
+      border-radius: var(--radius);
+      width: 100%;
+      height: auto;
+    }
 
     /* Values */
     .values {
-      padding: 4rem 0;
+      padding: 2rem 0;
       background: #f5f7fa;
     }
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.75rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
     }
     .value-card {
       background: white;
-      padding: 1.75rem;
+      padding: 1.5rem;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       transition: var(--transition);
     }
-    .value-card:hover { transform: translateY(-4px); }
-    .value-card h3 { color: var(--light-blue); margin-bottom: 0.75rem; }
+    .value-card:hover {
+      transform: translateY(-4px);
+    }
+    .value-card h3 {
+      color: var(--light-blue);
+      margin-bottom: 0.75rem;
+    }
 
     /* CTA */
     .cta {
-      padding: 4rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       background: var(--dark-blue);
       color: white;
     }
     .cta h2 {
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
     .cta p {
       max-width: 700px;
       margin: 0 auto 1.5rem;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     /* Footer */
     footer {
       background: #1a2634;
       color: white;
-      padding: 3rem 0;
+      padding: 2rem 1rem;
     }
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     .footer-column h3 {
       color: var(--gold);
       margin-bottom: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .footer-column ul {
       list-style: none;
-      padding:0;
-      margin:0;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
     }
-    .footer-column li { margin-bottom: 0.5rem; }
+    .footer-column li {
+      margin-bottom: 0.5rem;
+    }
     .footer-column a {
       color: #d1d5db;
       text-decoration: none;
       transition: var(--transition);
     }
-    .footer-column a:hover { color: white; }
+    .footer-column a:hover {
+      color: white;
+    }
     .copyright {
       text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       padding-top: 1.5rem;
       border-top: 1px solid #2e3a4a;
       color: #9ca3af;
       font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .about-content { grid-template-columns: 1fr; }
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 1rem;
+        flex-wrap: nowrap;
+      }
+      nav {
+        order: initial;
+        width: auto;
+        display: block;
+      }
+      .nav-list {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+      }
+      nav a {
+        padding: 0.5rem 0;
+      }
+      .hamburger {
+        display: none;
+      }
+      .hero {
+        padding: 3rem 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .section-title h2 {
+        font-size: 1.75rem;
+      }
+      .about-content {
+        flex-direction: row;
+        padding: 0;
+      }
+      .about-text {
+        flex: 1;
+      }
+      .about-image {
+        flex: 1;
+      }
+      .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+      }
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
-    @media (max-width: 900px) {
-      .nav-list { display: none; position: absolute; top: 100%; right: 0; background: white; flex-direction: column; padding: 1rem 1.25rem; border-radius: 12px; box-shadow: var(--shadow); width: 220px; }
-      .nav-list.show { display: flex; }
-      .hamburger { display: block; }
-    }
-    @media (max-width: 768px) {
-      .hero { padding: 3rem 0 2rem; }
-      .hero-buttons { flex-direction: column; }
-      .header-right { order: 3; width: 100%; justify-content: flex-end; margin-top: 6px; }
+
+    @media (min-width: 992px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .section-title h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -303,8 +413,8 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <nav>
-        <ul id="primary-navigation" class="nav-list" role="menubar">
+      <nav id="primary-navigation">
+        <ul class="nav-list" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
           <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
@@ -346,7 +456,7 @@
       </div>
       <div class="about-content">
         <div class="about-text">
-          <p data-i18n="about-text-1">Η HellasNOC ιδρύθηκε με μια απλή αποστολή: να φέρει επαγγελματική διαχείριση δικτύων και ασφάλεια σε ελληνικές επιχειρήσεις με προσιτές τιμές.</p>
+          <p data-i18n="about-text-1">Η HellasNOC ιδρύθηκε με μια απλή αποστολή: να φέρει επαγγελματική διαχείριση δικτύων και ασφαλείας σε ελληνικές επιχειρήσεις με προσιτές τιμές.</p>
           <p data-i18n="about-text-2">Ως πρώην sysadmins και network engineers, καταλάβαμε ότι οι μικρές επιχειρήσεις δεν έχουν πρόσβαση στις ίδιες ποιοτικές υπηρεσίες που προσφέρουν τα μεγάλα data centers.</p>
           <p data-i18n="about-text-3">Χρησιμοποιούμε ανοιχτές τεχνολογίες και ελληνική υποστήριξη για λύσεις που πραγματικά λειτουργούν.</p>
           <div class="about-buttons">
@@ -430,11 +540,12 @@
   <script>
     // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
-    const navList = document.getElementById('primary-navigation');
+    const nav = document.querySelector('nav');
     hamburger?.addEventListener('click', () => {
       const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', String(!expanded));
-      navList.classList.toggle('show');
+      hamburger.classList.toggle('active');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
     });
 
     // Language switcher + i18n
@@ -473,4 +584,3 @@
   </script>
 </body>
 </html>
-
