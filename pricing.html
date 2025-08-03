@@ -467,6 +467,102 @@
         font-size: 2.5rem;
       }
     }
+  /* Existing styles... */
+
+  /* Pricing Cards - Updated for alignment */
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+    align-items: stretch; /* Ensure all cards stretch to same height */
+  }
+
+  .pricing-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make cards take full height */
+  }
+
+  .pricing-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-blue);
+    min-height: 3rem; /* Fixed height for titles */
+  }
+
+  .device-limit {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    min-height: 1.5rem; /* Fixed height for device limit */
+  }
+
+  .price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--light-blue);
+    margin: 0.5rem 0;
+    min-height: 2.5rem; /* Fixed height for prices */
+  }
+
+  .annual-savings {
+    color: #2e7d32;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    min-height: 1.2rem; /* Fixed height for savings text */
+  }
+
+  .pricing-features {
+    margin: 1.5rem 0;
+    list-style: none;
+    padding: 0;
+    flex-grow: 1; /* Make features take remaining space */
+  }
+
+  .pricing-features li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .pricing-features li:before {
+    content: "✓";
+    color: var(--light-blue);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .popular-badge {
+    background: linear-gradient(135deg, #FFD700, #FFC000);
+    color: #8B6508;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+  }
+
+  /* Desktop styles */
+  @media (min-width: 768px) {
+    .pricing-cards {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0;
+    }
+  }
   </style>
 </head>
 <body>
