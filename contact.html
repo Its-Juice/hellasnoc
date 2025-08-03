@@ -173,6 +173,18 @@
       // Update UI
       updateLanguage(currentLang);
       
+      //Form Validation
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  if (!email.includes('@')) {
+    alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
+    return;
+  }
+  // Submit form via AJAX or show success message
+  document.getElementById('form-success').style.display = 'block';
+});
+      
       // Handle language switch
       document.querySelectorAll('.language-btn').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -184,6 +196,10 @@
           }
         });
       });
+      
+      hamburger.addEventListener('click', () => {
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+});
       
       function updateLanguage(lang) {
         // Update buttons

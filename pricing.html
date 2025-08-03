@@ -210,6 +210,9 @@
           }
         });
       });
+hamburger.addEventListener('click', () => {
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+});
 
       function updateLanguage(lang) {
         document.querySelectorAll('.language-btn').forEach(btn => {

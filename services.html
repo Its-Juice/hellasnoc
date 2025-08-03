@@ -247,6 +247,9 @@
         nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
       });
 
+hamburger.addEventListener('click', () => {
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+});
       // Language switcher functionality
       let currentLang = localStorage.getItem('language') || 'el';
       updateLanguage(currentLang);
