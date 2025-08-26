@@ -157,16 +157,15 @@
   <script src="translations.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Mobile nav toggle
-      const hamburger = document.querySelector('.hamburger');
-      const nav = document.querySelector('nav');
-      hamburger?.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', String(!expanded));
-        hamburger.classList.toggle('active');
-        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-      });
-
+// Mobile nav toggle - Fixed version
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+hamburger?.addEventListener('click', () => {
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!expanded));
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('active');
+});
       // Set default language to Greek ('el') regardless of browser preference
       let currentLang = localStorage.getItem('language') || 'el';
       

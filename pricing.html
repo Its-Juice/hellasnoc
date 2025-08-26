@@ -186,15 +186,15 @@
 
   <script src="translations.js"></script>
   <script>
-    // Mobile nav toggle
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    hamburger?.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      hamburger.classList.toggle('active');
-      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-    });
+ // Mobile nav toggle - Fixed version
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+hamburger?.addEventListener('click', () => {
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!expanded));
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('active');
+});
 
     document.addEventListener('DOMContentLoaded', function() {
       // Language switch / i18n

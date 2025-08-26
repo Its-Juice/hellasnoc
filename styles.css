@@ -197,7 +197,51 @@ header {
   opacity: 0.8;
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Fixed */
+nav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: height 0.4s ease;
+  z-index: 999;
+  display: block !important; /* Force display block for animation to work */
+}
+
+nav.active {
+  height: calc(100vh - var(--header-height));
+}
+
+.nav-list {
+  list-style: none;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+nav.active .nav-list {
+  opacity: 1;
+}
+
+/* Ensure navigation is visible when active on mobile */
+@media (max-width: 767px) {
+  nav:not(.active) {
+    display: none !important;
+  }
+  
+  nav.active {
+    display: block !important;
+  }
+}
+
+/* Hamburger menu animation fix */
 .hamburger {
   display: flex;
   flex-direction: column;
