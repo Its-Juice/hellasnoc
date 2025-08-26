@@ -815,7 +815,7 @@ nav.active .nav-list {
 }
 
 /* ==================== */
-/* TECHNOLOGIES SECTION */
+/* TECHNOLOGIES SECTION - UPDATED */
 /* ==================== */
 .logo-section {
   text-align: center;
@@ -827,6 +827,8 @@ nav.active .nav-list {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  align-items: center; /* Added for vertical alignment */
+  justify-items: center; /* Added for horizontal alignment */
 }
 
 .logo-item {
@@ -834,6 +836,7 @@ nav.active .nav-list {
   align-items: center;
   justify-content: center;
   height: 80px;
+  width: 120px; /* Fixed width for consistent sizing */
   padding: 1rem;
   background: var(--white);
   border-radius: var(--radius);
@@ -848,7 +851,10 @@ nav.active .nav-list {
 
 .logo-item img {
   max-height: 40px;
+  max-width: 80px; /* Limit maximum width */
   width: auto;
+  height: auto;
+  object-fit: contain; /* Ensures proper scaling */
 }
 
 .partners-grid {
@@ -1141,7 +1147,6 @@ footer {
     height: auto;
     background: transparent;
     box-shadow: none;
-    overflow: visible;
   }
 
   nav.active {
@@ -1231,3 +1236,4 @@ img:hover {
   align-self: center; /* Centers the button horizontally */
   min-width: 160px; /* Ensures consistent button width */
 }
+

@@ -236,76 +236,74 @@
 
   <script src="translations.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Mobile nav toggle
-      const hamburger = document.querySelector('.hamburger');
-      const nav = document.querySelector('nav');
-      hamburger?.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', String(!expanded));
-        hamburger.classList.toggle('active');
-        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-      });
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile nav toggle
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
+  
+  hamburger?.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
+    hamburger.classList.toggle('active');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  });
 
-hamburger.addEventListener('click', () => {
-  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-});
-      // Language switcher functionality
-      let currentLang = localStorage.getItem('language') || 'el';
-      updateLanguage(currentLang);
-      
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const lang = this.dataset.lang;
-          if (lang !== currentLang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            updateLanguage(lang);
-          }
-        });
-      });
-      
-      function updateLanguage(lang) {
-        // Update buttons
-        document.querySelectorAll('.language-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update slider position
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-        }
-        
-        // Update html lang attribute
-        document.documentElement.lang = lang;
-        
-        // Update all translatable elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
+  // Language switcher functionality - Load from localStorage first
+  let currentLang = localStorage.getItem('language') || 'el';
+  updateLanguage(currentLang);
+  
+  document.querySelectorAll('.language-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      if (lang !== currentLang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        updateLanguage(lang);
       }
-
-      // Services tabs functionality
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabContents = document.querySelectorAll('.tab-content');
-      
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active class from all buttons and contents
-          tabBtns.forEach(b => b.classList.remove('active'));
-          tabContents.forEach(c => c.classList.remove('active'));
-          
-          // Add active class to clicked button and corresponding content
-          btn.classList.add('active');
-          const tabId = btn.dataset.tab;
-          document.getElementById(tabId).classList.add('active');
-        });
-      });
     });
-  </script>
+  });
+  
+  function updateLanguage(lang) {
+    // Update buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    
+    // Update slider position
+    const slider = document.querySelector('.language-slider');
+    if (slider) {
+      slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+    }
+    
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Services tabs functionality
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons and contents
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding content
+      btn.classList.add('active');
+      const tabId = btn.dataset.tab;
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -132,6 +132,27 @@ const translations = {
     "save-189": "Save €189 annually",
     "save-289": "Save €289 annually",
     "contact-us": "Contact Us"
+    
+    // Add to English (en) section:
+    ,
+"our-services": "Our Services",
+"services-description": "We provide specialized solutions for your network security and performance",
+"network-monitoring": "24/7 Network Monitoring",
+"network-monitoring-desc": "Continuous monitoring and notification for network issues with immediate response",
+"cloud-management": "Cloud Management", 
+"cloud-management-desc": "Complete cloud solutions for businesses of all sizes",
+"backup-solutions": "Backup & Recovery Solutions",
+"backup-solutions-desc": "Reliable backup and recovery solutions",
+"firewall-management": "Firewall Management",
+"firewall-management-desc": "Network protection with customized security rules",
+"security-audits": "Security Audits",
+"security-audits-desc": "Specialized checks for vulnerabilities and compliance",
+"gdpr-compliance": "GDPR Compliance",
+"gdpr-compliance-desc": "Services for compliance with the General Data Protection Regulation",
+"tech-partners": "We Partner With",
+"tech-partners-desc": "Leading technologies for your network security and performance",
+"ready-to-start": "Ready to get started?",
+"cta-text": "Let our experts help you create a secure and efficient network.",
   },
   el: {
     // Header
@@ -265,5 +286,26 @@ const translations = {
     "save-189": "Εξοικονομείτε 189€ ετησίως",
     "save-289": "Εξοικονομείτε 289€ ετησίως",
     "contact-us": "Επικοινωνήστε μαζί μας"
+    
+    // Add to Greek (el) section:
+    ,
+"our-services": "Οι Υπηρεσίες Μας",
+"services-description": "Προσφέρουμε εξειδικευμένες λύσεις για την ασφάλεια και απόδοση του δικτύου σας",
+"network-monitoring": "24/7 Παρακολούθηση Δικτύου",
+"network-monitoring-desc": "Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου με άμεση ανταπόκριση",
+"cloud-management": "Διαχείριση Cloud",
+"cloud-management-desc": "Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους",
+"backup-solutions": "Λύσεις Backup & Recovery", 
+"backup-solutions-desc": "Αξιόπιστες λύσεις αντιγράφων ασφαλείας και αποκατάστασης",
+"firewall-management": "Διαχείριση Firewall",
+"firewall-management-desc": "Προστασία δικτύου με εξατομικευμένους κανόνες ασφαλείας",
+"security-audits": "Έλεγχοι Ασφαλείας",
+"security-audits-desc": "Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση",
+"gdpr-compliance": "Συμμόρφωση GDPR",
+"gdpr-compliance-desc": "Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων",
+"tech-partners": "Συνεργαζόμαστε με",
+"tech-partners-desc": "Κορυφαίες τεχνολογίες για την ασφάλεια και απόδοση του δικτύου σας",
+"ready-to-start": "Έτοιμοι να ξεκινήσετε;",
+"cta-text": "Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές και αποδοτικό δίκτυο."
   }
 };
