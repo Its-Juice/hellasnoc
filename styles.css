@@ -58,6 +58,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Enhanced animations for headings and text */
@@ -1055,13 +1058,18 @@ textarea.form-control {
 footer {
   background: var(--primary);
   color: var(--white);
-  padding: 4rem 1rem 2rem;
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .footer-column h3 {
@@ -1113,6 +1121,9 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.9rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  padding: 2rem 1.5rem 0;
 }
 
 /* ==================== */
