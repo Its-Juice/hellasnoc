@@ -7,6 +7,105 @@
   <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Additional styles for the fixed tab functionality */
+    .services-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--gray-200);
+      flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: var(--transition);
+      border-bottom: 3px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .service-features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    
+    .service-features li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+    
+    .service-features li i {
+      color: var(--success);
+    }
+    
+    .tech-partners-section {
+      padding: 4rem 1rem;
+      background: var(--white);
+    }
+    
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .partner-logo img {
+      max-height: 50px;
+      width: auto;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -72,102 +171,98 @@
           <span data-i18n="security-services">Υπηρεσίες Ασφαλείας</span>
         </button>
       </div>
-    </div>
-  </section>
-
-  <!-- Network Services -->
-  <section class="tab-content active" id="network">
-    <div class="container">
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-network-wired"></i>
+      
+      <!-- Network Services -->
+      <div class="tab-content active" id="network-tab">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση Δικτύου</h3>
+            <p data-i18n="network-monitoring-desc">Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου με άμεση ανταπόκριση</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-1">Παρακολούθηση uptime/downtime</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-2">Στατιστικά εύρους ζώνης</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-3">Προειδοποιήσεις μέσω email/SMS</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση Δικτύου</h3>
-          <p data-i18n="network-monitoring-desc">Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου με άμεση ανταπόκριση</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-1">Παρακολούθηση uptime/downtime</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-2">Στατιστικά εύρους ζώνης</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-3">Προειδοποιήσεις μέσω email/SMS</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cloud"></i>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 data-i18n="cloud-management">Διαχείριση Cloud</h3>
+            <p data-i18n="cloud-management-desc">Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-1">Διαχείριση AWS/Azure/Google Cloud</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-2">Private cloud υπηρεσίες</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-3">Αυτοματοποιημένη κλιμάκωση</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="cloud-management">Διαχείριση Cloud</h3>
-          <p data-i18n="cloud-management-desc">Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-1">Διαχείριση AWS/Azure/Google Cloud</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-2">Private cloud υπηρεσίες</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="cloud-feature-3">Αυτοματοποιημένη κλιμάκωση</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-database"></i>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 data-i18n="backup-solutions">Λύσεις Backup & Recovery</h3>
+            <p data-i18n="backup-solutions-desc">Αξιόπιστες λύσεις αντιγράφων ασφαλείας και αποκατάστασης</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-1">Ημερήσια/ωριαία backups</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-2">Off-site αποθήκευση</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-3">Σχεδιασμός disaster recovery</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="backup-solutions">Λύσεις Backup & Recovery</h3>
-          <p data-i18n="backup-solutions-desc">Αξιόπιστες λύσεις αντιγράφων ασφαλείας και αποκατάστασης</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-1">Ημερήσια/ωριαία backups</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-2">Off-site αποθήκευση</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="backup-feature-3">Σχεδιασμός disaster recovery</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Security Services -->
-  <section class="tab-content" id="security">
-    <div class="container">
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
+      <!-- Security Services -->
+      <div class="tab-content" id="security-tab">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 data-i18n="firewall-management">Διαχείριση Firewall</h3>
+            <p data-i18n="firewall-management-desc">Προστασία δικτύου με εξατομικευμένους κανόνες ασφαλείας</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-1">Παραμετροποίηση firewall</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-2">VPN διαμόρφωση</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-3">Πολιτικές πρόσβασης</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="firewall-management">Διαχείριση Firewall</h3>
-          <p data-i18n="firewall-management-desc">Προστασία δικτύου με εξατομικευμένους κανόνες ασφαλείας</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-1">Παραμετροποίηση firewall</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-2">VPN διαμόρφωση</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="firewall-feature-3">Πολιτικές πρόσβασης</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-search"></i>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 data-i18n="security-audits">Έλεγχοι Ασφαλείας</h3>
+            <p data-i18n="security-audits-desc">Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-1">Δοκιμές διείσδυσης</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-2">Συμμόρφωση GDPR</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-3">Αναφορά ευπαθειών</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="security-audits">Έλεγχοι Ασφαλείας</h3>
-          <p data-i18n="security-audits-desc">Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-1">Δοκιμές διείσδυσης</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-2">Συμμόρφωση GDPR</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="audit-feature-3">Αναφορά ευπαθειών</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-lock"></i>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 data-i18n="gdpr-compliance">Συμμόρφωση GDPR</h3>
+            <p data-i18n="gdpr-compliance-desc">Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-1">Αξιολόγηση κινδύνων</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-2">Εκπαίδευση προσωπικού</span></li>
+              <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-3">Τεκμηρίωση διαδικασιών</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
           </div>
-          <h3 data-i18n="gdpr-compliance">Συμμόρφωση GDPR</h3>
-          <p data-i18n="gdpr-compliance-desc">Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-1">Αξιολόγηση κινδύνων</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-2">Εκπαίδευση προσωπικού</span></li>
-            <li><i class="fas fa-check"></i> <span data-i18n="gdpr-feature-3">Τεκμηρίωση διαδικασιών</span></li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
         </div>
       </div>
     </div>
@@ -236,73 +331,87 @@
 
   <script src="translations.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', function() {
- // Mobile nav toggle - Fixed version
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
-hamburger?.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('active');
-});
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile nav toggle - Fixed version
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      hamburger?.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
 
-  // Language switcher functionality - Load from localStorage first
-  let currentLang = localStorage.getItem('language') || 'el';
-  updateLanguage(currentLang);
-  
-  document.querySelectorAll('.language-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const lang = this.dataset.lang;
-      if (lang !== currentLang) {
-        currentLang = lang;
-        localStorage.setItem('language', lang);
-        updateLanguage(lang);
-      }
-    });
-  });
-  
-  function updateLanguage(lang) {
-    // Update buttons
-    document.querySelectorAll('.language-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-    
-    // Update slider position
-    const slider = document.querySelector('.language-slider');
-    if (slider) {
-      slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-    }
-    
-    // Update html lang attribute
-    document.documentElement.lang = lang;
-    
-    // Update all translatable elements
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-  }
-
-  // Services tabs functionality
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
-  
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons and contents
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabContents.forEach(c => c.classList.remove('active'));
+      // Language switcher functionality - Load from localStorage first
+      let currentLang = localStorage.getItem('language') || 'el';
+      updateLanguage(currentLang);
       
-      // Add active class to clicked button and corresponding content
-      btn.classList.add('active');
-      const tabId = btn.dataset.tab;
-      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+      
+      function updateLanguage(lang) {
+        // Update buttons
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        // Update slider position
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+          slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+        }
+        
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      }
+
+      // Services tabs functionality - Fixed version
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      // Function to switch tabs
+      function switchTab(tabName) {
+        // Hide all tab contents
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // Show the selected tab content
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+        
+        // Update active tab button
+        tabBtns.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.dataset.tab === tabName) {
+            btn.classList.add('active');
+          }
+        });
+      }
+      
+      // Add click event listeners to tab buttons
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.dataset.tab;
+          switchTab(tabId);
+        });
+      });
     });
-  });
-});
-</script>
+  </script>
 </body>
 </html>

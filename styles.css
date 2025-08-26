@@ -209,7 +209,6 @@ nav {
   overflow: hidden;
   transition: height 0.4s ease;
   z-index: 999;
-  display: block !important; /* Force display block for animation to work */
 }
 
 nav.active {
@@ -241,9 +240,9 @@ nav.active .nav-list {
   }
 }
 
-/* Hamburger menu animation fix */
+/* Hamburger menu - Hidden by default, shown only on mobile */
 .hamburger {
-  display: flex;
+  display: none; /* Hidden by default */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -958,7 +957,7 @@ nav.active .nav-list {
 }
 
 /* ==================== */
-/* SERVICES TABS        */
+/* SERVICES TABS - FIXED */
 /* ==================== */
 .services-tabs-section {
   background: var(--background);
@@ -970,6 +969,10 @@ nav.active .nav-list {
   justify-content: center;
   margin-bottom: 3rem;
   border-bottom: 1px solid var(--gray-200);
+  flex-direction: row; /* Ensure horizontal layout */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .tab-btn {
@@ -985,6 +988,8 @@ nav.active .nav-list {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap; /* Prevent text wrapping */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 .tab-btn.active {
@@ -1002,6 +1007,7 @@ nav.active .nav-list {
 
 .tab-content.active {
   display: block;
+  animation: fadeIn 0.5s ease;
 }
 
 .service-features {
@@ -1179,10 +1185,53 @@ footer {
 /* ==================== */
 /* RESPONSIVE DESIGN    */
 /* ==================== */
-@media (min-width: 768px) {
-  /* Navigation */
+@media (max-width: 767px) {
+  /* Show hamburger on mobile */
   .hamburger {
+    display: flex;
+  }
+
+  /* Hide navigation by default on mobile */
+  nav {
     display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  /* Adjust hero padding for mobile */
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Stack services tabs vertically on mobile */
+  .services-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-btn {
+    width: 100%;
+    justify-content: center;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .tab-btn.active {
+    border-bottom: none;
+    border-left-color: var(--primary);
+  }
+}
+
+@media (min-width: 768px) {
+  /* Navigation - Desktop */
+  .hamburger {
+    display: none; /* Hide hamburger on desktop */
   }
 
   nav {
@@ -1191,6 +1240,7 @@ footer {
     height: auto;
     background: transparent;
     box-shadow: none;
+    display: flex !important; /* Force display on desktop */
   }
 
   nav.active {
@@ -1202,6 +1252,7 @@ footer {
     padding: 0;
     opacity: 1;
     gap: 1.5rem;
+    flex-direction: row; /* Horizontal menu on desktop */
   }
 
   .nav-list li {
@@ -1239,6 +1290,12 @@ footer {
   /* Contact */
   .contact-container {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Services tabs - Horizontal on desktop */
+  .services-tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
 
@@ -1280,4 +1337,3 @@ img:hover {
   align-self: center; /* Centers the button horizontally */
   min-width: 160px; /* Ensures consistent button width */
 }
-
