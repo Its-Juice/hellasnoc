@@ -7,11 +7,11 @@ This repository contains the source code and assets used to build and maintain t
 
 ## 🔒 License & Usage
 
-⚠️ **Important Notice**  
-This project is **completely proprietary**.  
-- The source code, design, and all related assets are the exclusive property of **HellasNOC**.  
-- **No copying, redistribution, modification, or reuse** is allowed without explicit written permission from HellasNOC.  
-- This repository is provided strictly for organizational and internal use.
+This project (HellasNOC Website) is proprietary software.
+© 2025 John Kapelakos. All rights reserved.
+No use, copying, modification, or distribution is permitted without explicit written permission from the author.
+
+For details, see the full [LICENSE](LICENSE)
 
 ---
 
