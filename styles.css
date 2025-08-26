@@ -1219,3 +1219,15 @@ img:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card .btn {
+  margin-top: auto; /* This pushes the button to the bottom */
+  align-self: center; /* Centers the button horizontally */
+  min-width: 160px; /* Ensures consistent button width */
+}
