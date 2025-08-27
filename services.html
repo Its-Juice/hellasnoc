@@ -8,6 +8,38 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    /* Additional styles for the sliding animation */
+  .tab-content-container {
+    position: relative;
+    min-height: 500px; /* Adjust based on your content height */
+    overflow: hidden;
+  }
+  
+  .tab-content {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
+  
+  .tab-content.active {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+  
+  .tab-content.slide-out-left {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  
+  .tab-content.slide-out-right {
+    transform: translateX(50px);
+    opacity: 0;
+  }
     /* Additional styles for the fixed tab functionality */
     .services-tabs {
       display: flex;
@@ -330,7 +362,9 @@
   </footer>
 
   <script src="translations.js"></script>
+  
   <script>
+    
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile nav toggle - Fixed version
       const hamburger = document.querySelector('.hamburger');
@@ -412,6 +446,102 @@
         });
       });
     });
+     document.addEventListener('DOMContentLoaded', function() {
+    // Mobile nav toggle - Fixed version
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    hamburger?.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    // Language switcher functionality - Load from localStorage first
+    let currentLang = localStorage.getItem('language') || 'el';
+    updateLanguage(currentLang);
+    
+    document.querySelectorAll('.language-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const lang = this.dataset.lang;
+        if (lang !== currentLang) {
+          currentLang = lang;
+          localStorage.setItem('language', lang);
+          updateLanguage(lang);
+        }
+      });
+    });
+    
+    function updateLanguage(lang) {
+      // Update buttons
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      // Update slider position
+      const slider = document.querySelector('.language-slider');
+      if (slider) {
+        slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+      }
+      
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Services tabs functionality with sliding animation
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    let currentTab = 'network'; // Default tab
+    
+    // Function to switch tabs with animation
+    function switchTab(tabName) {
+      // If clicking the same tab, do nothing
+      if (tabName === currentTab) return;
+      
+      const currentTabContent = document.getElementById(`${currentTab}-tab`);
+      const nextTabContent = document.getElementById(`${tabName}-tab`);
+      
+      // Determine animation direction
+      const currentIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === currentTab);
+      const nextIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === tabName);
+      const direction = nextIndex > currentIndex ? 'right' : 'left';
+      
+      // Add appropriate animation classes
+      currentTabContent.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
+      nextTabContent.classList.add('active');
+      
+      // After animation completes, clean up classes
+      setTimeout(() => {
+        currentTabContent.classList.remove('active', 'slide-out-left', 'slide-out-right');
+        nextTabContent.classList.remove('slide-out-left', 'slide-out-right');
+        currentTab = tabName;
+      }, 500); // Match this timeout with CSS transition duration
+      
+      // Update active tab button
+      tabBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabName) {
+          btn.classList.add('active');
+        }
+      });
+    }
+    
+    // Add click event listeners to tab buttons
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        switchTab(tabId);
+      });
+    });
+  });
   </script>
 </body>
 </html>
