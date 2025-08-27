@@ -224,13 +224,18 @@ hamburger?.addEventListener('click', () => {
         });
       }
 
-      // Simple form feedback
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert(translations[currentLang]?.['message-sent-alert'] || 'Το μήνυμά σας εστάλη με επιτυχία! Θα σας απαντήσουμε το συντομότερο δυνατό.');
-        this.reset();
-      });
-    });
+ // In contact.html, update the form validation code
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  if (!email.includes('@')) {
+    alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
+    return;
+  }
+  // Submit form via AJAX or show success message
+  alert(translations[currentLang]['message-sent-alert']);
+  this.reset();
+});
   </script>
 </body>
 </html>
