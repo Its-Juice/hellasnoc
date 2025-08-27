@@ -1,7 +1,11 @@
 # HellasNOC Website
 
-The official website for **HellasNOC**.  
+The official website for **HellasNOC**.
 This repository contains the source code and assets used to build and maintain the HellasNOC online presence.
+
+---
+
+![HellasNOC Logo](assets/img/HellasNOC-Logo-Transparent.png)
 
 ---
 
@@ -17,16 +21,15 @@ For details, see the full [LICENSE](LICENSE)
 
 ## 🚫 Contributions
 
-This is not an open source project.  
+This is not an open source project.
 We do **not** accept pull requests, issues, or external contributions.
 
 ---
 
 ## 📞 Contact
 
-For inquiries regarding the HellasNOC website, please reach out via:  
-📧 Email: [info@hellasnoc.gr](mailto:info@hellasnoc.gr)  
+For inquiries regarding the HellasNOC website, please reach out via:
+📧 Email: [info@hellasnoc.gr](mailto:info@hellasnoc.gr)
 🌐 Website: [https://its-juice.github.io/hellasnoc/index.html](https://its-juice.github.io/hellasnoc/index.html)
 
 ---
-
