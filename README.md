@@ -7,7 +7,7 @@ This repository contains the source code and assets used to build and maintain t
 
 ## 🎯 What we do
 
-HellasNOC (Hellenic Networking ΕΠΕ) is a private company specializing in network operations and infrastructure management in Greece. The company provides comprehensive services to monitor, optimize, and maintain network performance for businesses, ISPs, and data centers.  
+HellasNOC (Hellenic Networking Operations Center ΑΕ) is a private company specializing in network operations and infrastructure management in Greece. The company provides comprehensive services to monitor, optimize, and maintain network performance for businesses, ISPs, and data centers.  
 
 ## Key Services
 - **Network Monitoring:** Proactive monitoring of network health, uptime, and performance metrics.
