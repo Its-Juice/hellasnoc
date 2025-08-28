@@ -717,14 +717,15 @@ nav.active .nav-list {
   margin: 2rem auto;
   transition: all 0.3s ease;
   overflow: hidden;
+  padding: 4px;
 }
 
 .price-toggle-slider {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: calc(50% - 6px);
-  height: calc(100% - 6px);
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 8px); /* Half width minus padding */
+  height: calc(100% - 8px);
   background: var(--white);
   border-radius: 50px;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -754,6 +755,7 @@ nav.active .nav-list {
   color: var(--gray-500);
   padding: 0;
   height: 100%;
+  font-size: 0.95rem;
 }
 
 .price-toggle-btn.active {
@@ -769,13 +771,26 @@ nav.active .nav-list {
   transform: scale(0.98);
 }
 
-.price-toggle-btn:hover {
-  color: var(--primary-light);
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .price-toggle {
+    width: 200px;
+    height: 45px;
+    padding: 3px;
+  }
+  
+  .price-toggle-slider {
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 6px);
+    height: calc(100% - 6px);
+  }
+  
+  .price-toggle-btn {
+    font-size: 0.9rem;
+  }
 }
 
-.price-toggle-btn:active {
-  transform: scale(0.98);
-}
 
 .pricing-cards {
   display: grid;

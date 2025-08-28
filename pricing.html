@@ -188,7 +188,7 @@
   </footer>
 
   <script src="translations.js"></script>
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   // --- Language switch / i18n ---
   let currentLang = localStorage.getItem('language') || 'el';
@@ -249,45 +249,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-function showMonthly() {
-  monthlyToggle.classList.add('active');
-  annualToggle.classList.remove('active');
-  if (priceSlider) priceSlider.style.transform = 'translateX(0)';
-  
-  // Hide annual savings
-  document.querySelectorAll('.annual-savings').forEach(el => {
-    el.classList.remove('show');
-  });
-  
-  // Switch to monthly prices
-  document.querySelectorAll('.price-annual').forEach(el => {
-    el.classList.remove('show');
-  });
-  document.querySelectorAll('.price-monthly').forEach(el => {
-    el.classList.add('show');
-  });
-}
+  function showMonthly() {
+    monthlyToggle.classList.add('active');
+    annualToggle.classList.remove('active');
+    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
+    
+    // Hide annual savings
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.classList.remove('show');
+    });
+    
+    // Switch to monthly prices
+    document.querySelectorAll('.price-annual').forEach(el => {
+      el.classList.remove('show');
+    });
+    document.querySelectorAll('.price-monthly').forEach(el => {
+      el.classList.add('show');
+    });
+  }
 
-function showAnnual() {
-  annualToggle.classList.add('active');
-  monthlyToggle.classList.remove('active');
-  if (priceSlider) priceSlider.style.transform = 'translateX(100%)';
-  
-  // Hide monthly prices first
-  document.querySelectorAll('.price-monthly').forEach(el => {
-    el.classList.remove('show');
-  });
-  
-  // Then show annual prices and savings
-  document.querySelectorAll('.price-annual').forEach(el => {
-    el.classList.add('show');
-  });
-  
-  // Show savings
-  document.querySelectorAll('.annual-savings').forEach(el => {
-    el.classList.add('show');
-  });
-}
+  function showAnnual() {
+    annualToggle.classList.add('active');
+    monthlyToggle.classList.remove('active');
+    // FIXED: Translate by 100% of the slider's own width, not the container
+    if (priceSlider) priceSlider.style.transform = 'translateX(calc(100% + 8px))';
+    
+    // Hide monthly prices first
+    document.querySelectorAll('.price-monthly').forEach(el => {
+      el.classList.remove('show');
+    });
+    
+    // Then show annual prices and savings
+    document.querySelectorAll('.price-annual').forEach(el => {
+      el.classList.add('show');
+    });
+    
+    // Show savings
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.classList.add('show');
+    });
+  }
 
   // Event listeners for toggle buttons
   monthlyToggle.addEventListener('click', () => {
@@ -305,6 +306,6 @@ function showAnnual() {
   // Initialize the toggle on page load
   initializeToggle();
 });
-  </script>
+</script>
 </body>
 </html>
