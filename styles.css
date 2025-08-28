@@ -1326,21 +1326,66 @@ img:hover {
   transform: translateY(0);
 }
 
-[file name]: styles.css
-[file content begin]
-/* ... existing CSS code ... */
-
-/* Price Toggle Wrapper */
+/* Enhanced price toggle styling */
 .price-toggle {
-  position: relative;
   display: inline-flex;
-  background: #e5e7eb; /* light gray background */
+  background: var(--gray-200);
   border-radius: 50px;
-  overflow: hidden;
+  padding: 3px;
+  position: relative;
+  height: 50px;
   width: 220px;
-  height: 45px;
   margin: 2rem auto;
-  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.price-toggle:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-toggle-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 6px);
+  height: calc(100% - 6px);
+  background: var(--white);
+  border-radius: 50px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.price-toggle-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.price-toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.price-toggle-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Stagger animations for a more polished feel */
+.price-monthly.show ~ .annual-savings.show,
+.price-annual.show ~ .annual-savings.show {
+  transition-delay: 0.15s;
 }
 
 /* Toggle Buttons */
@@ -1362,6 +1407,11 @@ img:hover {
   font-weight: 600;
 }
 
+/* Add subtle scale effect on toggle for better feedback */
+.price-toggle-btn:active {
+  transform: scale(0.98);
+}
+
 /* Slider background */
 .price-toggle-slider {
   position: absolute;
@@ -1376,51 +1426,37 @@ img:hover {
   z-index: 1;
 }
 
-/* Prices */
-.price {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-  display: none;
-  text-align: center;
-}
+/* ==================== */
+/* PRICE TOGGLE ANIMATION REFINEMENT */
+/* ==================== */
 
-.price.show {
-  display: block;
-}
-
-/* Annual Savings */
-.annual-savings {
-  font-size: 0.9rem;
-  color: #10b981;
-  text-align: center;
-  margin-bottom: 1rem;
-  display: none;
-}
-
-/* Add to your existing styles.css file */
+/* Price elements with smooth transitions */
 .price {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.5rem;
   display: none;
+  opacity: 0;
+  transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .price.show {
   display: block;
-  animation: fadeInUp 0.5s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Annual savings with elegant fade-in */
 .annual-savings {
   color: var(--success);
   font-weight: 600;
   margin-bottom: 1.5rem;
   display: none;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .annual-savings.show {
@@ -1429,72 +1465,61 @@ img:hover {
   transform: translateY(0);
 }
 
-/* Add this animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fix for annual savings jerking issue */
+/* Price container with reserved space */
 .price-container {
-  min-height: 70px; /* Reserve space for price and savings */
+  min-height: 100px; /* Reserve consistent space */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.annual-savings {
-  color: var(--success);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  display: block; /* Always reserve space */
-  height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.5s ease, transform 0.5s ease, height 0.3s ease;
-  overflow: hidden;
+/* Slider animation refinement */
+.price-toggle-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 6px);
+  height: calc(100% - 6px);
+  background: var(--white);
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1;
 }
 
-.annual-savings.show {
-  height: auto;
-  opacity: 1;
-  transform: translateY(0);
-  margin-bottom: 1.5rem; /* Maintain spacing when visible */
+/* Toggle button states */
+.price-toggle-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
-/* Ensure smooth transitions for price changes */
-.price {
-  font-size: 2.5rem;
-  font-weight: 700;
+.price-toggle-btn.active {
   color: var(--primary);
-  margin-bottom: 0.5rem;
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-weight: 600;
 }
 
-.price.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+/* Add subtle hover effect */
+.price-toggle-btn:hover {
+  color: var(--primary-light);
 }
-
-/* Add a container for the device limit to maintain consistent spacing */
+/* Device limit styling */
 .device-limit {
   color: var(--text-light);
   margin-bottom: 1.5rem;
-  min-height: 24px; /* Reserve space for this element */
+  min-height: 24px;
+  transition: all 0.3s ease;
 }
 
-/* Add to styles.css - Service card improvements for consistent button alignment */
 .service-card {
   background: var(--white);
   border-radius: var(--radius);
