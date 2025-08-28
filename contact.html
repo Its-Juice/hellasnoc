@@ -157,34 +157,37 @@
   <script src="translations.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-// Mobile nav toggle - Fixed version
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
-hamburger?.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('active');
-});
+      // Mobile nav toggle - Fixed version
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      
+      hamburger?.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+      
       // Set default language to Greek ('el') regardless of browser preference
       let currentLang = localStorage.getItem('language') || 'el';
       
       // Update UI
       updateLanguage(currentLang);
       
-      //Form Validation
+      // Form Validation
       document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  if (!email.includes('@')) {
-    alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
-    return;
-  }
-  // Submit form via AJAX or show success message
-  document.getElementById('form-success').style.display = 'block';
-});
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        if (!email.includes('@')) {
+          alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
+          return;
+        }
+        // Submit form via AJAX or show success message
+        alert(translations[currentLang]['message-sent-alert']);
+        this.reset();
+      });
       
-      // Handle language switch
+      // Handle language switch - Fixed to properly target language buttons
       document.querySelectorAll('.language-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const lang = this.dataset.lang;
@@ -195,10 +198,6 @@ hamburger?.addEventListener('click', () => {
           }
         });
       });
-      
-      hamburger.addEventListener('click', () => {
-  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-});
       
       function updateLanguage(lang) {
         // Update buttons
@@ -223,19 +222,7 @@ hamburger?.addEventListener('click', () => {
           }
         });
       }
-
- // In contact.html, update the form validation code
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  if (!email.includes('@')) {
-    alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
-    return;
-  }
-  // Submit form via AJAX or show success message
-  alert(translations[currentLang]['message-sent-alert']);
-  this.reset();
-});
+    });
   </script>
 </body>
 </html>
