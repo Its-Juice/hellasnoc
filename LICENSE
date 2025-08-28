@@ -1,75 +1,79 @@
 # Proprietary Software License Agreement  
-# Συμφωνία Άδειας Χρήσης Ιδιοκτησιακού Λογισμικού
+## Συμφωνία Άδειας Χρήσης Ιδιοκτησιακού Λογισμικού  
 
-Copyright © 2025  
+**Copyright © 2025**  
 **Hellenic Networking Operations Center ΑΕ**  
 CEO: **Ioannis Kapelakos**  
-All Rights Reserved.  
-Παντός Δικαιώματος Διατηρούμενου.  
+All Rights Reserved / Παντός Δικαιώματος Διατηρούμενου  
 
 ---
 
-## 1. Ownership / Ιδιοκτησία
-**EN:** The Software, including without limitation all source code, object code, design, structure, user interface, documentation, and all intellectual property rights therein, is and shall remain the sole and exclusive property of **Hellenic Networking Operations Center ΑΕ**, represented by CEO **Ioannis Kapelakos** (“Licensor”).  
+# English Version  
 
-**GR:** Το Λογισμικό, συμπεριλαμβανομένου χωρίς περιορισμό όλου του πηγαίου κώδικα, εκτελέσιμου κώδικα, σχεδίασης, δομής, διεπαφής χρήστη, τεκμηρίωσης και όλων των συναφών δικαιωμάτων πνευματικής ιδιοκτησίας, ανήκει και θα παραμένει στην αποκλειστική ιδιοκτησία της **Hellenic Networking Operations Center ΑΕ**, εκπροσωπούμενης από τον Διευθύνοντα Σύμβουλο **Ιωάννη Καπελάκο** (“Δικαιοπάροχος”).  
+## 1. Ownership  
+The Software, including without limitation all source code, object code, design, structure, user interface, documentation, and all intellectual property rights therein, is and shall remain the sole and exclusive property of **Hellenic Networking Operations Center ΑΕ**, represented by CEO **Ioannis Kapelakos** (“Licensor”).  
 
----
+## 2. Grant of Rights  
+No license or rights of any kind are granted under this Agreement. The Software is provided strictly on a proprietary and confidential basis. Any use, reproduction, modification, distribution, sublicensing, sale, lease, or other exploitation of the Software, in whole or in part, is expressly prohibited unless authorized in writing by Licensor.  
 
-## 2. Grant of Rights / Παραχώρηση Δικαιωμάτων
-**EN:** No license or rights of any kind are granted under this Agreement. The Software is provided strictly on a proprietary and confidential basis. Any use, reproduction, modification, distribution, sublicensing, sale, lease, or other exploitation is expressly prohibited unless authorized in writing by Licensor.  
+## 3. Restrictions  
+You shall not, directly or indirectly:  
+- Use the Software without prior written consent from Licensor;  
+- Copy, reproduce, translate, or create derivative works;  
+- Distribute, publish, disclose, or make available to any third party;  
+- Reverse engineer, decompile, disassemble, or attempt to derive source code;  
+- Remove, obscure, or alter any proprietary notices or trademarks.  
 
-**GR:** Δεν παραχωρείται καμία άδεια ή δικαίωμα οποιασδήποτε μορφής βάσει της παρούσας Συμφωνίας. Το Λογισμικό παρέχεται αποκλειστικά σε ιδιοκτησιακή και εμπιστευτική βάση. Οποιαδήποτε χρήση, αναπαραγωγή, τροποποίηση, διανομή, υπεραδειοδότηση, πώληση, εκμίσθωση ή άλλη εκμετάλλευση απαγορεύεται ρητώς εκτός εάν έχει εγκριθεί εγγράφως από τον Δικαιοπάροχο.  
+## 4. No Warranty  
+The Software is provided **“AS IS”**, without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.  
 
----
+## 5. Limitation of Liability  
+To the maximum extent permitted by law, Licensor shall not be liable for any damages, whether direct, indirect, incidental, consequential, or special, arising out of or relating to the Software or this Agreement.  
 
-## 3. Restrictions / Περιορισμοί
-**EN:** You shall not, directly or indirectly:  
-a. Use the Software without prior written consent from Licensor.  
-b. Copy, reproduce, translate, or create derivative works.  
-c. Distribute, publish, disclose, or share with third parties.  
-d. Reverse engineer, decompile, disassemble, or derive source code.  
-e. Remove or alter any proprietary notices or trademarks.  
+## 6. Termination  
+Any unauthorized use of the Software constitutes a material breach of this Agreement. Licensor reserves the right to pursue all available remedies under Greek law, including injunctive relief and damages.  
 
-**GR:** Δεν επιτρέπεται, άμεσα ή έμμεσα:  
-α. Να χρησιμοποιήσετε το Λογισμικό χωρίς προηγούμενη γραπτή συγκατάθεση.  
-β. Να αντιγράψετε, αναπαράγετε, μεταφράσετε ή δημιουργήσετε παράγωγα έργα.  
-γ. Να διανείμετε, δημοσιεύσετε, γνωστοποιήσετε ή διαθέσετε σε τρίτους.  
-δ. Να προβείτε σε ανακατασκευή, αποσυμπίληση ή εξαγωγή πηγαίου κώδικα.  
-ε. Να αφαιρέσετε ή να τροποποιήσετε σημειώσεις ιδιοκτησίας ή σήματα.  
+## 7. Governing Law  
+This Agreement shall be governed by and construed in accordance with the laws of **Greece**, with exclusive jurisdiction of the Greek courts.  
 
----
-
-## 4. No Warranty / Αποποίηση Εγγυήσεων
-**EN:** The Software is provided **“AS IS”**, without any warranty of any kind, express or implied.  
-**GR:** Το Λογισμικό παρέχεται **“ΩΣ ΕΧΕΙ”**, χωρίς καμία εγγύηση οποιασδήποτε μορφής, ρητής ή σιωπηρής.  
+### Notice  
+HellasNOC Website is proprietary software. Unauthorized possession, use, or distribution is strictly prohibited and may result in civil and/or criminal liability.  
 
 ---
 
-## 5. Limitation of Liability / Περιορισμός Ευθύνης
-**EN:** To the maximum extent permitted by law, Licensor shall not be liable for any damages arising from use of the Software.  
-**GR:** Στο μέγιστο βαθμό που επιτρέπεται από το νόμο, ο Δικαιοπάροχος δεν ευθύνεται για οποιεσδήποτε ζημίες προκύψουν από τη χρήση του Λογισμικού.  
+# Ελληνική Έκδοση  
+
+## 1. Ιδιοκτησία  
+Το Λογισμικό, συμπεριλαμβανομένου πηγαίου κώδικα, εκτελέσιμου κώδικα, σχεδίασης, διεπαφής χρήστη, τεκμηρίωσης και όλων των δικαιωμάτων πνευματικής ιδιοκτησίας, ανήκει και θα παραμένει στην αποκλειστική ιδιοκτησία της **Hellenic Networking Operations Center ΑΕ**, εκπροσωπούμενης από τον Διευθύνοντα Σύμβουλο **Ιωάννη Καπελάκο** (“Δικαιοπάροχος”).  
+
+## 2. Παραχώρηση Δικαιωμάτων  
+Δεν παραχωρείται καμία άδεια ή δικαίωμα οποιασδήποτε μορφής βάσει της παρούσας Συμφωνίας. Το Λογισμικό παρέχεται αποκλειστικά σε ιδιοκτησιακή και εμπιστευτική βάση. Οποιαδήποτε χρήση, αναπαραγωγή, τροποποίηση, διανομή, υπεραδειοδότηση, πώληση, εκμίσθωση ή άλλη εκμετάλλευση, εν όλω ή εν μέρει, απαγορεύεται ρητώς εκτός εάν έχει εγκριθεί εγγράφως από τον Δικαιοπάροχο.  
+
+## 3. Περιορισμοί  
+Απαγορεύεται, άμεσα ή έμμεσα:  
+- Η χρήση του Λογισμικού χωρίς προηγούμενη γραπτή συγκατάθεση του Δικαιοπαρόχου·  
+- Η αντιγραφή, αναπαραγωγή, μετάφραση ή δημιουργία παράγωγων έργων·  
+- Η διανομή, δημοσίευση, γνωστοποίηση ή διάθεσή του σε τρίτους·  
+- Η ανακατασκευή, αποσυμπίληση ή απόπειρα εξαγωγής πηγαίου κώδικα·  
+- Η αφαίρεση, απόκρυψη ή αλλοίωση σημειώσεων ιδιοκτησίας ή εμπορικών σημάτων.  
+
+## 4. Αποποίηση Εγγυήσεων  
+Το Λογισμικό παρέχεται **“ΩΣ ΕΧΕΙ”**, χωρίς καμία εγγύηση οποιασδήποτε μορφής, ρητής ή σιωπηρής, συμπεριλαμβανομένων ενδεικτικά εγγυήσεων εμπορευσιμότητας, καταλληλότητας για συγκεκριμένο σκοπό ή μη παραβίασης δικαιωμάτων.  
+
+## 5. Περιορισμός Ευθύνης  
+Στο μέγιστο βαθμό που επιτρέπεται από το νόμο, ο Δικαιοπάροχος δεν ευθύνεται για οποιεσδήποτε ζημίες, άμεσες, έμμεσες, παρεπόμενες, αποθετικές ή ειδικές, που προκύπτουν από ή σχετίζονται με το Λογισμικό ή την παρούσα Συμφωνία.  
+
+## 6. Λύση  
+Κάθε μη εξουσιοδοτημένη χρήση του Λογισμικού συνιστά ουσιώδη παραβίαση της Συμφωνίας. Ο Δικαιοπάροχος διατηρεί το δικαίωμα να επιδιώξει όλα τα διαθέσιμα ένδικα μέσα βάσει του ελληνικού δικαίου, συμπεριλαμβανομένων ασφαλιστικών μέτρων και αποζημιώσεων.  
+
+## 7. Εφαρμοστέο Δίκαιο  
+Η Συμφωνία διέπεται και ερμηνεύεται σύμφωνα με το δίκαιο της **Ελλάδας**, με αποκλειστική δικαιοδοσία των ελληνικών δικαστηρίων.  
+
+### Σημείωση  
+Ο Ιστότοπος HellasNOC αποτελεί ιδιοκτησιακό λογισμικό. Μη εξουσιοδοτημένη κατοχή, χρήση ή διανομή απαγορεύεται αυστηρά και ενδέχεται να επιφέρει αστική και/ή ποινική ευθύνη.  
 
 ---
 
-## 6. Termination / Λύση
-**EN:** Any unauthorized use constitutes a material breach. Licensor may pursue legal and equitable remedies.  
-**GR:** Κάθε μη εξουσιοδοτημένη χρήση συνιστά ουσιώδη παραβίαση. Ο Δικαιοπάροχος μπορεί να επιδιώξει όλα τα νόμιμα και δίκαια μέσα.  
-
----
-
-## 7. Governing Law / Εφαρμοστέο Δίκαιο
-**EN:** This Agreement is governed by the laws of **Greece**, with exclusive jurisdiction of the Greek courts.  
-**GR:** Η παρούσα Συμφωνία διέπεται από το δίκαιο της **Ελλάδας**, με αποκλειστική δικαιοδοσία των ελληνικών δικαστηρίων.  
-
----
-
-## Notice / Σημείωση
-**EN:** HellasNOC Website is proprietary software. Unauthorized possession, use, or distribution is strictly prohibited and may result in civil and/or criminal liability.  
-**GR:** Ο Ιστότοπος HellasNOC είναι ιδιοκτησιακό λογισμικό. Μη εξουσιοδοτημένη κατοχή, χρήση ή διανομή απαγορεύεται αυστηρά και ενδέχεται να επιφέρει αστική και/ή ποινική ευθύνη.  
-
----
-
-**© 2025 Hellenic Networking Operations Center ΑΕ – CEO Ioannis Kapelakos. All Rights Reserved.**  
-**© 2025 Hellenic Networking Operations Center ΑΕ – Διευθύνων Σύμβουλος Ιωάννης Καπελάκος. Παντός Δικαιώματος Διατηρούμενου.**
+© 2025 **Hellenic Networking Operations Center ΑΕ** – CEO Ioannis Kapelakos  
+© 2025 **Hellenic Networking Operations Center ΑΕ** – Διευθύνων Σύμβουλος Ιωάννης Καπελάκος  
 
