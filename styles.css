@@ -1493,3 +1493,95 @@ textarea:focus-visible {
 .skip-link:focus {
   top: 0;
 }
+
+   /* Footer-specific styles */
+    footer {
+      background: #005bae;
+      color: white;
+      padding: 4rem 0 2rem;
+      margin-top: auto;
+      width: 100%;
+      text-align: center; /* Center all footer content */
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center columns horizontally */
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-column {
+      width: 100%;
+      max-width: 300px; /* Limit column width for better readability */
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: #1a75cf;
+      border-radius: 2px;
+    }
+
+    .footer-column p, .footer-column li {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      max-width: 1200px;
+      margin: 4rem auto 0;
+      padding: 2rem 1.5rem 0;
+    }
+
+    /* Responsive design */
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+      
+      .footer-column {
+        text-align: center;
+      }
+    }
