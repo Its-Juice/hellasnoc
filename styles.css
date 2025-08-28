@@ -1493,3 +1493,45 @@ img:hover {
   margin-bottom: 1.5rem;
   min-height: 24px; /* Reserve space for this element */
 }
+
+/* Add to styles.css - Service card improvements for consistent button alignment */
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make cards take full height of grid cell */
+}
+
+.service-card .btn {
+  margin-top: auto; /* Push button to bottom of card */
+  align-self: center; /* Center the button horizontally */
+  min-width: 160px; /* Ensure consistent button width */
+  justify-content: center;
+}
+
+/* Ensure service features have consistent spacing */
+.service-features {
+  list-style: none;
+  margin: 1.5rem 0;
+  flex-grow: 1; /* Allow features to take available space */
+}
+
+/* Add smooth transition for language changes */
+.service-card h3,
+.service-card p,
+.service-features li {
+  transition: all 0.3s ease;
+}
+
+/* Make sure all service cards have equal height in grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: stretch; /* Make grid items stretch to equal height */
+}
