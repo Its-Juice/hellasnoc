@@ -1326,14 +1326,170 @@ img:hover {
   transform: translateY(0);
 }
 
-.pricing-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+[file name]: styles.css
+[file content begin]
+/* ... existing CSS code ... */
+
+/* Price Toggle Wrapper */
+.price-toggle {
+  position: relative;
+  display: inline-flex;
+  background: #e5e7eb; /* light gray background */
+  border-radius: 50px;
+  overflow: hidden;
+  width: 220px;
+  height: 45px;
+  margin: 2rem auto;
+  user-select: none;
 }
 
-.pricing-card .btn {
-  margin-top: auto; /* This pushes the button to the bottom */
-  align-self: center; /* Centers the button horizontally */
-  min-width: 160px; /* Ensures consistent button width */
+/* Toggle Buttons */
+.price-toggle-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.price-toggle-btn.active {
+  color: #005bae;
+  font-weight: 600;
+}
+
+/* Slider background */
+.price-toggle-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 6px);
+  height: calc(100% - 6px);
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Prices */
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  display: none;
+  text-align: center;
+}
+
+.price.show {
+  display: block;
+}
+
+/* Annual Savings */
+.annual-savings {
+  font-size: 0.9rem;
+  color: #10b981;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+/* Add to your existing styles.css file */
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.price.show {
+  display: block;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.annual-savings {
+  color: var(--success);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.annual-savings.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add this animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fix for annual savings jerking issue */
+.price-container {
+  min-height: 70px; /* Reserve space for price and savings */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.annual-savings {
+  color: var(--success);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: block; /* Always reserve space */
+  height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.3s ease;
+  overflow: hidden;
+}
+
+.annual-savings.show {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 1.5rem; /* Maintain spacing when visible */
+}
+
+/* Ensure smooth transitions for price changes */
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.price.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a container for the device limit to maintain consistent spacing */
+.device-limit {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  min-height: 24px; /* Reserve space for this element */
 }

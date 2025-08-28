@@ -414,53 +414,55 @@
       const tabContents = document.querySelectorAll('.tab-content');
       let currentTab = 'network'; // Default tab
       
-      // Function to switch tabs with animation
-      function switchTab(tabName) {
-        // If clicking the same tab, do nothing
-        if (tabName === currentTab) return;
-        
-        const currentTabContent = document.getElementById(`${currentTab}-tab`);
-        const nextTabContent = document.getElementById(`${tabName}-tab`);
-        
-        // Determine animation direction
-        const currentIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === currentTab);
-        const nextIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === tabName);
-        const direction = nextIndex > currentIndex ? 'right' : 'left';
-        
-        // Add exit animation to current tab
-        currentTabContent.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
-        
-        // Prepare next tab with initial state
-        nextTabContent.classList.add('active');
-        nextTabContent.style.transform = direction === 'right' ? 'translateX(30px)' : 'translateX(-30px)';
-        nextTabContent.style.opacity = '0';
-        
-        // Force reflow to ensure initial state is applied
-        nextTabContent.offsetHeight;
-        
-        // Animate next tab in
-        setTimeout(() => {
-          nextTabContent.style.transform = 'translateX(0)';
-          nextTabContent.style.opacity = '1';
-        }, 10);
-        
-        // After animation completes, clean up classes
-        setTimeout(() => {
-          currentTabContent.classList.remove('active', 'slide-out-left', 'slide-out-right');
-          nextTabContent.classList.remove('slide-out-left', 'slide-out-right');
-          nextTabContent.style.transform = '';
-          nextTabContent.style.opacity = '';
-          currentTab = tabName;
-        }, 400); // Match this timeout with CSS transition duration
-        
-        // Update active tab button
-        tabBtns.forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.dataset.tab === tabName) {
-            btn.classList.add('active');
-          }
-        });
-      }
+function switchTab(tabName) {
+  if (tabName === currentTab) return;
+
+  const currentTabContent = document.getElementById(`${currentTab}-tab`);
+  const nextTabContent = document.getElementById(`${tabName}-tab`);
+
+  const currentIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === currentTab);
+  const nextIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === tabName);
+  const direction = nextIndex > currentIndex ? 'right' : 'left';
+
+  // Exit animation for current tab
+  currentTabContent.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
+
+  // Prepare next tab
+  nextTabContent.classList.add('active');
+  const cards = nextTabContent.querySelectorAll('.service-card');
+
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = direction === 'right' ? 'translateX(100vw)' : 'translateX(-100vw)';
+    card.style.transition = 'all 0.6s ease';
+  });
+
+  // Force reflow
+  nextTabContent.offsetHeight;
+
+  // Animate cards in with stagger from off-screen
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateX(0)';
+    }, i * 150); // 150ms stagger per card
+  });
+
+  // Cleanup after animation
+  setTimeout(() => {
+    currentTabContent.classList.remove('active', 'slide-out-left', 'slide-out-right');
+    cards.forEach(card => {
+      card.style.opacity = '';
+      card.style.transform = '';
+      card.style.transition = '';
+    });
+    currentTab = tabName;
+  }, 800 + cards.length * 150);
+
+  // Update tab buttons
+  tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+}
+
       
       // Add click event listeners to tab buttons
       tabBtns.forEach(btn => {
