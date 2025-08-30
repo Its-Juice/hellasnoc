@@ -296,6 +296,96 @@
     </div>
   </section>
 
+  <!-- Zero-Risk Guarantee Section -->
+  <section class="guarantees">
+    <div class="container">
+      <h2 data-i18n="guarantee-title">Εγγύηση Χωρίς Κίνδυνο</h2>
+      <p data-i18n="guarantee-subtitle" class="guarantee-subtitle">Δοκιμάστε τις υπηρεσίες μας με απόλυτη εμπιστοσύνη</p>
+      
+      <div class="guarantee-grid">
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 data-i18n="guarantee-1-title">30-Hμερη Δοκιμή</h3>
+          <p data-i18n="guarantee-1-desc">Δοκιμάστε τις υπηρεσίες μας χωρίς ρίσκο για 30 ημέρες</p>
+        </div>
+        
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3 data-i18n="guarantee-2-title">Εγγύηση Προστασίας</h3>
+          <p data-i18n="guarantee-2-desc">Θα διορθώσουμε οποιαδήποτε παραβίαση ασφαλείας χωρίς επιπλέον κόστος</p>
+        </div>
+        
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 data-i18n="guarantee-3-title">Χωρίς Μακροπρόθεσμες Συμβάσεις</h3>
+          <p data-i18n="guarantee-3-desc">Ακυρώστε ανά πάσα στιγμή με 30ήμερη προειδοποίηση</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Explanation Section -->
+  <section class="process-section">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-i18n="process-title">Η Διαδικασία Μας</h2>
+      <p data-i18n="process-subtitle">Πώς λειτουργούμε για να εξασφαλίσουμε την ασφάλεια του δικτύου σας</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="step-number">1</div>
+          <h3 data-i18n="step-1-title">Αξιολόγηση</h3>
+          <p data-i18n="step-1-desc">Αναλύουμε το τρέχον δίκτυό σας και εντοπίζουμε αδυναμίες</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="fas fa-pencil-alt"></i>
+          </div>
+          <div class="step-number">2</div>
+          <h3 data-i18n="step-2-title">Σχεδιασμός</h3>
+          <p data-i18n="step-2-desc">Δημιουργούμε μια εξατομικευμένη λύση για τις ανάγκες σας</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="step-number">3</div>
+          <h3 data-i18n="step-3-title">Εφαρμογή</h3>
+          <p data-i18n="step-3-desc">Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <div class="step-number">4</div>
+          <h3 data-i18n="step-4-title">Συντήρηση</h3>
+          <p data-i18n="step-4-desc">Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Technology Partners -->
   <section class="tech-partners-section">
     <div class="container">
@@ -360,6 +450,37 @@
 
   <script src="translations.js"></script>
   <script>
+    // Process steps animation
+function animateProcessSteps() {
+  const processSteps = document.querySelectorAll('.process-step');
+  const processSection = document.querySelector('.process-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        processSteps.forEach((step, index) => {
+          setTimeout(() => {
+            step.classList.add('animate');
+          }, index * 200);
+        });
+        observer.unobserve(processSection);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  if (processSection) {
+    observer.observe(processSection);
+  }
+}
+
+// Call the function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Your existing code...
+  
+  // Add process steps animation
+  animateProcessSteps();
+});
+
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile nav toggle - Fixed version
       const hamburger = document.querySelector('.hamburger');
