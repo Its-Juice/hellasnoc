@@ -1585,3 +1585,194 @@ textarea:focus-visible {
         text-align: center;
       }
     }
+
+    /* Value Proposition Section */
+.value-proposition {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.value-proposition h2 {
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-item h3 {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.value-item p {
+  color: var(--text-light);
+}
+
+/* ==================== */
+/* ENTERPRISE CARD STYLES */
+/* ==================== */
+
+.enterprise-card {
+  position: relative;
+}
+
+.enterprise-price-container {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.enterprise-solution-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.enterprise-solution-desc {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enterprise-card .btn {
+  margin-top: auto;
+  align-self: center;
+  min-width: 160px;
+  justify-content: center;
+}
+
+/* Adjust feature list for enterprise card */
+.enterprise-card .pricing-features {
+  margin-bottom: 1.8rem;
+}
+
+/* Ensure price toggle doesn't affect enterprise card */
+.enterprise-card .price-container {
+  display: none;
+}
+
+.enterprise-card .annual-savings {
+  display: none;
+}
+
+/* Value Proposition Icons */
+.value-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+/* Section spacing */
+.pricing-section,
+.value-proposition-section,
+.technologies-section,
+.faq-section {
+  padding: 4rem 1rem;
+}
+
+.value-proposition-section {
+  background: var(--white);
+}
+
+.technologies-section {
+  background: var(--background);
+}
+
+.faq-section {
+  background: var(--white);
+}
+
+/* Guarantees section */
+.guarantees {
+  padding: 4rem 1rem;
+  background: var(--primary-light);
+  color: white;
+  text-align: center;
+}
+
+.guarantees h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.guarantee-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.guarantee-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.guarantee-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.guarantee-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.guarantee-item h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.guarantee-item p {
+  color: rgba(255, 255, 255, 0.9);
+}

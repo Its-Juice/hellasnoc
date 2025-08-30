@@ -6,6 +6,7 @@
   <title>HellasNOC - Pricing</title>
   <meta name="description" content="Επιλέξτε πακέτο υπηρεσιών δικτύων και ασφάλειας από την HellasNOC με μηνιαία ή ετήσια τιμολόγηση.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -63,85 +64,124 @@
   </section>
 
   <!-- Pricing Cards -->
-  <div class="container">
-    <div class="pricing-cards">
-      <!-- Basic -->
-      <div class="pricing-card">
-        <h3 data-i18n="basic-package">Βασικό</h3>
-        <div class="device-limit" data-i18n="devices" data-i18n-count="5"></div>
-        <div class="price-container">
-          <div class="price price-monthly show">49€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-          <div class="price price-annual">499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-cards">
+        <!-- Essential (formerly Basic) -->
+        <div class="pricing-card">
+          <h3 data-i18n="essential-package">Essential</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="5"></div>
+          <div class="price-container">
+            <div class="price price-monthly show">99€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">999€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+          </div>
+          <div class="annual-savings" data-i18n="save-189">Εξοικονομείτε 189€</div>
+          <ul class="pricing-features">
+            <li data-i18n="network-monitoring">Έλεγχος δικτύου</li>
+            <li data-i18n="ad-blocking">Ad-blocking / DNS filtering</li>
+            <li data-i18n="wifi-optimization">Βελτιστοποίηση Wi-Fi</li>
+            <li data-i18n="firewall-config">Βασική παραμετροποίηση firewall</li>
+            <li data-i18n="basic-support">Βασική υποστήριξη</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
-        <div class="annual-savings" data-i18n="save-89">Εξοικονομείτε 89€</div>
-        <ul class="pricing-features">
-          <li data-i18n="network-monitoring">Έλεγχος δικτύου</li>
-          <li data-i18n="ad-blocking">Ad-blocking / DNS filtering</li>
-          <li data-i18n="wifi-optimization">Βελτιστοποίηση Wi-Fi</li>
-          <li data-i18n="firewall-config">Βασική παραμετροποίηση firewall</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-      </div>
 
-      <!-- Secure Office -->
-      <div class="pricing-card popular">
-        <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
-        <h3 data-i18n="secure-office">Ασφαλές Γραφείο</h3>
-        <div class="device-limit" data-i18n="devices" data-i18n-count="15"></div>
-        <div class="price-container">
-          <div class="price price-monthly show">99€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-          <div class="price price-annual">999€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+        <!-- Secure Office -->
+        <div class="pricing-card popular">
+          <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
+          <h3 data-i18n="secure-office">Ασφαλές Γραφείο</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="15"></div>
+          <div class="price-container">
+            <div class="price price-monthly show">249€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">2,499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+          </div>
+          <div class="annual-savings" data-i18n="save-489">Εξοικονομείτε 489€</div>
+          <ul class="pricing-features">
+            <li data-i18n="all-essential">Όλα από το Essential πακέτο</li>
+            <li data-i18n="wireguard-vpn">WireGuard VPN</li>
+            <li data-i18n="nextcloud-docs">Nextcloud για έγγραφα</li>
+            <li data-i18n="backups-scans">Αντίγραφα ασφαλείας & σαρώσεις</li>
+            <li data-i18n="security-training">Εκπαίδευση ασφαλείας</li>
+            <li data-i18n="priority-support">Προτεραιότητα υποστήριξης</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
-        <div class="annual-savings" data-i18n="save-189">Εξοικονομείτε 189€</div>
-        <ul class="pricing-features">
-          <li data-i18n="all-basic">Όλα από το Βασικό πακέτο</li>
-          <li data-i18n="wireguard-vpn">WireGuard VPN</li>
-          <li data-i18n="nextcloud-docs">Nextcloud για έγγραφα</li>
-          <li data-i18n="backups-scans">Αντίγραφα ασφαλείας & σαρώσεις</li>
-          <li data-i18n="security-training">Εκπαίδευση ασφαλείας</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-      </div>
 
-      <!-- Professional -->
-      <div class="pricing-card">
-        <h3 data-i18n="professional">Επαγγελματικό</h3>
-        <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
-        <div class="price-container">
-          <div class="price price-monthly show">149€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-          <div class="price price-annual">1,499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
-        </div>
-        <div class="annual-savings" data-i18n="save-289">Εξοικονομείτε 289€</div>
-        <ul class="pricing-features">
-          <li data-i18n="proxmox-stack">Proxmox / Unraid stack</li>
-          <li data-i18n="24-7-monitoring">24/7 παρακολούθηση</li>
-          <li data-i18n="zfs-backups">ΖFS backups</li>
-          <li data-i18n="unlimited-support">Απεριόριστη υποστήριξη</li>
-          <li data-i18n="multi-site">Διαχείριση πολλαπλών τοποθεσιών</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
+<!-- Enterprise -->
+<div class="pricing-card enterprise-card">
+  <h3 data-i18n="enterprise-package">Enterprise Solution</h3>
+  <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
+  <div class="enterprise-price-container">
+    <div class="enterprise-solution-header" data-i18n="custom-solution-header">Custom Tailored Solution</div>
+    <p class="enterprise-solution-desc" data-i18n="custom-solution-desc">We'll build a perfect package for your business needs</p>
+  </div>
+  <ul class="pricing-features">
+    <li data-i18n="proxmox-stack">Proxmox / Unraid stack</li>
+    <li data-i18n="24-7-monitoring">24/7 παρακολούθηση</li>
+    <li data-i18n="zfs-backups">ΖFS backups</li>
+    <li data-i18n="unlimited-support">Απεριόριστη υποστήριξη</li>
+    <li data-i18n="multi-site">Διαχείριση πολλαπλών τοποθεσιών</li>
+    <li data-i18n="dedicated-engineer">Αποκλειστικός μηχανικός</li>
+    <li data-i18n="custom-solution">Fully customized to your requirements</li>
+  </ul>
+  <a href="contact.html" class="btn btn-primary" data-i18n="contact-for-quote">Λήψη Προσφοράς</a>
+</div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section class="value-proposition-section">
+    <div class="container">
+      <div class="value-proposition">
+        <h2 data-i18n="value-title">Γιατί να επιλέξετε την HellasNOC;</h2>
+        <div class="value-grid">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 data-i18n="value-security">Ασφάλεια Enterprise επιπέδου</h3>
+            <p data-i18n="value-security-desc">Προστασία από απειλές με τεχνολογίες enterprise επιπέδου σε τιμές ΜΚΔ</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 data-i18n="value-uptime">99.9% Uptime Εγγύηση</h3>
+            <p data-i18n="value-uptime-desc">Η επιχείρησή σας παραμένει online με εγγύηση υψηλής διαθεσιμότητας</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 data-i18n="value-support">Εξειδικευμένη Υποστήριξη</h3>
+            <p data-i18n="value-support-desc">Οι ειδικοί μας είναι δίπλα σας για οποιοδήποτε τεχνικό ζήτημα</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Technologies -->
-  <div class="container">
-    <div class="logo-section">
-      <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
-      <div class="logo-grid">
-        <div class="logo-item"><img src="assets/img/tech-logos/opnsense.png" alt="OPNsense" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/pfsense.png" alt="pfSense" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/proxmox.svg" alt="Proxmox" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/unraid.png" alt="Unraid" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/mikrotik.png" alt="MikroTik" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/ubuntu.png" alt="Ubuntu" loading="lazy"></div>
-        <div class="logo-item"><img src="assets/img/tech-logos/synology.png" alt="Synology" loading="lazy"></div>
+  <section class="technologies-section">
+    <div class="container">
+      <div class="logo-section">
+        <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
+        <div class="logo-grid">
+          <div class="logo-item"><img src="assets/img/tech-logos/opnsense.png" alt="OPNsense" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/pfsense.png" alt="pfSense" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/proxmox.svg" alt="Proxmox" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/unraid.png" alt="Unraid" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/mikrotik.png" alt="MikroTik" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/ubuntu.png" alt="Ubuntu" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/synology.png" alt="Synology" loading="lazy"></div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- FAQ -->
-  <section class="faq">
+  <section class="faq-section">
     <div class="container">
       <h2 data-i18n="faq-title">Συχνές Ερωτήσεις</h2>
       <div class="faq-item">
@@ -151,6 +191,10 @@
       <div class="faq-item">
         <h3 data-i18n="free-trial">Προσφέρετε δωρεάν δοκιμή;</h3>
         <p data-i18n="free-trial-answer">Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-i18n="contract-length">Ποια είναι η διάρκεια των συμβάσεων;</h3>
+        <p data-i18n="contract-length-answer">Προσφέρουμε ευέλικτες επιλογές: μηνιαίες συμβάσεις με 30ήμερη notice περίοδο ή ετήσιες συμβάσεις με έκπτωση 15%.</p>
       </div>
     </div>
   </section>
@@ -187,126 +231,125 @@
     </div>
   </footer>
 
-
   <script src="translations.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // --- Language switch / i18n ---
-  let currentLang = localStorage.getItem('language') || 'el';
-  updateLanguage(currentLang);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // --- Language switch / i18n ---
+      let currentLang = localStorage.getItem('language') || 'el';
+      updateLanguage(currentLang);
 
-  document.querySelectorAll('.language-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const lang = this.dataset.lang;
-      if (lang !== currentLang) {
-        currentLang = lang;
-        localStorage.setItem('language', lang);
-        updateLanguage(lang);
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+          }
+        });
+      });
+
+      function updateLanguage(lang) {
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        const slider = document.querySelector('.language-slider');
+        if (slider) slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            let translation = translations[lang][key];
+            const count = el.dataset.i18nCount;
+            if (count !== undefined) translation = translation.replace(/\{count\}/g, count);
+            el.textContent = translation;
+          }
+        });
       }
-    });
-  });
 
-  function updateLanguage(lang) {
-    document.querySelectorAll('.language-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
+      // --- Price toggle ---
+      const monthlyToggle = document.getElementById('monthly-toggle');
+      const annualToggle = document.getElementById('annual-toggle');
+      const priceSlider = document.querySelector('.price-toggle-slider');
 
-    const slider = document.querySelector('.language-slider');
-    if (slider) slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      if (translations[lang] && translations[lang][key]) {
-        let translation = translations[lang][key];
-        const count = el.dataset.i18nCount;
-        if (count !== undefined) translation = translation.replace(/\{count\}/g, count);
-        el.textContent = translation;
+      // Initialize the toggle state
+      function initializeToggle() {
+        monthlyToggle.classList.add('active');
+        annualToggle.classList.remove('active');
+        if (priceSlider) priceSlider.style.transform = 'translateX(0)';
+        
+        // Show monthly prices, hide annual
+        document.querySelectorAll('.price-monthly').forEach(el => {
+          el.classList.add('show');
+        });
+        document.querySelectorAll('.price-annual').forEach(el => {
+          el.classList.remove('show');
+        });
+        document.querySelectorAll('.annual-savings').forEach(el => {
+          el.classList.remove('show');
+        });
       }
-    });
-  }
 
-  // --- Price toggle ---
-  const monthlyToggle = document.getElementById('monthly-toggle');
-  const annualToggle = document.getElementById('annual-toggle');
-  const priceSlider = document.querySelector('.price-toggle-slider');
+      function showMonthly() {
+        monthlyToggle.classList.add('active');
+        annualToggle.classList.remove('active');
+        if (priceSlider) priceSlider.style.transform = 'translateX(0)';
+        
+        // Hide annual savings
+        document.querySelectorAll('.annual-savings').forEach(el => {
+          el.classList.remove('show');
+        });
+        
+        // Switch to monthly prices
+        document.querySelectorAll('.price-annual').forEach(el => {
+          el.classList.remove('show');
+        });
+        document.querySelectorAll('.price-monthly').forEach(el => {
+          el.classList.add('show');
+        });
+      }
 
-  // Initialize the toggle state
-  function initializeToggle() {
-    monthlyToggle.classList.add('active');
-    annualToggle.classList.remove('active');
-    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
-    
-    // Show monthly prices, hide annual
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.add('show');
-    });
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.remove('show');
-    });
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.remove('show');
-    });
-  }
+      function showAnnual() {
+        annualToggle.classList.add('active');
+        monthlyToggle.classList.remove('active');
+        // FIXED: Translate by 100% of the slider's own width, not the container
+        if (priceSlider) priceSlider.style.transform = 'translateX(calc(100% + 8px))';
+        
+        // Hide monthly prices first
+        document.querySelectorAll('.price-monthly').forEach(el => {
+          el.classList.remove('show');
+        });
+        
+        // Then show annual prices and savings
+        document.querySelectorAll('.price-annual').forEach(el => {
+          el.classList.add('show');
+        });
+        
+        // Show savings
+        document.querySelectorAll('.annual-savings').forEach(el => {
+          el.classList.add('show');
+        });
+      }
 
-  function showMonthly() {
-    monthlyToggle.classList.add('active');
-    annualToggle.classList.remove('active');
-    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
-    
-    // Hide annual savings
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.remove('show');
-    });
-    
-    // Switch to monthly prices
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.remove('show');
-    });
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.add('show');
-    });
-  }
+      // Event listeners for toggle buttons
+      monthlyToggle.addEventListener('click', () => {
+        if (!monthlyToggle.classList.contains('active')) {
+          showMonthly();
+        }
+      });
+      
+      annualToggle.addEventListener('click', () => {
+        if (!annualToggle.classList.contains('active')) {
+          showAnnual();
+        }
+      });
 
-  function showAnnual() {
-    annualToggle.classList.add('active');
-    monthlyToggle.classList.remove('active');
-    // FIXED: Translate by 100% of the slider's own width, not the container
-    if (priceSlider) priceSlider.style.transform = 'translateX(calc(100% + 8px))';
-    
-    // Hide monthly prices first
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.remove('show');
+      // Initialize the toggle on page load
+      initializeToggle();
     });
-    
-    // Then show annual prices and savings
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.add('show');
-    });
-    
-    // Show savings
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.add('show');
-    });
-  }
-
-  // Event listeners for toggle buttons
-  monthlyToggle.addEventListener('click', () => {
-    if (!monthlyToggle.classList.contains('active')) {
-      showMonthly();
-    }
-  });
-  
-  annualToggle.addEventListener('click', () => {
-    if (!annualToggle.classList.contains('active')) {
-      showAnnual();
-    }
-  });
-
-  // Initialize the toggle on page load
-  initializeToggle();
-});
-</script>
+  </script>
 </body>
 </html>
