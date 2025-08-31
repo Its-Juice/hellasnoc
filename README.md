@@ -27,8 +27,11 @@ Any references to services, operations, or activities are purely **illustrative*
 ## 🔒 License & Usage
 
 This project (HellasNOC Website) is proprietary and experimental.  
-© 2025 John Kapelakos. All rights reserved.  
-No use, copying, modification, or distribution is permitted without explicit written permission from the author.  
+© 2025 HellasNOC. All rights reserved.  
+No use, copying, modification, or distribution is permitted without explicit written permission from HellasNOC.  
+
+This repository is provided for **experimental and educational purposes only**.  
+It is **not intended for production or commercial use**.  
 
 See the full [LICENSE](LICENSE) for details.  
 
@@ -38,6 +41,13 @@ See the full [LICENSE](LICENSE) for details.
 
 This is not an open source project.  
 We do **not** accept pull requests, issues, or external contributions.  
+
+---
+
+## 🏗️ Development
+
+This repository may change or be removed at any time without notice.  
+The maintainers assume no responsibility for security, stability, or data loss resulting from the use of this repository.  
 
 ---
 
