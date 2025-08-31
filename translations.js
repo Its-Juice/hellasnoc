@@ -232,7 +232,6 @@ const translations = {
 "certification-2-desc": "Specialized in information security policies",
 "certification-3": "GDPR Compliance Certification",
 "certification-3-desc": "Specialized in data protection according to GDPR",
-
 "guarantee-title": "Zero-Risk Commitment",
 "guarantee-subtitle": "Try our services with absolute confidence",
 "guarantee-1-title": "30-Day Trial",
@@ -485,7 +484,6 @@ const translations = {
 "certification-2-desc": "Ειδικευμένοι σε πολιτικές ασφαλείας πληροφοριών",
 "certification-3": "GDPR Compliance Certification",
 "certification-3-desc": "Εξειδικευμένοι στην προστασία δεδομένων σύμφωνα με τον GDPR",
-
 "guarantee-title": "Εγγύηση Χωρίς Κίνδυνο",
 "guarantee-subtitle": "Δοκιμάστε τις υπηρεσίες μας με απόλυτη εμπιστοσύνη",
 "guarantee-1-title": "30-Hμερη Δοκιμή",
@@ -494,7 +492,6 @@ const translations = {
 "guarantee-2-desc": "Θα διορθώσουμε οποιαδήποτε παραβίαση ασφαλείας χωρίς επιπλέον κόστος",
 "guarantee-3-title": "Χωρίς Μακροπρόθεσμες Συμβάσεις",
 "guarantee-3-desc": "Ακυρώστε ανά πάσα στιγμή με 30ήμερη προειδοποίηση",
-
 "process-title": "Η Διαδικασία Μας",
 "process-subtitle": "Πώς λειτουργούμε για να εξασφαλίσουμε την ασφάλεια του δικτύου σας",
 "step-1-title": "Αξιολόγηση",
@@ -505,6 +502,5 @@ const translations = {
 "step-3-desc": "Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες",
 "step-4-title": "Συντήρηση",
 "step-4-desc": "Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας",
-
   }
 };
