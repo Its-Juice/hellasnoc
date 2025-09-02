@@ -29,9 +29,9 @@
           <li class="products-dropdown">
             <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
             <div class="products-dropdown-content">
-              <a href="pricing-home.html">Οικιακά Πακέτα</a>
-              <a href="pricing-pro.html">Επαγγελματικά Πακέτα</a>
-              <a href="pricing-enterprise.html">Εταιρικά Πακέτα</a>
+              <a href="pricing-home.html" data-i18n="pricing-home" role="menuitem">Οικιακά Πακέτα</a>
+              <a href="pricing-pro.html" data-i18n="pricing-pro" role="menuitem">Επαγγελματικά Πακέτα</a>
+              <a href="pricing-enterprise.html" data-i18n="pricing-enterprise" role="menuitem">Εταιρικά Πακέτα</a>
             </div>
           </li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
@@ -52,7 +52,7 @@
       </div>
     </div>
   </header>
-
+  
   <!-- Pricing Hero -->
   <section class="hero pricing-hero">
     <div class="container">
@@ -236,6 +236,79 @@
 
   <script src="translations.js"></script>
   <script>
+// Price Toggle Functionality for Pricing Pages
+document.addEventListener('DOMContentLoaded', function() {
+  const monthlyToggle = document.getElementById('monthly-toggle');
+  const annualToggle = document.getElementById('annual-toggle');
+  const priceSlider = document.querySelector('.price-toggle-slider');
+
+  function initializeToggle() {
+    monthlyToggle.classList.add('active');
+    annualToggle.classList.remove('active');
+    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
+    
+    document.querySelectorAll('.price-monthly').forEach(el => {
+      el.classList.add('show');
+    });
+    document.querySelectorAll('.price-annual').forEach(el => {
+      el.classList.remove('show');
+    });
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.classList.remove('show');
+    });
+  }
+
+  function showMonthly() {
+    monthlyToggle.classList.add('active');
+    annualToggle.classList.remove('active');
+    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
+    
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.classList.remove('show');
+    });
+    
+    document.querySelectorAll('.price-annual').forEach(el => {
+      el.classList.remove('show');
+    });
+    document.querySelectorAll('.price-monthly').forEach(el => {
+      el.classList.add('show');
+    });
+  }
+
+  function showAnnual() {
+    annualToggle.classList.add('active');
+    monthlyToggle.classList.remove('active');
+    if (priceSlider) priceSlider.style.transform = 'translateX(100%)';
+    
+    document.querySelectorAll('.price-monthly').forEach(el => {
+      el.classList.remove('show');
+    });
+    
+    document.querySelectorAll('.price-annual').forEach(el => {
+      el.classList.add('show');
+    });
+    
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.classList.add('show');
+    });
+  }
+
+  monthlyToggle.addEventListener('click', () => {
+    if (!monthlyToggle.classList.contains('active')) {
+      showMonthly();
+    }
+  });
+  
+  annualToggle.addEventListener('click', () => {
+    if (!annualToggle.classList.contains('active')) {
+      showAnnual();
+    }
+  });
+
+  initializeToggle();
+});
+
+
     document.addEventListener('DOMContentLoaded', function() {
       // Language switcher functionality
       let currentLang = localStorage.getItem('language') || 'el';

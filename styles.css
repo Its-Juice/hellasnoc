@@ -2845,3 +2845,190 @@ html[lang="el"] .nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
     .tab-btn:hover {
       color: var(--text);
     }
+
+    /* Services Tab Animation Updates */
+.services-tabs-container {
+  position: relative;
+  min-height: 500px;
+}
+
+.tab-content {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.tab-content.exiting {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tab-content.active .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for service cards */
+.tab-content.active .service-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.tab-content.active .service-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.tab-content.active .service-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Language Toggle Padding Fix */
+.language-switcher {
+  width: 90px;
+  height: 35px;
+  padding: 2px;
+}
+
+.language-btn {
+  width: 40px;
+  height: 30px;
+  padding: 0;
+}
+
+.language-btn img {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Price Toggle Styles */
+.price-toggle {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  position: relative;
+  height: 50px;
+  width: 260px;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-toggle-slider {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 10px);
+  height: calc(100% - 10px);
+  background: var(--primary);
+  border-radius: 50px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.price-toggle-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.price-toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.price-toggle-btn.active {
+  color: var(--tech-white);
+}
+
+.price-toggle-btn:hover {
+  color: var(--tech-white);
+}
+
+/* Fix for Products dropdown centering */
+.products-dropdown {
+  position: relative;
+}
+
+.products-dropdown-content {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  min-width: 200px;
+}
+
+/* Fix for Most Popular badge clipping */
+.popular-badge {
+  top: -15px;
+  z-index: 10;
+}
+
+.pricing-card.popular,
+.enterprise-card.popular {
+  overflow: visible;
+  position: relative;
+}
+
+/* Fix for Language Switcher padding */
+.language-switcher {
+  margin: 0 10px;
+  width: 85px;
+  height: 35px;
+}
+
+.language-btn {
+  padding: 5px;
+}
+
+.language-btn img {
+  width: 20px;
+  height: 15px;
+}
+
+/* Fix for Price Toggle padding */
+.price-toggle {
+  margin: 2rem auto;
+  width: 260px;
+  height: 50px;
+}
+
+.price-toggle-btn {
+  font-size: 0.9rem;
+  padding: 0.75rem;
+}

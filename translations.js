@@ -10,6 +10,7 @@ const translations = {
     "pricing-enterprise": "Enterprise Packages",
     "pricing-pro": "Professional Packages",
     "contact": "Contact",
+    "products":"Products",
     
     // Common
     "company": "HellasNOC",
@@ -139,6 +140,7 @@ const translations = {
     "invalid-email": "Please enter a valid email address.",
     
     // Home Pricing Page
+    "pricing-enterprise": "Home Protection",
     "home-packages-title": "Home Protection Packages",
     "home-packages-subtitle": "Security and flexibility for your home. Protect all your devices with advanced solutions.",
     "home-basic": "Home Basic",
@@ -184,6 +186,7 @@ const translations = {
     "save-98": "Save €98 annually",
     
     // Pro Pricing Page
+    "pricing-enterprise": "Professional Security",
     "pro-packages-title": "Professional Security Packages",
     "pro-packages-subtitle": "Complete solutions for businesses. Network protection, cloud services and 24/7 support.",
     "pro-starter": "Pro Starter",
@@ -230,6 +233,7 @@ const translations = {
     "save-698": "Save €698 annually",
     
     // Enterprise Pricing Page
+    "pricing-enterprise": "Enterprise",
     "enterprise-packages-title": "Enterprise Security Packages",
     "enterprise-packages-subtitle": "Custom solutions for large enterprises. Multi-site networks, crisis management and exclusive support.",
     "enterprise-custom-title": "Custom Solutions for Large Enterprises",
@@ -287,6 +291,7 @@ const translations = {
     "pricing-enterprise": "Εταιρικά Πακέτα",
     "pricing-pro": "Επαγγελματικά Πακέτα",
     "contact": "Επικοινωνία",
+    "products":"Προϊόντα",
     
     // Common
     "company": "HellasNOC",
@@ -416,6 +421,7 @@ const translations = {
     "invalid-email": "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.",
     
     // Home Pricing Page
+    "pricing-home": "Οικιακά Πακέτα",
     "home-packages-title": "Οικιακά Πακέτα Προστασίας",
     "home-packages-subtitle": "Ασφάλεια και ευελιξία για το σπίτι σας. Προστατέψτε όλες τις συσκευές σας με προηγμένες λύσεις.",
     "home-basic": "Home Basic",
@@ -461,6 +467,7 @@ const translations = {
     "save-98": "Εξοικονόμηση €98 ετησίως",
     
     // Pro Pricing Page
+    "pricing-pro": "Επαγγελματικά Πακέτα",
     "pro-packages-title": "Επαγγελματικά Πακέτα Ασφαλείας",
     "pro-packages-subtitle": "Ολοκληρωμένες λύσεις για επιχειρήσεις. Προστασία δικτύου, cloud υπηρεσίες και 24/7 υποστήριξη.",
     "pro-starter": "Pro Starter",
@@ -507,6 +514,7 @@ const translations = {
     "save-698": "Εξοικονόμηση €698 ετησίως",
     
     // Enterprise Pricing Page
+    "pricing-enterprise": "Εταιρικά Πακέτα",
     "enterprise-packages-title": "Εταιρικά Πακέτα Ασφαλείας",
     "enterprise-packages-subtitle": "Προσαρμοσμένες λύσεις για μεγάλες επιχειρήσεις. Δίκτυα πολλαπλών τοποθεσιών, διαχείριση κρίσεων και αποκλειστική υποστήριξη.",
     "enterprise-custom-title": "Προσαρμοσμένες Λύσεις για Μεγάλες Επιχειρήσεις",

@@ -30,9 +30,9 @@
           <li class="products-dropdown">
             <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
             <div class="products-dropdown-content">
-              <a href="pricing-home.html">Οικιακά Πακέτα</a>
-              <a href="pricing-pro.html">Επαγγελματικά Πακέτα</a>
-              <a href="pricing-enterprise.html">Εταιρικά Πακέτα</a>
+              <a href="pricing-home.html" data-i18n="pricing-home" role="menuitem">Οικιακά Πακέτα</a>
+              <a href="pricing-pro.html" data-i18n="pricing-pro" role="menuitem">Επαγγελματικά Πακέτα</a>
+              <a href="pricing-enterprise.html" data-i18n="pricing-enterprise" role="menuitem">Εταιρικά Πακέτα</a>
             </div>
           </li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
@@ -336,6 +336,46 @@
 
   <script src="translations.js"></script>
   <script>
+    // Updated Services Tab Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  let currentTab = 'network'; // Default tab
+  
+  function switchTab(tabName) {
+    if (tabName === currentTab) return;
+    
+    const currentTabContent = document.getElementById(`${currentTab}-tab`);
+    const nextTabContent = document.getElementById(`${tabName}-tab`);
+    
+    // Fade out current tab
+    currentTabContent.classList.add('exiting');
+    
+    setTimeout(() => {
+      currentTabContent.classList.remove('active', 'exiting');
+      
+      // Show the selected tab content
+      nextTabContent.classList.add('active');
+      
+      // Update currentTab
+      currentTab = tabName;
+      
+      // Update tab buttons
+      tabBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+    }, 300); // Match this with the CSS transition time
+  }
+  
+  // Add click event listeners to tab buttons
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.dataset.tab;
+      switchTab(tabId);
+    });
+  });
+});
+
     // Services tabs functionality with new animation
     document.addEventListener('DOMContentLoaded', function() {
       const tabBtns = document.querySelectorAll('.tab-btn');
