@@ -23,19 +23,20 @@
         <span class="bar"></span>
       </button>
       <nav id="primary-navigation">
-<ul class="nav-list" role="menubar">
-  <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
-  <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-  <li class="dropdown">
-    <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
-      <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-business">Επαγγελματικά Πακέτα</a></li>
-      <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
-</ul>
+        <ul class="nav-list" role="menubar">
+          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
+          <!-- Products Dropdown -->
+          <li class="products-dropdown">
+            <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
+            <div class="products-dropdown-content">
+              <a href="pricing-home.html">Οικιακά Πακέτα</a>
+              <a href="pricing-pro.html">Επαγγελματικά Πακέτα</a>
+              <a href="pricing-enterprise.html">Εταιρικά Πακέτα</a>
+            </div>
+          </li>
+          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
+        </ul>
       </nav>
       <div class="header-right">
         <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
@@ -79,6 +80,7 @@
           <span data-i18n="security-services">Υπηρεσίες Ασφαλείας</span>
         </button>
       </div>
+
       
       <!-- Tab Content Container -->
       <div class="services-tabs-container">
@@ -91,13 +93,11 @@
               </div>
               <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση Δικτύου</h3>
               <p data-i18n="network-monitoring-desc">Συνεχής παρακολούθηση και ειδοποίηση για προβλήματα δικτύου με άμεση ανταπόκριση</p>
- <ul class="service-features">
-  <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-1">Παρακολούθηση uptime/downtime</span></li>
-  <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-2">Στατιστικά εύρους ζώνης</span></li>
-  <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-3">Προειδοποιήσεις μέσω email/SMS</span></li>
-</ul>
-
-
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-1">Παρακολούθηση uptime/downtime</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-2">Στατιστικά εύρους ζώνης</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="monitoring-feature-3">Προειδοποιήσεις μέσω email/SMS</span></li>
+              </ul>
               <a href="contact.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
             </div>
             
@@ -180,6 +180,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Zero-Risk Guarantee Section -->
   <section class="guarantees">
@@ -335,6 +336,37 @@
 
   <script src="translations.js"></script>
   <script>
+    // Services tabs functionality with new animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      function switchTab(tabName) {
+        // Hide all tab contents
+        tabContents.forEach(tab => {
+          tab.classList.remove('active');
+        });
+        
+        // Show the selected tab content
+        const tabContent = document.getElementById(`${tabName}-tab`);
+        tabContent.classList.add('active');
+        
+        // Update tab buttons
+        tabBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.tab === tabName);
+        });
+      }
+      
+      // Add click event listeners to tab buttons
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.dataset.tab;
+          switchTab(tabId);
+        });
+      });
+    });
+
+
     // Process steps animation
 function animateProcessSteps() {
   const processSteps = document.querySelectorAll('.process-step');

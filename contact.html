@@ -21,19 +21,20 @@
         <span class="bar"></span>
       </button>
       <nav id="primary-navigation">
-<ul class="nav-list" role="menubar">
-  <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
-  <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-  <li class="dropdown">
-    <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
-      <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-business">Επαγγελματικά Πακέτα</a></li>
-      <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
-</ul>
+        <ul class="nav-list" role="menubar">
+          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
+          <!-- Products Dropdown -->
+          <li class="products-dropdown">
+            <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
+            <div class="products-dropdown-content">
+              <a href="pricing-home.html">Οικιακά Πακέτα</a>
+              <a href="pricing-pro.html">Επαγγελματικά Πακέτα</a>
+              <a href="pricing-enterprise.html">Εταιρικά Πακέτα</a>
+            </div>
+          </li>
+          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
+        </ul>
       </nav>
       <div class="header-right">
         <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
@@ -50,6 +51,7 @@
       </div>
     </div>
   </header>
+
   
   <!-- Contact Hero -->
   <section class="hero contact-hero">
