@@ -2476,3 +2476,255 @@ select:focus-visible {
   color: var(--tech-white);
 }
 
+/* ==================== */
+/* FLAG FIXES           */
+/* ==================== */
+.language-btn img {
+  width: 24px !important;
+  height: 18px !important;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: none !important;
+}
+
+/* ==================== */
+/* SERVICES TABS ANIMATION */
+/* ==================== */
+.services-tabs-container {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.tab-content {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.tab-content.active {
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.tab-content.slide-out-left {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.tab-content.slide-out-right {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.service-card {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* ==================== */
+/* NAVIGATION RENAME (Pricing -> Products) */
+/* ==================== */
+/* This is a CSS-only approach to change the text */
+.nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
+  content: "Products";
+  display: inline;
+}
+
+/* For Greek language */
+html[lang="el"] .nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
+  content: "Προϊόντα";
+}
+
+/* Hide original text */
+.nav-list li:nth-child(3) > a[data-i18n="pricing"] {
+  font-size: 0;
+}
+
+/* Style the new text */
+.nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==================== */
+/* PROCESS ROADMAP REDESIGN */
+/* ==================== */
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--primary) 0%, 
+    var(--accent) 50%, 
+    var(--accent-alt) 100%);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.process-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 25%;
+  padding: 0 1rem;
+}
+
+.step-content {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: var(--tech-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tech-white);
+  font-size: 1.5rem;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.process-step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.process-step p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments for process steps */
+@media (max-width: 968px) {
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .process-steps::before {
+    display: none;
+  }
+  
+  .process-step {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 3rem;
+  }
+  
+  .process-step:last-child {
+    margin-bottom: 0;
+  }
+  
+  .step-number {
+    top: -15px;
+  }
+}
+
+/* ==================== */
+/* DROPDOWN MENU ENHANCEMENT */
+/* ==================== */
+.dropdown-menu {
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: all 0.5s ease;
+}
+
+.dropdown-menu a:hover::before {
+  left: 100%;
+}
+
+/* Mobile dropdown improvements */
+@media (max-width: 768px) {
+  .dropdown.active .dropdown-menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
