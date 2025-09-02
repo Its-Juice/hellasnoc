@@ -1,76 +1,83 @@
-# Proprietary Software License Agreement
-Συμφωνία Άδειας Χρήσης Ιδιοκτησιακού Λογισμικού
+# Proprietary Software License Agreement  
+Συμφωνία Άδειας Χρήσης Ιδιοκτησιακού Λογισμικού  
 
-Copyright © 2025 John Kapelakos - HellasNOC
-  
+Copyright © 2025 John Kapelakos – HellasNOC  
 All Rights Reserved / Παντός Δικαιώματος Διατηρούμενου  
 
 ---
 
-## English Version
+## English Version  
 
-1. **Ownership**  
-   The Software, including without limitation all source code, design, structure, user interface, and any related assets, is and shall remain the sole property of the author, John Kapelakos (“Licensor”).  
-   > Note: *HellasNOC is not an active company, and this project is currently experimental.*  
+### 1. Ownership  
+The Software, including but not limited to source code, design, structure, user interface, and any related assets, is and shall remain the sole and exclusive property of the author, **John Kapelakos** (“Licensor”).  
+> Note: *HellasNOC is not an active company, and this project is currently experimental.*  
 
-2. **Grant of Rights**  
-   No license or rights of any kind are granted under this Agreement. The Software is provided strictly on a proprietary and confidential basis. Any use, reproduction, modification, distribution, sublicensing, sale, lease, or other exploitation of the Software, in whole or in part, is expressly prohibited unless authorized in writing by Licensor.  
+### 2. Grant of Rights  
+No license or rights of any kind are granted under this Agreement.  
+The Software is provided strictly on a **proprietary and confidential basis**.  
+Any use, reproduction, modification, distribution, sublicensing, sale, lease, or other exploitation of the Software, in whole or in part, is expressly prohibited unless authorized in **prior written form by the Licensor**.  
 
-3. **Restrictions**  
-   You shall not, directly or indirectly:  
-   - Use the Software without prior written consent from Licensor;  
-   - Copy, reproduce, translate, or create derivative works;  
-   - Distribute, publish, disclose, or make available to any third party;  
-   - Reverse engineer, decompile, disassemble, or attempt to derive source code;  
-   - Remove, obscure, or alter any proprietary notices.  
+### 3. Restrictions  
+You shall not, directly or indirectly:  
+- Use the Software without prior written consent from the Licensor;  
+- Copy, reproduce, translate, or create derivative works;  
+- Distribute, publish, disclose, or make available to any third party;  
+- Reverse engineer, decompile, disassemble, or attempt to derive source code;  
+- Remove, obscure, or alter any proprietary notices.  
 
-4. **No Warranty**  
-   The Software is provided "AS IS", without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.  
+### 4. No Warranty  
+The Software is provided **“AS IS”**, without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.  
 
-5. **Limitation of Liability**  
-   To the maximum extent permitted by law, Licensor shall not be liable for any damages, whether direct, indirect, incidental, consequential, or special, arising out of or relating to the Software or this Agreement.  
+### 5. Limitation of Liability  
+To the maximum extent permitted by applicable law, the Licensor shall not be liable for any damages, whether direct, indirect, incidental, consequential, or special, arising out of or relating to the Software or this Agreement.  
 
-6. **Termination**  
-   Any unauthorized use of the Software constitutes a material breach of this Agreement. Licensor reserves the right to pursue all available remedies under Greek law.  
+### 6. Termination  
+Any unauthorized use of the Software constitutes a material breach of this Agreement.  
+The Licensor reserves the right to pursue all available remedies under **Greek law**.  
 
-7. **Governing Law**  
-   This Agreement shall be governed by and construed in accordance with the laws of Greece, with exclusive jurisdiction of the Greek courts.  
+### 7. Governing Law  
+This Agreement shall be governed by and construed in accordance with the laws of **Greece**, with exclusive jurisdiction resting with the Greek courts.  
 
 **Notice**  
-This project is experimental. HellasNOC is not an operational company. Unauthorized possession, use, or distribution of this Software is prohibited.  
+This project is experimental. HellasNOC is not an operational company. Unauthorized possession, use, or distribution of this Software is strictly prohibited.  
 
 ---
 
-## Ελληνική Έκδοση
+## Ελληνική Έκδοση  
 
-1. **Ιδιοκτησία**  
-   Το Λογισμικό, συμπεριλαμβανομένου πηγαίου κώδικα, σχεδίασης, διεπαφής χρήστη και συναφών στοιχείων, ανήκει και παραμένει στην αποκλειστική ιδιοκτησία του δημιουργού, Ιωάννη Καπελάκου (“Δικαιοπάροχος”).  
-   > Σημείωση: *H HellasNOC δεν αποτελεί ενεργή εταιρεία· το παρόν έργο είναι σε πειραματικό στάδιο.*  
+### 1. Ιδιοκτησία  
+Το Λογισμικό, συμπεριλαμβανομένου πηγαίου κώδικα, σχεδίασης, δομής, διεπαφής χρήστη και συναφών στοιχείων, ανήκει και παραμένει στην αποκλειστική ιδιοκτησία του δημιουργού, **Ιωάννη Καπελάκου** (“Δικαιοπάροχος”).  
+> Σημείωση: *Η HellasNOC δεν αποτελεί ενεργή εταιρεία· το παρόν έργο είναι σε πειραματικό στάδιο.*  
 
-2. **Παραχώρηση Δικαιωμάτων**  
-   Δεν παραχωρείται καμία άδεια ή δικαίωμα οποιασδήποτε μορφής βάσει της παρούσας Συμφωνίας. Το Λογισμικό παρέχεται αποκλειστικά σε ιδιοκτησιακή και εμπιστευτική βάση. Οποιαδήποτε χρήση, αναπαραγωγή, τροποποίηση, διανομή, υπεραδειοδότηση, πώληση, εκμίσθωση ή άλλη εκμετάλλευση, εν όλω ή εν μέρει, απαγορεύεται ρητώς εκτός εάν έχει εγκριθεί εγγράφως από τον Δικαιοπάροχο.  
+### 2. Παραχώρηση Δικαιωμάτων  
+Δεν παραχωρείται καμία άδεια ή δικαίωμα οποιασδήποτε μορφής βάσει της παρούσας Συμφωνίας.  
+Το Λογισμικό παρέχεται αποκλειστικά σε **ιδιοκτησιακή και εμπιστευτική βάση**.  
+Οποιαδήποτε χρήση, αναπαραγωγή, τροποποίηση, διανομή, υπεραδειοδότηση, πώληση, εκμίσθωση ή άλλη εκμετάλλευση, εν όλω ή εν μέρει, απαγορεύεται ρητώς εκτός εάν έχει εγκριθεί εγγράφως από τον Δικαιοπάροχο.  
 
-3. **Περιορισμοί**  
-   Απαγορεύεται, άμεσα ή έμμεσα:  
-   - Η χρήση του Λογισμικού χωρίς προηγούμενη γραπτή συγκατάθεση του Δικαιοπαρόχου  
-   - Η αντιγραφή, αναπαραγωγή, μετάφραση ή δημιουργία παράγωγων έργων  
-   - Η διανομή, δημοσίευση, γνωστοποίηση ή διάθεσή του σε τρίτους  
-   - Η ανακατασκευή, αποσυμπίληση ή απόπειρα εξαγωγής πηγαίου κώδικα  
-   - Η αφαίρεση, απόκρυψη ή αλλοίωση σημειώσεων ιδιοκτησίας  
+### 3. Περιορισμοί  
+Απαγορεύεται, άμεσα ή έμμεσα:  
+- Η χρήση του Λογισμικού χωρίς προηγούμενη γραπτή συγκατάθεση του Δικαιοπαρόχου  
+- Η αντιγραφή, αναπαραγωγή, μετάφραση ή δημιουργία παράγωγων έργων  
+- Η διανομή, δημοσίευση, γνωστοποίηση ή διάθεσή του σε τρίτους  
+- Η ανακατασκευή, αποσυμπίληση ή απόπειρα εξαγωγής πηγαίου κώδικα  
+- Η αφαίρεση, απόκρυψη ή αλλοίωση σημειώσεων ιδιοκτησίας  
 
-4. **Αποποίηση Εγγυήσεων**  
-   Το Λογισμικό παρέχεται "ΩΣ ΕΧΕΙ", χωρίς καμία εγγύηση οποιασδήποτε μορφής, ρητής ή σιωπηρής, συμπεριλαμβανομένων ενδεικτικά εγγυήσεων εμπορευσιμότητας, καταλληλότητας για συγκεκριμένο σκοπό ή μη παραβίασης δικαιωμάτων.  
+### 4. Αποποίηση Εγγυήσεων  
+Το Λογισμικό παρέχεται **"ΩΣ ΕΧΕΙ"**, χωρίς καμία εγγύηση οποιασδήποτε μορφής, ρητής ή σιωπηρής, συμπεριλαμβανομένων ενδεικτικά εγγυήσεων εμπορευσιμότητας, καταλληλότητας για συγκεκριμένο σκοπό ή μη παραβίασης δικαιωμάτων.  
 
-5. **Περιορισμός Ευθύνης**  
-   Στο μέγιστο βαθμό που επιτρέπεται από το νόμο, ο Δικαιοπάροχος δεν ευθύνεται για οποιεσδήποτε ζημίες, άμεσες, έμμεσες, παρεπόμενες, αποθετικές ή ειδικές, που προκύπτουν από ή σχετίζονται με το Λογισμικό ή την παρούσα Συμφωνία.  
+### 5. Περιορισμός Ευθύνης  
+Στο μέγιστο βαθμό που επιτρέπεται από τον νόμο, ο Δικαιοπάροχος δεν ευθύνεται για οποιεσδήποτε ζημίες, άμεσες, έμμεσες, παρεπόμενες, αποθετικές ή ειδικές, που προκύπτουν από ή σχετίζονται με το Λογισμικό ή την παρούσα Συμφωνία.  
 
-6. **Λύση**  
-   Κάθε μη εξουσιοδοτημένη χρήση του Λογισμικού συνιστά ουσιώδη παραβίαση της Συμφωνίας. Ο Δικαιοπάροχος διατηρεί το δικαίωμα να επιδιώξει όλα τα διαθέσιμα ένδικα μέσα βάσει του ελληνικού δικαίου.  
+### 6. Λύση  
+Κάθε μη εξουσιοδοτημένη χρήση του Λογισμικού συνιστά ουσιώδη παραβίαση της Συμφωνίας.  
+Ο Δικαιοπάροχος διατηρεί το δικαίωμα να επιδιώξει όλα τα διαθέσιμα ένδικα μέσα βάσει του **ελληνικού δικαίου**.  
 
-7. **Εφαρμοστέο Δίκαιο**  
-   Η Συμφωνία διέπεται και ερμηνεύεται σύμφωνα με το δίκαιο της Ελλάδας, με αποκλειστική δικαιοδοσία των ελληνικών δικαστηρίων.  
+### 7. Εφαρμοστέο Δίκαιο  
+Η Συμφωνία διέπεται και ερμηνεύεται σύμφωνα με το δίκαιο της **Ελλάδας**, με αποκλειστική δικαιοδοσία των ελληνικών δικαστηρίων.  
 
 **Σημείωση**  
-Το έργο αυτό είναι πειραματικό. Το HellasNOC δεν αποτελεί ενεργή εταιρεία. Μη εξουσιοδοτημένη κατοχή, χρήση ή διανομή απαγορεύεται αυστηρά.  
+Το έργο αυτό είναι πειραματικό. Η HellasNOC δεν αποτελεί ενεργή εταιρεία. Μη εξουσιοδοτημένη κατοχή, χρήση ή διανομή του Λογισμικού απαγορεύεται αυστηρά.  
 
-© 2025 John Kapelakos  
+---
+
+© 2025 John Kapelakos – HellasNOC  
