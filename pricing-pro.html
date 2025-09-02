@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HellasNOC - Pricing</title>
-  <meta name="description" content="Επιλέξτε πακέτο υπηρεσιών δικτύων και ασφάλειας από την HellasNOC με μηνιαία ή ετήσια τιμολόγηση.">
+  <title>HellasNOC - Επαγγελματικά Πακέτα</title>
+  <meta name="description" content="Επαγγελματικές λύσεις ασφαλείας για μικρές και μεσαίες επιχειρήσεις. Προστασία δικτύου, cloud services και υποστήριξη.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -26,7 +25,14 @@
         <ul class="nav-list" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
           <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-          <li><a href="pricing.html" data-i18n="pricing" role="menuitem" aria-current="page">Τιμές</a></li>
+          <li class="dropdown">
+            <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
+              <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-pro" aria-current="page">Επαγγελματικά Πακέτα</a></li>
+              <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
         </ul>
       </nav>
@@ -49,8 +55,8 @@
   <!-- Pricing Hero -->
   <section class="hero pricing-hero">
     <div class="container">
-      <h1 data-i18n="packages-title">Πακέτα Υπηρεσιών</h1>
-      <p data-i18n="packages-subtitle">Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες της επιχείρησής σας</p>
+      <h1 data-i18n="pro-packages-title">Επαγγελματικά Πακέτα Ασφαλείας</h1>
+      <p data-i18n="pro-packages-subtitle">Ολοκληρωμένες λύσεις για επιχειρήσεις. Προστασία δικτύου, cloud services και 24/7 υποστήριξη.</p>
 
       <!-- Price Toggle -->
       <div class="price-toggle" aria-label="Εναλλαγή χρέωσης">
@@ -67,97 +73,95 @@
   <section class="pricing-section">
     <div class="container">
       <div class="pricing-cards">
-        <!-- Essential (formerly Basic) -->
+        <!-- Pro Starter -->
         <div class="pricing-card">
-          <h3 data-i18n="essential-package">Essential</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="5"></div>
+          <h3 data-i18n="pro-starter">Pro Starter</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="25">Έως 25 συσκευές</div>
           <div class="price-container">
             <div class="price price-monthly show">99€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">999€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+            <div class="price price-annual">990€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
           </div>
-          <div class="annual-savings" data-i18n="save-189">Εξοικονομείτε 189€</div>
+          <div class="annual-savings" data-i18n="save-198">Εξοικονομείτε 198€ ετησίως</div>
           <ul class="pricing-features">
-            <li data-i18n="network-monitoring">Έλεγχος δικτύου</li>
-            <li data-i18n="ad-blocking">Ad-blocking / DNS filtering</li>
-            <li data-i18n="wifi-optimization">Βελτιστοποίηση Wi-Fi</li>
-            <li data-i18n="firewall-config">Βασική παραμετροποίηση firewall</li>
-            <li data-i18n="basic-support">Βασική υποστήριξη</li>
+            <li data-i18n="pro-feature-1">Προστασία δικτύου και endpoint</li>
+            <li data-i18n="pro-feature-2">Firewall management</li>
+            <li data-i18n="pro-feature-3">Email security & anti-phishing</li>
+            <li data-i18n="pro-feature-4">Cloud backup (100GB)</li>
+            <li data-i18n="pro-feature-5">Βασική υποστήριξη (9πμ-5μμ)</li>
           </ul>
           <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
 
-        <!-- Secure Office -->
+        <!-- Pro Business -->
         <div class="pricing-card popular">
           <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
-          <h3 data-i18n="secure-office">Ασφαλές Γραφείο</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="15"></div>
+          <h3 data-i18n="pro-business">Pro Business</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="50">Έως 50 συσκευές</div>
           <div class="price-container">
-            <div class="price price-monthly show">249€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">2,499€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+            <div class="price price-monthly show">199€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">1,990€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
           </div>
-          <div class="annual-savings" data-i18n="save-489">Εξοικονομείτε 489€</div>
+          <div class="annual-savings" data-i18n="save-398">Εξοικονομείτε 398€ ετησίως</div>
           <ul class="pricing-features">
-            <li data-i18n="all-essential">Όλα από το Essential πακέτο</li>
-            <li data-i18n="wireguard-vpn">WireGuard VPN</li>
-            <li data-i18n="nextcloud-docs">Nextcloud για έγγραφα</li>
-            <li data-i18n="backups-scans">Αντίγραφα ασφαλείας & σαρώσεις</li>
-            <li data-i18n="security-training">Εκπαίδευση ασφαλείας</li>
-            <li data-i18n="priority-support">Προτεραιότητα υποστήριξης</li>
+            <li data-i18n="pro-business-feature-1">Όλα από το Pro Starter</li>
+            <li data-i18n="pro-business-feature-2">24/7 monitoring & alerting</li>
+            <li data-i18n="pro-business-feature-3">VPN access για απομακρυσμένο προσωπικό</li>
+            <li data-i18n="pro-business-feature-4">Cloud backup (500GB)</li>
+            <li data-i18n="pro-business-feature-5">Εκπαίδευση προσωπικού</li>
+            <li data-i18n="pro-business-feature-6">Προτεραιότητα υποστήριξης</li>
           </ul>
           <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
 
-<!-- Enterprise -->
-<div class="pricing-card enterprise-card">
-  <h3 data-i18n="enterprise-package">Enterprise Solution</h3>
-  <div class="device-limit" data-i18n="unlimited-devices">Απεριόριστες συσκευές</div>
-  <div class="enterprise-price-container">
-    <div class="enterprise-solution-header" data-i18n="custom-solution-header">Custom Tailored Solution</div>
-    <p class="enterprise-solution-desc" data-i18n="custom-solution-desc">We'll build a perfect package for your business needs</p>
-  </div>
-  <ul class="pricing-features">
-    <li data-i18n="proxmox-stack">Proxmox / Unraid stack</li>
-    <li data-i18n="24-7-monitoring">24/7 παρακολούθηση</li>
-    <li data-i18n="zfs-backups">ΖFS backups</li>
-    <li data-i18n="unlimited-support">Απεριόριστη υποστήριξη</li>
-    <li data-i18n="multi-site">Διαχείριση πολλαπλών τοποθεσιών</li>
-    <li data-i18n="dedicated-engineer">Αποκλειστικός μηχανικός</li>
-    <li data-i18n="custom-solution">Fully customized to your requirements</li>
-  </ul>
-  <a href="contact.html" class="btn btn-primary" data-i18n="contact-for-quote">Λήψη Προσφοράς</a>
-</div>
+        <!-- Pro Advanced -->
+        <div class="pricing-card">
+          <h3 data-i18n="pro-advanced">Pro Advanced</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="100">Έως 100 συσκευές</div>
+          <div class="price-container">
+            <div class="price price-monthly show">349€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">3,490€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+          </div>
+          <div class="annual-savings" data-i18n="save-698">Εξοικονομείτε 698€ ετησίως</div>
+          <ul class="pricing-features">
+            <li data-i18n="pro-advanced-feature-1">Όλα από το Pro Business</li>
+            <li data-i18n="pro-advanced-feature-2">Advanced threat protection</li>
+            <li data-i18n="pro-advanced-feature-3">Multi-site management</li>
+            <li data-i18n="pro-advanced-feature-4">Cloud backup (1TB)</li>
+            <li data-i18n="pro-advanced-feature-5">Dedicated account manager</li>
+            <li data-i18n="pro-advanced-feature-6">24/7 premium support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
+        </div>
       </div>
     </div>
   </section>
-
-  
 
   <!-- Value Proposition Section -->
   <section class="value-proposition-section">
     <div class="container">
       <div class="value-proposition">
-        <h2 data-i18n="value-title">Γιατί να επιλέξετε την HellasNOC;</h2>
+        <h2 data-i18n="pro-value-title">Γιατί οι Επιχειρήσεις Εμπιστεύονται την HellasNOC;</h2>
         <div class="value-grid">
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-shield-alt"></i>
+              <i class="fas fa-chart-line"></i>
             </div>
-            <h3 data-i18n="value-security">Ασφάλεια Enterprise επιπέδου</h3>
-            <p data-i18n="value-security-desc">Προστασία από απειλές με τεχνολογίες enterprise επιπέδου σε τιμές ΜΚΔ</p>
+            <h3 data-i18n="pro-value-1">Μείωση Κινδύνων</h3>
+            <p data-i18n="pro-value-1-desc">Προστατέψτε την επιχείρησή σας από cyber απειλές και αποφύγετε ακριβές παύσεις λειτουργίας</p>
           </div>
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-server"></i>
+              <i class="fas fa-users"></i>
             </div>
-            <h3 data-i18n="value-uptime">99.9% Uptime Εγγύηση</h3>
-            <p data-i18n="value-uptime-desc">Η επιχείρησή σας παραμένει online με εγγύηση υψηλής διαθεσιμότητας</p>
+            <h3 data-i18n="pro-value-2">Απομακρυσμένη Πρόσβαση</h3>
+            <p data-i18n="pro-value-2-desc">Δώστε στο προσωπικό σας ασφαλή πρόσβαση από οπουδήποτε με VPN και advanced security</p>
           </div>
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-headset"></i>
+              <i class="fas fa-gem"></i>
             </div>
-            <h3 data-i18n="value-support">Εξειδικευμένη Υποστήριξη</h3>
-            <p data-i18n="value-support-desc">Οι ειδικοί μας είναι δίπλα σας για οποιοδήποτε τεχνικό ζήτημα</p>
+            <h3 data-i18n="pro-value-3">Επαγγελματική Υποστήριξη</h3>
+            <p data-i18n="pro-value-3-desc">Ειδικοί διαθέσιμοι 24/7 για να λύσουν οποιοδήποτε τεχνικό ζήτημα άμεσα</p>
           </div>
         </div>
       </div>
@@ -168,14 +172,12 @@
   <section class="technologies-section">
     <div class="container">
       <div class="logo-section">
-        <h2 data-i18n="technologies-title">Τεχνολογίες που χρησιμοποιούμε</h2>
+        <h2 data-i18n="technologies-title">Τεχνολογίες που Χρησιμοποιούμε</h2>
         <div class="logo-grid">
           <div class="logo-item"><img src="assets/img/tech-logos/opnsense.png" alt="OPNsense" loading="lazy"></div>
           <div class="logo-item"><img src="assets/img/tech-logos/pfsense.png" alt="pfSense" loading="lazy"></div>
           <div class="logo-item"><img src="assets/img/tech-logos/proxmox.svg" alt="Proxmox" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/unraid.png" alt="Unraid" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/mikrotik.png" alt="MikroTik" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/ubuntu.png" alt="Ubuntu" loading="lazy"></div>
+          <div class="logo-item"><img src="assets/img/tech-logos/wireguard.png" alt="WireGuard" loading="lazy"></div>
           <div class="logo-item"><img src="assets/img/tech-logos/synology.png" alt="Synology" loading="lazy"></div>
         </div>
       </div>
@@ -185,18 +187,32 @@
   <!-- FAQ -->
   <section class="faq-section">
     <div class="container">
-      <h2 data-i18n="faq-title">Συχνές Ερωτήσεις</h2>
+      <h2 data-i18n="pro-faq-title">Συχνές Ερωτήσεις για Επαγγελματικά Πακέτα</h2>
       <div class="faq-item">
-        <h3 data-i18n="installation-time">Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
-        <p data-i18n="installation-answer">Τα βασικά πακέτα εγκαθίστανται συνήθως εντός 2-3 εργάσιμων ημερών. Τα πιο σύνθετα πακέτα μπορεί να χρειαστούν έως και μια εβδομάδα.</p>
+        <h3 data-i18n="pro-faq-1">Πόσο γρήγορα μπορείτε να ανταποκριθείτε σε επείγοντα ζητήματα;</h3>
+        <p data-i18n="pro-faq-1-answer">Σε κρίσιμα ζητήματα, ανταποκρινόμαστε εντός 15 λεπτών. Στα Pro Business και Advanced πακέτα προσφέρουμε 24/7 υποστήριξη.</p>
       </div>
       <div class="faq-item">
-        <h3 data-i18n="free-trial">Προσφέρετε δωρεάν δοκιμή;</h3>
-        <p data-i18n="free-trial-answer">Ναι, προσφέρουμε 7ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας.</p>
+        <h3 data-i18n="pro-faq-2">Προσφέρετε εκπαίδευση προσωπικού;</h3>
+        <p data-i18n="pro-faq-2-answer">Ναι, στα Pro Business και Advanced πακέτα περιλαμβάνεται εκπαίδευση προσωπικού για ασφαλείς πρακτικές και αναγνώριση phishing attempts.</p>
       </div>
       <div class="faq-item">
-        <h3 data-i18n="contract-length">Ποια είναι η διάρκεια των συμβάσεων;</h3>
-        <p data-i18n="contract-length-answer">Προσφέρουμε ευέλικτες επιλογές: μηνιαίες συμβάσεις με 30ήμερη notice περίοδο ή ετήσιες συμβάσεις με έκπτωση 15%.</p>
+        <h3 data-i18n="pro-faq-3">Μπορώ να αναβαθμίσω το πακέτο μου αργότερα;</h3>
+        <p data-i18n="pro-faq-3-answer">Φυσικά! Μπορείτε να αναβαθμίσετε ανά πάσα στιγμή. Θα εφαρμόσουμε τη νέα τιμολόγηση από την επόμενη χρεωστική περίοδο.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-i18n="pro-cta-title">Προστατέψτε την Επιχείρησή Σας Σήμερα</h2>
+        <p data-i18n="pro-cta-text">Ξεκινήστε με δωρεάν αξιολόγηση ασφαλείας και προσαρμοσμένη πρόταση για τις ανάγκες σας.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary" data-i18n="request-consultation">Ζητήστε Συμβουλευτική</a>
+          <a href="pricing-enterprise.html" class="btn btn-outline" data-i18n="view-enterprise-packages">Δείτε Εταιρικά Πακέτα</a>
+        </div>
       </div>
     </div>
   </section>
@@ -207,14 +223,14 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3 data-i18n="company">HellasNOC</h3>
-          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφάλειας.</p>
+          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
         <div class="footer-column">
           <h3 data-i18n="links">Σύνδεσμοι</h3>
           <ul>
             <li><a href="index.html" data-i18n="home">Αρχική</a></li>
             <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
-            <li><a href="pricing.html" data-i18n="pricing">Τιμές</a></li>
+            <li><a href="pricing-pro.html" data-i18n="pricing-pro">Επαγγελματικά Πακέτα</a></li>
             <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
         </div>
@@ -235,8 +251,9 @@
 
   <script src="translations.js"></script>
   <script>
+    // Same JavaScript as in pricing-home.html
     document.addEventListener('DOMContentLoaded', function() {
-      // --- Language switch / i18n ---
+      // Language switcher functionality
       let currentLang = localStorage.getItem('language') || 'el';
       updateLanguage(currentLang);
 
@@ -272,18 +289,16 @@
         });
       }
 
-      // --- Price toggle ---
+      // Price toggle functionality
       const monthlyToggle = document.getElementById('monthly-toggle');
       const annualToggle = document.getElementById('annual-toggle');
       const priceSlider = document.querySelector('.price-toggle-slider');
 
-      // Initialize the toggle state
       function initializeToggle() {
         monthlyToggle.classList.add('active');
         annualToggle.classList.remove('active');
         if (priceSlider) priceSlider.style.transform = 'translateX(0)';
         
-        // Show monthly prices, hide annual
         document.querySelectorAll('.price-monthly').forEach(el => {
           el.classList.add('show');
         });
@@ -300,12 +315,10 @@
         annualToggle.classList.remove('active');
         if (priceSlider) priceSlider.style.transform = 'translateX(0)';
         
-        // Hide annual savings
         document.querySelectorAll('.annual-savings').forEach(el => {
           el.classList.remove('show');
         });
         
-        // Switch to monthly prices
         document.querySelectorAll('.price-annual').forEach(el => {
           el.classList.remove('show');
         });
@@ -317,26 +330,21 @@
       function showAnnual() {
         annualToggle.classList.add('active');
         monthlyToggle.classList.remove('active');
-        // FIXED: Translate by 100% of the slider's own width, not the container
         if (priceSlider) priceSlider.style.transform = 'translateX(calc(100% + 8px))';
         
-        // Hide monthly prices first
         document.querySelectorAll('.price-monthly').forEach(el => {
           el.classList.remove('show');
         });
         
-        // Then show annual prices and savings
         document.querySelectorAll('.price-annual').forEach(el => {
           el.classList.add('show');
         });
         
-        // Show savings
         document.querySelectorAll('.annual-savings').forEach(el => {
           el.classList.add('show');
         });
       }
 
-      // Event listeners for toggle buttons
       monthlyToggle.addEventListener('click', () => {
         if (!monthlyToggle.classList.contains('active')) {
           showMonthly();
@@ -349,8 +357,30 @@
         }
       });
 
-      // Initialize the toggle on page load
       initializeToggle();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile dropdown toggle
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+          }
+        });
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
     });
   </script>
 </body>

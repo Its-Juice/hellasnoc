@@ -7,128 +7,6 @@
   <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Additional styles for the sliding animation */
-    .services-tabs-section {
-      background: var(--background);
-      padding: 4rem 1rem;
-    }
-    
-    .services-tabs-container {
-      position: relative;
-      min-height: 600px;
-      overflow: hidden;
-    }
-    
-    .tab-content {
-      position: absolute;
-      width: 100%;
-      opacity: 0;
-      transform: translateX(30px);
-      transition: all 0.4s ease;
-      pointer-events: none;
-    }
-    
-    .tab-content.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: all;
-    }
-    
-    .tab-content.slide-out-left {
-      transform: translateX(-30px);
-      opacity: 0;
-    }
-    
-    .tab-content.slide-out-right {
-      transform: translateX(30px);
-      opacity: 0;
-    }
-    
-    /* Additional styles for the fixed tab functionality */
-    .services-tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 3rem;
-      border-bottom: 1px solid var(--gray-200);
-      flex-wrap: wrap;
-    }
-    
-    .tab-btn {
-      background: none;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-light);
-      cursor: pointer;
-      transition: var(--transition);
-      border-bottom: 3px solid transparent;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .tab-btn.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
-    
-    .tab-btn:hover {
-      color: var(--primary);
-    }
-    
-    .service-features {
-      list-style: none;
-      margin: 1.5rem 0;
-    }
-    
-    .service-features li {
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text);
-    }
-    
-    .service-features li i {
-      color: var(--success);
-    }
-    
-    .tech-partners-section {
-      padding: 4rem 1rem;
-      background: var(--white);
-    }
-    
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .partner-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100px;
-      padding: 1.5rem;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    
-    .partner-logo:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .partner-logo img {
-      max-height: 50px;
-      width: auto;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
@@ -145,12 +23,19 @@
         <span class="bar"></span>
       </button>
       <nav id="primary-navigation">
-        <ul class="nav-list" role="menubar">
-          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
-          <li><a href="services.html" data-i18n="services" role="menuitem" aria-current="page">Υπηρεσίες</a></li>
-          <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
-          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
-        </ul>
+<ul class="nav-list" role="menubar">
+  <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+  <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
+  <li class="dropdown">
+    <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
+      <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-business">Επαγγελματικά Πακέτα</a></li>
+      <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
+    </ul>
+  </li>
+  <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
+</ul>
       </nav>
       <div class="header-right">
         <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
@@ -594,6 +479,28 @@ function switchTab(tabName) {
         });
       });
     });
+    document.addEventListener('DOMContentLoaded', function() {
+  // Mobile dropdown toggle
+  const dropdownToggles = document.querySelectorAll('.dropdown > a');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+      }
+    });
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+});
   </script>
 </body>
 </html>

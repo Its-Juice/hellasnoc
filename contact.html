@@ -21,12 +21,19 @@
         <span class="bar"></span>
       </button>
       <nav id="primary-navigation">
-        <ul class="nav-list" role="menubar">
-          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
-          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-          <li><a href="pricing.html" data-i18n="pricing" role="menuitem">Τιμές</a></li>
-          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
-        </ul>
+<ul class="nav-list" role="menubar">
+  <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+  <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
+  <li class="dropdown">
+    <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
+      <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-business">Επαγγελματικά Πακέτα</a></li>
+      <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
+    </ul>
+  </li>
+  <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
+</ul>
       </nav>
       <div class="header-right">
         <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
@@ -43,7 +50,7 @@
       </div>
     </div>
   </header>
-
+  
   <!-- Contact Hero -->
   <section class="hero contact-hero">
     <div class="container">
@@ -223,6 +230,28 @@
         });
       }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+  // Mobile dropdown toggle
+  const dropdownToggles = document.querySelectorAll('.dropdown > a');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+      }
+    });
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+});
   </script>
 </body>
 </html>

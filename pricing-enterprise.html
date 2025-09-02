@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HellasNOC - Εταιρικά Πακέτα</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container" aria-label="Κύρια πλοήγηση">
+      <div class="logo">
+        <a href="index.html" aria-label="HellasNOC home">
+          <img src="https://placehold.co/200x60/005bae/FFFFFF/png?text=HellasNOC" alt="HellasNOC Logo" loading="lazy">
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Μενού" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="primary-navigation">
+        <ul class="nav-list" role="menubar">
+          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
+          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
+          <li class="dropdown">
+            <a href="#" data-i18n="pricing" role="menuitem" aria-haspopup="true" aria-expanded="false">Τιμές</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pricing-home.html" role="menuitem" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
+              <li><a href="pricing-pro.html" role="menuitem" data-i18n="pricing-pro">Επαγγελματικά Πακέτα</a></li>
+              <li><a href="pricing-enterprise.html" role="menuitem" data-i18n="pricing-enterprise" aria-current="page">Εταιρικά Πακέτα</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
+          <div class="language-slider"></div>
+          <div class="language-toggle-container">
+            <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
+              <img src="https://placehold.co/20x15/005bae/FFFFFF/png?text=GR" alt="Greek flag">
+            </button>
+            <button class="language-btn" data-lang="en" aria-label="English">
+              <img src="https://placehold.co/20x15/005bae/FFFFFF/png?text=EN" alt="UK flag">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pricing Hero -->
+  <section class="hero pricing-hero enterprise-hero">
+    <div class="container">
+      <h1 data-i18n="enterprise-packages-title">Εταιρικά Πακέτα Ασφαλείας</h1>
+      <p data-i18n="enterprise-packages-subtitle">Επιχειρησιακές λύσεις για μεγάλες επιχειρήσεις. Πολυ-τοποθεσιακά δίκτυα, διαχείριση κρίσεων και αποκλειστική υποστήριξη.</p>
+    </div>
+  </section>
+
+  <!-- Enterprise Pricing Section -->
+  <section class="enterprise-pricing-section">
+    <div class="pricing-header">
+      <h2 data-i18n="enterprise-starter-title">Επιχειρησιακά Πακέτα</h2>
+      <p data-i18n="enterprise-starter-text">Εξατομικευμένες λύσεις για εταιρείες που απαιτούν απόλυτη ασφάλεια και διαθεσιμότητα</p>
+    </div>
+    
+    <div class="enterprise-cards">
+      <div class="enterprise-card">
+        <h3 data-i18n="enterprise-essential">Enterprise Essential</h3>
+        <div class="enterprise-price">11,000<span data-i18n="year">/έτος</span></div>
+        <ul class="enterprise-features">
+          <li data-i18n="enterprise-essential-1">Έως 250 συσκευές</li>
+          <li data-i18n="enterprise-essential-2">24/7 monitoring & alerting</li>
+          <li data-i18n="enterprise-essential-3">Advanced threat protection</li>
+          <li data-i18n="enterprise-essential-4">Multi-site management</li>
+          <li data-i18n="enterprise-essential-5">Dedicated account manager</li>
+          <li>Στατιστικές αναφορές & analytics</li>
+          <li>Τριμηνιαίοι ασφαλείας ελέγχους</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" data-i18n="request-quote">Ζητήστε Προσφορά</a>
+      </div>
+      
+      <div class="enterprise-card popular">
+        <div class="popular-badge" data-i18n="recommended">Συνιστάται</div>
+        <h3 data-i18n="enterprise-premium">Enterprise Premium</h3>
+        <div class="enterprise-price">20,000<span data-i18n="year">/έτος</span></div>
+        <ul class="enterprise-features">
+          <li data-i18n="enterprise-premium-1">Έως 500 συσκευές</li>
+          <li data-i18n="enterprise-premium-2">SIEM integration</li>
+          <li data-i18n="enterprise-premium-3">Compliance management</li>
+          <li data-i18n="enterprise-premium-4">Disaster recovery</li>
+          <li data-i18n="enterprise-premium-5">On-site support available</li>
+          <li>Προηγμένη ανάλυση απειλών</li>
+          <li>Μηνιαίοι penetration tests</li>
+          <li>Εξατομικευμένο σχέδιο continuty</li>
+          <li>Προτεραιότητα σε επείγοντα incidents</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" data-i18n="request-quote">Ζητήστε Προσφορά</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Solutions -->
+  <section class="enterprise-solutions">
+    <div class="container">
+      <div class="enterprise-content">
+        <h2 data-i18n="enterprise-custom-title">Προσαρμοσμένες Λύσεις για Μεγάλες Επιχειρήσεις</h2>
+        <p data-i18n="enterprise-custom-text">Για εταιρείες με πολύπλοκες ανάγκες, δημιουργούμε προσαρμοσμένα πακέτα που καλύπτουν ακριβώς τις απαιτήσεις σας. Επικοινωνήστε μαζί μας για μια εξατομικευμένη πρόταση.</p>
+        
+        <div class="enterprise-features-grid">
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-sitemap"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-1">Πολυ-τοποθεσιακά Δίκτυα</h3>
+            <p data-i18n="enterprise-feature-1-desc">Κεντρική διαχείριση πολλαπλών τοποθεσιών με ενιαία πολιτική ασφαλείας</p>
+          </div>
+          
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-2">Αποκλειστική Υποστήριξη</h3>
+            <p data-i18n="enterprise-feature-2-desc">Dedicated account manager και τεχνική ομάδα 24/7 για άμεση ανταπόκριση</p>
+          </div>
+          
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-3">Προηγμένη Προστασία</h3>
+            <p data-i18n="enterprise-feature-3-desc">Next-gen firewall, SIEM integration και threat intelligence services</p>
+          </div>
+          
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-4">Υβριδική Υποδομή</h3>
+            <p data-i18n="enterprise-feature-4-desc">Ολοκληρωμένη διαχείριση on-premise και cloud infrastructure</p>
+          </div>
+          
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-5">Συμμόρφωση & Αναφορές</h3>
+            <p data-i18n="enterprise-feature-5-desc">Πλήρης συμμόρφωση με GDPR και άλλα κανονιστικά πλαίσια. Λεπτομερείς αναφορές</p>
+          </div>
+          
+          <div class="enterprise-feature">
+            <div class="feature-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3 data-i18n="enterprise-feature-6">Διαχείριση Κρίσεων</h3>
+            <p data-i18n="enterprise-feature-6-desc">Σχέδιο continuty και disaster recovery για ελάχιστο downtime</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="case-studies">
+    <div class="container">
+      <h2 data-i18n="case-studies-title">Μελετήματα Περιπτώσεων</h2>
+      <div class="case-studies-grid">
+        <div class="case-study">
+          <div class="case-logo">
+            <img src="https://placehold.co/180x60/005bae/FFFFFF/png?text=Client+1" alt="Client Logo" loading="lazy">
+          </div>
+          <h3 data-i18n="case-study-1-title">Δικτυακή Υποδομή για Τράπεζα</h3>
+          <p data-i18n="case-study-1-text">Αναβάθμιση ολόκληρης της δικτυακής υποδομής για κορυφαία ελληνική τράπεζα με 50+ υποκαταστήματα.</p>
+          <div class="case-results">
+            <div class="result-item">
+              <div class="result-number">99.99%</div>
+              <div data-i18n="uptime">Disponibilidad</div>
+            </div>
+            <div class="result-item">
+              <div class="result-number">40%</div>
+              <div data-i18n="cost-reduction">Μείωση Κόστους</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="case-study">
+          <div class="case-logo">
+            <img src="https://placehold.co/180x60/005bae/FFFFFF/png?text=Client+2" alt="Client Logo" loading="lazy">
+          </div>
+          <h3 data-i18n="case-study-2-title">Cloud Migration για Retail</h3>
+          <p data-i18n="case-study-2-text">Μετάβαση σε υβριδικό cloud για αλυσίδα καταστημάτων με 120+ σημεία πώλησης.</p>
+          <div class="case-results">
+            <div class="result-item">
+              <div class="result-number">3x</div>
+              <div data-i18n="performance">Απόδοση</div>
+            </div>
+            <div class="result-item">
+              <div class="result-number">100%</div>
+              <div data-i18n="compliance">Συμμόρφωση</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section enterprise-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-i18n="enterprise-cta-title">Συζητήστε με Ειδικό Σήμερα</h2>
+        <p data-i18n="enterprise-cta-text">Οι λύσεις μας προσαρμόζονται ακριβώς στις ανάγκες σας. Επικοινωνήστε για μια δωρεάν αξιολόγηση και προσαρμοσμένη πρόταση.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary" data-i18n="schedule-consultation">Προγραμματίστε Συμβουλευτική</a>
+          <a href="tel:+302106969420" class="btn btn-outline" data-i18n="call-now">Καλέστε Τώρα</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 data-i18n="company">HellasNOC</h3>
+          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="links">Σύνδεσμοι</h3>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Αρχική</a></li>
+            <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
+            <li><a href="pricing-enterprise.html" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
+            <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="contact">Επικοινωνία</h3>
+          <ul>
+            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
+            <li data-i18n="phone">Τηλ: 210 6969 420</li>
+            <li data-i18n="email">Email: info@hellasnoc.gr</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p data-i18n="copyright">© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.enterprise-card, .enterprise-feature, .case-study, .enterprise-content h2, .enterprise-content p');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.classList.add('animate');
+        }
+      });
+    }
+    
+    // Initial check
+    animateOnScroll();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>
