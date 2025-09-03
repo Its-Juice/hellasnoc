@@ -3468,3 +3468,157 @@ html[lang="el"] .nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
     height: 100% !important;
   }
 }
+
+
+/* ==================== */
+/* FIX: Pricing Toggle Sizing & Padding */
+/* Aligns the slider perfectly with equal inset on both ends */
+/* ==================== */
+
+.pricing-toggle {
+  --toggle-p: 6px; /* base padding */
+  padding: var(--toggle-p);
+}
+
+.pricing-toggle-slider {
+  top: var(--toggle-p) !important;
+  left: var(--toggle-p) !important;
+  width: calc(50% - var(--toggle-p)) !important;
+  height: calc(100% - (var(--toggle-p) * 2)) !important;
+}
+
+/* Buttons evenly flex to half width, no fixed px padding */
+.pricing-toggle-btn {
+  flex: 1 1 50% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border-radius: 50px !important;
+}
+
+
+/* ==================== */
+/* TWEAK: Nudge & normalize pricing toggle slider */
+/* Addresses small rendering gap on the right side by using a safe offset */
+/* ==================== */
+
+.pricing-toggle {
+  --toggle-p: 6px;
+  --toggle-offset: 1px; /* visual nudge — adjust to 0 if it feels too large */
+  padding: var(--toggle-p) !important;
+  box-sizing: border-box;
+}
+
+/* Use content-box for the slider so width calculation isn't affected by any accidental borders/padding */
+.pricing-toggle-slider {
+  box-sizing: content-box !important;
+  top: var(--toggle-p) !important;
+  left: var(--toggle-p) !important;
+  /* Calculation uses the inner available width so the slider sits flush on both sides */
+  width: calc((100% - (var(--toggle-p) * 2)) / 2 + var(--toggle-offset)) !important;
+  height: calc(100% - (var(--toggle-p) * 2)) !important;
+  transform-origin: left center !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* If JS sets transform: translateX(100%) inline, override and apply the same visual nudge */
+.pricing-toggle-slider[style*="translateX(100%)"] {
+  transform: translateX(calc(100% + var(--toggle-offset))) !important;
+}
+
+/* Small-screen tweak */
+@media (max-width: 768px) {
+  .pricing-toggle { --toggle-p: 5px; --toggle-offset: 0px; }
+  .pricing-toggle-slider {
+    width: calc((100% - (var(--toggle-p) * 2)) / 2 + var(--toggle-offset)) !important;
+    height: calc(100% - (var(--toggle-p) * 2)) !important;
+  }
+}
+
+
+/* ==================== */
+/* STRONG FIX: Pricing toggle — force left-based movement */
+/* This overrides inline transform moves and many class-name variants to ensure the knob
+   lands perfectly flush on the right without visual gaps. */
+/* ==================== */
+
+.pricing-toggle {
+  --toggle-p: 6px;
+  padding: var(--toggle-p) !important;
+  box-sizing: border-box !important;
+}
+
+/* slider occupies exactly half of the inner width: (100% - 2*padding)/2 */
+.pricing-toggle-slider {
+  box-sizing: border-box !important;
+  top: var(--toggle-p) !important;
+  left: var(--toggle-p) !important;
+  width: calc((100% - (var(--toggle-p) * 2)) / 2) !important;
+  height: calc(100% - (var(--toggle-p) * 2)) !important;
+  border-radius: 999px !important;
+  transition: left 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transform: none !important; /* neutralize any leftover transforms */
+  box-shadow: var(--shadow) !important;
+  z-index: 1 !important;
+}
+
+/* When the toggle is toggled to the right, the slider's left should be 50% exactly.
+   Support multiple possible JS class/data-name conventions. */
+.pricing-toggle.active .pricing-toggle-slider,
+.pricing-toggle.annual .pricing-toggle-slider,
+.pricing-toggle[data-state="annual"] .pricing-toggle-slider,
+.pricing-toggle[data-active="annual"] .pricing-toggle-slider,
+.pricing-toggle.is-annual .pricing-toggle-slider {
+  left: 50% !important;
+  transform: none !important;
+}
+
+/* Catch common inline transform patterns and convert them to left-based placement */
+.pricing-toggle-slider[style*="translateX(100%)"],
+.pricing-toggle-slider[style*="translate3d(100%"],
+.pricing-toggle-slider[style*="translateX( 100%"],
+.pricing-toggle-slider[style*="translateX(100%"] {
+  left: 50% !important;
+  transform: none !important;
+}
+
+/* Make sure the buttons are on top of the slider for clicks/labels */
+.pricing-toggle-btn {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 50% !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .pricing-toggle { --toggle-p: 5px !important; padding: var(--toggle-p) !important; }
+  .pricing-toggle-slider {
+    width: calc((100% - (var(--toggle-p) * 2)) / 2) !important;
+    height: calc(100% - (var(--toggle-p) * 2)) !important;
+  }
+  .pricing-toggle.active .pricing-toggle-slider,
+  .pricing-toggle.annual .pricing-toggle-slider,
+  .pricing-toggle[data-state="annual"] .pricing-toggle-slider {
+    left: 50% !important;
+  }
+}
+
+/* ==================== */
+/* DEBUG: Pricing toggle outline helper */
+/* Adds colored outlines so we can see spacing/padding visually */
+/* ==================== */
+.pricing-toggle {
+  outline: 3px dashed red !important;
+}
+.pricing-toggle > .pricing-toggle-slider {
+  outline: 3px solid lime !important;
+}
+.pricing-toggle > .pricing-toggle-container > .pricing-toggle-btn {
+  outline: 3px solid orange !important;
+  position: relative !important;
+  z-index: 9999 !important; /* bring button outline above slider */
+}
