@@ -3422,3 +3422,49 @@ html[lang="el"] .nav-list li:nth-child(3) > a[data-i18n="pricing"]::after {
     radial-gradient(circle at 80% 70%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
+
+/* ==================== */
+/* FIX: Unified padding & sizing for toggles */
+/* Ensures the slider lands perfectly centered when using transform: translateX(100%) */
+/* ==================== */
+
+.language-switcher,
+.pricing-toggle {
+  position: relative;
+}
+
+/* Define per-component internal padding as a variable so math stays correct */
+.language-switcher { --toggle-p: 3px; padding: var(--toggle-p); }
+.pricing-toggle    { --toggle-p: 6px; padding: var(--toggle-p); }
+
+/* Core slider sizing logic:
+   Width = 50% - left padding, so L + W = 50%.
+   That way translateX(100%) moves the knob exactly to the other side,
+   preserving the same padding on both ends without needing JS offsets. */
+.language-slider,
+.pricing-toggle-slider {
+  top: var(--toggle-p) !important;
+  left: var(--toggle-p) !important;
+  width: calc(50% - var(--toggle-p)) !important;
+  height: calc(100% - (var(--toggle-p) * 2)) !important;
+}
+
+/* Buttons inside keep flexible sizing; avoid fixed px that can break alignment */
+.language-btn,
+.pricing-toggle-btn {
+  width: auto !important;
+  flex: 1 1 50% !important;
+  height: 100% !important;
+}
+
+/* Mobile: remove previous fixed sizes that caused misalignment */
+@media (max-width: 768px) {
+  .language-switcher { --toggle-p: 3px; } /* keep same visual density */
+  .pricing-toggle    { --toggle-p: 6px; }
+  .language-btn,
+  .pricing-toggle-btn {
+    width: auto !important;
+    flex: 1 1 50% !important;
+    height: 100% !important;
+  }
+}
