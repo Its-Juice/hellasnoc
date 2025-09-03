@@ -306,7 +306,7 @@ const translations = {
     "month": "/μήνα",
     "year": "/έτος",
     "choose": "Επιλογή",
-    "most-popular": "Πιο Δημοφιλές",
+    "most-popular": "Δημοφιλές",
     "devices": "Έως {count} συσκευές",
     "save": "Εξοικονόμηση",
     

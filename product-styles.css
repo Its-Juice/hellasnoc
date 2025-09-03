@@ -1,0 +1,496 @@
+/* ==================== */
+/* UNIFIED PRODUCT CARD STYLES */
+/* ==================== */
+
+.product-card,
+.pricing-card,
+.enterprise-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  backface-visibility: hidden;
+}
+
+.product-card::before,
+.pricing-card::before,
+.enterprise-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover,
+.pricing-card:hover,
+.enterprise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
+.product-card:hover::before,
+.pricing-card:hover::before,
+.enterprise-card:hover::before {
+  opacity: 1;
+}
+
+/* Popular Highlight */
+.product-card.popular,
+.pricing-card.popular,
+.enterprise-card.popular {
+  transform: scale(1.03);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: var(--shadow-lg), var(--glow);
+  z-index: 2;
+}
+
+.product-card.popular::before,
+.pricing-card.popular::before,
+.enterprise-card.popular::before {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), transparent 70%);
+}
+
+.product-card.popular:hover,
+.pricing-card.popular:hover,
+.enterprise-card.popular:hover {
+  transform: scale(1.03) translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 102, 255, 0.4);
+}
+
+/* Popular Badge */
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tech-white);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: var(--shadow);
+  z-index: 3;
+  animation: pulse 2s infinite;
+}
+
+/* Card Title */
+.product-card h3,
+.pricing-card h3,
+.enterprise-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+/* Device Limit */
+.device-limit {
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-muted);
+  min-height: 24px;
+  transition: color 0.3s ease;
+}
+
+/* ==================== */
+/* PRICE STYLES */
+/* ==================== */
+
+.price-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price,
+.enterprise-price {
+  display: none;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--primary); /* Fallback for browsers that don't support background-clip:text */
+  transition: all 0.4s ease;
+}
+
+.price.show,
+.enterprise-price {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.billing-cycle {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Annual Savings */
+.annual-savings {
+  display: none;
+  margin-bottom: 1.8rem;
+  padding: 0.6rem 0;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.5s ease;
+  background: rgba(0, 229, 255, 0.1);
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.annual-savings.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.annual-savings::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+/* ==================== */
+/* FEATURES LIST */
+/* ==================== */
+
+.pricing-features,
+.enterprise-features {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.pricing-features li,
+.enterprise-features li {
+  margin-bottom: 0.9rem;
+  padding-left: 1.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.pricing-features li::before,
+.enterprise-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* ==================== */
+/* BUTTON STYLES */
+/* ==================== */
+
+.product-card .btn,
+.pricing-card .btn,
+.enterprise-card .btn {
+  margin-top: auto;
+  min-width: 200px;
+  align-self: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ==================== */
+/* PRICE TOGGLE */
+/* ==================== */
+
+.price-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  width: 260px;
+  height: 55px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.price-toggle-slider {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(50% - 12px);
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+}
+
+.price-toggle-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.price-toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.price-toggle-btn.active,
+.price-toggle-btn:hover {
+  color: var(--tech-white);
+}
+
+/* ==================== */
+/* LAYOUT */
+/* ==================== */
+
+.pricing-cards,
+.enterprise-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2.2rem;
+  margin: 4rem auto;
+  align-items: stretch;
+}
+
+/* ==================== */
+/* RESPONSIVE */
+/* ==================== */
+
+@media (max-width: 768px) {
+  .pricing-cards,
+  .enterprise-cards {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .product-card,
+  .pricing-card,
+  .enterprise-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .product-card.popular,
+  .pricing-card.popular,
+  .enterprise-card.popular {
+    transform: scale(1);
+    order: -1; /* Move popular card to top on mobile */
+  }
+  
+  .product-card.popular:hover,
+  .pricing-card.popular:hover,
+  .enterprise-card.popular:hover {
+    transform: translateY(-8px);
+  }
+
+  .price,
+  .enterprise-price {
+    font-size: 2.5rem;
+  }
+
+  .price-toggle {
+    width: 240px;
+    height: 50px;
+  }
+  
+  .popular-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card,
+  .pricing-card,
+  .enterprise-card {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .product-card h3,
+  .pricing-card h3,
+  .enterprise-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .price,
+  .enterprise-price {
+    font-size: 2.2rem;
+  }
+  
+  .pricing-features li,
+  .enterprise-features li {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ==================== */
+/* ANIMATIONS */
+/* ==================== */
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(25px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-25px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Smooth transitions for price changes */
+.price-monthly, 
+.price-annual {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Loading state for cards */
+.product-card.loading::after,
+.pricing-card.loading::after,
+.enterprise-card.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* In styles.css or product-styles.css */
+
+/* Fix popular badge overflow */
+.pricing-card.popular,
+.enterprise-card.popular {
+  overflow: visible;
+}
+
+.popular-badge {
+  top: -20px; /* Move badge further up to prevent clipping */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* Remove gradient from popular cards but keep badge gradient */
+.pricing-card.popular::before,
+.enterprise-card.popular::before {
+  content: none; /* Remove gradient background */
+}
+
+.pricing-card.popular,
+.enterprise-card.popular {
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Same border as regular cards */
+  background: var(--card-bg); /* Same background as regular cards */
+  transform: none; /* Remove scaling effect */
+}
+
+.pricing-card.popular:hover,
+.enterprise-card.popular:hover {
+  transform: translateY(-8px); /* Keep hover effect but remove scaling */
+  box-shadow: var(--shadow-lg); /* Standard shadow without glow effect */
+}
+
+/* Make enterprise cards match product cards */
+.enterprise-card {
+  padding: 3rem 2.5rem; /* Match product card padding */
+}
+
+.enterprise-price {
+  font-size: 3.5rem; /* Match product card price size */
+  margin-bottom: 1.5rem; /* Add spacing like product cards */
+}
+
+/* Ensure all cards have consistent hover effects */
+.product-card:hover,
+.pricing-card:hover,
+.enterprise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 102, 255, 0.3);
+}
