@@ -378,6 +378,30 @@
     });
   });
 
+    // Add this to your existing script in pricing-enterprise.html
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile dropdown toggle
+    const dropdownToggles = document.querySelectorAll('.dropdown > a');
+    
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          this.parentElement.classList.toggle('active');
+        }
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+        });
+      }
+    });
+  });
+
   </script>
 </body>
 </html>

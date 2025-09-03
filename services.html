@@ -251,56 +251,58 @@
     </div>
   </section>
 
-  <!-- Process Explanation Section -->
-  <section class="process-section">
+<!-- Process Roadmap Section -->
+<section class="roadmap-section">
   <div class="container">
     <div class="section-title">
-      <h2 data-i18n="process-title">Η Διαδικασία Μας</h2>
-      <p data-i18n="process-subtitle">Πώς λειτουργούμε για να εξασφαλίσουμε την ασφάλεια του δικτύου σας</p>
+      <h2 data-i18n="roadmap-title">Η Διαδικασία Μας</h2>
+      <p data-i18n="roadmap-subtitle">Από την πρώτη επικοινωνία μέχρι την ολοκλήρωση του project</p>
     </div>
     
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-content">
-          <div class="step-icon">
+    <div class="roadmap">
+      <div class="roadmap-line"></div>
+      
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <div class="roadmap-icon">
             <i class="fas fa-search"></i>
           </div>
-          <div class="step-number">1</div>
-          <h3 data-i18n="step-1-title">Αξιολόγηση</h3>
-          <p data-i18n="step-1-desc">Αναλύουμε το τρέχον δίκτυό σας και εντοπίζουμε αδυναμίες</p>
+          <h3 data-i18n="roadmap-step-1-title">Αξιολόγηση</h3>
+          <p data-i18n="roadmap-step-1-desc">Αναλύουμε το τρέχον δίκτυό σας και εντοπίζουμε αδυναμίες</p>
+          <div class="roadmap-number">1</div>
         </div>
       </div>
       
-      <div class="process-step">
-        <div class="step-content">
-          <div class="step-icon">
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <div class="roadmap-icon">
             <i class="fas fa-pencil-alt"></i>
           </div>
-          <div class="step-number">2</div>
-          <h3 data-i18n="step-2-title">Σχεδιασμός</h3>
-          <p data-i18n="step-2-desc">Δημιουργούμε μια εξατομικευμένη λύση για τις ανάγκες σας</p>
+          <h3 data-i18n="roadmap-step-2-title">Σχεδιασμός</h3>
+          <p data-i18n="roadmap-step-2-desc">Δημιουργούμε μια εξατομικευμένη λύση για τις ανάγκες σας</p>
+          <div class="roadmap-number">2</div>
         </div>
       </div>
       
-      <div class="process-step">
-        <div class="step-content">
-          <div class="step-icon">
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <div class="roadmap-icon">
             <i class="fas fa-cogs"></i>
           </div>
-          <div class="step-number">3</div>
-          <h3 data-i18n="step-3-title">Εφαρμογή</h3>
-          <p data-i18n="step-3-desc">Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες</p>
+          <h3 data-i18n="roadmap-step-3-title">Εφαρμογή</h3>
+          <p data-i18n="roadmap-step-3-desc">Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες</p>
+          <div class="roadmap-number">3</div>
         </div>
       </div>
       
-      <div class="process-step">
-        <div class="step-content">
-          <div class="step-icon">
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <div class="roadmap-icon">
             <i class="fas fa-sync-alt"></i>
           </div>
-          <div class="step-number">4</div>
-          <h3 data-i18n="step-4-title">Συντήρηση</h3>
-          <p data-i18n="step-4-desc">Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας</p>
+          <h3 data-i18n="roadmap-step-4-title">Συντήρηση</h3>
+          <p data-i18n="roadmap-step-4-desc">Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας</p>
+          <div class="roadmap-number">4</div>
         </div>
       </div>
     </div>
@@ -442,35 +444,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Process steps animation
-function animateProcessSteps() {
-  const processSteps = document.querySelectorAll('.process-step');
-  const processSection = document.querySelector('.process-section');
+// Roadmap animation
+function animateRoadmap() {
+  const roadmapSteps = document.querySelectorAll('.roadmap-step');
+  const roadmapSection = document.querySelector('.roadmap-section');
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        processSteps.forEach((step, index) => {
+        roadmapSteps.forEach((step, index) => {
           setTimeout(() => {
             step.classList.add('animate');
           }, index * 200);
         });
-        observer.unobserve(processSection);
+        observer.unobserve(roadmapSection);
       }
     });
   }, { threshold: 0.3 });
   
-  if (processSection) {
-    observer.observe(processSection);
+  if (roadmapSection) {
+    observer.observe(roadmapSection);
   }
 }
 
 // Call the function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Your existing code...
-  
-  // Add process steps animation
-  animateProcessSteps();
+  // Add roadmap animation
+  animateRoadmap();
 });
 
     document.addEventListener('DOMContentLoaded', function() {
