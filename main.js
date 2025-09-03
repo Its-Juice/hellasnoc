@@ -1,5 +1,6 @@
 // main.js - Consolidated JavaScript for HellasNOC
 
+// Fixed dropdown functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
@@ -46,7 +47,97 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-
+    
+    // Keep the dropdown open when hovering over it (desktop only)
+    const productsDropdown = document.querySelector('.products-dropdown');
+    const productsDropdownContent = document.querySelector('.products-dropdown-content');
+    
+    if (productsDropdown && productsDropdownContent) {
+        // Desktop hover behavior
+        productsDropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth >= 769) {
+                this.classList.add('hover-active');
+            }
+        });
+        
+        productsDropdown.addEventListener('mouseleave', function(e) {
+            if (window.innerWidth >= 769) {
+                // Check if mouse is moving to dropdown content
+                const relatedTarget = e.relatedTarget;
+                if (relatedTarget && !productsDropdownContent.contains(relatedTarget)) {
+                    this.classList.remove('hover-active');
+                }
+            }
+        });
+        
+        productsDropdownContent.addEventListener('mouseenter', function() {
+            if (window.innerWidth >= 769) {
+                productsDropdown.classList.add('hover-active');
+            }
+        });
+        
+        productsDropdownContent.addEventListener('mouseleave', function(e) {
+            if (window.innerWidth >= 769) {
+                // Check if mouse is moving to dropdown trigger
+                const relatedTarget = e.relatedTarget;
+                if (relatedTarget && !productsDropdown.contains(relatedTarget)) {
+                    productsDropdown.classList.remove('hover-active');
+                }
+            }
+        });
+    }
+    
+    // The rest of your JavaScript code...
+    // Scroll animation functionality
+    function initScrollAnimation() {
+        // ... your existing code
+    }
+    
+    // Contact form validation
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        // ... your existing code
+    }
+    
+    // Services tabs functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabBtns.length > 0 && tabContents.length > 0) {
+        // ... your existing code
+    }
+    
+    // Roadmap animation
+    function animateRoadmap() {
+        // ... your existing code
+    }
+    
+    // Language switcher functionality
+    let currentLang = localStorage.getItem('language') || 'el';
+    
+    function updateLanguage(lang) {
+        // ... your existing code
+    }
+    
+    // Initialize language
+    updateLanguage(currentLang);
+    
+    // Add event listeners to language buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.dataset.lang;
+            if (lang !== currentLang) {
+                localStorage.setItem('language', lang);
+                updateLanguage(lang);
+            }
+        });
+    });
+    
+    // Update language switcher on window resize
+    window.addEventListener('resize', function() {
+        updateLanguage(currentLang);
+    });
+});
     
     // Scroll animation functionality
     function initScrollAnimation() {
@@ -234,4 +325,3 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         updateLanguage(currentLang);
     });
-});

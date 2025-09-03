@@ -3687,3 +3687,89 @@ footer::before {
         padding-left: 2rem;
     }
 }
+
+/* Fix for Products Dropdown Menu */
+.products-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.products-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 23, 0.98);
+  backdrop-filter: blur(15px);
+  min-width: 220px;
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Create an invisible gap filler between menu and dropdown */
+.products-dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  z-index: 999;
+}
+
+.products-dropdown:hover .products-dropdown-content,
+.products-dropdown:focus-within .products-dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.products-dropdown-content a {
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.products-dropdown-content a:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 2rem;
+}
+
+/* Mobile dropdown */
+@media (max-width: 768px) {
+  .products-dropdown::after {
+    display: none;
+  }
+  
+  .products-dropdown-content {
+    position: static;
+    transform: none;
+    display: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0.5rem 0;
+    border-radius: 8px;
+  }
+  
+  .products-dropdown.active .products-dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
