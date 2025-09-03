@@ -14,26 +14,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile dropdown toggle
+    // Mobile dropdown toggle - FIXED VERSION
     const dropdownToggles = document.querySelectorAll('.dropdown > a, .products-dropdown > a');
     
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
-            if (window.innerWidth < 768) {
+            // Only prevent default on mobile and for dropdown toggles (not regular links)
+            if (window.innerWidth < 768 && this.getAttribute('href') === '#') {
                 e.preventDefault();
                 this.parentElement.classList.toggle('active');
+                
+                // Close other dropdowns when opening this one
+                document.querySelectorAll('.dropdown, .products-dropdown').forEach(dropdown => {
+                    if (dropdown !== this.parentElement) {
+                        dropdown.classList.remove('active');
+                    }
+                });
             }
         });
     });
     
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside - FIXED VERSION
     document.addEventListener('click', function(e) {
-        if (window.innerWidth < 768 && !e.target.closest('.dropdown') && !e.target.closest('.products-dropdown')) {
+        if (window.innerWidth < 768 && 
+            !e.target.closest('.dropdown') && 
+            !e.target.closest('.products-dropdown') &&
+            !e.target.closest('.hamburger')) {
+            
             document.querySelectorAll('.dropdown, .products-dropdown').forEach(dropdown => {
                 dropdown.classList.remove('active');
             });
         }
     });
+
     
     // Scroll animation functionality
     function initScrollAnimation() {
@@ -165,45 +178,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     animateRoadmap();
-});
-
-// Language switcher functionality
-document.addEventListener('DOMContentLoaded', function() {
-    let currentLang = localStorage.getItem('language') || 'el';
-    updateLanguage(currentLang);
     
-    document.querySelectorAll('.language-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const lang = this.dataset.lang;
-        if (lang !== currentLang) {
-          currentLang = lang;
-          localStorage.setItem('language', lang);
-          updateLanguage(lang);
-        }
-      });
-    });
+    // Fixed Language switcher functionality
+    let currentLang = localStorage.getItem('language') || 'el';
     
     function updateLanguage(lang) {
-      // Update buttons
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      
-      // Update slider position
-      const slider = document.querySelector('.language-slider');
-      if (slider) {
-        slider.style.transform = lang === 'el' ? 'translateX(0)' : 'translateX(100%)';
-      }
-
-      // Update html lang attribute
-      document.documentElement.lang = lang;
-      
-      // Update all translatable elements
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
+        // Update buttons
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        // Update slider position - fixed to account for padding
+        const slider = document.querySelector('.language-slider');
+        if (slider) {
+            // Calculate the width and position based on the active button
+            const activeBtn = document.querySelector(`.language-btn[data-lang="${lang}"]`);
+            if (activeBtn) {
+                const btnWidth = activeBtn.offsetWidth;
+                const btnLeft = activeBtn.offsetLeft;
+                
+                slider.style.width = `${btnWidth}px`;
+                slider.style.transform = `translateX(${btnLeft}px)`;
+            }
         }
-      });
+
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        currentLang = lang;
     }
+    
+    // Initialize language
+    updateLanguage(currentLang);
+    
+    // Add event listeners to language buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.dataset.lang;
+            if (lang !== currentLang) {
+                localStorage.setItem('language', lang);
+                updateLanguage(lang);
+            }
+        });
+    });
+    
+    // Update language switcher on window resize to handle responsive changes
+    window.addEventListener('resize', function() {
+        updateLanguage(currentLang);
+    });
 });
