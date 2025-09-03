@@ -255,6 +255,47 @@
     }
   });
 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elements to animate for contact page
+    const animatedElements = [
+      '.contact-section .container',
+      '.contact-info',
+      '.contact-form'
+    ];
+    
+    // Add animation classes to elements
+    animatedElements.forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        // Add base animation class
+        el.classList.add('animate-on-scroll');
+        el.classList.add('animate-fade-up');
+      });
+    });
+    
+    // Intersection Observer to trigger animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+          // Stop observing after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all animated elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  });
+
   </script>
 </body>
 </html>

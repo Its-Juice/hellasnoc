@@ -608,6 +608,64 @@ function switchTab(tabName) {
     }
   });
 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elements to animate for services page
+    const animatedElements = [
+      '.services-tabs-section .section-title',
+      '.services-tabs',
+      '.services-tabs-container',
+      '.guarantees h2',
+      '.guarantees .guarantee-subtitle',
+      '.guarantee-grid',
+      '.process-section .section-title',
+      '.process-steps',
+      '.tech-partners-section .section-title',
+      '.partners-grid',
+      '.cta'
+    ];
+    
+    // Add animation classes to elements
+    animatedElements.forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        // Add base animation class
+        el.classList.add('animate-on-scroll');
+        
+        // Add specific animation type based on element
+        if (selector.includes('grid') || selector.includes('steps')) {
+          el.classList.add('animate-fade-up');
+          el.classList.add('stagger-children');
+        } else if (selector.includes('section-title')) {
+          el.classList.add('animate-fade-up');
+        } else {
+          el.classList.add('animate-fade-scale');
+        }
+      });
+    });
+    
+    // Intersection Observer to trigger animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+          // Stop observing after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all animated elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  });
+
   </script>
 </body>
 </html>
