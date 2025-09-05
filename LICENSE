@@ -1,83 +1,121 @@
-# Proprietary Software License Agreement  
-Συμφωνία Άδειας Χρήσης Ιδιοκτησιακού Λογισμικού  
+# Proprietary Software License Agreement
 
-Copyright © 2025 John Kapelakos – HellasNOC  
-All Rights Reserved / Παντός Δικαιώματος Διατηρούμενου  
-
----
-
-## English Version  
-
-### 1. Ownership  
-The Software, including but not limited to source code, design, structure, user interface, and any related assets, is and shall remain the sole and exclusive property of the author, **John Kapelakos** (“Licensor”).  
-> Note: *HellasNOC is not an active company, and this project is currently experimental.*  
-
-### 2. Grant of Rights  
-No license or rights of any kind are granted under this Agreement.  
-The Software is provided strictly on a **proprietary and confidential basis**.  
-Any use, reproduction, modification, distribution, sublicensing, sale, lease, or other exploitation of the Software, in whole or in part, is expressly prohibited unless authorized in **prior written form by the Licensor**.  
-
-### 3. Restrictions  
-You shall not, directly or indirectly:  
-- Use the Software without prior written consent from the Licensor;  
-- Copy, reproduce, translate, or create derivative works;  
-- Distribute, publish, disclose, or make available to any third party;  
-- Reverse engineer, decompile, disassemble, or attempt to derive source code;  
-- Remove, obscure, or alter any proprietary notices.  
-
-### 4. No Warranty  
-The Software is provided **“AS IS”**, without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.  
-
-### 5. Limitation of Liability  
-To the maximum extent permitted by applicable law, the Licensor shall not be liable for any damages, whether direct, indirect, incidental, consequential, or special, arising out of or relating to the Software or this Agreement.  
-
-### 6. Termination  
-Any unauthorized use of the Software constitutes a material breach of this Agreement.  
-The Licensor reserves the right to pursue all available remedies under **Greek law**.  
-
-### 7. Governing Law  
-This Agreement shall be governed by and construed in accordance with the laws of **Greece**, with exclusive jurisdiction resting with the Greek courts.  
-
-**Notice**  
-This project is experimental. HellasNOC is not an operational company. Unauthorized possession, use, or distribution of this Software is strictly prohibited.  
+**Copyright © 2025 John Kapelakos – HellasNOC**
+All Rights Reserved
 
 ---
 
-## Ελληνική Έκδοση  
+## 1. Definitions
 
-### 1. Ιδιοκτησία  
-Το Λογισμικό, συμπεριλαμβανομένου πηγαίου κώδικα, σχεδίασης, δομής, διεπαφής χρήστη και συναφών στοιχείων, ανήκει και παραμένει στην αποκλειστική ιδιοκτησία του δημιουργού, **Ιωάννη Καπελάκου** (“Δικαιοπάροχος”).  
-> Σημείωση: *Η HellasNOC δεν αποτελεί ενεργή εταιρεία· το παρόν έργο είναι σε πειραματικό στάδιο.*  
+For the purposes of this Agreement (“Agreement”):
 
-### 2. Παραχώρηση Δικαιωμάτων  
-Δεν παραχωρείται καμία άδεια ή δικαίωμα οποιασδήποτε μορφής βάσει της παρούσας Συμφωνίας.  
-Το Λογισμικό παρέχεται αποκλειστικά σε **ιδιοκτησιακή και εμπιστευτική βάση**.  
-Οποιαδήποτε χρήση, αναπαραγωγή, τροποποίηση, διανομή, υπεραδειοδότηση, πώληση, εκμίσθωση ή άλλη εκμετάλλευση, εν όλω ή εν μέρει, απαγορεύεται ρητώς εκτός εάν έχει εγκριθεί εγγράφως από τον Δικαιοπάροχο.  
-
-### 3. Περιορισμοί  
-Απαγορεύεται, άμεσα ή έμμεσα:  
-- Η χρήση του Λογισμικού χωρίς προηγούμενη γραπτή συγκατάθεση του Δικαιοπαρόχου  
-- Η αντιγραφή, αναπαραγωγή, μετάφραση ή δημιουργία παράγωγων έργων  
-- Η διανομή, δημοσίευση, γνωστοποίηση ή διάθεσή του σε τρίτους  
-- Η ανακατασκευή, αποσυμπίληση ή απόπειρα εξαγωγής πηγαίου κώδικα  
-- Η αφαίρεση, απόκρυψη ή αλλοίωση σημειώσεων ιδιοκτησίας  
-
-### 4. Αποποίηση Εγγυήσεων  
-Το Λογισμικό παρέχεται **"ΩΣ ΕΧΕΙ"**, χωρίς καμία εγγύηση οποιασδήποτε μορφής, ρητής ή σιωπηρής, συμπεριλαμβανομένων ενδεικτικά εγγυήσεων εμπορευσιμότητας, καταλληλότητας για συγκεκριμένο σκοπό ή μη παραβίασης δικαιωμάτων.  
-
-### 5. Περιορισμός Ευθύνης  
-Στο μέγιστο βαθμό που επιτρέπεται από τον νόμο, ο Δικαιοπάροχος δεν ευθύνεται για οποιεσδήποτε ζημίες, άμεσες, έμμεσες, παρεπόμενες, αποθετικές ή ειδικές, που προκύπτουν από ή σχετίζονται με το Λογισμικό ή την παρούσα Συμφωνία.  
-
-### 6. Λύση  
-Κάθε μη εξουσιοδοτημένη χρήση του Λογισμικού συνιστά ουσιώδη παραβίαση της Συμφωνίας.  
-Ο Δικαιοπάροχος διατηρεί το δικαίωμα να επιδιώξει όλα τα διαθέσιμα ένδικα μέσα βάσει του **ελληνικού δικαίου**.  
-
-### 7. Εφαρμοστέο Δίκαιο  
-Η Συμφωνία διέπεται και ερμηνεύεται σύμφωνα με το δίκαιο της **Ελλάδας**, με αποκλειστική δικαιοδοσία των ελληνικών δικαστηρίων.  
-
-**Σημείωση**  
-Το έργο αυτό είναι πειραματικό. Η HellasNOC δεν αποτελεί ενεργή εταιρεία. Μη εξουσιοδοτημένη κατοχή, χρήση ή διανομή του Λογισμικού απαγορεύεται αυστηρά.  
+* **“Licensor”** means **John Kapelakos**, the sole copyright holder and proprietor of the Software.
+* **“Software”** means all files, code, scripts, data, designs, structures, concepts, graphics, documentation, intellectual property, and related materials contained in or associated with the HellasNOC Website repository.
+* **“Licensee”** means any individual or entity who accesses, views, or interacts with the Software in any manner.
+* **“Use”** means any form of access, execution, reproduction, storage, modification, display, distribution, transmission, or interaction with the Software.
 
 ---
 
-© 2025 John Kapelakos – HellasNOC  
+## 2. Ownership and Intellectual Property
+
+The Software is and shall remain the sole and exclusive property of the Licensor. All rights, title, and interest in and to the Software, including but not limited to intellectual property rights, trade secrets, design elements, algorithms, source code, structure, and associated documentation, are reserved by the Licensor.
+
+The Licensee acquires **no rights whatsoever** to the Software under this Agreement, except those explicitly granted in writing by the Licensor.
+
+---
+
+## 3. Grant of Rights
+
+No license is granted under this Agreement. The Software is provided strictly on a **proprietary, confidential, and restricted basis**.
+
+Unless expressly authorized in a prior written agreement signed by the Licensor:
+
+* The Licensee may not use, reproduce, modify, adapt, distribute, publish, sublicense, lease, sell, or otherwise exploit the Software in whole or in part.
+* The Licensee may not incorporate the Software or any part thereof into any commercial or non-commercial product, project, or service.
+
+Any unauthorized Use constitutes a **material breach** of this Agreement and an infringement of intellectual property rights.
+
+---
+
+## 4. Restrictions
+
+The Licensee shall not, directly or indirectly:
+
+* Copy, reproduce, or create derivative works of the Software;
+* Modify, adapt, translate, or alter the Software in any way;
+* Distribute, transfer, disclose, or make the Software available to any third party;
+* Reverse engineer, decompile, disassemble, or otherwise attempt to derive source code or underlying structures;
+* Remove, obscure, or alter any copyright, proprietary, or confidentiality notices.
+
+---
+
+## 5. Confidentiality
+
+The Licensee acknowledges that the Software may contain confidential and proprietary information.
+The Licensee agrees to:
+
+* Treat all Software and related materials as **confidential**;
+* Not disclose such materials to any third party without prior written consent of the Licensor;
+* Use at least reasonable measures to protect the confidentiality of the Software.
+
+---
+
+## 6. No Warranty
+
+The Software is provided strictly **“AS IS”**, without warranties of any kind, whether express, implied, statutory, or otherwise.
+The Licensor disclaims all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, accuracy, security, or non-infringement.
+
+The Software is **experimental, conceptual, and non-production** in nature. The Licensor makes no representation that the Software is reliable, functional, or suitable for any purpose.
+
+---
+
+## 7. Limitation of Liability
+
+To the fullest extent permitted by applicable law:
+
+* The Licensor shall not be liable for any damages of any kind, including but not limited to direct, indirect, incidental, consequential, punitive, exemplary, or special damages, arising from or in connection with the Software or this Agreement.
+* This limitation applies regardless of the cause of action, whether in contract, tort (including negligence), strict liability, or otherwise.
+
+The Licensee assumes all risks associated with accessing or using the Software.
+
+---
+
+## 8. Termination
+
+Any unauthorized Use of the Software will automatically terminate this Agreement, without notice to the Licensee.
+Upon termination:
+
+* The Licensee must immediately cease all access and Use of the Software;
+* The Licensee must destroy all copies, partial or complete, of the Software in their possession;
+* The Licensor reserves the right to pursue all remedies available under law, including but not limited to injunctive relief, damages, and legal prosecution.
+
+---
+
+## 9. Governing Law and Jurisdiction
+
+This Agreement shall be governed by and construed in accordance with the laws of **Greece**, without regard to conflict of law principles.
+
+The Licensee agrees that any disputes arising under or related to this Agreement shall be subject to the **exclusive jurisdiction of the courts of Greece**.
+
+---
+
+## 10. Entire Agreement
+
+This Agreement constitutes the entire agreement between the Licensor and Licensee with respect to the Software.
+No waiver, modification, or amendment of this Agreement shall be effective unless in writing and signed by the Licensor.
+
+---
+
+## 11. Acknowledgement
+
+By accessing, viewing, or interacting with the Software, the Licensee acknowledges that they have read, understood, and agreed to be legally bound by the terms of this Agreement.
+If the Licensee does not agree to these terms, they must refrain from all Use of the Software.
+
+---
+
+**Notice**: HellasNOC is presently an **experimental initiative** and not an incorporated entity. This license protects the intellectual property of its creator, **John Kapelakos**, and governs all interaction with this Software. Unauthorized possession, reproduction, or distribution is strictly prohibited and enforceable under Greek law.
+
+---
+
+© 2025 John Kapelakos – HellasNOC
+All Rights Reserved
