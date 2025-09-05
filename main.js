@@ -222,55 +222,7 @@ function updateLanguage(lang) {
     }
 }
 
-/**
- * Show a brief loading indicator when changing languages
- */
-function showLanguageLoadingIndicator() {
-    const indicator = document.createElement('div');
-    indicator.className = 'language-loading-indicator';
-    indicator.innerHTML = '<div class="loading-spinner"></div>';
-    
-    // Add styles if not already present
-    if (!document.querySelector('#language-loading-styles')) {
-        const styles = document.createElement('style');
-        styles.id = 'language-loading-styles';
-        styles.textContent = `
-            .language-loading-indicator {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(10, 14, 23, 0.8);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            }
-            .loading-spinner {
-                width: 50px;
-                height: 50px;
-                border: 5px solid rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                border-top-color: var(--primary);
-                animation: spin 1s ease-in-out infinite;
-            }
-            @keyframes spin {
-                to { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(styles);
-    }
-    
-    document.body.appendChild(indicator);
-    
-    // Remove after a short delay
-    setTimeout(() => {
-        if (document.body.contains(indicator)) {
-            document.body.removeChild(indicator);
-        }
-    }, 1000);
-}
+
 
 /**
  * ====================
