@@ -1,7 +1,29 @@
 // main.js - Consolidated JavaScript for HellasNOC
+// Enhanced with robust language persistence and improved documentation
 
-// Fixed dropdown functionality
+/**
+ * ====================
+ * INITIALIZATION
+ * ====================
+ */
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all functionality
+    initNavigation();
+    initLanguageSystem();
+    initScrollAnimations();
+    initPageSpecificFeatures();
+});
+
+/**
+ * ====================
+ * NAVIGATION FUNCTIONS
+ * ====================
+ */
+
+/**
+ * Initialize mobile navigation and dropdown menus
+ */
+function initNavigation() {
     // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -15,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile dropdown toggle - FIXED VERSION
+    // Mobile dropdown toggle
     const dropdownToggles = document.querySelectorAll('.dropdown > a, .products-dropdown > a');
     
     dropdownToggles.forEach(toggle => {
@@ -35,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close dropdown when clicking outside - FIXED VERSION
+    // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
         if (window.innerWidth < 768 && 
             !e.target.closest('.dropdown') && 
@@ -48,7 +70,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Keep the dropdown open when hovering over it (desktop only)
+    // Desktop hover behavior for dropdowns
+    initDesktopDropdowns();
+}
+
+/**
+ * Initialize desktop dropdown hover behavior
+ */
+function initDesktopDropdowns() {
     const productsDropdown = document.querySelector('.products-dropdown');
     const productsDropdownContent = document.querySelector('.products-dropdown-content');
     
@@ -86,40 +115,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+}
+
+/**
+ * ====================
+ * LANGUAGE MANAGEMENT
+ * ====================
+ */
+
+/**
+ * Initialize the language system with persistence
+ */
+function initLanguageSystem() {
+    // Set the language key for localStorage
+    const LANGUAGE_KEY = 'hellasnoc-language';
+    let currentLang = getStoredLanguage();
     
-    // The rest of your JavaScript code...
-    // Scroll animation functionality
-    function initScrollAnimation() {
-        // ... your existing code
-    }
-    
-    // Contact form validation
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        // ... your existing code
-    }
-    
-    // Services tabs functionality
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    
-    if (tabBtns.length > 0 && tabContents.length > 0) {
-        // ... your existing code
-    }
-    
-    // Roadmap animation
-    function animateRoadmap() {
-        // ... your existing code
-    }
-    
-    // Language switcher functionality
-    let currentLang = localStorage.getItem('language') || 'el';
-    
-    function updateLanguage(lang) {
-        // ... your existing code
-    }
-    
-    // Initialize language
+    // Initialize language on page load
     updateLanguage(currentLang);
     
     // Add event listeners to language buttons
@@ -127,61 +139,220 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function() {
             const lang = this.dataset.lang;
             if (lang !== currentLang) {
-                localStorage.setItem('language', lang);
+                setStoredLanguage(lang);
+                currentLang = lang;
                 updateLanguage(lang);
+                
+                // Show a brief loading indicator for better UX
+                showLanguageLoadingIndicator();
+                
+                // Small delay to allow UI to update before potentially heavy translation work
+                setTimeout(() => {
+                    window.location.reload();
+                }, 300);
             }
         });
     });
     
-    // Update language switcher on window resize
+    // Update language on window resize
     window.addEventListener('resize', function() {
         updateLanguage(currentLang);
     });
-});
+}
+
+/**
+ * Retrieve stored language preference from localStorage
+ * @returns {string} The language code (default: 'el')
+ */
+function getStoredLanguage() {
+    try {
+        return localStorage.getItem('hellasnoc-language') || 'el';
+    } catch (e) {
+        console.warn('LocalStorage not available, using default language');
+        return 'el';
+    }
+}
+
+/**
+ * Store language preference in localStorage
+ * @param {string} lang - The language code to store
+ */
+function setStoredLanguage(lang) {
+    try {
+        localStorage.setItem('hellasnoc-language', lang);
+    } catch (e) {
+        console.warn('Could not save language preference to localStorage');
+    }
+}
+
+/**
+ * Update the UI to reflect the current language
+ * @param {string} lang - The language code to apply
+ */
+function updateLanguage(lang) {
+    // Update buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
     
-    // Scroll animation functionality
-    function initScrollAnimation() {
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        
-        if (animatedElements.length > 0) {
-            const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px'
-            };
+    // Update slider position
+    const slider = document.querySelector('.language-slider');
+    if (slider) {
+        const activeBtn = document.querySelector(`.language-btn[data-lang="${lang}"]`);
+        if (activeBtn) {
+            const btnWidth = activeBtn.offsetWidth;
+            const btnLeft = activeBtn.offsetLeft;
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
+            slider.style.width = `${btnWidth}px`;
+            slider.style.transform = `translateX(${btnLeft}px)`;
         }
     }
+
+    // Update html lang attribute for accessibility
+    document.documentElement.lang = lang;
     
-    initScrollAnimation();
+    // Update all translatable elements if translations are available
+    if (typeof translations !== 'undefined') {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+}
+
+/**
+ * Show a brief loading indicator when changing languages
+ */
+function showLanguageLoadingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'language-loading-indicator';
+    indicator.innerHTML = '<div class="loading-spinner"></div>';
     
+    // Add styles if not already present
+    if (!document.querySelector('#language-loading-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'language-loading-styles';
+        styles.textContent = `
+            .language-loading-indicator {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(10, 14, 23, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            .loading-spinner {
+                width: 50px;
+                height: 50px;
+                border: 5px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                border-top-color: var(--primary);
+                animation: spin 1s ease-in-out infinite;
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+    
+    document.body.appendChild(indicator);
+    
+    // Remove after a short delay
+    setTimeout(() => {
+        if (document.body.contains(indicator)) {
+            document.body.removeChild(indicator);
+        }
+    }, 1000);
+}
+
+/**
+ * ====================
+ * SCROLL ANIMATIONS
+ * ====================
+ */
+
+/**
+ * Initialize scroll animations for elements with animate-on-scroll class
+ */
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    if (animatedElements.length > 0) {
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
+}
+
+/**
+ * ====================
+ * PAGE-SPECIFIC FEATURES
+ * ====================
+ */
+
+/**
+ * Initialize features specific to certain pages
+ */
+function initPageSpecificFeatures() {
     // Contact form validation (only on contact page)
+    initContactForm();
+    
+    // Services tabs functionality (only on services page)
+    initServicesTabs();
+    
+    // Roadmap animation (only on services page)
+    initRoadmapAnimation();
+}
+
+/**
+ * Initialize contact form validation
+ */
+function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
+            
+            // Get current language for error messages
+            const currentLang = getStoredLanguage();
+            
             if (!email.includes('@')) {
                 alert(translations[currentLang]['invalid-email'] || 'Invalid email address.');
                 return;
             }
-            alert(translations[currentLang]['message-sent-alert']);
+            
+            alert(translations[currentLang]['message-sent-alert'] || 'Your message has been sent!');
             this.reset();
         });
     }
-    
-    // Services tabs functionality (only on services page)
+}
+
+/**
+ * Initialize services tabs functionality
+ */
+function initServicesTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -244,84 +415,29 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // Roadmap animation (only on services page)
-    function animateRoadmap() {
-        const roadmapSteps = document.querySelectorAll('.roadmap-step');
-        const roadmapSection = document.querySelector('.roadmap-section');
-        
-        if (roadmapSteps.length > 0 && roadmapSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        roadmapSteps.forEach((step, index) => {
-                            setTimeout(() => {
-                                step.classList.add('animate');
-                            }, index * 200);
-                        });
-                        observer.unobserve(roadmapSection);
-                    }
-                });
-            }, { threshold: 0.3 });
-            
-            observer.observe(roadmapSection);
-        }
-    }
-    
-    animateRoadmap();
-    
-    // Fixed Language switcher functionality
-    let currentLang = localStorage.getItem('language') || 'el';
-    
-    function updateLanguage(lang) {
-        // Update buttons
-        document.querySelectorAll('.language-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update slider position - fixed to account for padding
-        const slider = document.querySelector('.language-slider');
-        if (slider) {
-            // Calculate the width and position based on the active button
-            const activeBtn = document.querySelector(`.language-btn[data-lang="${lang}"]`);
-            if (activeBtn) {
-                const btnWidth = activeBtn.offsetWidth;
-                const btnLeft = activeBtn.offsetLeft;
-                
-                slider.style.width = `${btnWidth}px`;
-                slider.style.transform = `translateX(${btnLeft}px)`;
-            }
-        }
+}
 
-        // Update html lang attribute
-        document.documentElement.lang = lang;
+/**
+ * Initialize roadmap animation
+ */
+function initRoadmapAnimation() {
+    const roadmapSteps = document.querySelectorAll('.roadmap-step');
+    const roadmapSection = document.querySelector('.roadmap-section');
+    
+    if (roadmapSteps.length > 0 && roadmapSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    roadmapSteps.forEach((step, index) => {
+                        setTimeout(() => {
+                            step.classList.add('animate');
+                        }, index * 200);
+                    });
+                    observer.unobserve(roadmapSection);
+                }
+            });
+        }, { threshold: 0.3 });
         
-        // Update all translatable elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.dataset.i18n;
-            if (translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key];
-            }
-        });
-        
-        currentLang = lang;
+        observer.observe(roadmapSection);
     }
-    
-    // Initialize language
-    updateLanguage(currentLang);
-    
-    // Add event listeners to language buttons
-    document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.dataset.lang;
-            if (lang !== currentLang) {
-                localStorage.setItem('language', lang);
-                updateLanguage(lang);
-            }
-        });
-    });
-    
-    // Update language switcher on window resize to handle responsive changes
-    window.addEventListener('resize', function() {
-        updateLanguage(currentLang);
-    });
+}
