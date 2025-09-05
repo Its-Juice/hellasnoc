@@ -1,102 +1,105 @@
-# HellasNOC Website  
-
 Welcome to the official repository of the **HellasNOC Website**.  
-This is more than just code on GitHub — it’s the very first spark of an idea we believe can grow into something bigger: **a startup born in Greece, aiming to build the future of digital infrastructure.**  
-
-HellasNOC is not just a name. It’s a vision.  
-A vision of a Greece that doesn’t just consume technology, but creates it. A Greece that isn’t just connected, but powers connections for others.  
-
-Right now, we are at the beginning of our journey. This repository is our **first step forward**. It’s raw, it’s experimental, but it’s driven by something powerful: **passion and ambition**.  
+This repository is the initial milestone of **HellasNOC**, a forward-looking initiative dedicated to advancing digital infrastructure with a clear mission:  
+to establish a Greece-born technology venture that can achieve **global relevance** in reliability, security, and innovation.  
 
 ---
 
-## 🌍 Our Vision  
+## 🌍 Vision & Mission  
 
-At HellasNOC, we dream of creating a network backbone that is:  
-- **Reliable** – where uptime and resilience are not luxuries, but the standard.  
-- **Secure** – where privacy and trust come first, not last.  
-- **Innovative** – where Greece contributes to the global tech stage, not just participates in it.  
+At HellasNOC, we believe that Greece should not only consume technology, but also **design, develop, and deliver it**.  
+Our mission is to contribute to the global technology ecosystem by:  
 
-We’re inspired by the power of **open-source software**, the creativity of communities, and the belief that digital infrastructure should serve people — not the other way around.  
+- **Reliability by Design** – building infrastructure where resilience and uptime are embedded into the core.  
+- **Security at the Forefront** – creating systems that respect privacy, enforce trust, and prioritize safety.  
+- **Innovation with Impact** – ensuring that our work is not incremental, but transformative, positioning Greece as a creator in the global digital economy.  
 
-This repository may be small, but to us it’s a **symbol**: the first stone in building what we hope will one day become a **Greek-born startup with global impact**.  
+We are inspired by the **power of open-source**, the potential of communities, and the conviction that infrastructure should empower individuals, organizations, and societies — not restrict them.  
+
+---
+
+## 🚀 Strategic Outlook  
+
+Though at a very early stage, HellasNOC aspires to become a trusted name in:  
+- **Cloud and Edge Infrastructure** – delivering scalable, resilient, and secure services.  
+- **Networking Solutions** – enabling reliable connectivity across regions and communities.  
+- **Digital Sovereignty** – supporting Europe’s and Greece’s ambition to be self-reliant in critical infrastructure.  
+- **Open Innovation** – fostering collaboration, research, and knowledge-sharing at both local and international levels.  
+
+We recognize that building infrastructure is a long-term endeavor. Every line of code, every design draft, and every iteration brings us closer to that vision.  
 
 ---
 
 ## 🚧 Current Status  
 
-We want to be transparent: **HellasNOC is not an active company yet**.  
+HellasNOC is currently in the **ideation and prototyping phase**.  
 
 At this stage:  
-- We have **no clients, no headquarters, and no employees**.  
-- We are still in the **ideation and exploration phase**.  
-- Everything here should be seen as **conceptual and experimental**.  
+- No operational entity has been established.  
+- There are no active clients, employees, or commercial activities.  
+- All deliverables in this repository are **conceptual, exploratory, and experimental**.  
 
-But we see this as a beginning — a **launchpad for what’s to come**.  
-Every great company, every startup, every movement started with **nothing but an idea**. This is ours.  
-
----
-
-## ❗ Disclaimer  
-
-This is a **passion project in progress**.  
-Any mention of services, operations, or activities is **illustrative only** and must not be interpreted as an actual business offering.  
-
-We are building. We are experimenting. We are learning.  
-One day, this may evolve into a real startup. But today, it’s our **dream in the making**.  
+This repository is best understood as a **launchpad** — a foundation for innovation and learning that will evolve into something larger.  
 
 ---
 
-## 🔒 License & Usage  
+## ❗ Important Disclaimer  
 
-The HellasNOC Website is **proprietary and experimental**.  
+- This is not an active service provider, company, or commercial entity at this time.  
+- References to products, services, or operations are **illustrative only**.  
+- All material here is subject to change, experimentation, and restructuring without notice.  
+
+This project is, above all, a **vision in motion**.  
+
+---
+
+## 🔒 License  
+
+The HellasNOC Website is released under a **proprietary license**.  
 © 2025 HellasNOC. All rights reserved.  
 
-- **No copying, modification, or redistribution** is permitted without written consent.  
-- Provided strictly for **educational and exploratory purposes**.  
-- Not intended for production or commercial use.  
+- Copying, modification, or redistribution without explicit written consent is prohibited.  
+- Provided exclusively for **educational, conceptual, and exploratory use**.  
+- Not intended for deployment in production or commercial environments.  
 
-See the [LICENSE](LICENSE) for details.  
+See the [LICENSE](LICENSE) file for full licensing details.  
 
 ---
 
 ## 🚫 Contributions  
 
-We love the spirit of open source and collaboration, but this repository is **not open to external contributions at this stage**.  
-
-When the time comes and HellasNOC is ready, we hope to **open the doors wider**. Until then, this is our internal workshop.  
-
----
-
-## 🏗️ Development Notes  
-
-This repository is a **work in progress**, subject to rapid change and experimentation.  
-Expect breakage, expect drafts, expect constant evolution.  
-
-That’s what makes it exciting.  
+External contributions are not accepted at this stage.  
+As HellasNOC matures, we expect to adopt a more open and collaborative development model, inviting innovators, developers, and researchers to participate.  
 
 ---
 
-## 📞 Contact  
+## 🏗️ Development Philosophy  
 
-If you share our passion, curiosity, or simply want to follow our journey, reach out:  
+The HellasNOC Website and its associated projects follow an **iterative and agile approach**:  
+- Expect **rapid iteration**, with frequent updates and architectural changes.  
+- Anticipate **experimental features** that may be deprecated or restructured.  
+- Prioritize **learning, exploration, and adaptability** over immediate stability.  
+
+This is an evolving project — a sandbox for ideas that will shape our long-term direction.  
+
+---
+
+## 📞 Contact Information  
+
+For questions, expressions of interest, or to follow our progress:  
 
 📧 **Email:** info@hellasnoc.gr  
-🌐 **Website:** [HellasNOC Website (Preview)](https://its-juice.github.io/hellasnoc/index.html)  
+🌐 **Website:** [Preview Site](https://its-juice.github.io/hellasnoc/index.html)  
 
 ---
 
-## 💡 Final Note  
+## 💡 Final Statement  
 
-HellasNOC today is **just an idea** — but ideas are powerful.  
-This repository is not about where we are, but about **where we’re going**.  
+HellasNOC represents more than a repository; it represents a **commitment to the future**.  
+We believe Greece can and should play a leading role in digital infrastructure, moving from a consumer of technology to a **global contributor and innovator**.  
 
-We’re building from the ground up. With every commit, every experiment, and every iteration, we’re getting one step closer to turning this dream into a **real startup**.  
+This repository is an early step in that journey — a declaration of intent, a foundation to build upon, and a signal of what is to come.  
 
-We believe Greece can and should play a bigger role in the digital world.  
-This is our way of contributing to that future.  
+If you are reading this, you are witnessing the earliest stages of a story still being written.  
+With persistence, collaboration, and vision, HellasNOC will grow from an idea into a **recognized force in global digital infrastructure**.  
 
-If you’re reading this, you’re witnessing the start of something.  
-And who knows? One day, HellasNOC might grow into exactly what we imagine.  
-
-Stay tuned. 🚀  
+Stay tuned. The journey has just begun. 🚀  
