@@ -222,7 +222,49 @@ function updateLanguage(lang) {
     }
 }
 
+// Language toggle functionality
+function initLanguageToggle() {
+    const languageSlider = document.querySelector('.language-slider');
+    const languageButtons = document.querySelectorAll('.language-btn');
+    
+    if (!languageSlider || languageButtons.length === 0) return;
+    
+    // Add smooth transition class
+    languageSlider.classList.add('smooth');
+    
+    // Set initial position based on active button
+    const activeButton = document.querySelector('.language-btn.active');
+    if (activeButton) {
+        const buttonIndex = Array.from(languageButtons).indexOf(activeButton);
+        languageSlider.style.transform = `translateX(${buttonIndex * 100}%)`;
+    }
+    
+    // Language toggle click event
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const lang = button.getAttribute('data-lang');
+            
+            // Remove active class from all buttons
+            languageButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Move the language slider smoothly
+            const buttonIndex = Array.from(languageButtons).indexOf(button);
+            languageSlider.style.transform = `translateX(${buttonIndex * 100}%)`;
+            
+            // Your existing language change logic here
+            // updateLanguage(lang);
+        });
+    });
+}
 
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initLanguageToggle();
+    // Your other initialization code
+});
 
 /**
  * ====================
