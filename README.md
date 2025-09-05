@@ -116,6 +116,7 @@ We do not view this repository as an endpoint, but as a **sandbox for testing, b
 For inquiries, collaboration opportunities, or to follow our journey:
 
 📧 **Email:** [info@hellasnoc.gr](mailto:info@hellasnoc.gr)
+
 🌐 **Website (Preview):** [HellasNOC Website](https://its-juice.github.io/hellasnoc/index.html)
 
 ---
