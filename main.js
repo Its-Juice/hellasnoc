@@ -258,51 +258,70 @@ function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// --- SERVICES TABS FUNCTIONALITY ---
+// --- SERVICES TABS FUNCTIONALITY - REDESIGNED ---
 
 function initServicesTabs() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    if (tabBtns.length === 0 || tabContents.length === 0) return;
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  if (tabBtns.length === 0 || tabContents.length === 0) return;
 
-    let currentTab = 'network';
+  let currentTab = 'network';
+  let isAnimating = false;
 
-    function switchTab(tabName) {
-        if (tabName === currentTab) return;
+  function switchTab(tabName) {
+    if (tabName === currentTab || isAnimating) return;
+    
+    isAnimating = true;
+    
+    const currentTabContent = document.getElementById(`${currentTab}-tab`);
+    const nextTabContent = document.getElementById(`${tabName}-tab`);
+    if (!currentTabContent || !nextTabContent) return;
 
-        const currentTabContent = document.getElementById(`${currentTab}-tab`);
-        const nextTabContent = document.getElementById(`${tabName}-tab`);
-        if (!currentTabContent || !nextTabContent) return;
+    const currentIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === currentTab);
+    const nextIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === tabName);
+    const direction = nextIndex > currentIndex ? 'right' : 'left';
 
-        const currentIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === currentTab);
-        const nextIndex = Array.from(tabBtns).findIndex(btn => btn.dataset.tab === tabName);
-        const direction = nextIndex > currentIndex ? 'right' : 'left';
+    // Add animation classes
+    currentTabContent.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
+    nextTabContent.classList.add('active', direction === 'right' ? 'slide-in-right' : 'slide-in-left');
+    
+    // Remove active class from current tab after animation
+    setTimeout(() => {
+      currentTabContent.classList.remove('active', 'slide-out-left', 'slide-out-right');
+    }, 600);
 
-        // Use CSS classes for transitions
-        currentTabContent.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
-        nextTabContent.classList.add('active', direction === 'right' ? 'slide-in-right' : 'slide-in-left');
-
-        // Stagger animation for cards
-        const cards = nextTabContent.querySelectorAll('.service-card');
-        cards.forEach((card, i) => {
-            card.classList.add('card-hidden');
-            setTimeout(() => card.classList.remove('card-hidden'), 150 * i);
-        });
-
-        // Cleanup after animation
-        setTimeout(() => {
-            currentTabContent.classList.remove('active', 'slide-out-left', 'slide-out-right');
-            nextTabContent.classList.remove('slide-in-right', 'slide-in-left');
-            currentTab = tabName;
-        }, 800 + cards.length * 150);
-
-        // Update tab buttons
-        tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
-    }
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+    // Update tab buttons
+    tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+    
+    // Animate service cards with staggered delay
+    const cards = nextTabContent.querySelectorAll('.service-card');
+    cards.forEach((card, i) => {
+      card.classList.remove('card-visible');
+      setTimeout(() => {
+        card.classList.add('card-visible');
+      }, 700 + (i * 150)); // Start after tab animation completes
     });
+
+    // Reset animation flag after all animations complete
+    setTimeout(() => {
+      isAnimating = false;
+      currentTab = tabName;
+      nextTabContent.classList.remove('slide-in-right', 'slide-in-left');
+    }, 700 + (cards.length * 150));
+  }
+
+  // Initialize first tab with visible cards
+  const initialTab = document.getElementById('network-tab');
+  if (initialTab) {
+    const cards = initialTab.querySelectorAll('.service-card');
+    cards.forEach((card, i) => {
+      card.classList.add('card-stagger-' + (i + 1), 'card-visible');
+    });
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
 }
 
 // --- ROADMAP ANIMATION ---
