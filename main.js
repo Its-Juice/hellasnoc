@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguageToggle();
     initScrollAnimations();
     initPageSpecificFeatures();
+    setActiveNavItem();
 });
 
 // ====================
@@ -159,7 +160,18 @@ function updateLanguage(lang) {
     if (typeof translations !== 'undefined') {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
-            el.textContent = translations[lang] && translations[lang][key] ? translations[lang][key] : el.textContent;
+            const dict = translations[lang] || {};
+            let translated = dict[key];
+
+            if (typeof translated !== 'string') {
+                translated = el.textContent || '';
+            }
+
+            if (el.dataset.i18nCount) {
+                translated = translated.replace('{count}', el.dataset.i18nCount);
+            }
+
+            el.textContent = translated;
         });
     }
 }
@@ -192,7 +204,7 @@ function initLanguageToggle() {
         button.addEventListener('click', () => {
             languageButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            languageSlider.style.transform = `translateX(${buttonIndex * 100}%)`;
+            languageSlider.style.transform = `translateX(${button.offsetLeft}px)`;
             // Language switch logic handled by initLanguageSystem
         });
     });
@@ -231,6 +243,21 @@ function initPageSpecificFeatures() {
     initContactForm();
     initServicesTabs();
     initRoadmapAnimation();
+}
+
+// --- ACTIVE NAV ITEM ---
+function setActiveNavItem() {
+    try {
+        const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        const navLinks = document.querySelectorAll('nav a[href]');
+        navLinks.forEach(a => a.removeAttribute('aria-current'));
+        const exact = Array.from(navLinks).find(a => (a.getAttribute('href') || '').toLowerCase().endsWith(path));
+        if (exact) {
+            exact.setAttribute('aria-current', 'page');
+        }
+    } catch {
+        // noop
+    }
 }
 
 // --- CONTACT FORM VALIDATION ---
