@@ -2,48 +2,49 @@
 /* MODERN TECH GIANT STYLES */
 /* ==================== */
 :root {
-  --tech-dark: #0a0e17;
-  --tech-darker: #05080f;
-  --tech-blue: #0066ff;
-  --tech-blue-light: #3399ff;
-  --tech-cyan: #00e5ff;
-  --tech-purple: #8a2be2;
+  /* Greek-inspired palette */
+  --tech-dark: #0b1020;         /* Aegean midnight */
+  --tech-darker: #070b16;       /* Deep navy */
+  --tech-blue: #0d5be1;         /* Hellenic blue */
+  --tech-blue-light: #3a86ff;   /* Aegean sky */
+  --tech-cyan: #00d4ff;         /* Ionian cyan */
+  --tech-purple: #5b6ef5;       /* Subtle indigo accent */
   --tech-white: #ffffff;
-  --tech-gray-100: #f8fafc;
-  --tech-gray-200: #e2e8f0;
-  --tech-gray-300: #cbd5e0;
-  --tech-gray-400: #94a3b8;
-  --tech-gray-500: #64748b;
-  --tech-gray-600: #475569;
-  --tech-gray-700: #334155;
-  --tech-gray-800: #1e293b;
-  --tech-gray-900: #0f172a;
-  
+  --tech-gray-100: #f7f9fb;     /* Marble white */
+  --tech-gray-200: #e6edf5;
+  --tech-gray-300: #cdd9e5;
+  --tech-gray-400: #9fb1c6;
+  --tech-gray-500: #7b8da4;
+  --tech-gray-600: #5a6a80;
+  --tech-gray-700: #3b475a;
+  --tech-gray-800: #223044;
+  --tech-gray-900: #111827;
+
   --primary: var(--tech-blue);
   --primary-light: var(--tech-blue-light);
-  --primary-dark: #0052cc;
+  --primary-dark: #0a46b6;
   --accent: var(--tech-cyan);
   --accent-alt: var(--tech-purple);
   --background: var(--tech-dark);
   --background-alt: var(--tech-darker);
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --card-bg-hover: rgba(255, 255, 255, 0.085);
   --text: var(--tech-white);
   --text-light: var(--tech-gray-300);
   --text-muted: var(--tech-gray-400);
-  
-  --radius: 12px;
-  --radius-sm: 6px;
-  --radius-lg: 16px;
+
+  --radius: 14px;
+  --radius-sm: 7px;
+  --radius-lg: 18px;
   --section-padding: 6rem 1rem;
   --max-width: 1280px;
   --header-height: 80px;
-  
-  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-  --glow: 0 0 20px rgba(0, 102, 255, 0.3);
-  --glow-accent: 0 0 20px rgba(0, 229, 255, 0.3);
+
+  --shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.45), 0 8px 10px -12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 20px 35px -15px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 35px 70px -20px rgba(0, 0, 0, 0.55);
+  --glow: 0 0 20px rgba(13, 91, 225, 0.35);
+  --glow-accent: 0 0 20px rgba(0, 212, 255, 0.35);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -63,7 +64,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Inter', 'Noto Sans', 'Noto Sans Greek', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--background);
   color: var(--text);
   line-height: 1.6;
@@ -151,13 +152,14 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(rgba(10, 14, 23, 0.9) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 14, 23, 0.9) 1px, transparent 1px);
-  background-size: 40px 40px;
+  /* Subtle Hellenic grid accent */
+  background-image:
+    linear-gradient(rgba(13, 91, 225, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 91, 225, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.18;
 }
 
 /* ==================== */
