@@ -140,7 +140,6 @@ const translations = {
     "invalid-email": "Please enter a valid email address.",
     
     // Home Pricing Page
-    "pricing-enterprise": "Home Protection",
     "home-packages-title": "Home Protection Packages",
     "home-packages-subtitle": "Security and flexibility for your home. Protect all your devices with advanced solutions.",
     "home-basic": "Home Basic",
@@ -186,7 +185,6 @@ const translations = {
     "save-98": "Save €98 annually",
     
     // Pro Pricing Page
-    "pricing-enterprise": "Professional Security",
     "pro-packages-title": "Professional Security Packages",
     "pro-packages-subtitle": "Complete solutions for businesses. Network protection, cloud services and 24/7 support.",
     "pro-starter": "Pro Starter",
@@ -233,7 +231,6 @@ const translations = {
     "save-698": "Save €698 annually",
     
     // Enterprise Pricing Page
-    "pricing-enterprise": "Enterprise",
     "enterprise-packages-title": "Enterprise Security Packages",
     "enterprise-packages-subtitle": "Custom solutions for large enterprises. Multi-site networks, crisis management and exclusive support.",
     "enterprise-custom-title": "Custom Solutions for Large Enterprises",
@@ -278,7 +275,26 @@ const translations = {
     "schedule-consultation": "Schedule Consultation",
     "call-now": "Call Now",
     "request-quote": "Request Quote",
-    "recommended": "Recommended"
+    "recommended": "Recommended",
+    // Services Roadmap (services.html)
+    "roadmap-title": "Our Process",
+    "roadmap-subtitle": "From first contact to project completion",
+    "roadmap-step-1-title": "Assessment",
+    "roadmap-step-1-desc": "We analyze your current network and identify weaknesses",
+    "roadmap-step-2-title": "Planning",
+    "roadmap-step-2-desc": "We design a customized solution for your needs",
+    "roadmap-step-3-title": "Implementation",
+    "roadmap-step-3-desc": "We install and configure the required technologies",
+    "roadmap-step-4-title": "Maintenance",
+    "roadmap-step-4-desc": "We continuously monitor and improve your network",
+
+    // Enterprise Pricing extras (ensure all list items are translatable)
+    "enterprise-essential-6": "Reporting & analytics",
+    "enterprise-essential-7": "Quarterly security audits",
+    "enterprise-premium-6": "Advanced threat analytics",
+    "enterprise-premium-7": "Monthly penetration tests",
+    "enterprise-premium-8": "Custom continuity plan",
+    "enterprise-premium-9": "Priority handling for critical incidents",
   },
   
   el: {
@@ -382,7 +398,7 @@ const translations = {
     "services-cta-text": "Αφήστε τους ειδικούς μας να σας βοηθήσουν να δημιουργήσετε ένα ασφαλές και αποδοτικό δίκτυο.",
     "guarantee-title": "Εγγύηση Χωρίς Κίνδυνο",
     "guarantee-subtitle": "Δοκιμάστε τις υπηρεσίες μας με απόλυτη εμπιστοσύνη",
-    "guarantee-1-title": "30-Hμερη Δοκιμή",
+    "guarantee-1-title": "30ήμερη Δοκιμή",
     "guarantee-1-desc": "Δοκιμάστε τις υπηρεσίες μας χωρίς ρίσκο για 30 ημέρες",
     "guarantee-2-title": "Εγγύηση Προστασίας",
     "guarantee-2-desc": "Θα διορθώσουμε οποιαδήποτε παραβίαση ασφαλείας χωρίς επιπλέον κόστος",
@@ -550,7 +566,7 @@ const translations = {
     "case-study-1-text": "Αναβάθμιση ολόκληρης της δικτυακής υποδομής για μια κορυφαία ελληνική τράπεζα με 50+ υποκαταστήματα.",
     "case-study-2-title": "Μετάβαση στο Cloud για Retail",
     "case-study-2-text": "Μετάβαση σε υβριδικό cloud για μια αλυσίδα λιανικής με 120+ σημεία πώλησης.",
-    "uptime": "Uptime",
+    "uptime": "Διαθεσιμότητα",
     "cost-reduction": "Μείωση Κόστους",
     "performance": "Απόδοση",
     "compliance": "Συμμόρφωση",
@@ -559,7 +575,26 @@ const translations = {
     "schedule-consultation": "Προγραμματισμός Συμβουλευτικής",
     "call-now": "Καλέστε Τώρα",
     "request-quote": "Αίτημα Προσφοράς",
-    "recommended": "Συνιστάται"
+    "recommended": "Συνιστάται",
+    // Services Roadmap (services.html)
+    "roadmap-title": "Η Διαδικασία Μας",
+    "roadmap-subtitle": "Από την πρώτη επικοινωνία μέχρι την ολοκλήρωση του project",
+    "roadmap-step-1-title": "Αξιολόγηση",
+    "roadmap-step-1-desc": "Αναλύουμε το τρέχον δίκτυό σας και εντοπίζουμε αδυναμίες",
+    "roadmap-step-2-title": "Σχεδιασμός",
+    "roadmap-step-2-desc": "Δημιουργούμε μια εξατομικευμένη λύση για τις ανάγκες σας",
+    "roadmap-step-3-title": "Εφαρμογή",
+    "roadmap-step-3-desc": "Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες",
+    "roadmap-step-4-title": "Συντήρηση",
+    "roadmap-step-4-desc": "Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας",
+
+    // Enterprise Pricing extras (ensure all list items are translatable)
+    "enterprise-essential-6": "Στατιστικές αναφορές & analytics",
+    "enterprise-essential-7": "Τριμηνιαίοι έλεγχοι ασφαλείας",
+    "enterprise-premium-6": "Προηγμένη ανάλυση απειλών",
+    "enterprise-premium-7": "Μηνιαίοι έλεγχοι διείσδυσης",
+    "enterprise-premium-8": "Εξατομικευμένο σχέδιο συνέχειας",
+    "enterprise-premium-9": "Προτεραιότητα σε επείγοντα περιστατικά",
   }
 };
 
