@@ -4,67 +4,57 @@ document.addEventListener('DOMContentLoaded', function() {
   const annualToggle = document.getElementById('annual-toggle');
   const priceSlider = document.querySelector('.price-toggle-slider');
 
+  // Guard early if this page has no pricing toggle
+  if (!monthlyToggle || !annualToggle) return;
+
+  function moveSliderTo(element) {
+    if (!priceSlider || !element) return;
+    // Align slider with the active button position (pixel-accurate)
+    priceSlider.style.transform = `translateX(${element.offsetLeft}px)`;
+  }
+
   function initializeToggle() {
     monthlyToggle.classList.add('active');
     annualToggle.classList.remove('active');
-    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
-    
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.add('show');
-    });
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.remove('show');
-    });
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.remove('show');
-    });
+    moveSliderTo(monthlyToggle);
+
+    document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
+    document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.annual-savings').forEach(el => el.classList.remove('show'));
   }
 
   function showMonthly() {
     monthlyToggle.classList.add('active');
     annualToggle.classList.remove('active');
-    if (priceSlider) priceSlider.style.transform = 'translateX(0)';
-    
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.remove('show');
-    });
-    
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.remove('show');
-    });
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.add('show');
-    });
+    moveSliderTo(monthlyToggle);
+
+    document.querySelectorAll('.annual-savings').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
   }
 
   function showAnnual() {
     annualToggle.classList.add('active');
     monthlyToggle.classList.remove('active');
-    if (priceSlider) priceSlider.style.transform = 'translateX(calc(100% + 8px))';
-    
-    document.querySelectorAll('.price-monthly').forEach(el => {
-      el.classList.remove('show');
-    });
-    
-    document.querySelectorAll('.price-annual').forEach(el => {
-      el.classList.add('show');
-    });
-    
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.classList.add('show');
-    });
+    moveSliderTo(annualToggle);
+
+    document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
+    document.querySelectorAll('.annual-savings').forEach(el => el.classList.add('show'));
   }
 
   monthlyToggle.addEventListener('click', () => {
-    if (!monthlyToggle.classList.contains('active')) {
-      showMonthly();
-    }
+    if (!monthlyToggle.classList.contains('active')) showMonthly();
   });
-  
+
   annualToggle.addEventListener('click', () => {
-    if (!annualToggle.classList.contains('active')) {
-      showAnnual();
-    }
+    if (!annualToggle.classList.contains('active')) showAnnual();
+  });
+
+  // Recalculate slider on resize (handles layout shifts)
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.price-toggle-btn.active');
+    moveSliderTo(active);
   });
 
   initializeToggle();
