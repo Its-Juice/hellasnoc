@@ -1,41 +1,37 @@
-// translations.js
+// ====================
+// HELLASNOC 2025 - TRANSLATIONS
+// Complete Redesign with Enhanced Content
+// ====================
+
 const translations = {
   en: {
     // Header & Navigation
     "home": "Home",
     "services": "Services",
-    "pricing": "Pricing",
+    "products": "Products",
     "pricing-home": "Home Packages",
-    "pricing-business": "Business Packages",
-    "pricing-enterprise": "Enterprise Packages",
     "pricing-pro": "Professional Packages",
+    "pricing-enterprise": "Enterprise Packages",
     "contact": "Contact",
-    "products":"Products",
     
     // Common
     "company": "HellasNOC",
-    "company-description": "Professional network and security services.",
+    "company-description": "Professional network and security services for modern businesses.",
     "links": "Quick Links",
     "copyright": "© 2025 HellasNOC. All rights reserved.",
     "learn-more": "Learn More",
     "contact-us": "Contact Us",
     "view-pricing": "View Pricing",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "month": "/month",
-    "year": "/year",
-    "choose": "Choose Plan",
-    "most-popular": "Most Popular",
-    "devices": "Up to {count} devices",
-    "save": "Save",
+    "get-started": "Get Started",
+    "read-more": "Read More",
     
     // Index Page
     "hero-title": "Professional Network & Security Solutions",
     "hero-subtitle": "Reliable infrastructure management services for businesses in Greece",
-    "see-our-packages": "See Our Packages",
     "years-experience": "Years of Experience",
     "support-availability": "Support Availability",
     "client-satisfaction": "Client Satisfaction",
+    "projects-completed": "Projects Completed",
     "our-solutions": "Our Solutions",
     "solutions-subtitle": "We provide complete services for your network security and stability",
     "network-monitoring": "24/7 Monitoring",
@@ -49,7 +45,8 @@ const translations = {
     "about-text-1": "HellasNOC is a new company focusing on network management and security services. Our goal is to provide reliable and effective solutions for small and medium-sized businesses in Greece.",
     "about-text-2": "Our team consists of young, enthusiastic professionals with knowledge in modern networking technologies, cloud services, and security. We combine our expertise with attention to each client's needs.",
     "about-text-3": "Our aim is to build trust relationships with our clients, offering support, flexibility, and customized solutions that ensure stability and security for their infrastructure.",
-    "about-text-4": "Although we are a new company, we continuously invest in knowledge, tools, and processes to deliver high-quality services. HellasNOC is here to help businesses grow with security and reliability.",
+    "our-team": "Our Team",
+    "team-description": "Specialized professionals with deep knowledge of modern network and security technologies",
     "testimonials-title": "What Our Clients Say",
     "testimonials-subtitle": "Experience our clients' satisfaction",
     "testimonial-1": "\"Reliable and professional service. Our network has never worked so well.\"",
@@ -276,7 +273,9 @@ const translations = {
     "call-now": "Call Now",
     "request-quote": "Request Quote",
     "recommended": "Recommended",
-    // Services Roadmap (services.html)
+    "most-popular": "Most Popular",
+    
+    // Services Roadmap
     "roadmap-title": "Our Process",
     "roadmap-subtitle": "From first contact to project completion",
     "roadmap-step-1-title": "Assessment",
@@ -287,52 +286,78 @@ const translations = {
     "roadmap-step-3-desc": "We install and configure the required technologies",
     "roadmap-step-4-title": "Maintenance",
     "roadmap-step-4-desc": "We continuously monitor and improve your network",
-
-    // Enterprise Pricing extras (ensure all list items are translatable)
+    
+    // Enterprise Pricing extras
     "enterprise-essential-6": "Reporting & analytics",
     "enterprise-essential-7": "Quarterly security audits",
     "enterprise-premium-6": "Advanced threat analytics",
     "enterprise-premium-7": "Monthly penetration tests",
     "enterprise-premium-8": "Custom continuity plan",
     "enterprise-premium-9": "Priority handling for critical incidents",
+    
+    // Additional keys for new pages
+    "network-services-desc": "Continuous monitoring and management of your network for maximum performance",
+    "monitoring-feature-1-desc": "Continuous monitoring of your services availability",
+    "monitoring-feature-2-desc": "Detailed network usage and performance statistics",
+    "monitoring-feature-3-desc": "Immediate notifications for any issues",
+    "network-infrastructure": "Network Infrastructure",
+    "network-infrastructure-desc": "Design, installation and maintenance of complete network infrastructures",
+    "security-protection": "Security Protection",
+    "security-protection-desc": "Multi-layered protection from cyber threats and security breaches",
+    "security-services-desc": "Protection from cyber threats with modern security technologies",
+    "cloud-management-desc": "Complete cloud solutions for businesses of all sizes",
+    "cloud-feature-1-desc": "Expert management of leading cloud platforms",
+    "cloud-feature-2-desc": "Exclusive cloud solutions for maximum security",
+    "cloud-feature-3-desc": "Automatic resource scaling based on demand",
+    "firewall-management-desc": "Configuration and management of firewalls for maximum protection",
+    "security-audits-desc": "Specialized checks for vulnerabilities and compliance",
+    "gdpr-compliance-desc": "Services for compliance with the General Data Protection Regulation",
+    "contact-info-desc": "Contact us in any way that suits you",
+    "address-text": "Agios Konstantinou 12, Athens 106 75",
+    "follow-us": "Follow Us",
+    "find-us": "Find Us",
+    "find-us-desc": "Visit our offices in Athens",
+    "our-location": "Our Location",
+    "faq-title": "Frequently Asked Questions",
+    "faq-subtitle": "Answers to common questions about our services",
+    "faq-1": "How quickly can you respond to urgent issues?",
+    "faq-1-answer": "For critical issues, we respond within 15 minutes. Pro Business and Advanced packages include 24/7 support.",
+    "faq-2": "Do you offer free network assessment?",
+    "faq-2-answer": "Yes, we offer free network assessment for new clients. Contact us to schedule an appointment.",
+    "faq-3": "Can you work with existing infrastructure?",
+    "faq-3-answer": "Absolutely! We work with all brands and device models. We will integrate your existing devices into the new security system.",
+    "faq-4": "How long does installation take?",
+    "faq-4-answer": "The duration depends on the size of the network. For small businesses, installation can be completed in 1-2 days, while for larger businesses it may take 1-2 weeks.",
   },
   
   el: {
     // Header & Navigation
     "home": "Αρχική",
     "services": "Υπηρεσίες",
-    "pricing": "Τιμές",
+    "products": "Προϊόντα",
     "pricing-home": "Οικιακά Πακέτα",
-    "pricing-business": "Επαγγελματικά Πακέτα",
-    "pricing-enterprise": "Εταιρικά Πακέτα",
     "pricing-pro": "Επαγγελματικά Πακέτα",
+    "pricing-enterprise": "Εταιρικά Πακέτα",
     "contact": "Επικοινωνία",
-    "products":"Προϊόντα",
     
     // Common
     "company": "HellasNOC",
-    "company-description": "Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.",
+    "company-description": "Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας για σύγχρονες επιχειρήσεις.",
     "links": "Γρήγοροι Σύνδεσμοι",
     "copyright": "© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.",
     "learn-more": "Μάθετε Περισσότερα",
     "contact-us": "Επικοινωνήστε μαζί μας",
     "view-pricing": "Δείτε τις Τιμές",
-    "monthly": "Μηνιαία",
-    "annual": "Ετήσια",
-    "month": "/μήνα",
-    "year": "/έτος",
-    "choose": "Επιλογή",
-    "most-popular": "Δημοφιλές",
-    "devices": "Έως {count} συσκευές",
-    "save": "Εξοικονόμηση",
+    "get-started": "Ξεκινήστε",
+    "read-more": "Διαβάστε Περισσότερα",
     
     // Index Page
     "hero-title": "Επαγγελματικές Λύσεις Δικτύων & Ασφαλείας",
     "hero-subtitle": "Αξιόπιστες υπηρεσίες διαχείρισης υποδομής για επιχειρήσεις στην Ελλάδα",
-    "see-our-packages": "Δείτε τα Πακέτα μας",
     "years-experience": "Χρόνια Εμπειρία",
     "support-availability": "Υποστήριξη",
     "client-satisfaction": "Ικανοποίηση Πελατών",
+    "projects-completed": "Έργα Ολοκληρωμένα",
     "our-solutions": "Οι Λύσεις μας",
     "solutions-subtitle": "Προσφέρουμε ολοκληρωμένες υπηρεσίες για την ασφάλεια και σταθερότητα του δικτύου σας",
     "network-monitoring": "24/7 Παρακολούθηση",
@@ -346,7 +371,8 @@ const translations = {
     "about-text-1": "Η HellasNOC είναι μια νέα εταιρεία με έμφαση στις υπηρεσίες διαχείρισης δικτύων και ασφάλειας. Στόχος μας είναι να προσφέρουμε αξιόπιστες και αποτελεσματικές λύσεις για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.",
     "about-text-2": "Η ομάδα μας αποτελείται από νέους, ενθουσιώδεις επαγγελματίες με γνώσεις σε σύγχρονες τεχνολογίες δικτύωσης, cloud υπηρεσιών και ασφάλειας. Συνδυάζουμε την τεχνογνωσία μας με την προσοχή στις ανάγκες κάθε πελάτη.",
     "about-text-3": "Στόχος μας είναι να δημιουργήσουμε σχέσεις εμπιστοσύνης με τους πελάτες μας, προσφέροντας υποστήριξη, ευελιξία και προσαρμοσμένες λύσεις που εξασφαλίζουν σταθερότητα και ασφάλεια στις υποδομές τους.",
-    "about-text-4": "Αν και είμαστε μια νέα εταιρεία, επενδύουμε συνεχώς στη γνώση, τα εργαλεία και τις διαδικασίες για να παρέχουμε υπηρεσίες υψηλής ποιότητας. Η HellasNOC είναι εδώ για να βοηθήσει τις επιχειρήσεις να αναπτυχθούν με ασφάλεια και αξιοπιστία.",
+    "our-team": "Η Ομάδα μας",
+    "team-description": "Εξειδικευμένοι επαγγελματίες με βαθιά γνώση των σύγχρονων τεχνολογιών δικτύων και ασφαλείας",
     "testimonials-title": "Τι Λένε Οι Πελάτες Μας",
     "testimonials-subtitle": "Απολαύστε την εμπειρία των πελατών μας",
     "testimonial-1": "\"Αξιόπιστη και επαγγελματική υπηρεσία. Το δίκτυό μας δεν έχει ξαναδουλέψει τόσο καλά.\"",
@@ -437,7 +463,6 @@ const translations = {
     "invalid-email": "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.",
     
     // Home Pricing Page
-    "pricing-home": "Οικιακά Πακέτα",
     "home-packages-title": "Οικιακά Πακέτα Προστασίας",
     "home-packages-subtitle": "Ασφάλεια και ευελιξία για το σπίτι σας. Προστατέψτε όλες τις συσκευές σας με προηγμένες λύσεις.",
     "home-basic": "Home Basic",
@@ -483,7 +508,6 @@ const translations = {
     "save-98": "Εξοικονόμηση €98 ετησίως",
     
     // Pro Pricing Page
-    "pricing-pro": "Επαγγελματικά Πακέτα",
     "pro-packages-title": "Επαγγελματικά Πακέτα Ασφαλείας",
     "pro-packages-subtitle": "Ολοκληρωμένες λύσεις για επιχειρήσεις. Προστασία δικτύου, cloud υπηρεσίες και 24/7 υποστήριξη.",
     "pro-starter": "Pro Starter",
@@ -530,7 +554,6 @@ const translations = {
     "save-698": "Εξοικονόμηση €698 ετησίως",
     
     // Enterprise Pricing Page
-    "pricing-enterprise": "Εταιρικά Πακέτα",
     "enterprise-packages-title": "Εταιρικά Πακέτα Ασφαλείας",
     "enterprise-packages-subtitle": "Προσαρμοσμένες λύσεις για μεγάλες επιχειρήσεις. Δίκτυα πολλαπλών τοποθεσιών, διαχείριση κρίσεων και αποκλειστική υποστήριξη.",
     "enterprise-custom-title": "Προσαρμοσμένες Λύσεις για Μεγάλες Επιχειρήσεις",
@@ -576,7 +599,9 @@ const translations = {
     "call-now": "Καλέστε Τώρα",
     "request-quote": "Αίτημα Προσφοράς",
     "recommended": "Συνιστάται",
-    // Services Roadmap (services.html)
+    "most-popular": "Δημοφιλές",
+    
+    // Services Roadmap
     "roadmap-title": "Η Διαδικασία Μας",
     "roadmap-subtitle": "Από την πρώτη επικοινωνία μέχρι την ολοκλήρωση του project",
     "roadmap-step-1-title": "Αξιολόγηση",
@@ -587,14 +612,61 @@ const translations = {
     "roadmap-step-3-desc": "Εγκαθιστούμε και ρυθμίζουμε τις απαραίτητες τεχνολογίες",
     "roadmap-step-4-title": "Συντήρηση",
     "roadmap-step-4-desc": "Παρακολουθούμε και βελτιώνουμε συνεχώς το δίκτυό σας",
-
-    // Enterprise Pricing extras (ensure all list items are translatable)
+    
+    // Enterprise Pricing extras
     "enterprise-essential-6": "Στατιστικές αναφορές & analytics",
     "enterprise-essential-7": "Τριμηνιαίοι έλεγχοι ασφαλείας",
     "enterprise-premium-6": "Προηγμένη ανάλυση απειλών",
     "enterprise-premium-7": "Μηνιαίοι έλεγχοι διείσδυσης",
     "enterprise-premium-8": "Εξατομικευμένο σχέδιο συνέχειας",
     "enterprise-premium-9": "Προτεραιότητα σε επείγοντα περιστατικά",
+    
+    // Additional keys for new pages
+    "network-services-desc": "Συνεχής παρακολούθηση και διαχείριση του δικτύου σας για μέγιστη απόδοση",
+    "monitoring-feature-1-desc": "Συνεχής παρακολούθηση της διαθεσιμότητας των υπηρεσιών σας",
+    "monitoring-feature-2-desc": "Αναλυτικά στατιστικά χρήσης και απόδοσης δικτύου",
+    "monitoring-feature-3-desc": "Άμεσες ειδοποιήσεις για οποιοδήποτε πρόβλημα",
+    "network-infrastructure": "Δικτυακή Υποδομή",
+    "network-infrastructure-desc": "Σχεδιασμός, εγκατάσταση και συντήρηση ολοκληρωμένων δικτυακών υποδομών",
+    "security-protection": "Προστασία Ασφαλείας",
+    "security-protection-desc": "Πολυεπίπεδη προστασία από cyber απειλές και παραβιάσεις ασφαλείας",
+    "security-services-desc": "Προστασία από cyber απειλές με σύγχρονες τεχνολογίες ασφαλείας",
+    "cloud-management-desc": "Ολοκληρωμένες λύσεις cloud για επιχειρήσεις κάθε μεγέθους",
+    "cloud-feature-1-desc": "Εξειδικευμένη διαχείριση των κορυφαίων cloud πλατφορμών",
+    "cloud-feature-2-desc": "Αποκλειστικές cloud λύσεις για μέγιστη ασφάλεια",
+    "cloud-feature-3-desc": "Αυτόματη προσαρμογή πόρων ανάλογα με την ζήτηση",
+    "firewall-management-desc": "Παραμετροποίηση και διαχείριση firewall για μέγιστη προστασία",
+    "security-audits-desc": "Εξειδικευμένοι έλεγχοι για ευπάθειες και συμμόρφωση",
+    "gdpr-compliance-desc": "Υπηρεσίες συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων",
+    "contact-info-desc": "Επικοινωνήστε μαζί μας με οποιονδήποτε τρόπο σας βολεύει",
+    "address-text": "Αγίου Κωνσταντίνου 12, Αθήνα 106 75",
+    "follow-us": "Ακολουθήστε μας",
+    "find-us": "Βρείτε μας",
+    "find-us-desc": "Επισκεφτείτε τα γραφεία μας στην Αθήνα",
+    "our-location": "Η Τοποθεσία μας",
+    "faq-title": "Συχνές Ερωτήσεις",
+    "faq-subtitle": "Απαντήσεις σε κοινές ερωτήσεις για τις υπηρεσίες μας",
+    "faq-1": "Πόσο γρήγορα μπορείτε να ανταποκριθείτε σε επείγοντα ζητήματα;",
+    "faq-1-answer": "Για κρίσιμα ζητήματα, ανταποκρινόμαστε εντός 15 λεπτών. Τα πακέτα Pro Business και Advanced περιλαμβάνουν 24/7 υποστήριξη.",
+    "faq-2": "Προσφέρετε δωρεάν αξιολόγηση δικτύου;",
+    "faq-2-answer": "Ναι, προσφέρουμε δωρεάν αξιολόγηση δικτύου για νέους πελάτες. Επικοινωνήστε μαζί μας για να κανονίσουμε ένα ραντεβού.",
+    "faq-3": "Μπορείτε να εργαστείτε με υπάρχουσα υποδομή;",
+    "faq-3-answer": "Απολύτως! Εργαζόμαστε με όλες τις μάρκες και μοντέλα συσκευών. Θα ενσωματώσουμε τις υπάρχουσες συσκευές σας στο νέο σύστημα ασφαλείας.",
+    "faq-4": "Πόσο διαρκεί η εγκατάσταση;",
+    "faq-4-answer": "Η διάρκεια εξαρτάται από το μέγεθος του δικτύου. Για μικρές επιχειρήσεις, η εγκατάσταση μπορεί να ολοκληρωθεί σε 1-2 ημέρες, ενώ για μεγαλύτερες επιχειρήσεις μπορεί να χρειαστούν 1-2 εβδομάδες.",
   }
 };
 
+// ====================
+// EXPORT FOR MODULE SYSTEMS
+// ====================
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = translations;
+}
+
+// ====================
+// GLOBAL ACCESS
+// ====================
+if (typeof window !== 'undefined') {
+  window.translations = translations;
+}
