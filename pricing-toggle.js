@@ -1,61 +1,20 @@
-// Price Toggle Functionality for Pricing Pages
-document.addEventListener('DOMContentLoaded', function() {
-  const monthlyToggle = document.getElementById('monthly-toggle');
-  const annualToggle = document.getElementById('annual-toggle');
-  const priceSlider = document.querySelector('.price-toggle-slider');
+// HellasNOC pricing toggle (2025)
+document.addEventListener('DOMContentLoaded', () => {
+  const wrap = document.querySelector('.billing-toggle');
+  if (!wrap) return;
+  const btnM = wrap.querySelector('[data-billing="monthly"]');
+  const btnY = wrap.querySelector('[data-billing="annual"]');
 
-  // Guard early if this page has no pricing toggle
-  if (!monthlyToggle || !annualToggle) return;
-
-  function moveSliderTo(element) {
-    if (!priceSlider || !element) return;
-    // Align slider with the active button position (pixel-accurate)
-    priceSlider.style.transform = `translateX(${element.offsetLeft}px)`;
+  function show(period) {
+    const isAnnual = period === 'annual';
+    btnM.classList.toggle('active', !isAnnual);
+    btnY.classList.toggle('active', isAnnual);
+    document.querySelectorAll('.price-monthly').forEach(el => el.classList.toggle('show', !isAnnual));
+    document.querySelectorAll('.price-annual').forEach(el => el.classList.toggle('show', isAnnual));
+    document.querySelectorAll('.savings').forEach(el => el.classList.toggle('show', isAnnual));
   }
 
-  function initializeToggle() {
-    monthlyToggle.classList.add('active');
-    annualToggle.classList.remove('active');
-    moveSliderTo(monthlyToggle);
-
-    document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
-    document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
-    document.querySelectorAll('.annual-savings').forEach(el => el.classList.remove('show'));
-  }
-
-  function showMonthly() {
-    monthlyToggle.classList.add('active');
-    annualToggle.classList.remove('active');
-    moveSliderTo(monthlyToggle);
-
-    document.querySelectorAll('.annual-savings').forEach(el => el.classList.remove('show'));
-    document.querySelectorAll('.price-annual').forEach(el => el.classList.remove('show'));
-    document.querySelectorAll('.price-monthly').forEach(el => el.classList.add('show'));
-  }
-
-  function showAnnual() {
-    annualToggle.classList.add('active');
-    monthlyToggle.classList.remove('active');
-    moveSliderTo(annualToggle);
-
-    document.querySelectorAll('.price-monthly').forEach(el => el.classList.remove('show'));
-    document.querySelectorAll('.price-annual').forEach(el => el.classList.add('show'));
-    document.querySelectorAll('.annual-savings').forEach(el => el.classList.add('show'));
-  }
-
-  monthlyToggle.addEventListener('click', () => {
-    if (!monthlyToggle.classList.contains('active')) showMonthly();
-  });
-
-  annualToggle.addEventListener('click', () => {
-    if (!annualToggle.classList.contains('active')) showAnnual();
-  });
-
-  // Recalculate slider on resize (handles layout shifts)
-  window.addEventListener('resize', () => {
-    const active = document.querySelector('.price-toggle-btn.active');
-    moveSliderTo(active);
-  });
-
-  initializeToggle();
+  btnM?.addEventListener('click', () => show('monthly'));
+  btnY?.addEventListener('click', () => show('annual'));
+  show('monthly');
 });

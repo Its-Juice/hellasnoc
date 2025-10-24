@@ -3,62 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HellasNOC - Επαγγελματικές Υπηρεσίες Δικτύων & Ασφαλείας</title>
-  <meta name="description" content="Επαγγελματικές υπηρεσίες διαχείρισης δικτύων και ασφάλειας για μικρές και μεσαίες επιχειρήσεις στην Ελλάδα.">
+  <title>HellasNOC • Network & Security Experts</title>
+  <meta name="description" content="Network and security services for home, business and enterprise in Greece.">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    .hero {
-      padding: 12rem 1rem 8rem;
-      text-align: center;
-      background: 
-        linear-gradient(135deg, rgba(10, 14, 23, 0.8) 0%, rgba(5, 8, 15, 0.8) 100%),
-        url('assets/servers.jpg') center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container nav-container" aria-label="Κύρια πλοήγηση">
-      <div class="logo">
-        <a href="index.html" aria-label="HellasNOC home">
-          <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" loading="lazy">
-        </a>
-      </div>
-      <button class="hamburger" aria-label="Μενού" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+  <header class="site-header">
+    <div class="container navbar" aria-label="Κύρια πλοήγηση">
+      <a class="brand" href="index.html" aria-label="HellasNOC home">
+        <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC" loading="lazy">
+        HellasNOC
+      </a>
+      <button class="menu-toggle" aria-label="Μενού" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <nav id="primary-navigation">
-        <ul class="nav-list" role="menubar">
+      <nav class="site-nav" role="navigation">
+        <ul class="menu" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
           <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-          <!-- Products Dropdown -->
-          <li class="products-dropdown">
+          <li class="has-submenu" aria-expanded="false">
             <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
-            <div class="products-dropdown-content">
+            <div class="submenu" role="menu">
               <a href="pricing-home.html" data-i18n="pricing-home" role="menuitem">Οικιακά Πακέτα</a>
               <a href="pricing-pro.html" data-i18n="pricing-pro" role="menuitem">Επαγγελματικά Πακέτα</a>
               <a href="pricing-enterprise.html" data-i18n="pricing-enterprise" role="menuitem">Εταιρικά Πακέτα</a>
@@ -66,221 +33,127 @@
           </li>
           <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
         </ul>
-      </nav>
-      <div class="header-right">
-        <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
-          <div class="language-slider"></div>
-          <div class="language-toggle-container">
-            <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
-              <img src="assets/img/flags/gr.png" alt="Greek flag">
-            </button>
-            <button class="language-btn" data-lang="en" aria-label="English">
-              <img src="assets/img/flags/gb.png" alt="UK flag">
-            </button>
-          </div>
+        <div class="lang-switch" aria-label="Εναλλαγή γλώσσας">
+          <button class="active" data-lang="el">EL</button>
+          <button data-lang="en">EN</button>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 data-i18n="hero-title">Επαγγελματικές Λύσεις Δικτύων & Ασφαλείας</h1>
-        <p class="hero-subtitle" data-i18n="hero-subtitle">Αξιόπιστες υπηρεσίες διαχείρισης υποδομής για επιχειρήσεις στην Ελλάδα</p>
-        <div class="hero-buttons">
-          <a href="contact.html" class="btn btn-primary" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- Trust Indicators -->
-  <section class="trust-indicators">
-    <div class="container">
-      <div class="indicators-grid">
-        <div class="indicator-item">
-          <div class="indicator-number">10+</div>
-          <div class="indicator-label" data-i18n="years-experience">Χρόνια Εμπειρία</div>
-        </div>
-        <div class="indicator-item">
-          <div class="indicator-number">24/7</div>
-          <div class="indicator-label" data-i18n="support-availability">Υποστήριξη</div>
-        </div>
-        <div class="indicator-item">
-          <div class="indicator-number">100%</div>
-          <div class="indicator-label" data-i18n="client-satisfaction">Ικανοποίηση Πελατών</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Services -->
-  <section class="core-services">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-i18n="our-solutions">Οι Λύσεις μας</h2>
-        <p data-i18n="solutions-subtitle">Προσφέρουμε ολοκληρωμένες υπηρεσίες για την ασφάλεια και σταθερότητα του δικτύου σας</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
+  <main>
+    <!-- Hero -->
+    <section class="section hero hero--split">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Managed Network & Security</span>
+          <h1 data-i18n="hero-title">Επαγγελματικές Λύσεις Δικτύων & Ασφαλείας</h1>
+          <p data-i18n="hero-subtitle">Αξιόπιστες υπηρεσίες διαχείρισης υποδομής για επιχειρήσεις στην Ελλάδα</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="contact.html" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
+            <a class="btn btn-ghost" href="pricing-pro.html" data-i18n="view-pricing">Δείτε τις Τιμές</a>
           </div>
-          <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση</h3>
-          <p data-i18n="monitoring-desc">Συνεχής εποπτεία του δικτύου σας με άμεση ανταπόκριση σε τυχόν προβλήματα</p>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path>
-            </svg>
-          </div>
-          <h3 data-i18n="security-solutions">Λύσεις Ασφαλείας</h3>
-          <p data-i18n="security-desc">Προστασία από απειλές με σύγχρονες τεχνολογίες και καλύτερες πρακτικές</p>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3 data-i18n="cloud-services">Υπηρεσίες Cloud</h3>
-          <p data-i18n="cloud-desc">Αξιόπιστες υπηρεσίες cloud για την επιχείρησή σας με υψηλή διαθεσιμότητα</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
- <section class="about-section">
-  <div class="container">
-    <div class="about-content">
-      <div class="about-text">
-        <div class="section-title">
-          <h2 data-i18n="about-title">Η Εταιρεία μας</h2>
-          <p data-i18n="about-subtitle">Αξιοπιστία και Επαγγελματισμός</p>
-        </div>
-
-        <p data-i18n="about-text-1">
-          Η HellasNOC είναι μια νέα εταιρεία με έμφαση στις υπηρεσίες διαχείρισης δικτύων και ασφάλειας. 
-          Στόχος μας είναι να προσφέρουμε αξιόπιστες και αποτελεσματικές λύσεις για μικρές και μεσαίες επιχειρήσεις 
-          στην Ελλάδα.
-        </p>
-
-        <p data-i18n="about-text-2">
-          Η ομάδα μας αποτελείται από νέους, ενθουσιώδεις επαγγελματίες με γνώσεις σε σύγχρονες τεχνολογίες δικτύωσης, 
-          cloud υπηρεσιών και ασφάλειας. Συνδυάζουμε την τεχνογνωσία μας με την προσοχή στις ανάγκες κάθε πελάτη.
-        </p>
-
-        <p data-i18n="about-text-3">
-          Στόχος μας είναι να δημιουργήσουμε σχέσεις εμπιστοσύνης με τους πελάτες μας, προσφέροντας υποστήριξη, 
-          ευελιξία και προσαρμοσμένες λύσεις που εξασφαλίζουν σταθερότητα και ασφάλεια στις υποδομές τους.
-        </p>
-
-        <p data-i18n="about-text-4">
-          Αν και είμαστε μια νέα εταιρεία, επενδύουμε συνεχώς στη γνώση, τα εργαλεία και τις διαδικασίες για να 
-          παρέχουμε υπηρεσίες υψηλής ποιότητας. Η HellasNOC είναι εδώ για να βοηθήσει τις επιχειρήσεις να 
-          αναπτυχθούν με ασφάλεια και αξιοπιστία.
-        </p>
-
-        <div class="about-buttons">
-          <a href="services.html" class="btn btn-primary" data-i18n="learn-more">Μάθετε Περισσότερα</a>
-        </div>
-      </div>
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="HellasNOC Team" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Testimonials -->
-  <section class="testimonials-section">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-i18n="testimonials-title">Τι Λένε Οι Πελάτες Μας</h2>
-        <p data-i18n="testimonials-subtitle">Απολαύστε την εμπειρία των πελατών μας</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-text">
-              <p data-i18n="testimonial-1">"Αξιόπιστη και επαγγελματική υπηρεσία. Το δίκτυό μας δεν έχει ξαναδουλέψει τόσο καλά."</p>
-            </div>
-            <div class="testimonial-author">
-              <div class="author-info">
-                <h4>Μαρία Παπαδοπούλου</h4>
-                <span data-i18n="testimonial-1-role">Διευθύντρια, TechSolutions</span>
-              </div>
-            </div>
+          <div class="metrics">
+            <div class="metric reveal"><div class="num">10+</div><div class="label" data-i18n="years-experience">Χρόνια Εμπειρία</div></div>
+            <div class="metric reveal"><div class="num">24/7</div><div class="label" data-i18n="support-availability">Υποστήριξη</div></div>
+            <div class="metric reveal"><div class="num">100%</div><div class="label" data-i18n="client-satisfaction">Ικανοποίηση Πελατών</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-text">
-              <p data-i18n="testimonial-2">"Αποτελεσματική λύση για τα προβλήματα ασφαλείας μας με εξαιρετική υποστήριξη."</p>
-            </div>
-            <div class="testimonial-author">
-              <div class="author-info">
-                <h4>Νίκος Κωνσταντίνου</h4>
-                <span data-i18n="testimonial-2-role">CTO, RetailCorp</span>
-              </div>
-            </div>
-          </div>
+        <div class="hero-visual reveal">
+          <img src="assets/servers.jpg" alt="Secure network infrastructure" loading="lazy">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
+    <!-- Solutions -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="our-solutions">Οι Λύσεις μας</h2>
+        <p class="section-subtitle" data-i18n="solutions-subtitle">Προσφέρουμε ολοκληρωμένες υπηρεσίες για την ασφάλεια και σταθερότητα του δικτύου σας</p>
+        <div class="cards">
+          <article class="card reveal">
+            <h3 data-i18n="network-monitoring">24/7 Παρακολούθηση</h3>
+            <p data-i18n="monitoring-desc">Συνεχής εποπτεία του δικτύου σας με άμεση ανταπόκριση σε τυχόν προβλήματα</p>
+          </article>
+          <article class="card reveal">
+            <h3 data-i18n="security-solutions">Λύσεις Ασφαλείας</h3>
+            <p data-i18n="security-desc">Προστασία από απειλές με σύγχρονες τεχνολογίες και καλύτερες πρακτικές</p>
+          </article>
+          <article class="card reveal">
+            <h3 data-i18n="cloud-services">Υπηρεσίες Cloud</h3>
+            <p data-i18n="cloud-desc">Αξιόπιστες υπηρεσίες cloud για την επιχείρησή σας με υψηλή διαθεσιμότητα</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section-title" data-i18n="testimonials-title">Τι Λένε Οι Πελάτες Μας</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <p data-i18n="testimonial-1">"Αξιόπιστη και επαγγελματική υπηρεσία. Το δίκτυό μας δεν έχει ξαναδουλέψει τόσο καλά."</p>
+            <strong>Μαρία Παπαδοπούλου • TechSolutions</strong>
+          </article>
+          <article class="card reveal">
+            <p data-i18n="testimonial-2">"Αποτελεσματική λύση για τα προβλήματα ασφαλείας μας με εξαιρετική υποστήριξη."</p>
+            <strong>Νίκος Κωνσταντίνου • RetailCorp</strong>
+          </article>
+          <article class="card reveal">
+            <p>“Απρόσκοπτη λειτουργία και κορυφαία υποστήριξη. Προτείνεται ανεπιφύλακτα.”</p>
+            <strong>Ελένη • SMB Owner</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight">
+      <div class="container" style="text-align:center">
         <h2 data-i18n="cta-title">Έτοιμοι να Βελτιώσετε το Δίκτυό Σας;</h2>
-        <p data-i18n="cta-text">Επικοινωνήστε μαζί μας για μια δωρεάν αξιολόγηση των αναγκών σας.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
-          <a href="pricing-pro.html" class="btn btn-outline" data-i18n="view-pricing">Δείτε τις Τιμές</a>
+        <p class="section-subtitle" data-i18n="cta-text">Επικοινωνήστε μαζί μας για μια δωρεάν αξιολόγηση των αναγκών σας.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-primary" href="contact.html" data-i18n="contact-us">Επικοινωνήστε μαζί μας</a>
+          <a class="btn btn-ghost" href="pricing-pro.html" data-i18n="view-pricing">Δείτε τις Τιμές</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer (consistent with other pages) -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3 data-i18n="company">HellasNOC</h3>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC"><strong>HellasNOC</strong></div>
           <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
         </div>
-        <div class="footer-column">
-          <h3 data-i18n="links">Σύνδεσμοι</h3>
+        <nav class="footer-nav">
+          <h4 data-i18n="links">Σύνδεσμοι</h4>
           <ul>
             <li><a href="index.html" data-i18n="home">Αρχική</a></li>
             <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
             <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
-        </div>
-        <div class="footer-column">
-          <h3 data-i18n="contact">Επικοινωνία</h3>
+        </nav>
+        <nav class="footer-nav">
+          <h4 data-i18n="products">Προϊόντα</h4>
           <ul>
-            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
-            <li data-i18n="phone">Τηλ: 210 6969 420</li>
-            <li data-i18n="email">Email: info@hellasnoc.gr</li>
+            <li><a href="pricing-home.html" data-i18n="pricing-home">Οικιακά Πακέτα</a></li>
+            <li><a href="pricing-pro.html" data-i18n="pricing-pro">Επαγγελματικά Πακέτα</a></li>
+            <li><a href="pricing-enterprise.html" data-i18n="pricing-enterprise">Εταιρικά Πακέτα</a></li>
           </ul>
+        </nav>
+        <div>
+          <h4 data-i18n="contact">Επικοινωνία</h4>
+          <p data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</p>
+          <p data-i18n="phone">Τηλ: 210 6969 420</p>
+          <p data-i18n="email">Email: info@hellasnoc.gr</p>
         </div>
       </div>
-      <div class="copyright">
-        <p data-i18n="copyright">© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
-      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div data-i18n="copyright">© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</div>
     </div>
   </footer>
 
