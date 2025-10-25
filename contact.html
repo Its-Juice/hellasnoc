@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - HellasNOC Cybersecurity Solutions</title>
@@ -330,5 +331,118 @@
 
     <script src="translations.js"></script>
     <script src="script.js"></script>
+=======
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HellasNOC — Επικοινωνία</title>
+  <meta name="description" content="Επικοινωνήστε με την HellasNOC για δωρεάν αξιολόγηση και προσαρμοσμένη πρόταση." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="HellasNOC">
+        <img src="assets/img/HellasNOC-Logo.png" alt="HellasNOC" />
+        HellasNOC
+      </a>
+      <button class="menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Αρχική</a></li>
+          <li><a class="nav__link" href="services.html">Υπηρεσίες</a></li>
+          <li><a class="nav__link" href="pricing-home.html">Οικιακά</a></li>
+          <li><a class="nav__link" href="pricing-pro.html">Επαγγελματικά</a></li>
+          <li><a class="nav__link" href="pricing-enterprise.html">Εταιρικά</a></li>
+          <li><a class="nav__link" href="contact.html" aria-current="page">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container section__header">
+        <div class="section__eyebrow">Επικοινωνία</div>
+        <h1>Μιλήστε με έναν ειδικό</h1>
+        <p class="section__lede">Συμπληρώστε τη φόρμα ή καλέστε μας. Θα απαντήσουμε εντός 24 ωρών.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid--2">
+        <div class="card reveal">
+          <h3 class="mb-2">Στοιχεία</h3>
+          <p class="mb-1"><strong>Διεύθυνση:</strong> Αγίου Κωνσταντίνου 12, Αθήνα</p>
+          <p class="mb-1"><strong>Τηλέφωνο:</strong> 210 6969 420</p>
+          <p class="mb-2"><strong>Email:</strong> info@hellasnoc.gr</p>
+          <div class="badge badge--accent">Δευτέρα - Παρασκευή: 09:00 - 17:00</div>
+        </div>
+        <div class="card reveal">
+          <form id="contact-form" class="form" novalidate>
+            <div>
+              <label class="label" for="name">Ονοματεπώνυμο</label>
+              <input class="input" id="name" name="name" type="text" required />
+            </div>
+            <div>
+              <label class="label" for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <label class="label" for="phone">Τηλέφωνο</label>
+              <input class="input" id="phone" name="phone" type="tel" />
+            </div>
+            <div>
+              <label class="label" for="subject">Θέμα</label>
+              <select class="select" id="subject" name="subject" required>
+                <option value="">Επιλέξτε θέμα</option>
+                <option value="support">Τεχνική Υποστήριξη</option>
+                <option value="sales">Πωλήσεις</option>
+                <option value="billing">Τιμολόγηση</option>
+                <option value="other">Άλλο</option>
+              </select>
+            </div>
+            <div>
+              <label class="label" for="message">Μήνυμα</label>
+              <textarea class="textarea" id="message" name="message" required></textarea>
+            </div>
+            <button class="button button--primary" type="submit">Αποστολή</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <h4>HellasNOC</h4>
+        <p class="mb-0">Σύγχρονες υπηρεσίες δικτύων και ασφάλειας για κάθε ανάγκη.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Σύνδεσμοι</h4>
+        <nav aria-label="Χρήσιμοι σύνδεσμοι">
+          <ul>
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="pricing-pro.html">Πακέτα</a></li>
+            <li><a href="contact.html">Επικοινωνία</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <h4>Επικοινωνία</h4>
+        <ul>
+          <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
+          <li>Τηλ: 210 6969 420</li>
+          <li>Email: info@hellasnoc.gr</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__legal">© 2025 HellasNOC. All rights reserved.</div>
+  </footer>
+
+  <script src="main.js"></script>
+>>>>>>> 9b846f0e6eff4de07db4cc20a683fb459ad98d30
 </body>
 </html>
