@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - HellasNOC Cybersecurity Solutions</title>
@@ -75,8 +74,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-details">
-                                <h3>Office Address</h3>
-                                <p>123 Business Street<br>Athens, Greece 12345</p>
+                                <h3 data-i18n="contact.address.title">Office Address</h3>
+                                <p data-i18n="contact.address">123 Business Street, Athens, Greece 12345</p>
                             </div>
                         </div>
                         
@@ -85,9 +84,9 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-details">
-                                <h3>Phone Number</h3>
-                                <p>+30 210 123 4567</p>
-                                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                                <h3 data-i18n="contact.phone.title">Phone Number</h3>
+                                <p data-i18n="contact.phone">+30 210 123 4567</p>
+                                <p data-i18n="contact.hours">Mon-Fri: 9:00 AM - 6:00 PM</p>
                             </div>
                         </div>
                         
@@ -96,8 +95,8 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
-                                <h3>Email Address</h3>
-                                <p>info@hellasnoc.gr</p>
+                                <h3 data-i18n="contact.email.title">Email Address</h3>
+                                <p data-i18n="contact.email">info@hellasnoc.gr</p>
                                 <p>support@hellasnoc.gr</p>
                             </div>
                         </div>
@@ -107,7 +106,7 @@
                                 <i class="fas fa-clock"></i>
                             </div>
                             <div class="contact-details">
-                                <h3>Business Hours</h3>
+                                <h3 data-i18n="contact.hours.title">Business Hours</h3>
                                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                                 <p>Saturday: 10:00 AM - 2:00 PM</p>
                                 <p>Sunday: Closed</p>
@@ -173,7 +172,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="budget">Budget Range</label>
+                            <label for="budget" data-i18n="contact.form.budget">Budget Range</label>
                             <select id="budget" name="budget">
                                 <option value="">Select budget range</option>
                                 <option value="under-500">Under €500/month</option>
@@ -184,7 +183,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message *</label>
+                            <label for="message" data-i18n="contact.form.message">Message *</label>
                             <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements..." required></textarea>
                         </div>
                         
@@ -192,7 +191,7 @@
                             <label class="checkbox-label">
                                 <input type="checkbox" id="newsletter" name="newsletter">
                                 <span class="checkmark"></span>
-                                I'd like to receive updates about new services and offers
+                                <span data-i18n="contact.form.newsletter">I'd like to receive updates about new services and offers</span>
                             </label>
                         </div>
                         
@@ -200,7 +199,7 @@
                             <label class="checkbox-label">
                                 <input type="checkbox" id="privacy" name="privacy" required>
                                 <span class="checkmark"></span>
-                                I agree to the <a href="#" class="privacy-link">Privacy Policy</a> and <a href="#" class="privacy-link">Terms of Service</a> *
+                                <span data-i18n="contact.form.privacy">I agree to the Privacy Policy and Terms of Service *</span>
                             </label>
                         </div>
                         
@@ -217,12 +216,12 @@
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">Find Us</h2>
+            <h2 class="section-title" data-i18n="contact.map.title">Find Us</h2>
             <div class="map-container">
                 <div class="map-placeholder">
                     <i class="fas fa-map-marker-alt"></i>
                     <p>Interactive Map</p>
-                    <p>123 Business Street, Athens, Greece</p>
+                    <p data-i18n="contact.address">123 Business Street, Athens, Greece 12345</p>
                 </div>
             </div>
         </div>
@@ -232,8 +231,8 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Quick answers to common questions</p>
+                <h2 class="section-title" data-i18n="contact.faq.title">Frequently Asked Questions</h2>
+                <p class="section-subtitle" data-i18n="contact.faq.subtitle">Quick answers to common questions</p>
             </div>
             
             <div class="faq-grid">
@@ -264,18 +263,18 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Get Started?</h2>
-                <p class="cta-description">
+                <h2 class="cta-title" data-i18n="contact.cta.title">Ready to Get Started?</h2>
+                <p class="cta-description" data-i18n="contact.cta.subtitle">
                     Don't wait to secure your business. Contact us today for a free consultation.
                 </p>
                 <div class="cta-buttons">
                     <a href="tel:+302101234567" class="btn btn-primary">
                         <i class="fas fa-phone"></i>
-                        Call Now
+                        <span data-i18n="contact.cta.call">Call Now</span>
                     </a>
                     <a href="mailto:info@hellasnoc.gr" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
-                        Email Us
+                        <span data-i18n="contact.cta.email">Email Us</span>
                     </a>
                 </div>
             </div>
@@ -288,13 +287,13 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" class="footer-logo">
-                    <p class="footer-description">
-                        Professional network and security solutions for modern businesses.
+                    <p class="footer-description" data-i18n="footer.description">
+                        Professional cybersecurity and network infrastructure solutions for modern businesses.
                     </p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title" data-i18n="footer.services">Services</h4>
                     <ul class="footer-links">
                         <li><a href="services.html">Network Management</a></li>
                         <li><a href="services.html">Cybersecurity</a></li>
@@ -304,145 +303,32 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Company</h4>
+                    <h4 class="footer-title" data-i18n="footer.company">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Contact Info</h4>
+                    <h4 class="footer-title" data-i18n="footer.contact">Contact Info</h4>
                     <div class="footer-contact">
-                        <p><i class="fas fa-phone"></i> +30 210 123 4567</p>
-                        <p><i class="fas fa-envelope"></i> info@hellasnoc.gr</p>
+                        <p><i class="fas fa-phone"></i> <span data-i18n="contact.phone">+30 210 123 4567</span></p>
+                        <p><i class="fas fa-envelope"></i> <span data-i18n="contact.email">info@hellasnoc.gr</span></p>
                         <p><i class="fas fa-map-marker-alt"></i> Athens, Greece</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 HellasNOC. All rights reserved.</p>
+                <p>&copy; 2024 HellasNOC. <span data-i18n="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
 
     <script src="translations.js"></script>
     <script src="script.js"></script>
-=======
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HellasNOC — Επικοινωνία</title>
-  <meta name="description" content="Επικοινωνήστε με την HellasNOC για δωρεάν αξιολόγηση και προσαρμοσμένη πρόταση." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container navbar">
-      <a class="brand" href="index.html" aria-label="HellasNOC">
-        <img src="assets/img/HellasNOC-Logo.png" alt="HellasNOC" />
-        HellasNOC
-      </a>
-      <button class="menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <nav class="nav" aria-label="Κύρια πλοήγηση">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="index.html">Αρχική</a></li>
-          <li><a class="nav__link" href="services.html">Υπηρεσίες</a></li>
-          <li><a class="nav__link" href="pricing-home.html">Οικιακά</a></li>
-          <li><a class="nav__link" href="pricing-pro.html">Επαγγελματικά</a></li>
-          <li><a class="nav__link" href="pricing-enterprise.html">Εταιρικά</a></li>
-          <li><a class="nav__link" href="contact.html" aria-current="page">Επικοινωνία</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="section">
-      <div class="container section__header">
-        <div class="section__eyebrow">Επικοινωνία</div>
-        <h1>Μιλήστε με έναν ειδικό</h1>
-        <p class="section__lede">Συμπληρώστε τη φόρμα ή καλέστε μας. Θα απαντήσουμε εντός 24 ωρών.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid grid--2">
-        <div class="card reveal">
-          <h3 class="mb-2">Στοιχεία</h3>
-          <p class="mb-1"><strong>Διεύθυνση:</strong> Αγίου Κωνσταντίνου 12, Αθήνα</p>
-          <p class="mb-1"><strong>Τηλέφωνο:</strong> 210 6969 420</p>
-          <p class="mb-2"><strong>Email:</strong> info@hellasnoc.gr</p>
-          <div class="badge badge--accent">Δευτέρα - Παρασκευή: 09:00 - 17:00</div>
-        </div>
-        <div class="card reveal">
-          <form id="contact-form" class="form" novalidate>
-            <div>
-              <label class="label" for="name">Ονοματεπώνυμο</label>
-              <input class="input" id="name" name="name" type="text" required />
-            </div>
-            <div>
-              <label class="label" for="email">Email</label>
-              <input class="input" id="email" name="email" type="email" required />
-            </div>
-            <div>
-              <label class="label" for="phone">Τηλέφωνο</label>
-              <input class="input" id="phone" name="phone" type="tel" />
-            </div>
-            <div>
-              <label class="label" for="subject">Θέμα</label>
-              <select class="select" id="subject" name="subject" required>
-                <option value="">Επιλέξτε θέμα</option>
-                <option value="support">Τεχνική Υποστήριξη</option>
-                <option value="sales">Πωλήσεις</option>
-                <option value="billing">Τιμολόγηση</option>
-                <option value="other">Άλλο</option>
-              </select>
-            </div>
-            <div>
-              <label class="label" for="message">Μήνυμα</label>
-              <textarea class="textarea" id="message" name="message" required></textarea>
-            </div>
-            <button class="button button--primary" type="submit">Αποστολή</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer__grid">
-      <div class="footer__col">
-        <h4>HellasNOC</h4>
-        <p class="mb-0">Σύγχρονες υπηρεσίες δικτύων και ασφάλειας για κάθε ανάγκη.</p>
-      </div>
-      <div class="footer__col">
-        <h4>Σύνδεσμοι</h4>
-        <nav aria-label="Χρήσιμοι σύνδεσμοι">
-          <ul>
-            <li><a href="index.html">Αρχική</a></li>
-            <li><a href="pricing-pro.html">Πακέτα</a></li>
-            <li><a href="contact.html">Επικοινωνία</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__col">
-        <h4>Επικοινωνία</h4>
-        <ul>
-          <li>Αγίου Κωνσταντίνου 12, Αθήνα</li>
-          <li>Τηλ: 210 6969 420</li>
-          <li>Email: info@hellasnoc.gr</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__legal">© 2025 HellasNOC. All rights reserved.</div>
-  </footer>
-
-  <script src="main.js"></script>
->>>>>>> 9b846f0e6eff4de07db4cc20a683fb459ad98d30
 </body>
 </html>
