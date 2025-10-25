@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HellasNOC - Επαγγελματικά Πακέτα</title>
-  <meta name="description" content="Επαγγελματικές λύσεις ασφαλείας δικτύου για μικρές και μεσαίες επιχειρήσεις. Προστασία για το γραφείο σας.">
+  <title>HellasNOC - Οικιακά Πακέτα</title>
+  <meta name="description" content="Ασφαλής και αξιόπιστη προστασία δικτύου για το σπίτι σας. Προστατέψτε την οικογένεια και τις συσκευές σας.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="product-styles.css">
@@ -14,7 +14,7 @@
       text-align: center;
       background: 
         linear-gradient(135deg, rgba(10, 14, 23, 0.8) 0%, rgba(5, 8, 15, 0.8) 100%),
-        url('assets/office.jpg') center/cover no-repeat;
+        url('assets/home.jpg') center/cover no-repeat;
       position: relative;
       overflow: hidden;
       min-height: 60vh;
@@ -37,7 +37,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container nav-container" aria-label="Κύρια πλοήγηση">
       <div class="logo">
@@ -54,7 +53,6 @@
         <ul class="nav-list" role="menubar">
           <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
           <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-          <!-- Products Dropdown -->
           <li class="products-dropdown">
             <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
             <div class="products-dropdown-content">
@@ -81,14 +79,13 @@
       </div>
     </div>
   </header>
+
   
-  <!-- Pricing Hero -->
   <section class="hero pricing-hero">
     <div class="container">
-      <h1 data-i18n="pro-packages-title">Επαγγελματικά Πακέτα Προστασίας</h1>
-      <p data-i18n="pro-packages-subtitle">Ασφάλεια και απόδοση για την επιχείρησή σας. Προστατέψτε το δίκτυό σας με επαγγελματικές λύσεις.</p>
+      <h1 data-i18n="home-packages-title">Οικιακά Πακέτα Προστασίας</h1>
+      <p data-i18n="home-packages-subtitle">Ασφάλεια και ευελιξία για το σπίτι σаς. Προστατέψτε όλες τις συσκευές σας με προηγμένες λύσεις.</p>
 
-      <!-- Price Toggle -->
       <div class="price-toggle" aria-label="Εναλλαγή χρέωσης">
         <div class="price-toggle-slider"></div>
         <div class="price-toggle-container">
@@ -99,66 +96,62 @@
     </div>
   </section>
 
-  <!-- Pricing Cards -->
   <section class="pricing-section">
     <div class="container">
       <div class="pricing-cards">
-        <!-- Pro Starter -->
         <div class="pricing-card">
-          <h3 data-i18n="pro-starter">Pro Starter</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="25">Έως 25 συσκευές</div>
+          <h3 data-i18n="home-basic">Home Basic</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="5">Έως 5 συσκευές</div>
           <div class="price-container">
-            <div class="price price-monthly show">99€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">990€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+            <div class="price price-monthly show">19€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">190€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
           </div>
-          <div class="annual-savings" data-i18n="save-198">Εξοικονομείτε 198€ ετησίως</div>
+          <div class="annual-savings" data-i18n="save-38">Εξοικονομείτε 38€ ετησίως</div>
           <ul class="pricing-features">
-            <li data-i18n="pro-feature-1">Προστασία δικτύου και endpoint</li>
-            <li data-i18n="pro-feature-2">Firewall management</li>
-            <li data-i18n="pro-feature-3">Email security & anti-phishing</li>
-            <li data-i18n="pro-feature-4">Cloud backup (100GB)</li>
-            <li data-i18n="pro-feature-5">Βασική υποστήριξη (9πμ-5μμ)</li>
+            <li data-i18n="home-feature-1">Προστασία από ιούς και malware</li>
+            <li data-i18n="home-feature-2">Παρακολούθηση παιδικού περιεχομένου</li>
+            <li data-i18n="home-feature-3">Ad-blocking & DNS filtering</li>
+            <li data-i18n="home-feature-4">Βασική ρύθμιση firewall</li>
+            <li data-i18n="home-feature-5">Email υποστήριξη</li>
           </ul>
           <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
 
-        <!-- Pro Business -->
         <div class="pricing-card popular">
           <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
-          <h3 data-i18n="pro-business">Pro Business</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="50">Έως 50 συσκευές</div>
+          <h3 data-i18n="home-plus">Home Plus</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="10">Έως 10 συσκευές</div>
           <div class="price-container">
-            <div class="price price-monthly show">199€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">1,990€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+            <div class="price price-monthly show">29€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">290€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
           </div>
-          <div class="annual-savings" data-i18n="save-398">Εξοικονομείτε 398€ ετησίως</div>
+          <div class="annual-savings" data-i18n="save-58">Εξοικονομείτε 58€ ετησίως</div>
           <ul class="pricing-features">
-            <li data-i18n="pro-business-feature-1">Όλα από το Pro Starter</li>
-            <li data-i18n="pro-business-feature-2">24/7 monitoring & alerting</li>
-            <li data-i18n="pro-business-feature-3">VPN access για απομακρυσμένο προσωπικό</li>
-            <li data-i18n="pro-business-feature-4">Cloud backup (500GB)</li>
-            <li data-i18n="pro-business-feature-5">Εκπαίδευση προσωπικού</li>
-            <li data-i18n="pro-business-feature-6">Προτεραιότητα υποστήριξης</li>
+            <li data-i18n="home-plus-feature-1">Όλα από το Home Basic</li>
+            <li data-i18n="home-plus-feature-2">Προηγμένο parental control</li>
+            <li data-i18n="home-plus-feature-3">Προστασία ταυτότητας</li>
+            <li data-i18n="home-plus-feature-4">Cloud backup (50GB)</li>
+            <li data-i18n="home-plus-feature-5">VPN πρόσβαση</li>
+            <li data-i18n="home-plus-feature-6">Τηλεφωνική υποστήριξη</li>
           </ul>
           <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
 
-        <!-- Pro Advanced -->
         <div class="pricing-card">
-          <h3 data-i18n="pro-advanced">Pro Advanced</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="100">Έως 100 συσκευές</div>
+          <h3 data-i18n="home-premium">Home Premium</h3>
+          <div class="device-limit" data-i18n="devices" data-i18n-count="20">Έως 20 συσκευές</div>
           <div class="price-container">
-            <div class="price price-monthly show">349€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">3,490€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+            <div class="price price-monthly show">49€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
+            <div class="price price-annual">490€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
           </div>
-          <div class="annual-savings" data-i18n="save-698">Εξοικονομείτε 698€ ετησίως</div>
+          <div class="annual-savings" data-i18n="save-98">Εξοικονομείτε 98€ ετησίως</div>
           <ul class="pricing-features">
-            <li data-i18n="pro-advanced-feature-1">Όλα από το Pro Business</li>
-            <li data-i18n="pro-advanced-feature-2">Advanced threat protection</li>
-            <li data-i18n="pro-advanced-feature-3">Multi-site management</li>
-            <li data-i18n="pro-advanced-feature-4">Cloud backup (1TB)</li>
-            <li data-i18n="pro-advanced-feature-5">Dedicated account manager</li>
-            <li data-i18n="pro-advanced-feature-6">24/7 premium support</li>
+            <li data-i18n="home-premium-feature-1">Όλα από το Home Plus</li>
+            <li data-i18n="home-premium-feature-2">Cloud backup (200GB)</li>
+            <li data-i18n="home-premium-feature-3">Προηγμένη προστασία IoT συσκευών</li>
+            <li data-i18n="home-premium-feature-4">24/7 monitoring</li>
+            <li data-i18n="home-premium-feature-5">Προτεραιότητα υποστήριξης</li>
+            <li data-i18n="home-premium-feature-6">Διαχείριση πολλαπλών χρηστών</li>
           </ul>
           <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
@@ -166,88 +159,68 @@
     </div>
   </section>
 
-  <!-- Value Proposition Section -->
   <section class="value-proposition-section">
     <div class="container">
       <div class="value-proposition">
-        <h2 data-i18n="pro-value-title">Γιατί οι Επιχειρήσεις Εμπιστεύονται την HellasNOC;</h2>
+        <h2 data-i18n="home-value-title">Γιατί να προστατέψετε το σπίτι σας;</h2>
         <div class="value-grid">
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-chart-line"></i>
+              <i class="fas fa-shield-alt"></i>
             </div>
-            <h3 data-i18n="pro-value-1">Μείωση Κινδύνων</h3>
-            <p data-i18n="pro-value-1-desc">Προστατέψτε την επιχείρησή σας από cyber απειλές και αποφύγετε ακριβές παύσεις λειτουργίας</p>
+            <h3 data-i18n="home-value-1">Προστασία Οικογένειας</h3>
+            <p data-i18n="home-value-1-desc">Κρατήστε τα παιδιά σας ασφαλή online με προηγμένο parental control και φιλτράρισμα περιεχομένου</p>
           </div>
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-users"></i>
+              <i class="fas fa-lock"></i>
             </div>
-            <h3 data-i18n="pro-value-2">Απομακρυσμένη Πρόσβαση</h3>
-            <p data-i18n="pro-value-2-desc">Δώστε στο προσωπικό σας ασφαλή πρόσβαση από οπουδήποτε με VPN και advanced security</p>
+            <h3 data-i18n="home-value-2">Ασφάλεια Συσκευών</h3>
+            <p data-i18n="home-value-2-desc">Προστατέψτε όλες τις συσκευές σας - smartphones, tablets, laptops και IoT συσκευές</p>
           </div>
           <div class="value-item">
             <div class="value-icon">
-              <i class="fas fa-gem"></i>
+              <i class="fas fa-user-secret"></i>
             </div>
-            <h3 data-i18n="pro-value-3">Επαγγελματική Υποστήριξη</h3>
-            <p data-i18n="pro-value-3-desc">Ειδικοί διαθέσιμοι 24/7 για να λύσουν οποιοδήποτε τεχνικό ζήτημα άμεσα</p>
+            <h3 data-i18n="home-value-3">Ιδιωτικότητα</h3>
+            <p data-i18n="home-value-3-desc">Περιηγηθείτε στο διαδίκτυο με απόλυτη ιδιωτικότητα χάρη στο ενσωματωμένο VPN</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Technologies -->
-  <section class="technologies-section">
-    <div class="container">
-      <div class="logo-section">
-        <h2 data-i18n="technologies-title">Τεχνολογίες που Χρησιμοποιούμε</h2>
-        <div class="logo-grid">
-          <div class="logo-item"><img src="assets/img/tech-logos/opnsense.png" alt="OPNsense" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/pfsense.png" alt="pfSense" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/proxmox.svg" alt="Proxmox" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/wireguard.png" alt="WireGuard" loading="lazy"></div>
-          <div class="logo-item"><img src="assets/img/tech-logos/synology.png" alt="Synology" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
   <section class="faq-section">
     <div class="container">
-      <h2 data-i18n="pro-faq-title">Συχνές Ερωτήσεις για Επαγγελματικά Πακέτα</h2>
+      <h2 data-i18n="home-faq-title">Συχνές Ερωτήσεις για Οικιακά Πακέτα</h2>
       <div class="faq-item">
-        <h3 data-i18n="pro-faq-1">Πόσο γρήγορα μπορείτε να ανταποκριθείτε σε επείγοντα ζητήματα;</h3>
-        <p data-i18n="pro-faq-1-answer">Σε κρίσιμα ζητήματα, ανταποκρινόμαστε εντός 15 λεπτών. Στα Pro Business και Advanced πακέτα προσφέρουμε 24/7 υποστήριξη.</p>
+        <h3 data-i18n="home-faq-1">Πόσες συσκευές μπορώ να προστατέψω;</h3>
+        <p data-i18n="home-faq-1-answer">Τα πακέτα μας καλύπτουν από 5 έως 20 συσκευές ανάλογα με το πακέτο που επιλέξετε. Όλες οι συσκευές σας θα είναι προστατευμένες.</p>
       </div>
       <div class="faq-item">
-        <h3 data-i18n="pro-faq-2">Προσφέρετε εκπαίδευση προσωπικού;</h3>
-        <p data-i18n="pro-faq-2-answer">Ναι, στα Pro Business και Advanced πακέτα περιλαμβάνεται εκπαίδευση προσωπικού για ασφαλείς πρακτικές και αναγνώριση phishing attempts.</p>
+        <h3 data-i18n="home-faq-2">Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
+        <p data-i18n="home-faq-2-answer">Η εγκατάσταση διαρκεί λιγότερο από 30 λεπτά. Θα σας καθοδηγήσουμε βήμα-βήμα και θα είστε προστατευμένοι αμέσως.</p>
       </div>
       <div class="faq-item">
-        <h3 data-i18n="pro-faq-3">Μπορώ να αναβαθμίσω το πακέτο μου αργότερα;</h3>
-        <p data-i18n="pro-faq-3-answer">Φυσικά! Μπορείτε να αναβαθμίσετε ανά πάσα στιγμή. Θα εφαρμόσουμε τη νέα τιμολόγηση από την επόμενη χρεωστική περίοδο.</p>
+        <h3 data-i18n="home-faq-3">Υπάρχει δωρεάν δοκιμαστική περίοδος;</h3>
+        <p data-i18n="home-faq-3-answer">Ναι! Προσφέρουμε 14ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας χωρίς καμία δέσμευση.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2 data-i18n="pro-cta-title">Προστατέψτε την Επιχείρησή Σας Σήμερα</h2>
-        <p data-i18n="pro-cta-text">Ξεκινήστε με δωρεάν αξιολόγηση ασφαλείας και προσαρμοσμένη πρόταση για τις ανάγκες σας.</p>
+        <h2 data-i18n="home-cta-title">Προστατέψτε την Ψηφιακή Σας Ζωή Σήμερα</h2>
+        <p data-i18n="home-cta-text">Ξεκινήστε με δωρεάν δοκιμή 14 ημερών και αποκτήστε ειρήνη για το ψηφιακό σας περιβάλλον.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary" data-i18n="request-consultation">Ζητήστε Συμβουλευτική</a>
-          <a href="pricing-enterprise.html" class="btn btn-outline" data-i18n="view-enterprise-packages">Δείτε Εταιρικά Πακέτα</a>
+          <a href="contact.html" class="btn btn-primary" data-i18n="start-free-trial">Ξεκινήστε Δωρεάν Δοκιμή</a>
+          <a href="pricing-pro.html" class="btn btn-outline" data-i18n="view-pro-packages">Δείτε Επαγγελματικά Πακέτα</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">

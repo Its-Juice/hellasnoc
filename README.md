@@ -1,139 +1,137 @@
-# HellasNOC Website – Official Repository
+# HellasNOC Website
 
-Welcome to the official repository of the **HellasNOC Website**.
-This repository represents the **initial cornerstone** of **HellasNOC** — an emerging initiative with a bold ambition: to establish a Greece-born technology venture capable of achieving **global recognition in the fields of digital infrastructure, security, and innovation**.
+A modern, professional website for HellasNOC - Professional IT Solutions company.
 
-HellasNOC is not merely a project, but a **visionary commitment** to positioning Greece as an **active architect** in the evolving digital era, rather than a passive consumer of imported technologies. Through rigorous design, open collaboration, and strategic foresight, HellasNOC intends to become a force that delivers infrastructure which is **reliable, secure, sovereign, and globally relevant**.
+## 🚀 Features
 
----
+- **Modern Design**: Clean, professional layout with smooth animations
+- **Responsive**: Fully responsive design that works on all devices
+- **Fast Loading**: Optimized for performance and speed
+- **Interactive**: Dynamic pricing toggles, form validation, and smooth scrolling
+- **Accessible**: Built with accessibility best practices
 
-## 🌍 Vision & Mission
+## 📁 File Structure
 
-HellasNOC is guided by the conviction that technology should be **created, not just consumed**. Our mission extends beyond the development of services: it is about **building trust, enabling sovereignty, and redefining Greece's role in the global digital economy**.
+```
+hellasnoc-website/
+├── index.html          # Homepage
+├── services.html       # Services page
+├── pricing.html        # Pricing page
+├── contact.html        # Contact page
+├── about.html          # About page
+├── style.css           # Main stylesheet
+├── script.js           # JavaScript functionality
+├── assets/             # Images and resources
+│   ├── img/
+│   │   ├── HellasNOC-Logo-Transparent.png
+│   │   └── tech-logos/
+│   └── *.jpg           # Hero and content images
+└── README.md           # This file
+```
 
-### Our Core Pillars:
+## 🎨 Design System
 
-* **Reliability by Design**
-  Every system, every architecture, and every deployment must embody resilience, predictability, and fault-tolerance. We aim to design infrastructure that minimizes downtime and maximizes confidence.
+### Colors
+- Primary: #3b82f6 (Blue)
+- Secondary: #8b5cf6 (Purple)
+- Success: #10b981 (Green)
+- Warning: #f59e0b (Amber)
+- Error: #ef4444 (Red)
 
-* **Security at the Core**
-  Security is not an afterthought, but an inseparable element of our design philosophy. Privacy, encryption, trust, and compliance are central to every prototype, service, and process.
+### Typography
+- Font Family: Inter (Google Fonts)
+- Weights: 300, 400, 500, 600, 700, 800
 
-* **Innovation with Purpose**
-  True progress is not measured by incremental improvements but by transformative leaps. HellasNOC seeks to push boundaries, delivering solutions that can stand on the global stage.
+### Components
+- Modern card-based layout
+- Gradient backgrounds
+- Smooth hover effects
+- Responsive grid system
 
-* **Empowerment through Openness**
-  Inspired by open-source principles, we believe that knowledge-sharing and community engagement create stronger, more resilient ecosystems. Infrastructure should empower individuals, organizations, and societies — not limit them.
+## 🛠️ Technologies Used
 
----
+- **HTML5**: Semantic markup
+- **CSS3**: Modern styling with Grid and Flexbox
+- **JavaScript (ES6+)**: Interactive functionality
+- **Font Awesome**: Icons
+- **Google Fonts**: Typography
 
-## 🚀 Strategic Outlook
+## 📱 Responsive Breakpoints
 
-While HellasNOC is still at the **conceptual and prototyping stage**, the long-term strategic direction is clear. Our ambition is to evolve into a trusted and recognizable name across multiple domains of digital infrastructure.
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-### Target Domains of Impact:
+## 🚀 Getting Started
 
-* **Cloud & Edge Infrastructure**
-  Building platforms that deliver scalable, reliable, and secure computing power — not just for enterprises, but also for communities and governments seeking independence.
+1. Open `index.html` in a web browser
+2. Navigate through the different pages using the navigation menu
+3. Test the interactive features like pricing toggle and contact form
 
-* **Networking & Connectivity Solutions**
-  Developing solutions to ensure that data flows with reliability, low-latency, and efficiency across borders and regions.
+## 📄 Pages
 
-* **Digital Sovereignty**
-  Supporting Greece’s and Europe’s goal of reducing dependency on foreign-owned infrastructure, enabling strategic autonomy in critical digital operations.
+### Homepage (`index.html`)
+- Hero section with call-to-action
+- Services overview
+- Pricing plans
+- About section
+- Contact information
 
-* **Research & Open Innovation**
-  Fostering an environment where collaboration, academic research, and experimental technologies can transition into production-grade infrastructure.
+### Services (`services.html`)
+- Detailed service descriptions
+- Technology partners
+- Process overview
+- Call-to-action sections
 
-### Our Long-Term Outlook:
+### Pricing (`pricing.html`)
+- Interactive pricing plans
+- Monthly/Annual toggle
+- Feature comparison table
+- FAQ section
 
-We recognize that infrastructure is a **long-term undertaking**. It requires careful planning, incremental testing, and unwavering dedication. Every repository, every line of code, and every architectural sketch serves as a stepping stone toward a more resilient and sovereign digital future.
+### Contact (`contact.html`)
+- Contact information
+- Interactive contact form
+- Map placeholder
+- FAQ section
 
----
+### About (`about.html`)
+- Company story
+- Mission and values
+- Team members
+- Certifications
+- Statistics
 
-## 🚧 Current Status
+## 🎯 Key Features
 
-HellasNOC is currently in the **ideation and exploratory prototyping phase**.
-At this early stage:
+### Interactive Elements
+- Mobile navigation menu
+- Pricing toggle (Monthly/Annual)
+- Form validation
+- Smooth scrolling
+- Hover effects
 
-* There is **no incorporated legal entity** representing HellasNOC.
-* There are **no clients, employees, or commercial engagements** in progress.
-* Deliverables published here are **conceptual, research-oriented, and non-production** in nature.
+### Performance
+- Optimized images
+- Efficient CSS
+- Minimal JavaScript
+- Fast loading times
 
-This repository should be viewed as a **launchpad for experimentation**, not as a final product. The code, designs, and documents found here are intended to inspire, demonstrate, and lay the foundation for future development.
+### Accessibility
+- Semantic HTML
+- ARIA labels
+- Keyboard navigation
+- Screen reader support
+- High contrast support
 
----
+## 📞 Contact
 
-## ❗ Disclaimer
+For questions about this website or HellasNOC services:
 
-* HellasNOC is not yet a functioning company, service provider, or commercial organization.
-* All references to products, services, or offerings are **illustrative, conceptual, or aspirational only**.
-* Materials within this repository are subject to continuous revision, rethinking, and restructuring.
-* No guarantees of stability, support, or backward compatibility are offered at this stage.
+- **Phone**: +30 210 123 4567
+- **Email**: info@hellasnoc.gr
+- **Address**: 123 Business Street, Athens, Greece
 
-This project should be understood as a **vision in motion** — a framework for ideas that are actively being shaped and redefined.
+## 📝 License
 
----
-
-## 🔒 License
-
-The HellasNOC Website is distributed under a **proprietary license**.
-© 2025 HellasNOC. All rights reserved.
-
-* Copying, modification, or redistribution without explicit written consent is strictly prohibited.
-* Content is provided exclusively for **educational, exploratory, and conceptual purposes**.
-* Not suitable or intended for **production, deployment, or commercial environments**.
-
-Please refer to the [LICENSE](LICENSE) file for complete details.
-
----
-
-## 🚫 Contributions
-
-At this stage, **external contributions are not accepted**.
-Future development cycles may welcome open collaboration, but currently, HellasNOC remains an **internal research and prototyping effort**.
-
-As the initiative grows, we anticipate a gradual shift toward a **more open development model**, engaging developers, researchers, and innovators who align with our mission of digital sovereignty and global relevance.
-
----
-
-## 🏗️ Development Philosophy
-
-The HellasNOC Website and associated projects follow an **iterative, agile, and learning-centered methodology**.
-Our philosophy prioritizes:
-
-* **Rapid Iteration** – frequent updates, early prototypes, and adaptive planning.
-* **Experimentation** – trialing new approaches and technologies, even at the risk of deprecation.
-* **Adaptability** – adjusting direction in response to discoveries, challenges, and opportunities.
-* **Exploration First, Stability Later** – emphasizing learning and innovation at this early stage, before prioritizing enterprise-grade reliability.
-
-We do not view this repository as an endpoint, but as a **sandbox for testing, building, and refining ideas** that will eventually form the backbone of HellasNOC’s long-term strategy.
-
----
-
-## 📞 Contact Information
-
-For inquiries, collaboration opportunities, or to follow our journey:
-
-📧 **Email:** [info@hellasnoc.gr](mailto:info@hellasnoc.gr)
-
-🌐 **Website (Preview):** [HellasNOC Website](https://its-juice.github.io/hellasnoc/index.html)
-
----
-
-## 💡 Final Statement
-
-HellasNOC is not just a repository — it is a **declaration of intent and vision**.
-It is the first public signal of a larger ambition: to see Greece emerge as a **recognized force in global digital infrastructure**, shaping technology rather than only consuming it.
-
-This repository stands as:
-
-* A **foundation** upon which future systems will be built.
-* A **manifesto** expressing our guiding principles of reliability, security, and innovation.
-* A **milestone** marking the beginning of a long and ambitious journey.
-
-If you are reading this, you are witnessing the very first chapter of a story still being written.
-With persistence, collaboration, and foresight, HellasNOC will grow from an idea into a **recognized and respected contributor** to the global digital ecosystem.
-
-The road ahead is long, but the direction is clear.
-This is only the beginning — and the journey has just begun. 🚀
+© 2024 HellasNOC. All rights reserved.

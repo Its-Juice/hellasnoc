@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Pricing - HellasNOC Cybersecurity Solutions</title>
+    <meta name="description" content="Transparent pricing for cybersecurity services. Choose the perfect security plan for your business needs with our flexible pricing options.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" class="logo">
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="pricing.html" class="nav-link active" data-i18n="nav.pricing">Pricing</a>
+                <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                
+                <!-- Language Switcher -->
+                <div class="language-switcher-simple">
+                    <button class="lang-btn active" data-lang="en" aria-label="English">
+                        <img src="assets/img/flags/gb.png" alt="English" class="flag-icon">
+                        <span>EN</span>
+                    </button>
+                    <button class="lang-btn" data-lang="el" aria-label="Greek">
+                        <img src="assets/img/flags/gr.png" alt="Greek" class="flag-icon">
+                        <span>GR</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transparent Pricing</h1>
+                <p class="hero-subtitle">Choose the perfect plan for your business needs. No hidden fees, no surprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-subtitle">Flexible pricing options designed to scale with your business</p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Annual <span class="discount">(Save 20%)</span></span>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name" data-i18n="pricing.basic.title">Essential Security</h3>
+                        <div class="plan-price">
+                            <span class="price-amount" data-monthly="299" data-annual="239">€299</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="pricing.basic.desc">Basic security monitoring for small businesses</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.basic.feature1">Basic Threat Monitoring</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.basic.feature2">Email Security</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.basic.feature3">Monthly Security Reports</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.basic.feature4">Email Support</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.basic.feature5">Up to 25 Devices</span></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Professional</h3>
+                        <div class="plan-price">
+                            <span class="price-amount" data-monthly="499" data-annual="399">€499</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <p class="plan-description">Ideal for growing companies</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Advanced Network Monitoring</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Weekly Reports</li>
+                        <li><i class="fas fa-check"></i> Up to 50 Devices</li>
+                        <li><i class="fas fa-check"></i> Enhanced Security</li>
+                        <li><i class="fas fa-check"></i> On-site Visits</li>
+                        <li><i class="fas fa-check"></i> Cloud Backup</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <div class="plan-price">
+                            <span class="price-amount" data-monthly="999" data-annual="799">€999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <p class="plan-description">For large organizations</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
+                        <li><i class="fas fa-check"></i> Dedicated Support</li>
+                        <li><i class="fas fa-check"></i> Real-time Reports</li>
+                        <li><i class="fas fa-check"></i> Unlimited Devices</li>
+                        <li><i class="fas fa-check"></i> Enterprise Security</li>
+                        <li><i class="fas fa-check"></i> Custom Solutions</li>
+                        <li><i class="fas fa-check"></i> SLA Guarantee</li>
+                        <li><i class="fas fa-check"></i> Disaster Recovery</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section class="features-comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Feature Comparison</h2>
+                <p class="section-subtitle">Compare features across all plans</p>
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Starter</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Network Monitoring</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Support Level</td>
+                            <td>Email</td>
+                            <td>Priority</td>
+                            <td>Dedicated</td>
+                        </tr>
+                        <tr>
+                            <td>Device Limit</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>On-site Visits</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Backup</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>SLA Guarantee</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to common questions about our pricing and services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I change my plan anytime?</h3>
+                    <p class="faq-answer">Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the next billing cycle.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a setup fee?</h3>
+                    <p class="faq-answer">No setup fees for Professional and Enterprise plans. Starter plan includes a one-time setup fee of €99.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What's included in support?</h3>
+                    <p class="faq-answer">Support includes remote assistance, troubleshooting, system monitoring, and regular maintenance tasks.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer custom solutions?</h3>
+                    <p class="faq-answer">Yes, we provide custom solutions for Enterprise clients. Contact us to discuss your specific requirements.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What's your cancellation policy?</h3>
+                    <p class="faq-answer">You can cancel your subscription with 30 days notice. No long-term contracts required.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you provide training?</h3>
+                    <p class="faq-answer">Yes, we offer training sessions for your team on new systems and security best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-description">
+                    Contact us today for a free consultation and custom quote for your business needs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Free Quote</a>
+                    <a href="services.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" class="footer-logo">
+                    <p class="footer-description">
+                        Professional network and security solutions for modern businesses.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Network Management</a></li>
+                        <li><a href="services.html">Cybersecurity</a></li>
+                        <li><a href="services.html">Cloud Solutions</a></li>
+                        <li><a href="services.html">24/7 Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +30 210 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@hellasnoc.gr</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Athens, Greece</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 HellasNOC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

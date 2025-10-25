@@ -2,74 +2,64 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HellasNOC - Οικιακά Πακέτα</title>
   <meta name="description" content="Ασφαλής και αξιόπιστη προστασία δικτύου για το σπίτι σας. Προστατέψτε την οικογένεια και τις συσκευές σας.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="product-styles.css">
-  <style>
-    .hero.pricing-hero {
-      padding: 12rem 1rem 8rem;
-      text-align: center;
-      background: 
-        linear-gradient(135deg, rgba(10, 14, 23, 0.8) 0%, rgba(5, 8, 15, 0.8) 100%),
-        url('assets/home.jpg') center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero.pricing-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Πήγαινε στο κύριο περιεχόμενο</a>
+
   <!-- Header -->
-  <header>
-    <div class="container nav-container" aria-label="Κύρια πλοήγηση">
-      <div class="logo">
-        <a href="index.html" aria-label="HellasNOC home">
-          <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" loading="lazy">
-        </a>
-      </div>
-      <button class="hamburger" aria-label="Μενού" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <nav id="primary-navigation">
-        <ul class="nav-list" role="menubar">
-          <li><a href="index.html" data-i18n="home" role="menuitem">Αρχική</a></li>
-          <li><a href="services.html" data-i18n="services" role="menuitem">Υπηρεσίες</a></li>
-          <!-- Products Dropdown -->
-          <li class="products-dropdown">
-            <a href="#" data-i18n="products" role="menuitem">Προϊόντα</a>
-            <div class="products-dropdown-content">
-              <a href="pricing-home.html" data-i18n="pricing-home" role="menuitem">Οικιακά Πακέτα</a>
-              <a href="pricing-pro.html" data-i18n="pricing-pro" role="menuitem">Επαγγελματικά Πακέτα</a>
-              <a href="pricing-enterprise.html" data-i18n="pricing-enterprise" role="menuitem">Εταιρικά Πακέτα</a>
-            </div>
-          </li>
-          <li><a href="contact.html" data-i18n="contact" role="menuitem">Επικοινωνία</a></li>
-        </ul>
-      </nav>
-      <div class="header-right">
-        <div class="language-switcher" aria-label="Εναλλαγή γλώσσας">
-          <div class="language-slider"></div>
-          <div class="language-toggle-container">
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="navbar" aria-label="Κύρια πλοήγηση">
+        <!-- Logo -->
+        <div class="navbar-brand">
+          <a href="index.html" aria-label="HellasNOC Αρχική">
+            <img src="assets/img/HellasNOC-Logo-Transparent.png" alt="HellasNOC Logo" class="logo">
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Navigation menu -->
+        <div class="navbar-menu" id="main-navigation">
+          <ul class="navbar-nav" role="menubar">
+            <li class="nav-item" role="none">
+              <a href="index.html" class="nav-link" data-i18n="home" role="menuitem">Αρχική</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a href="services.html" class="nav-link" data-i18n="services" role="menuitem">Υπηρεσίες</a>
+            </li>
+            <li class="nav-item dropdown" role="none">
+              <a href="#" class="nav-link dropdown-toggle" data-i18n="products" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                Προϊόντα
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="none"><a href="pricing-home.html" class="dropdown-item active" data-i18n="pricing-home" role="menuitem">Οικιακά Πακέτα</a></li>
+                <li role="none"><a href="pricing-pro.html" class="dropdown-item" data-i18n="pricing-pro" role="menuitem">Επαγγελματικά Πακέτα</a></li>
+                <li role="none"><a href="pricing-enterprise.html" class="dropdown-item" data-i18n="pricing-enterprise" role="menuitem">Εταιρικά Πακέτα</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" role="none">
+              <a href="contact.html" class="nav-link" data-i18n="contact" role="menuitem">Επικοινωνία</a>
+            </li>
+          </ul>
+
+          <!-- Language switcher -->
+          <div class="language-switcher">
             <button class="language-btn active" data-lang="el" aria-label="Ελληνικά">
               <img src="assets/img/flags/gr.png" alt="Greek flag">
             </button>
@@ -78,193 +68,309 @@
             </button>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
 
-  
-  <!-- Pricing Hero -->
-  <section class="hero pricing-hero">
-    <div class="container">
-      <h1 data-i18n="home-packages-title">Οικιακά Πακέτα Προστασίας</h1>
-      <p data-i18n="home-packages-subtitle">Ασφάλεια και ευελιξία για το σπίτι σаς. Προστατέψτε όλες τις συσκευές σας με προηγμένες λύσεις.</p>
-
-      <!-- Price Toggle -->
-      <div class="price-toggle" aria-label="Εναλλαγή χρέωσης">
-        <div class="price-toggle-slider"></div>
-        <div class="price-toggle-container">
-          <div id="monthly-toggle" class="price-toggle-btn active" data-i18n="monthly">Μηνιαία</div>
-          <div id="annual-toggle" class="price-toggle-btn" data-i18n="annual">Ετήσια</div>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero pricing-hero" aria-labelledby="hero-title">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title" data-i18n="home-packages-title">
+            Οικιακά Πακέτα Προστασίας
+          </h1>
+          <p class="hero-subtitle" data-i18n="home-packages-subtitle">
+            Ασφάλεια και ευελιξία για το σπίτι σας. Προστατέψτε όλες τις συσκευές σας με προηγμένες λύσεις.
+          </p>
+          
+          <!-- Pricing Toggle -->
+          <div class="pricing-toggle" role="group" aria-label="Επιλογή χρέωσης">
+            <button class="toggle-btn active" data-billing="monthly" data-i18n="monthly">Μηνιαία</button>
+            <button class="toggle-btn" data-billing="annual" data-i18n="annual">Ετήσια</button>
+            <div class="toggle-slider"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing Cards -->
-  <section class="pricing-section">
-    <div class="container">
-      <div class="pricing-cards">
-        <!-- Home Basic -->
-        <div class="pricing-card">
-          <h3 data-i18n="home-basic">Home Basic</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="5">Έως 5 συσκευές</div>
-          <div class="price-container">
-            <div class="price price-monthly show">19€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">190€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+    <!-- Pricing Section -->
+    <section class="pricing-section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-grid">
+          <!-- Basic Plan -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <h3 class="plan-name" data-i18n="home-basic">Home Basic</h3>
+              <div class="device-limit" data-i18n="devices" data-count="5">Έως 5 συσκευές</div>
+            </div>
+            
+            <div class="price-container">
+              <div class="price monthly-price active">
+                <span class="amount">19€</span>
+                <span class="period" data-i18n="month">/μήνα</span>
+              </div>
+              <div class="price annual-price">
+                <span class="amount">190€</span>
+                <span class="period" data-i18n="year">/έτος</span>
+              </div>
+            </div>
+            
+            <div class="savings" data-i18n="save-38">Εξοικονομείτε 38€ ετησίως</div>
+            
+            <ul class="features-list">
+              <li data-i18n="home-feature-1">Προστασία από ιούς και malware</li>
+              <li data-i18n="home-feature-2">Παρακολούθηση παιδικού περιεχομένου</li>
+              <li data-i18n="home-feature-3">Ad-blocking & DNS filtering</li>
+              <li data-i18n="home-feature-4">Βασική ρύθμιση firewall</li>
+              <li data-i18n="home-feature-5">Email υποστήριξη</li>
+            </ul>
+            
+            <a href="contact.html" class="btn btn-outline btn-lg" data-i18n="choose">
+              Επιλογή
+            </a>
           </div>
-          <div class="annual-savings" data-i18n="save-38">Εξοικονομείτε 38€ ετησίως</div>
-          <ul class="pricing-features">
-            <li data-i18n="home-feature-1">Προστασία από ιούς και malware</li>
-            <li data-i18n="home-feature-2">Παρακολούθηση παιδικού περιεχομένου</li>
-            <li data-i18n="home-feature-3">Ad-blocking & DNS filtering</li>
-            <li data-i18n="home-feature-4">Βασική ρύθμιση firewall</li>
-            <li data-i18n="home-feature-5">Email υποστήριξη</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-        </div>
 
-        <!-- Home Plus -->
-        <div class="pricing-card popular">
-          <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
-          <h3 data-i18n="home-plus">Home Plus</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="10">Έως 10 συσκευές</div>
-          <div class="price-container">
-            <div class="price price-monthly show">29€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">290€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+          <!-- Plus Plan (Popular) -->
+          <div class="pricing-card popular">
+            <div class="popular-badge" data-i18n="most-popular">Πιο Δημοφιλές</div>
+            
+            <div class="card-header">
+              <h3 class="plan-name" data-i18n="home-plus">Home Plus</h3>
+              <div class="device-limit" data-i18n="devices" data-count="10">Έως 10 συσκευές</div>
+            </div>
+            
+            <div class="price-container">
+              <div class="price monthly-price active">
+                <span class="amount">29€</span>
+                <span class="period" data-i18n="month">/μήνα</span>
+              </div>
+              <div class="price annual-price">
+                <span class="amount">290€</span>
+                <span class="period" data-i18n="year">/έτος</span>
+              </div>
+            </div>
+            
+            <div class="savings" data-i18n="save-58">Εξοικονομείτε 58€ ετησίως</div>
+            
+            <ul class="features-list">
+              <li data-i18n="home-plus-feature-1">Όλα από το Home Basic</li>
+              <li data-i18n="home-plus-feature-2">Προηγμένο parental control</li>
+              <li data-i18n="home-plus-feature-3">Προστασία ταυτότητας</li>
+              <li data-i18n="home-plus-feature-4">Cloud backup (50GB)</li>
+              <li data-i18n="home-plus-feature-5">VPN πρόσβαση</li>
+              <li data-i18n="home-plus-feature-6">Τηλεφωνική υποστήριξη</li>
+            </ul>
+            
+            <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="choose">
+              Επιλογή
+            </a>
           </div>
-          <div class="annual-savings" data-i18n="save-58">Εξοικονομείτε 58€ ετησίως</div>
-          <ul class="pricing-features">
-            <li data-i18n="home-plus-feature-1">Όλα από το Home Basic</li>
-            <li data-i18n="home-plus-feature-2">Προηγμένο parental control</li>
-            <li data-i18n="home-plus-feature-3">Προστασία ταυτότητας</li>
-            <li data-i18n="home-plus-feature-4">Cloud backup (50GB)</li>
-            <li data-i18n="home-plus-feature-5">VPN πρόσβαση</li>
-            <li data-i18n="home-plus-feature-6">Τηλεφωνική υποστήριξη</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
-        </div>
 
-        <!-- Home Premium -->
-        <div class="pricing-card">
-          <h3 data-i18n="home-premium">Home Premium</h3>
-          <div class="device-limit" data-i18n="devices" data-i18n-count="20">Έως 20 συσκευές</div>
-          <div class="price-container">
-            <div class="price price-monthly show">49€<span class="billing-cycle" data-i18n="month">/μήνα</span></div>
-            <div class="price price-annual">490€<span class="billing-cycle" data-i18n="year">/έτος</span></div>
+          <!-- Premium Plan -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <h3 class="plan-name" data-i18n="home-premium">Home Premium</h3>
+              <div class="device-limit" data-i18n="devices" data-count="20">Έως 20 συσκευές</div>
+            </div>
+            
+            <div class="price-container">
+              <div class="price monthly-price active">
+                <span class="amount">49€</span>
+                <span class="period" data-i18n="month">/μήνα</span>
+              </div>
+              <div class="price annual-price">
+                <span class="amount">490€</span>
+                <span class="period" data-i18n="year">/έτος</span>
+              </div>
+            </div>
+            
+            <div class="savings" data-i18n="save-98">Εξοικονομείτε 98€ ετησίως</div>
+            
+            <ul class="features-list">
+              <li data-i18n="home-premium-feature-1">Όλα από το Home Plus</li>
+              <li data-i18n="home-premium-feature-2">Cloud backup (200GB)</li>
+              <li data-i18n="home-premium-feature-3">Προηγμένη προστασία IoT συσκευών</li>
+              <li data-i18n="home-premium-feature-4">24/7 monitoring</li>
+              <li data-i18n="home-premium-feature-5">Προτεραιότητα υποστήριξης</li>
+              <li data-i18n="home-premium-feature-6">Διαχείριση πολλαπλών χρηστών</li>
+            </ul>
+            
+            <a href="contact.html" class="btn btn-outline btn-lg" data-i18n="choose">
+              Επιλογή
+            </a>
           </div>
-          <div class="annual-savings" data-i18n="save-98">Εξοικονομείτε 98€ ετησίως</div>
-          <ul class="pricing-features">
-            <li data-i18n="home-premium-feature-1">Όλα από το Home Plus</li>
-            <li data-i18n="home-premium-feature-2">Cloud backup (200GB)</li>
-            <li data-i18n="home-premium-feature-3">Προηγμένη προστασία IoT συσκευών</li>
-            <li data-i18n="home-premium-feature-4">24/7 monitoring</li>
-            <li data-i18n="home-premium-feature-5">Προτεραιότητα υποστήριξης</li>
-            <li data-i18n="home-premium-feature-6">Διαχείριση πολλαπλών χρηστών</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" data-i18n="choose">Επιλογή</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Value Proposition Section -->
-  <section class="value-proposition-section">
-    <div class="container">
-      <div class="value-proposition">
-        <h2 data-i18n="home-value-title">Γιατί να προστατέψετε το σπίτι σας;</h2>
+    <!-- Value Proposition -->
+    <section class="value-section" aria-labelledby="value-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="value-title" class="section-title" data-i18n="home-value-title">Γιατί να προστατέψετε το σπίτι σας;</h2>
+        </div>
+        
         <div class="value-grid">
-          <div class="value-item">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fas fa-shield-alt"></i>
             </div>
-            <h3 data-i18n="home-value-1">Προστασία Οικογένειας</h3>
-            <p data-i18n="home-value-1-desc">Κρατήστε τα παιδιά σας ασφαλή online με προηγμένο parental control και φιλτράρισμα περιεχομένου</p>
+            <h3 class="value-title" data-i18n="home-value-1">Προστασία Οικογένειας</h3>
+            <p class="value-description" data-i18n="home-value-1-desc">
+              Κρατήστε τα παιδιά σας ασφαλή online με προηγμένο parental control και φιλτράρισμα περιεχομένου
+            </p>
           </div>
-          <div class="value-item">
+          
+          <div class="value-card">
             <div class="value-icon">
               <i class="fas fa-lock"></i>
             </div>
-            <h3 data-i18n="home-value-2">Ασφάλεια Συσκευών</h3>
-            <p data-i18n="home-value-2-desc">Προστατέψτε όλες τις συσκευές σας - smartphones, tablets, laptops και IoT συσκευές</p>
+            <h3 class="value-title" data-i18n="home-value-2">Ασφάλεια Συσκευών</h3>
+            <p class="value-description" data-i18n="home-value-2-desc">
+              Προστατέψτε όλες τις συσκευές σας - smartphones, tablets, laptops και IoT συσκευές
+            </p>
           </div>
-          <div class="value-item">
+          
+          <div class="value-card">
             <div class="value-icon">
               <i class="fas fa-user-secret"></i>
             </div>
-            <h3 data-i18n="home-value-3">Ιδιωτικότητα</h3>
-            <p data-i18n="home-value-3-desc">Περιηγηθείτε στο διαδίκτυο με απόλυτη ιδιωτικότητα χάρη στο ενσωματωμένο VPN</p>
+            <h3 class="value-title" data-i18n="home-value-3">Ιδιωτικότητα</h3>
+            <p class="value-description" data-i18n="home-value-3-desc">
+              Περιηγηθείτε στο διαδίκτυο με απόλυτη ιδιωτικότητα χάρη στο ενσωματωμένο VPN
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="faq-section">
-    <div class="container">
-      <h2 data-i18n="home-faq-title">Συχνές Ερωτήσεις για Οικιακά Πακέτα</h2>
-      <div class="faq-item">
-        <h3 data-i18n="home-faq-1">Πόσες συσκευές μπορώ να προστατέψω;</h3>
-        <p data-i18n="home-faq-1-answer">Τα πακέτα μας καλύπτουν από 5 έως 20 συσκευές ανάλογα με το πακέτο που επιλέξετε. Όλες οι συσκευές σας θα είναι προστατευμένες.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="home-faq-2">Πόσο καιρό διαρκεί η εγκατάσταση;</h3>
-        <p data-i18n="home-faq-2-answer">Η εγκατάσταση διαρκεί λιγότερο από 30 λεπτά. Θα σας καθοδηγήσουμε βήμα-βήμα και θα είστε προστατευμένοι αμέσως.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="home-faq-3">Υπάρχει δωρεάν δοκιμαστική περίοδος;</h3>
-        <p data-i18n="home-faq-3-answer">Ναι! Προσφέρουμε 14ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας χωρίς καμία δέσμευση.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 data-i18n="home-cta-title">Προστατέψτε την Ψηφιακή Σας Ζωή Σήμερα</h2>
-        <p data-i18n="home-cta-text">Ξεκινήστε με δωρεάν δοκιμή 14 ημερών και αποκτήστε ειρήνη για το ψηφιακό σας περιβάλλον.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary" data-i18n="start-free-trial">Ξεκινήστε Δωρεάν Δοκιμή</a>
-          <a href="pricing-pro.html" class="btn btn-outline" data-i18n="view-pro-packages">Δείτε Επαγγελματικά Πακέτα</a>
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-title" class="section-title" data-i18n="home-faq-title">Συχνές Ερωτήσεις για Οικιακά Πακέτα</h2>
+        </div>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-question" data-i18n="home-faq-1">Πόσες συσκευές μπορώ να προστατέψω;</h3>
+            <p class="faq-answer" data-i18n="home-faq-1-answer">
+              Τα πακέτα μας καλύπτουν από 5 έως 20 συσκευές ανάλογα με το πακέτο που επιλέγετε. Όλες οι συσκευές σας θα προστατεύονται.
+            </p>
+          </div>
+          
+          <div class="faq-item">
+            <h3 class="faq-question" data-i18n="home-faq-2">Πόσο διαρκεί η εγκατάσταση;</h3>
+            <p class="faq-answer" data-i18n="home-faq-2-answer">
+              Η εγκατάσταση διαρκεί λιγότερο από 30 λεπτά. Θα σας καθοδηγήσουμε βήμα προς βήμα και θα προστατευτείτε αμέσως.
+            </p>
+          </div>
+          
+          <div class="faq-item">
+            <h3 class="faq-question" data-i18n="home-faq-3">Υπάρχει δωρεάν δοκιμαστική περίοδος;</h3>
+            <p class="faq-answer" data-i18n="home-faq-3-answer">
+              Ναι! Προσφέρουμε 14ήμερη δωρεάν δοκιμή για όλα τα πακέτα μας χωρίς δεσμεύσεις.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-content">
+          <h2 id="cta-title" class="cta-title" data-i18n="home-cta-title">Προστατέψτε την Ψηφιακή σας Ζωή Σήμερα</h2>
+          <p class="cta-text" data-i18n="home-cta-text">
+            Ξεκινήστε με δωρεάν δοκιμή 14 ημερών και αποκτήστε ηρεμία για το ψηφιακό σας περιβάλλον.
+          </p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="start-free-trial">
+              Έναρξη Δωρεάν Δοκιμής
+            </a>
+            <a href="pricing-pro.html" class="btn btn-outline btn-lg" data-i18n="view-pro-packages">
+              Δείτε Επαγγελματικά Πακέτα
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-column">
-          <h3 data-i18n="company">HellasNOC</h3>
-          <p data-i18n="company-description">Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.</p>
+        <div class="footer-section">
+          <h3 class="footer-title" data-i18n="company">HellasNOC</h3>
+          <p class="footer-description" data-i18n="company-description">
+            Επαγγελματικές υπηρεσίες δικτύων και ασφαλείας.
+          </p>
         </div>
-        <div class="footer-column">
-          <h3 data-i18n="links">Σύνδεσμοι</h3>
-          <ul>
+        
+        <div class="footer-section">
+          <h3 class="footer-title" data-i18n="links">Σύνδεσμοι</h3>
+          <ul class="footer-links">
             <li><a href="index.html" data-i18n="home">Αρχική</a></li>
             <li><a href="services.html" data-i18n="services">Υπηρεσίες</a></li>
             <li><a href="contact.html" data-i18n="contact">Επικοινωνία</a></li>
           </ul>
         </div>
-        <div class="footer-column">
-          <h3 data-i18n="contact">Επικοινωνία</h3>
-          <ul>
-            <li data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</li>
-            <li data-i18n="phone">Τηλ: 210 6969 420</li>
-            <li data-i18n="email">Email: info@hellasnoc.gr</li>
-          </ul>
+        
+        <div class="footer-section">
+          <h3 class="footer-title" data-i18n="contact">Επικοινωνία</h3>
+          <div class="contact-info">
+            <p data-i18n="address">Αγίου Κωνσταντίνου 12, Αθήνα</p>
+            <p data-i18n="phone">Τηλ: 210 6969 420</p>
+            <p data-i18n="email">Email: info@hellasnoc.gr</p>
+          </div>
         </div>
       </div>
-      <div class="copyright">
-        <p data-i18n="copyright">© 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.</p>
+      
+      <div class="footer-bottom">
+        <p class="copyright" data-i18n="copyright">
+          © 2025 HellasNOC. Με την επιφύλαξη παντός δικαιώματος.
+        </p>
       </div>
     </div>
   </footer>
 
-<script src="translations.js"></script>
-<script src="pricing-toggle.js"></script>
-<script src="main.js"></script>
+  <script src="translations.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Pricing toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButtons = document.querySelectorAll('.toggle-btn');
+      const monthlyPrices = document.querySelectorAll('.monthly-price');
+      const annualPrices = document.querySelectorAll('.annual-price');
+      const savings = document.querySelectorAll('.savings');
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const billing = this.dataset.billing;
+          
+          // Update active button
+          toggleButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Update prices visibility
+          if (billing === 'monthly') {
+            monthlyPrices.forEach(price => price.classList.add('active'));
+            annualPrices.forEach(price => price.classList.remove('active'));
+            savings.forEach(saving => saving.style.display = 'none');
+          } else {
+            monthlyPrices.forEach(price => price.classList.remove('active'));
+            annualPrices.forEach(price => price.classList.add('active'));
+            savings.forEach(saving => saving.style.display = 'block');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
